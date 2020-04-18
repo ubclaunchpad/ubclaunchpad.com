@@ -3,7 +3,7 @@
     <Nav />
 
     <Section full-height>
-      <Feature />
+      <Feature v-bind:applications-open="applicationsOpen" />
     </Section>
 
     <Section>
@@ -23,7 +23,7 @@
     </Section>
 
     <Section>
-      <Join />
+      <Join v-bind:applications-open="applicationsOpen" />
     </Section>
 
     <Section>
@@ -50,6 +50,9 @@ import Sponsors from './sections/Sponsors.vue';
 
 export default {
   name: 'App',
+  data: () => ({
+    applicationsOpen: true,
+  }),
   components: {
     Nav, Footer, Section,
 
@@ -66,6 +69,7 @@ export default {
 
 <style lang="scss">
 @import "./typography.scss";
+@import "./util.scss";
 
 #main {
   background-color: $dark;
