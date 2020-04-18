@@ -4,6 +4,7 @@
     v-bind:class="{
       'is-fullheight': fullHeight,
     }">
+    <img id="section-bg" src="@/assets/backdrop.svg" />
     <div class="hero-body">
       <slot />
     </div>
@@ -20,3 +21,11 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped lang="scss">
+#section-bg {
+  overflow: hidden;
+  position: absolute;
+  mix-blend-mode: overlay;
+}
+</style>

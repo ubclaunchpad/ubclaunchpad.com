@@ -5,7 +5,7 @@ module.exports = {
     loaderOptions: {
       scss: {
         // @/ is an alias to src/
-        prependData: `@import "~@/variables.scss"`,
+        prependData: `@import "~@/variables.scss";`,
       },
     },
   },
