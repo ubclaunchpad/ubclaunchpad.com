@@ -2,11 +2,11 @@
   <div id="main">
     <Nav />
 
-    <Section :section-id="0" next-section-indicator>
+    <Section :section-id="0" next-section-indicator full-height>
       <Feature v-bind:applications-open="applicationsOpen" />
     </Section>
 
-    <Section :section-id="1" full-height>
+    <Section :section-id="1">
       <About />
     </Section>
 

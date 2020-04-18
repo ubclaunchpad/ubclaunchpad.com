@@ -1,10 +1,13 @@
 <template>
   <section
     :id="id"
-    class="hero section-container"
+    class="hero"
     :class="{
       'is-fullheight': fullHeight,
       'is-large': !fullHeight,
+
+      // add more space for every section except first
+      'margin-bottom-96': sectionId > 0,
     }">
     <div class="section-bg-container">
     <img class="section-bg" :src="backdrop.src" :class="backdrop.class" />
@@ -62,10 +65,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.section-container {
-  margin-bottom: 32px;
-}
-
 .section-bg-container {
   position: absolute;
   width: 100%;
