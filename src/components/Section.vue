@@ -26,8 +26,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-const backdropFirst = require('@/assets/backdrop-first.svg');
-const backdropNormal = require('@/assets/backdrop.svg');
+
+// need to import images - should be okay to ignore the require ban
+const backdropFirst = require('@/assets/backdrop-first.svg'); // eslint-disable-line @typescript-eslint/no-var-requires
+const backdropNormal = require('@/assets/backdrop.svg'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 export default Vue.extend({
   name: 'Section',
@@ -37,10 +39,10 @@ export default Vue.extend({
     sectionId: Number,
   },
   computed: {
-    id: function(): String {
+    id: function(): string {
       return `section-${this.sectionId}`;
     },
-    backdrop: function(): { src: String, class: String } {
+    backdrop: function(): { src: string; class: string } {
       // special backdrop for first section
       if (this.sectionId === 0) return {
         src: backdropFirst,
@@ -48,7 +50,7 @@ export default Vue.extend({
       };
 
       // TODO: temporary guard for unimplemented sections
-      if (this.sectionId > 2) return { src: '', class: '' };
+      if (this.sectionId > 3) return { src: '', class: '' };
 
       // alternating rotating normal backdrop for other sections
       if (this.sectionId % 2 === 0) return {

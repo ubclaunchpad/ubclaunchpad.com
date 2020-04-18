@@ -21,7 +21,7 @@
             A leading student-run software club devoted to building applications in a collaborative and professional environment.
           </p>
           <p v-if="applicationsOpen" class="secondary">
-            <i>{{ year }} applications are now open!</i>
+            <i>{{ season }} applications are now open!</i>
           </p>
         </div>
 
@@ -46,9 +46,7 @@ export default Vue.extend({
   name: 'Feature',
   props: {
     applicationsOpen: Boolean,
-  },
-  computed: {
-    year: () => new Date().getFullYear(),
+    season: String,
   },
   components: {
     Button,

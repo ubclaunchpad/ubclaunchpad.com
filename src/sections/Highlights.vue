@@ -20,8 +20,8 @@
 import Vue from 'vue';
 
 interface Highlight {
-  title: String,
-  description: String,
+  title: string;
+  description: string;
 }
 
 const highlights: Highlight[] = [
