@@ -2,7 +2,7 @@
   <section
     class="hero"
     v-bind:class="{
-      'is-fullheight': fullHeight,
+      'is-fullheight-with-navbar': fullHeight,
     }">
     <img id="section-bg" src="@/assets/backdrop.svg" />
     <div class="hero-body">
@@ -27,5 +27,6 @@ export default Vue.extend({
   overflow: hidden;
   position: absolute;
   mix-blend-mode: overlay;
+  width: 100%;
 }
 </style>

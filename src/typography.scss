@@ -1,12 +1,14 @@
 /* Typography */
-p {
+* {
   font-family: 'Lato', sans-serif;
-  font-style: normal;
+}
+
+p {
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   color: $offwhite;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 
   &.secondary {
     color: $grey
@@ -14,7 +16,6 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
   color: $white;
   text-transform: uppercase;
 }
