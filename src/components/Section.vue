@@ -1,9 +1,10 @@
 <template>
   <section
     :id="id"
-    class="hero"
+    class="hero section-container"
     :class="{
       'is-fullheight': fullHeight,
+      'is-large': !fullHeight,
     }">
     <div class="section-bg-container">
     <img class="section-bg" :src="backdrop.src" :class="backdrop.class" />
@@ -44,7 +45,7 @@ export default Vue.extend({
       };
 
       // TODO: temporary guard for unimplemented sections
-      if (this.sectionId > 1) return { src: '', class: '' };
+      if (this.sectionId > 2) return { src: '', class: '' };
 
       // alternating rotating normal backdrop for other sections
       if (this.sectionId % 2 === 0) return {
@@ -61,6 +62,10 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+.section-container {
+  margin-bottom: 32px;
+}
+
 .section-bg-container {
   position: absolute;
   width: 100%;
@@ -78,7 +83,7 @@ export default Vue.extend({
 
     &.rotated {
       // flip backdrop around
-      transform: matrix(1, 0, 0, -1, 0, 0);
+      transform: matrix(-1, 0, 0, -1, 0, 0);
     }
 
     &.upright {
