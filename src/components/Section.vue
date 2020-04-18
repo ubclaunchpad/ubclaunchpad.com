@@ -2,11 +2,14 @@
   <section
     class="hero"
     v-bind:class="{
-      'is-fullheight-with-navbar': fullHeight,
+      'is-fullheight': fullHeight,
     }">
     <img id="section-bg" src="@/assets/backdrop.svg" />
     <div class="hero-body">
       <slot />
+    </div>
+    <div v-if="nextSectionIndicator">
+      <img id="indicator" src="@/assets/icons/indicator-down.svg" class="animated fadeInUp" />
     </div>
   </section>
 </template>
@@ -18,6 +21,7 @@ export default Vue.extend({
   name: 'Section',
   props: {
     fullHeight: Boolean,
+    nextSectionIndicator: Boolean,
   },
 });
 </script>
@@ -28,5 +32,11 @@ export default Vue.extend({
   position: absolute;
   mix-blend-mode: overlay;
   width: 100%;
+}
+#indicator {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
 }
 </style>

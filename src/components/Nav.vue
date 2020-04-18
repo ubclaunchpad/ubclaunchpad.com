@@ -36,7 +36,7 @@ export default Vue.extend({
 #rocket {
   max-height: none;
   width: auto;
-  height: 60px;
+  height: 55px;
 }
 
 .navbar {

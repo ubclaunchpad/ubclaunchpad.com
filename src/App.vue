@@ -2,7 +2,7 @@
   <div id="main">
     <Nav />
 
-    <Section full-height>
+    <Section full-height next-section-indicator>
       <Feature v-bind:applications-open="applicationsOpen" />
     </Section>
 
