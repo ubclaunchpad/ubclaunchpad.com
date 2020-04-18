@@ -7,11 +7,18 @@ p {
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
-  color: $offwhite;
+  color: $white;
+  opacity: 0.8;
   margin-bottom: 32px;
 
+  &.main {
+    color: $offwhite;
+    opacity: 1;
+  }
+
   &.secondary {
-    color: $grey
+    color: $grey;
+    opacity: 1;
   }
 }
 
@@ -32,6 +39,8 @@ h2 {
   font-weight: bold;
   font-size: 36px;
   line-height: 43px;
+  color: $rocket;
+  margin-bottom: 32px;
 }
 
 h3 {
@@ -39,4 +48,5 @@ h3 {
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
+  color: $rocket;
 }

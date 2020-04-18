@@ -8,23 +8,25 @@
               UBC Launch Pad
             </h1>
           </div>
-          <div id="aside-divider" class="column is-narrow" />
+          <div id="aside-divider" class="column is-narrow is-hidden-mobile" />
           <div class="column">
-            <p id="aside">
+            <p id="aside" class="main">
               Software Engineering<br>Design Team
             </p>
           </div>
         </div>
 
-        <p class="secondary animated fadeInUp">
-          A leading student-run software club devoted to building applications in a collaborative and professional environment.
-        </p>
-        <p v-if="applicationsOpen" class="animated fadeInUp secondary">
-          <i>{{ year }} applications are now open!</i>
-        </p>
+        <div class="animated fadeIn">
+          <p class="secondary">
+            A leading student-run software club devoted to building applications in a collaborative and professional environment.
+          </p>
+          <p v-if="applicationsOpen" class="secondary">
+            <i>{{ year }} applications are now open!</i>
+          </p>
+        </div>
 
-        <div>
-          <Button v-if="applicationsOpen" text="join us" primary class="margin-right-32" />
+        <div class="animated fadeInUp">
+          <Button v-if="applicationsOpen" text="join us" primary />
           <Button text="our projects" />
         </div>
       </div>

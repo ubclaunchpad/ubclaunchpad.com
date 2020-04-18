@@ -2,31 +2,31 @@
   <div id="main">
     <Nav />
 
-    <Section full-height next-section-indicator>
+    <Section :section-id="0" full-height next-section-indicator>
       <Feature v-bind:applications-open="applicationsOpen" />
     </Section>
 
-    <Section>
+    <Section :section-id="1" full-height>
       <About />
     </Section>
 
-    <Section>
+    <Section :section-id="2">
       <Highlights />
     </Section>
 
-    <Section>
+    <Section :section-id="3">
       <Projects />
     </Section>
 
-    <Section>
+    <Section :section-id="4">
       <Teams />
     </Section>
 
-    <Section>
+    <Section :section-id="5">
       <Join v-bind:applications-open="applicationsOpen" />
     </Section>
 
-    <Section>
+    <Section :section-id="6">
       <Sponsors />
     </Section>
 
