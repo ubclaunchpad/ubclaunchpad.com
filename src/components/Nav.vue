@@ -6,7 +6,7 @@
       </a>
     </div>
 
-    <div class="navbar-end links">
+    <div class="navbar-end links is-hidden-touch">
       <a class="navbar-item">
         ABOUT
       </a>

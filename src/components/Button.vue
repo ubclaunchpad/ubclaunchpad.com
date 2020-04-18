@@ -18,8 +18,6 @@ export default Vue.extend({
     text: String,
     primary: Boolean,
     onClick: Function,
-
-    class: String,
   },
 });
 </script>
@@ -39,6 +37,7 @@ export default Vue.extend({
   height: auto;
   padding: 10px 42px 10px 42px;
   margin-right: 16px;
+  margin-bottom: 8px;
 
   &.simple {
     border: 2px solid $white;
