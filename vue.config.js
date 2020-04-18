@@ -1,4 +1,12 @@
 
 module.exports = {
-    outputDir: 'docs',
-}
+  outputDir: 'docs',
+  css: {
+    loaderOptions: {
+      scss: {
+        // @/ is an alias to src/
+        prependData: `@import "~@/variables.scss"`,
+      },
+    },
+  },
+};
