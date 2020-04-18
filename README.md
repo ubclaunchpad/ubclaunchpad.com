@@ -1,4 +1,4 @@
-# new
+# new ![Checks](https://github.com/ubclaunchpad/new/workflows/Checks/badge.svg)
 
 a preview of the new ubc launch pad website
 
