@@ -76,7 +76,7 @@ export interface ClubSponsor {
    */
   tier?: ClubSponsorTier;
   /**
-   * must be PNG, transparent
+   * must be PNG, transparent, ~ 140px by 120px
    */
   logoURL: string;
 }
