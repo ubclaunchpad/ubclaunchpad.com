@@ -1,10 +1,13 @@
 <template>
   <section
     :id="id"
-    class="hero section-container"
+    class="hero"
     :class="{
       'is-fullheight': fullHeight,
       'is-large': !fullHeight,
+
+      // add more space for every section except first
+      'margin-bottom-96': sectionId > 0,
     }">
     <div class="section-bg-container">
     <img class="section-bg" :src="backdrop.src" :class="backdrop.class" />
@@ -23,6 +26,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 const backdropFirst = require('@/assets/backdrop-first.svg');
 const backdropNormal = require('@/assets/backdrop.svg');
 
@@ -34,10 +38,10 @@ export default Vue.extend({
     sectionId: Number,
   },
   computed: {
-    id: function(): String {
+    id: function(): string {
       return `section-${this.sectionId}`;
     },
-    backdrop: function(): { src: String, class: String } {
+    backdrop: function(): { src: string; class: string } {
       // special backdrop for first section
       if (this.sectionId === 0) return {
         src: backdropFirst,
@@ -45,7 +49,7 @@ export default Vue.extend({
       };
 
       // TODO: temporary guard for unimplemented sections
-      if (this.sectionId > 2) return { src: '', class: '' };
+      if (this.sectionId > 3) return { src: '', class: '' };
 
       // alternating rotating normal backdrop for other sections
       if (this.sectionId % 2 === 0) return {
@@ -62,10 +66,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.section-container {
-  margin-bottom: 32px;
-}
-
 .section-bg-container {
   position: absolute;
   width: 100%;

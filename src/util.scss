@@ -4,3 +4,11 @@
     padding: 32px;
   }
 }
+
+.margin {
+  &-bottom {
+    &-96 {
+      margin-bottom: 96px;
+    }
+  }
+}

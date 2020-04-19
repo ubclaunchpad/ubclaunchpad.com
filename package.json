@@ -37,7 +37,8 @@
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended",
-      "@vue/typescript"
+      "@vue/typescript",
+      "@vue/typescript/recommended"
     ],
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
@@ -52,7 +53,8 @@
         "error",
         "always-multiline"
       ],
-      "max-len": ["error", { "code": 130 }]
+      "max-len": ["error", { "code": 130 }],
+      "@typescript-eslint/no-var-requires": 0
     }
   },
   "browserslist": [

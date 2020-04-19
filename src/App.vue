@@ -2,11 +2,13 @@
   <div id="main">
     <Nav />
 
-    <Section :section-id="0" next-section-indicator>
-      <Feature v-bind:applications-open="applicationsOpen" />
+    <Section :section-id="0" next-section-indicator full-height>
+      <Feature
+        :applications-open="recruitment.applicationsOpen"
+        :season="recruitment.season" />
     </Section>
 
-    <Section :section-id="1" full-height>
+    <Section :section-id="1">
       <About />
     </Section>
 
@@ -15,7 +17,9 @@
     </Section>
 
     <Section :section-id="3">
-      <Projects />
+      <Projects
+        :teams="club.teams"
+        :member-count="club.memberCount" />
     </Section>
 
     <Section :section-id="4">
@@ -35,6 +39,10 @@
 </template>
 
 <script>
+// configuration for site properties
+import config from './config';
+
+// useful components
 import Nav from './components/Nav.vue';
 import Footer from './components/Footer.vue';
 import Section from './components/Section.vue';
@@ -50,9 +58,7 @@ import Sponsors from './sections/Sponsors.vue';
 
 export default {
   name: 'App',
-  data: () => ({
-    applicationsOpen: true,
-  }),
+  data: () => ({ ...config }),
   components: {
     Nav, Footer, Section,
 
