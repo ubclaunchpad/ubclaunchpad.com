@@ -4,7 +4,6 @@
     class="hero"
     :class="{
       'is-fullheight': size === 'max',
-      'is-medium': !size,
       'is-large': size === 'large',
 
       // add more space for every section except first

@@ -2,17 +2,17 @@
   <div id="main">
     <Nav />
 
-    <Section :section-id="0" next-section-indicator :size="max">
+    <Section :section-id="0" next-section-indicator size="max">
       <Feature
         :applications-open="recruitment.applicationsOpen"
         :season="recruitment.season" />
     </Section>
 
-    <Section :section-id="1">
+    <Section :section-id="1" size="large">
       <About />
     </Section>
 
-    <Section :section-id="2" :size="large">
+    <Section :section-id="2" size="large">
       <Highlights />
     </Section>
 
