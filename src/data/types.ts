@@ -14,6 +14,10 @@ export interface Project {
      * 640px by 320px banner image (or equivalent 2:1 image)
      */
     bannerURI?: string;
+    /**
+     * indicate if the banner has project name, and that a name should not be generated
+     */
+    bannerHasName?: boolean;
   };
 
   links: {
