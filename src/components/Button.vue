@@ -1,6 +1,7 @@
 <template>
   <button
     class="button"
+    v-on:click="onClick"
     :class="{
       'simple': !primary,
       'primary': primary,
@@ -26,6 +27,10 @@ export default Vue.extend({
      * Toggle whether to use a primary, attention-grabbing style or a more lowkey style for this button
      */
     primary: Boolean,
+    /**
+     * Something that should happen on-click.
+     */
+    onClick: Function,
   },
 });
 </script>

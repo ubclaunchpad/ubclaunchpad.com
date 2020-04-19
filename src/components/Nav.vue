@@ -7,16 +7,16 @@
     </div>
 
     <div class="navbar-end links is-hidden-touch">
-      <a class="navbar-item">
+      <a v-on:click="goTo('about')" class="navbar-item">
         ABOUT
       </a>
-      <a class="navbar-item">
+      <a v-on:click="goTo('projects')" class="navbar-item">
         PROJECTS
       </a>
-      <a class="navbar-item">
+      <a v-on:click="goTo('teams')" class="navbar-item">
         TEAMS
       </a>
-      <a class="navbar-item">
+      <a v-on:click="goTo('sponsors')" class="navbar-item">
         SPONSORS
       </a>
     </div>
@@ -25,6 +25,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { goTo } from '@/lib/util';
 
 /**
  * Nav is the website navbar.
@@ -32,6 +33,9 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'Nav',
   props: {},
+  methods: {
+    goTo: function(anchor: string) { goTo(document, anchor); },
+  },
 });
 </script>
 

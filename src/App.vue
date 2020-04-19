@@ -29,7 +29,7 @@
         :teams="club.featuredTeams" />
     </Section>
 
-    <Section :section-id="5" v-if="recruitment.applicationsOpen" size="large">
+    <Section :section-id="5" v-if="recruitment.applicationsOpen" size="medium">
       <Join
         :positions="recruitment.positions" />
     </Section>

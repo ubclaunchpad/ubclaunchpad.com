@@ -25,3 +25,24 @@ export function generateColumns<T>(data: T[], perColumn: number): T[][] {
   }
   return columns;
 }
+
+/**
+ * Scroll smoothly to an element. Add it to `methods`:
+ * 
+ *    export default Vue.extend({
+ *      name: 'Nav',
+ *      methods: {
+ *        goTo: function(anchor: string) { goTo(document, anchor); },
+ *      },
+ *    });
+ * 
+ * Then, for example it, bind it to an `v:on:click`:
+ * 
+ *    <a v-on:click="goTo('teams')">Click me!</a>
+ * 
+ * @param document HTML document (in vue components, just provide `document`)
+ * @param id element to find and scrhool to
+ */
+export function goTo(document: HTMLDocument, id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
