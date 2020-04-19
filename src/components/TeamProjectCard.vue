@@ -1,9 +1,12 @@
 <template>
   <div
-    class="project card"
+    class="project card has-text-centered"
     :style="{
         'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')'
     }">
+    <h2 v-if="!team.project.images.bannerURI">
+      {{ team.project.name }}
+    </h2>
   </div>
 </template>
 
