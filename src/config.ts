@@ -1,4 +1,4 @@
-import { Team, ClubPosition } from './data/types';
+import { Team, ClubPosition, ClubSponsor } from './data/types';
 
 /**
  * Recruitment configuration
@@ -62,7 +62,8 @@ const currentTeams: Team[] = [
       name: 'Sync',
       description: ':tv: Watch YouTube videos interactively in sync with friends',
       images: {
-        bannerURI: 'https://github.com/ubclaunchpad/sync/blob/master/.static/banner.png',
+        bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/sync/master/.static/banner.png',
+        bannerHasName: true,
       },
       links: {
         repository: 'https://github.com/ubclaunchpad/sync',
@@ -216,6 +217,7 @@ const featuredTeams: Team[] = [
       description: 'Should we eat 🌮, 🍟, or 🍣?',
       images: {
         bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/eatnow.png',
+        bannerHasName: true,
       },
       links: {
         repository: 'https://github.com/ubclaunchpad/eat',
@@ -269,7 +271,53 @@ const club = {
   memberCount: 50,
 };
 
+/**
+ * Sponsors configuration
+ */
+
+const sponsors: ClubSponsor[] = [
+  {
+    name: 'Logo 1',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 2',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 3',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 4',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 5',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 6',
+    tier: undefined,
+    logoURL: '',
+  },
+];
+
+const sponsorship = {
+  sponsors,
+  package: 'TODO',
+};
+
+/**
+ * Export all configuration options
+ */
 export default {
   recruitment,
   club,
+  sponsorship,
 };

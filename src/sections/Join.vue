@@ -34,7 +34,7 @@ export default Vue.extend({
   name: 'Join',
   props: {
     positions: {
-      type: Object as () => ClubPosition[],
+      type: Array as () => ClubPosition[],
     },
   },
 });

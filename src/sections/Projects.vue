@@ -25,6 +25,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
+import { generateColumns } from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 
 export default Vue.extend({
@@ -34,22 +35,12 @@ export default Vue.extend({
   },
   props: {
     teams: {
-      type: Object as () => Team[],
+      type: Array as () => Team[],
     },
   },
   computed: {
-    columns: function() {
-      // sort teams into columns
-      const perColumn = 2;
-      const columns: Team[][] = [];
-      for (let i = 0; i < this.teams.length; i+=perColumn) {
-        const col = [this.teams[i]];
-        for (let j = 1; j < perColumn; j+=1) {
-          if (i+j < this.teams.length) col.push(this.teams[i+j]);
-        }
-        columns.push(col);
-      }
-      return columns;
+    columns: function(): Team[][] {
+      return generateColumns<Team>(this.teams, 2);
     },
   },
 });
@@ -57,10 +48,13 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .project-column {
-  padding-right: 16px;
-}
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
 
-.project-container {
-  margin-bottom: 52px;
+  .project-container {
+    margin-bottom: 52px;
+  }
 }
 </style>

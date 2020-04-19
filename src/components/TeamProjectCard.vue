@@ -4,7 +4,7 @@
     :style="{
         'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')'
     }">
-    <h2 v-if="!team.project.images.bannerURI">
+    <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
       {{ team.project.name }}
     </h2>
   </div>

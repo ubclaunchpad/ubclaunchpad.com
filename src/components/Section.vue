@@ -49,9 +49,6 @@ export default Vue.extend({
         class: 'first',
       };
 
-      // TODO: temporary guard for unimplemented sections
-      if (this.sectionId > 5) return { src: '', class: '' };
-
       // alternating rotating normal backdrop for other sections
       if (this.sectionId % 2 === 0) return {
         src: backdropNormal,
