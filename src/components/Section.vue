@@ -18,8 +18,14 @@
       <!-- child goes here (the section component) -->
       <slot />
     </div>
+
+    <!-- next section indicator - if an onclick is provided, wrap in href, otherwise just show indicator -->
     <div v-if="nextSectionIndicator">
-      <img src="@/assets/icons/indicator-down.svg" class="indicator animated bounce delay-1s" />
+      <a v-if="nextSectionOnClick" v-on:click="nextSectionOnClick">
+        <img src="@/assets/icons/indicator-down.svg" class="indicator animated bounce delay-1s" />
+      </a>
+      <img v-if="!nextSectionOnClick"
+        src="@/assets/icons/indicator-down.svg" class="indicator animated bounce delay-1s" />
     </div>
   </section>
 </template>
@@ -51,9 +57,14 @@ export default Vue.extend({
      */
     size: String,
     /**
-     * Toggle whether to display a next section indicator arrow for this section.
+     * Toggle whether to display a next section indicator arrow for this section. Optional.
      */
     nextSectionIndicator: Boolean,
+    /**
+     * Provide an on-click callback for the next section indicator arrow. Only applies if 
+     * nextSectionIndicator is true.
+     */
+    nextSectionOnClick: { type: Function, default: () => 1 },
   },
   computed: {
     id: function(): string {
