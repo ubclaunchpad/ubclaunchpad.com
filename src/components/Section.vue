@@ -3,8 +3,9 @@
     :id="id"
     class="hero"
     :class="{
-      'is-fullheight': fullHeight,
-      'is-large': !fullHeight,
+      'is-fullheight': size === 'max',
+      'is-medium': !size,
+      'is-large': size === 'large',
 
       // add more space for every section except first
       'margin-bottom-96': sectionId > 0,
@@ -33,7 +34,7 @@ const backdropNormal = require('@/assets/backdrop.svg');
 export default Vue.extend({
   name: 'Section',
   props: {
-    fullHeight: Boolean,
+    size: String,
     nextSectionIndicator: Boolean,
     sectionId: Number,
   },
@@ -49,7 +50,7 @@ export default Vue.extend({
       };
 
       // TODO: temporary guard for unimplemented sections
-      if (this.sectionId > 3) return { src: '', class: '' };
+      if (this.sectionId > 4) return { src: '', class: '' };
 
       // alternating rotating normal backdrop for other sections
       if (this.sectionId % 2 === 0) return {
