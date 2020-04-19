@@ -64,6 +64,6 @@ export default Vue.extend({
   border-left: 2px solid $white;
   height: 42px;
   margin-left: 8px;
-  margin-right: -8px;
+  margin-right: -12px;
 }
 </style>
