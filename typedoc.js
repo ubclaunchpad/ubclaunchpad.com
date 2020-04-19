@@ -1,6 +1,6 @@
 // configuration documentation configuration ;)
 module.exports = {
-  name: 'Configuring the UBC Launch Pad Website',
+  name: 'UBC Launch Pad Site Configuration Guide',
   theme: 'minimal',
   readme: './CONFIGURING.md',
   mode: 'file',

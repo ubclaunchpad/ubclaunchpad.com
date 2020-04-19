@@ -33,6 +33,9 @@ const socials = {
   medium: 'https://medium.com/ubc-launch-pad-software-engineering-blog',
 };
 
+/**
+ * Footer is the website footer.
+ */
 export default Vue.extend({
   name: 'Footer',
   props: {},

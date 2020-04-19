@@ -26,6 +26,9 @@
 <script lang="ts">
 import Vue from 'vue';
 
+/**
+ * Nav is the website navbar.
+ */
 export default Vue.extend({
   name: 'Nav',
   props: {},

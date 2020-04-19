@@ -28,11 +28,11 @@ import { Team } from '@/data/types';
 import { generateColumns } from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 
+/**
+ * Projects implements a section for highlighting past Launch Pad projects.
+ */
 export default Vue.extend({
   name: 'Projects',
-  components: {
-    TeamProjectCard,
-  },
   props: {
     teams: {
       type: Array as () => Team[],
@@ -42,6 +42,9 @@ export default Vue.extend({
     columns: function(): Team[][] {
       return generateColumns<Team>(this.teams, 2);
     },
+  },
+  components: {
+    TeamProjectCard,
   },
 });
 </script>

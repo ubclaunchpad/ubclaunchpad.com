@@ -28,6 +28,9 @@
 <script lang="ts">
 import Vue from 'vue';
 
+/**
+ * About implements a section for introducing visitors to Launch Pad.
+ */
 export default Vue.extend({
   name: 'About',
   props: {},

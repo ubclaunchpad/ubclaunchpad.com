@@ -2,6 +2,8 @@
   <div id="main">
     <Nav />
 
+    <!-- sections: refer to each section's component documentation for more details -->
+
     <Section :section-id="0" next-section-indicator size="max">
       <Feature
         :applications-open="recruitment.applicationsOpen"
@@ -81,12 +83,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-// styles and imports declared here are global!!
-
-@import "./styles/typography.scss";
-@import "./styles/util.scss";
-
+<style scoped lang="scss">
 #main {
   background-color: $dark;
 }
