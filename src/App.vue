@@ -12,7 +12,7 @@
       <About />
     </Section>
 
-    <Section :section-id="2" size="large">
+    <Section :section-id="2" size="medium">
       <Highlights />
     </Section>
 
