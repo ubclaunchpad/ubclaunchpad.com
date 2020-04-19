@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "postbuild": "npm run docs",
+    "lint": "vue-cli-service lint",
+    "docs": "typedoc --options typedoc.js src/config.ts"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
@@ -26,6 +28,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
+    "typedoc": "^0.17.4",
     "typescript": "^3.8.3",
     "vue-template-compiler": "^2.6.11"
   },
@@ -53,7 +56,14 @@
         "error",
         "always-multiline"
       ],
-      "max-len": ["error", { "code": 130 }],
+      "max-len": [
+        "error",
+        {
+          "code": 130
+        }
+      ],
+      "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+      "quote-props": ["error", "as-needed"],
       "@typescript-eslint/no-var-requires": 0
     }
   },

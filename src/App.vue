@@ -35,7 +35,7 @@
     <Section :section-id="6" size="medium">
       <Sponsors
         :sponsors="sponsorship.sponsors"
-        :sponsorship-package="sponsorship.package" />
+        :sponsorship-package="sponsorship.packageURL" />
     </Section>
 
     <Footer />
@@ -43,8 +43,8 @@
 </template>
 
 <script>
-// configuration for site properties
-import config from './config';
+// configuration for site properties - this should ONLY be imported here
+import { recruitmentConfig, clubConfig, sponsorshipConfig } from './config';
 
 // useful components
 import Nav from '@/components/Nav.vue';
@@ -62,7 +62,11 @@ import Sponsors from '@/sections/Sponsors.vue';
 
 export default {
   name: 'App',
-  data: () => ({ ...config }),
+  data: () => ({ 
+    recruitment: recruitmentConfig,
+    club: clubConfig,
+    sponsorship: sponsorshipConfig,
+  }),
   components: {
     Nav, Footer, Section,
 
@@ -77,12 +81,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-// styles and imports declared here are global!!
-
-@import "./styles/typography.scss";
-@import "./styles/util.scss";
-
+<style scoped lang="scss">
 #main {
   background-color: $dark;
 }

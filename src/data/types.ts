@@ -1,82 +1,111 @@
-export interface Project {
+/**
+ * Describes a Launch Pad project.
+ */
+export type Project = {
   /**
-   * human-readable name for project
+   * Human-readable name for project.
    */
   name: string;
 
   /**
-   * short one-line description of project
+   * Short one-line description of project.
    */
   description: string;
 
   images: {
     /**
-     * 640px by 320px banner image (or equivalent 2:1 image)
+     * 640px by 320px banner image (or equivalent 2:1 image). Should be hosted on the project
+     * repository or elswhere, and NOT in this website repository.
+     * 
+     * If using an image in a repository, make sure it is a direct link to the image, i.e. instead of:
+     * 
+     *    https://github.com/ubclaunchpad/inertia/blob/master/.static/inertia-with-name.png
+     * 
+     * the link should be:
+     * 
+     *    https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/inertia-with-name.png
+     * 
+     * On most browsers, you can do this by right-clicking the image and selecting "Copy Image Location".
      */
     bannerURI?: string;
     /**
-     * indicate if the banner has project name, and that a name should not be generated
+     * Indicate if the banner has project name, and that a name should not be generated on the website.
      */
     bannerHasName?: boolean;
   };
 
   links: {
     /**
-     * github repository link
+     * Link to GitHub repository
      */
     repository: string;
 
     /**
-     * link to deployed website if applicable
+     * Link to deployed website
      */
     website?: string;
 
     /**
-     * link to a blog post or writeup
+     * Link to a blog post or similar writeup
      */
     writeup?: string;
   };
 }
 
-export interface Team {
+/**
+ * Describes a Launch Pad team.
+ */
+export type Team = {
   /**
-   * team name!
+   * Team name!
    */
   name: string;
   /**
-   * most recent project
+   * The team's most recent/relevant project
    */
   project: Project;
 }
 
-export interface ClubPosition {
+/**
+ * Describes a Launch Pad position (e.g. 'Developer', 'Designer')
+ */
+export type ClubPosition = {
   /**
-   * position name
+   * Position name.
    */
   name: string;
   /**
-   * position description
+   * Position description.
    */
   description: string;
   /**
-   * link to apply
+   * Link to apply to this position.
    */
   applicationURL: string;
 }
 
+/**
+ * Sponsorship tier achieved by a sponsor. Refer to the sponsorship package for more details.
+ */
 export type ClubSponsorTier = 'bronze' | 'silver' | 'gold' | 'platinum';
 
-export interface ClubSponsor {
+/**
+ * Describes a club sponsor.
+ */
+export type ClubSponsor = {
   /**
-   * sponsor name
+   * Sponsor name.
    */
   name: string;
   /**
-   * how much support this sponsor provided
+   * How much support this sponsor provided.
    */
   tier?: ClubSponsorTier;
   /**
-   * must be PNG, transparent, ~ 140px by 120px
+   * Sponsor logo - must be PNG, transparent, and roughly 140px by 120px.
+   * 
+   * Unlike project images, we can host these in this repository - just add them to `/assets/logos`
+   * and use `require`. TODO(@bobheadxi): verify this works as expected
    */
-  logoURL: string;
+  logoURL: string | any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
