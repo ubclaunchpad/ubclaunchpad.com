@@ -57,15 +57,17 @@ const recruitment = {
 
 const currentTeams: Team[] = [
   {
-    name: 'Team1',
+    name: 'Sync',
     project: {
-      name: 'Placeholder1',
-      description: '',
+      name: 'Sync',
+      description: ':tv: Watch YouTube videos interactively in sync with friends',
       images: {
-        bannerURI: undefined,
+        bannerURI: 'https://github.com/ubclaunchpad/sync/blob/master/.static/banner.png',
       },
       links: {
-        repository: 'https://github.com/ubclaunchpad/new',
+        repository: 'https://github.com/ubclaunchpad/sync',
+        website: 'https://thesyncapp.herokuapp.com/',
+        writeup: 'https://github.com/ubclaunchpad/sync/blob/showcase/README.md',
       },
     },
   },
