@@ -27,9 +27,8 @@
 <script lang="ts">
 import Vue from 'vue';
 
-// need to import images - should be okay to ignore the require ban
-const backdropFirst = require('@/assets/backdrop-first.svg'); // eslint-disable-line @typescript-eslint/no-var-requires
-const backdropNormal = require('@/assets/backdrop.svg'); // eslint-disable-line @typescript-eslint/no-var-requires
+const backdropFirst = require('@/assets/backdrop-first.svg');
+const backdropNormal = require('@/assets/backdrop.svg');
 
 export default Vue.extend({
   name: 'Section',

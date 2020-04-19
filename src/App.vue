@@ -5,7 +5,7 @@
     <Section :section-id="0" next-section-indicator full-height>
       <Feature
         :applications-open="recruitment.applicationsOpen"
-        :season="recruitement.season" />
+        :season="recruitment.season" />
     </Section>
 
     <Section :section-id="1">
