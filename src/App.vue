@@ -27,12 +27,12 @@
         :teams="club.featuredTeams" />
     </Section>
 
-    <Section :section-id="5" v-if="recruitment.applicationsOpen">
+    <Section :section-id="5" v-if="recruitment.applicationsOpen" size="large">
       <Join
         :positions="recruitment.positions" />
     </Section>
 
-    <Section :section-id="6">
+    <Section :section-id="6" size="medium">
       <Sponsors
         :sponsors="sponsorship.sponsors"
         :sponsorship-package="sponsorship.package" />
