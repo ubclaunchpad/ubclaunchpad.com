@@ -67,7 +67,7 @@ export default Vue.extend({
   props: {
     memberCount: Number,
     teams: {
-      type: Object as () => Team[],
+      type: Array as () => Team[],
     },
   },
   data: () => ({ stats }),
@@ -95,10 +95,11 @@ export default Vue.extend({
   align-items: center;
   padding-right: 16px;
   padding-left: 16px;
-}
-.project-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 36px;
+
+  .project-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+  }
 }
 </style>

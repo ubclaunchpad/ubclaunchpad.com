@@ -34,7 +34,7 @@ export default Vue.extend({
   },
   props: {
     teams: {
-      type: Object as () => Team[],
+      type: Array as () => Team[],
     },
   },
   computed: {
@@ -57,10 +57,13 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .project-column {
-  padding-right: 16px;
-}
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
 
-.project-container {
-  margin-bottom: 52px;
+  .project-container {
+    margin-bottom: 52px;
+  }
 }
 </style>
