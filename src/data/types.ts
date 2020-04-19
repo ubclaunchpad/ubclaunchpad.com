@@ -39,7 +39,27 @@ export interface Project {
 }
 
 export interface Team {
+  /**
+   * team name!
+   */
   name: string;
-  // most recent project
+  /**
+   * most recent project
+   */
   project: Project;
+}
+
+export interface ClubPosition {
+  /**
+   * position name
+   */
+  name: string;
+  /**
+   * position description
+   */
+  description: string;
+  /**
+   * link to apply
+   */
+  applicationURL: string;
 }
