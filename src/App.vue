@@ -27,8 +27,9 @@
         :teams="club.featuredTeams" />
     </Section>
 
-    <Section :section-id="5">
-      <Join v-bind:applications-open="applicationsOpen" />
+    <Section :section-id="5" v-if="recruitment.applicationsOpen">
+      <Join
+        :positions="recruitment.positions" />
     </Section>
 
     <Section :section-id="6">

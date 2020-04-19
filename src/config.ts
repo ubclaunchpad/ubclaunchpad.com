@@ -26,7 +26,7 @@ const positions: ClubPosition[] = [
     applicationURL: '',
   },
   {
-    name: 'Strategy',
+    name: 'Business Strategist',
     description:
       `Bring an entrepreneurial flair to a team of designers and developers to create awesome projects.
       Develop industry relationships and insight while securing funding and sponsorships.
