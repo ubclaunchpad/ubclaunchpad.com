@@ -74,8 +74,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./typography.scss";
-@import "./util.scss";
+// styles and imports declared here are global!!
+
+@import "./styles/typography.scss";
+@import "./styles/util.scss";
 
 #main {
   background-color: $dark;
