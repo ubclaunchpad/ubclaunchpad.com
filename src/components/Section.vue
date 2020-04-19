@@ -11,8 +11,7 @@
       'margin-bottom-96': sectionId > 0,
     }">
     <div class="section-bg-container">
-    <img class="section-bg" :src="backdrop.src" :class="backdrop.class" />
-    
+      <img class="section-bg" :src="backdrop.src" :class="backdrop.class" />
     </div>
 
     <div class="hero-body">
@@ -58,7 +57,14 @@ export default Vue.extend({
   },
   computed: {
     id: function(): string {
-      return `section-${this.sectionId}`;
+      const defaultID = `section-${this.sectionId}`;
+      // if a single component is provided in section slot, use its name (aka tag in vue internals)
+      // as an ID for use with ref anchors
+      const slots = this.$slots['default'];
+      if (slots && slots.length > 0) {
+        return slots[0].componentOptions?.tag?.toLowerCase() || defaultID;
+      }
+      return defaultID;
     },
     backdrop: function(): { src: string; class: string } {
       // special backdrop for first section
