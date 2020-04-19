@@ -25,6 +25,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { goTo } from '@/lib/util';
 
 /**
  * Nav is the website navbar.
@@ -33,9 +34,7 @@ export default Vue.extend({
   name: 'Nav',
   props: {},
   methods: {
-    goTo: function(anchor: string) {
-      document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
-    },
+    goTo: function(anchor: string) { goTo(document, anchor); },
   },
 });
 </script>

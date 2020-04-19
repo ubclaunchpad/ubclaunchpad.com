@@ -26,8 +26,14 @@
         </div>
 
         <div class="animated fadeInUp">
-          <Button v-if="applicationsOpen" text="join us" primary />
-          <Button text="our projects" />
+          <Button
+            v-if="applicationsOpen"
+            text="join us"
+            primary
+            :on-click="() => goTo('join')" />
+          <Button
+            text="our projects"
+            :on-click="() => goTo('teams')" />
         </div>
       </div>
 
@@ -41,6 +47,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Button from '@/components/Button.vue';
+import { goTo } from '@/lib/util';
 
 /**
  * Feature implements the landing section - the first thing visitors see.
@@ -53,6 +60,9 @@ export default Vue.extend({
   },
   components: {
     Button,
+  },
+  methods: {
+    goTo: function(anchor: string) { goTo(document, anchor); },
   },
 });
 </script>
