@@ -1,4 +1,40 @@
-import { Team } from './data/types';
+import { Team, ClubPosition } from './data/types';
+
+/**
+ * Recruitment configuration
+ */
+
+const positions: ClubPosition[] = [
+  {
+    name: 'Developer',
+    description: 
+      `Join our development team to improve your skills and resume. You have the basics down, but want
+      to collaborate with a team to build awesome software and learn professional development practices.
+      Realize your ideas with a dedicated project team, and learn
+      from peers in a talented team of experienced designers and entrepreneurs. You're full
+      of ideas and you're ready to guide the development of a project from
+      conception to release.`,
+    applicationURL: '',
+  },
+  {
+    name: 'Designer',
+    description:
+      `Realize your design ideas with a dedicated project team, and learn
+      from peers in a talented team of experienced designers. You're full
+      of ideas and you're ready to guide the development of a project from
+      conception to release.`,
+    applicationURL: '',
+  },
+  {
+    name: 'Business Strategist',
+    description:
+      `Bring an entrepreneurial flair to a team of designers and developers to create awesome projects.
+      Develop industry relationships and insight while securing funding and sponsorships.
+      Work closely with partners to organize and market events that aim to benefit UBC's tech
+      community.`,
+    applicationURL: '',
+  },
+];
 
 const recruitment = {
   /**
@@ -9,7 +45,15 @@ const recruitment = {
    * are applications open? this activates CTAs on the website for signup
    */
   applicationsOpen: true,
+  /**
+   * positions that are open for application
+   */
+  positions,
 };
+
+/**
+ * Club configuration
+ */
 
 const currentTeams: Team[] = [
   {
@@ -206,11 +250,24 @@ const featuredTeams: Team[] = [
   },
 ];
 
+const club = {
+  /**
+   * Current teams
+   */
+  currentTeams,
+
+  /**
+   * Past teams to feature
+   */
+  featuredTeams,
+
+  /**
+   * Current members
+   */
+  memberCount: 50,
+};
+
 export default {
   recruitment,
-  club: {
-    currentTeams,
-    featuredTeams,
-    memberCount: 50,
-  },
+  club,
 };

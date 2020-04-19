@@ -1,18 +1,59 @@
 <template>
-  <div>
+  <div id="container" class="container is-widescreen">
+    <div class="columns is-vcentered">
+      <div class="column has-text-centered is-half">
+        <div v-for="(p, i) in positions" :key="p.name">
+          <a class="position-link" :href="p.applicationURL" target="_blank">
+            <h3>{{ p.name }}</h3>
+          </a>
+          <hr class="position-divider" v-if="i !== (positions.length-1)" />
+        </div>
+      </div>
 
+      <div class="column has-text-centered is-half is-narrow">
+        <div class="join-col">
+          <h2 class="accent">
+            Join Us
+          </h2>
+          <img src="@/assets/computer.png" width="100%" />
+          <p class="margin-top-24">
+            Are you a programmer, designer, or business student looking for an opportunity to work on
+            interesting projects with fun people? Apply today!
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import { ClubPosition } from '@/data/types';
 
 export default Vue.extend({
   name: 'Join',
-  props: {},
+  props: {
+    positions: {
+      type: Object as () => ClubPosition[],
+    },
+  },
 });
 </script>
 
 <style scoped lang="scss">
+.position-link {
+  h3 {
+    color: $white;
+  }
+}
 
+.position-divider {
+  width: 350px;
+  display: inline-block;
+}
+
+.join-col {
+  width: 350px;
+  display: inline-grid;
+}
 </style>

@@ -56,13 +56,8 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.project-columns {
-  > :first-child { padding-left: 0px; }
-  > :last-child { padding-right: 0px; }
-}
 .project-column {
   padding-right: 16px;
-  padding-left: 16px;
 }
 
 .project-container {

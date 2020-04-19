@@ -22,7 +22,7 @@
         </p>
       </div>
       <div class="column">
-        <div class="tile project-columns is-pulled-right">
+        <div class="tile">
           <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical project-column">
             <div v-for="(r, j) in col" :key="'row-'+i+'-'+j" class="tile project-container">
               <TeamProjectCard :team="r" />
@@ -91,10 +91,14 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .project-column {
+  display: flex;
+  align-items: center;
   padding-right: 16px;
   padding-left: 16px;
 }
 .project-container {
+  display: flex;
+  align-items: center;
   margin-bottom: 36px;
 }
 </style>
