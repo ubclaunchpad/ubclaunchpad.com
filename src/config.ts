@@ -1,4 +1,4 @@
-import { Team, ClubPosition } from './data/types';
+import { Team, ClubPosition, ClubSponsor } from './data/types';
 
 /**
  * Recruitment configuration
@@ -267,7 +267,43 @@ const club = {
   memberCount: 50,
 };
 
+/**
+ * Sponsors configuration
+ */
+
+const sponsors: ClubSponsor[] = [
+  {
+    name: 'Logo 1',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 2',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 3',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 4',
+    tier: undefined,
+    logoURL: '',
+  },
+];
+
+const sponsorship = {
+  sponsors,
+  package: 'TODO',
+};
+
+/**
+ * Export all configuration options
+ */
 export default {
   recruitment,
   club,
+  sponsorship,
 };

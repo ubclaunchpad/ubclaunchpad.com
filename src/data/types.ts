@@ -63,3 +63,20 @@ export interface ClubPosition {
    */
   applicationURL: string;
 }
+
+export type ClubSponsorTier = 'bronze' | 'silver' | 'gold' | 'platinum';
+
+export interface ClubSponsor {
+  /**
+   * sponsor name
+   */
+  name: string;
+  /**
+   * how much support this sponsor provided
+   */
+  tier?: ClubSponsorTier;
+  /**
+   * must be PNG, transparent
+   */
+  logoURL: string;
+}
