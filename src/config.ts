@@ -2,12 +2,12 @@ import { Team } from './data/types';
 
 const teams: Team[] = [
   {
-    name: 'Team1',
+    name: 'Sync',
     project: {
       name: 'Sync',
       description: ':tv: Watch YouTube videos interactively in sync with friends',
       images: {
-        bannerURI: 'https://github.com/ubclaunchpad/new/blob/master/src/assets/sync.png',
+        bannerURI: 'https://github.com/ubclaunchpad/sync/blob/master/.static/banner.png',
       },
       links: {
         repository: 'https://github.com/ubclaunchpad/sync',
