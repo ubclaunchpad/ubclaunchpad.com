@@ -4,13 +4,15 @@ const teams: Team[] = [
   {
     name: 'Team1',
     project: {
-      name: 'Placeholder1',
-      description: '',
+      name: 'Sync',
+      description: 'Watch YouTube videos interactively in sync with friends',
       images: {
-        bannerURI: undefined,
+        bannerURI: 'https://github.com/ubclaunchpad/new/blob/master/src/assets/sync.png',
       },
       links: {
-        repository: 'https://github.com/ubclaunchpad/new',
+        repository: 'https://github.com/ubclaunchpad/sync',
+        website: 'https://thesyncapp.herokuapp.com/',
+        writeup: 'https://github.com/ubclaunchpad/sync/blob/showcase/README.md',
       },
     },
   },
