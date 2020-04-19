@@ -51,6 +51,7 @@ export default Vue.extend({
 h2 {
   margin-bottom: 84px;
 }
+
 .sponsor-column {
   display: flex;
   align-items: center;
@@ -65,7 +66,6 @@ h2 {
 
   .package-link {
     margin-top: 62px;
-    color: $white
   }
 }
 
