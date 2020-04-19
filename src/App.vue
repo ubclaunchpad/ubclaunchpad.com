@@ -81,12 +81,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-// styles and imports declared here are global!!
-
-@import "./styles/typography.scss";
-@import "./styles/util.scss";
-
+<style scoped lang="scss">
 #main {
   background-color: $dark;
 }
