@@ -5,7 +5,7 @@ const teams: Team[] = [
     name: 'Team1',
     project: {
       name: 'Sync',
-      description: 'Watch YouTube videos interactively in sync with friends',
+      description: ':tv: Watch YouTube videos interactively in sync with friends',
       images: {
         bannerURI: 'https://github.com/ubclaunchpad/new/blob/master/src/assets/sync.png',
       },
