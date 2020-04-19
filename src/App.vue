@@ -4,7 +4,7 @@
 
     <!-- sections: refer to each section's component documentation for more details -->
 
-    <Section :section-id="0" next-section-indicator size="max">
+    <Section :section-id="0" size="max" next-section-indicator :next-section-on-click="() => goTo('about')">
       <Feature
         :applications-open="recruitment.applicationsOpen"
         :season="recruitment.season" />
@@ -44,9 +44,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // configuration for site properties - this should ONLY be imported here
 import { recruitmentConfig, clubConfig, sponsorshipConfig } from './config';
+
+// utility functions
+import { goTo } from '@/lib/util';
 
 // useful components
 import Nav from '@/components/Nav.vue';
@@ -79,6 +82,9 @@ export default {
     Teams,
     Join,
     Sponsors,
+  },
+  methods: {
+    goTo: function(anchor: string) { goTo(document, anchor); },
   },
 };
 </script>
