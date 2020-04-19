@@ -62,7 +62,8 @@ const currentTeams: Team[] = [
       name: 'Sync',
       description: ':tv: Watch YouTube videos interactively in sync with friends',
       images: {
-        bannerURI: 'https://github.com/ubclaunchpad/sync/blob/master/.static/banner.png',
+        bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/sync/master/.static/banner.png',
+        bannerHasName: true,
       },
       links: {
         repository: 'https://github.com/ubclaunchpad/sync',
@@ -216,6 +217,7 @@ const featuredTeams: Team[] = [
       description: 'Should we eat 🌮, 🍟, or 🍣?',
       images: {
         bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/eatnow.png',
+        bannerHasName: true,
       },
       links: {
         repository: 'https://github.com/ubclaunchpad/eat',
@@ -291,6 +293,16 @@ const sponsors: ClubSponsor[] = [
   },
   {
     name: 'Logo 4',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 5',
+    tier: undefined,
+    logoURL: '',
+  },
+  {
+    name: 'Logo 6',
     tier: undefined,
     logoURL: '',
   },
