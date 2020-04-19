@@ -7,12 +7,7 @@
     <div class="tile project-columns">
       <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical project-column">
         <div v-for="(r, j) in col" :key="'row-'+i+'-'+j" class="tile project-container">
-          <div
-            class="project card"
-            :style="{
-              'background-image': 'url(' + (r.project.images.bannerURI || projectPlaceholder) + ')'
-            }">
-          </div>
+          <TeamProjectCard :team="r" />
         </div>
       </div>
     </div>
@@ -22,19 +17,17 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-
-const projectPlaceholder = require('@/assets/project-placeholder.png');
+import TeamProjectCard from '@/components/TeamProjectCard.vue';
 
 export default Vue.extend({
   name: 'Projects',
-  data: () => ({
-    projectPlaceholder,
-  }),
+  components: {
+    TeamProjectCard,
+  },
   props: {
     teams: {
       type: Object as () => Team[],
     },
-    memberCount: Number,
   },
   computed: {
     columns: function() {
@@ -66,14 +59,5 @@ export default Vue.extend({
 
 .project-container {
   margin-bottom: 52px;
-}
-.project {
-  height: 160px;
-  width: 320px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
 </style>

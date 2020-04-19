@@ -2,7 +2,7 @@
   <div id="main">
     <Nav />
 
-    <Section :section-id="0" next-section-indicator full-height>
+    <Section :section-id="0" next-section-indicator :size="max">
       <Feature
         :applications-open="recruitment.applicationsOpen"
         :season="recruitment.season" />
@@ -12,17 +12,19 @@
       <About />
     </Section>
 
-    <Section :section-id="2">
+    <Section :section-id="2" :size="large">
       <Highlights />
     </Section>
 
     <Section :section-id="3">
-      <Projects
-        :teams="club.featuredTeams" />
+      <Teams
+        :member-count="club.memberCount"
+        :teams="club.currentTeams" />
     </Section>
 
     <Section :section-id="4">
-      <Teams />
+      <Projects
+        :teams="club.featuredTeams" />
     </Section>
 
     <Section :section-id="5">
