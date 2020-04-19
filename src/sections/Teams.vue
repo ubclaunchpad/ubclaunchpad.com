@@ -5,11 +5,13 @@
         <h2>Our Teams</h2>
         <img src="@/assets/screen.png" width="300px" />
 
-        <div class="level">
+        <div class="level stats">
           <div v-for="s in stats" :key="s.description" class="level-item has-text-centered">
             <div>
               <h2 class="margin-bottom-16">{{ s.value }}</h2>
-              <p class="pad-sides-8">{{ s.description }}</p>
+              <p class="stat-desc pad-sides-8">
+                <b>{{ s.description }}</b>
+              </p>
             </div>
           </div>
         </div>
@@ -52,7 +54,7 @@ const stats: TeamStats[] = [
   },
   {
     value: '1-2',
-    description: 'Designers',
+    description: 'Designers\nand Strategists',
   },
   {
     value: '1',
@@ -98,4 +100,13 @@ export default Vue.extend({
     margin-bottom: 36px;
   }
 }
+
+.stats {
+  align-items: start;
+
+  .stat-desc {
+    white-space: pre-line;
+  }
+}
+
 </style>
