@@ -5,7 +5,7 @@ export interface Project {
   name: string;
 
   /**
-   * short description of project
+   * short one-line description of project
    */
   description: string;
 

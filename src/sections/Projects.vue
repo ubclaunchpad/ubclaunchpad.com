@@ -1,10 +1,7 @@
 <template>
   <div id="container" class="container is-widescreen">
     <div>
-      <h2 class="accent">This Year's Projects</h2>
-      <p>
-        We had {{ teams.length }} project teams this year with {{ memberCount }} developers, designers, and strategy members.
-      </p>
+      <h2>Past Projects</h2>
     </div>
 
     <div class="tile project-columns">
@@ -75,7 +72,7 @@ export default Vue.extend({
   width: 320px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }

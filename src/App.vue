@@ -18,8 +18,7 @@
 
     <Section :section-id="3">
       <Projects
-        :teams="club.teams"
-        :member-count="club.memberCount" />
+        :teams="club.featuredTeams" />
     </Section>
 
     <Section :section-id="4">
