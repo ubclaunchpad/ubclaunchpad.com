@@ -60,11 +60,11 @@ const stats: TeamStats[] = [
   },
 ];
 
+/**
+ * Teams implements a section to talk about Launch Pad's teams and feature our current teams.
+ */
 export default Vue.extend({
   name: 'Teams',
-  components: {
-    TeamProjectCard,
-  },
   props: {
     teams: {
       type: Array as () => Team[],
@@ -78,6 +78,9 @@ export default Vue.extend({
       const perColumn = Math.ceil(this.teams.length / perRow);
       return generateColumns<Team>(this.teams, perColumn);
     },
+  },
+  components: {
+    TeamProjectCard,
   },
 });
 </script>

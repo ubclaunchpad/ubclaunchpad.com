@@ -16,9 +16,15 @@ import { Team } from '@/data/types';
 
 const projectPlaceholder = require('@/assets/project-placeholder.png');
 
+/**
+ * TeamProjectCard is a small card used to render a Team. See [[Team]] for more details.
+ */
 export default Vue.extend({
   name: 'TeamProjectCard',
   props: {
+    /**
+     * Team to render
+     */
     team: {
       type: Object as () => Team,
     },

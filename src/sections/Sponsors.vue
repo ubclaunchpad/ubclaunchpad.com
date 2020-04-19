@@ -28,6 +28,9 @@ import { generateColumns } from '@/lib/util';
 
 const logoPlaceholder = require('@/assets/logo-placeholder.png');
 
+/**
+ * Sponsors implements a section to feature Launch Pad's sponsors.
+ */
 export default Vue.extend({
   name: 'Sponsors',
   props: {

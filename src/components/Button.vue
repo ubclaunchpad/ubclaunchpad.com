@@ -12,12 +12,20 @@
 <script lang="ts">
 import Vue from 'vue';
 
+/**
+ * Button is a simple stylized Launch Pad button.
+ */
 export default Vue.extend({
   name: 'Button',
   props: {
+    /**
+     * Text to include in the button
+     */
     text: String,
+    /**
+     * Toggle whether to use a primary, attention-grabbing style or a more lowkey style for this button
+     */
     primary: Boolean,
-    onClick: Function,
   },
 });
 </script>

@@ -42,6 +42,9 @@
 import Vue from 'vue';
 import Button from '@/components/Button.vue';
 
+/**
+ * Feature implements the landing section - the first thing visitors see.
+ */
 export default Vue.extend({
   name: 'Feature',
   props: {

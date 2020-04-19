@@ -42,6 +42,9 @@ UBC tech community and increase interest in software development.`,
   },
 ];
 
+/**
+ * Highlights implements a section to highlight some things about Launch Pad, such as what we do.
+ */
 export default Vue.extend({
   name: 'Highlights',
   data: () => ({ highlights }),

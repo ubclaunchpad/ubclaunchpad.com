@@ -31,12 +31,30 @@ import Vue from 'vue';
 const backdropFirst = require('@/assets/backdrop-first.svg');
 const backdropNormal = require('@/assets/backdrop.svg');
 
+/**
+ * Section should be used to wrap a component from `src/sections`. It automatically provides a
+ * suitable backdrop style and space for a child component. For example:
+ * 
+ *   <Section :section-id="1" size="large">
+ *     <About />
+ *   </Section>
+ *
+ */
 export default Vue.extend({
   name: 'Section',
   props: {
-    size: String,
-    nextSectionIndicator: Boolean,
+    /**
+     * Unique identifier for this section. Sections should be ordered from 0 onwards.
+     */
     sectionId: Number,
+    /**
+     * One of 'max', 'medium', or 'large' - dictates the height of this section.
+     */
+    size: String,
+    /**
+     * Toggle whether to display a next section indicator arrow for this section.
+     */
+    nextSectionIndicator: Boolean,
   },
   computed: {
     id: function(): string {

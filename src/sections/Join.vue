@@ -30,6 +30,10 @@
 import Vue from 'vue';
 import { ClubPosition } from '@/data/types';
 
+/**
+ * Join implements a section for encouraging users to apply to Launch Pad. It should only be
+ * displayed if applications are open.
+ */
 export default Vue.extend({
   name: 'Join',
   props: {
