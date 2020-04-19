@@ -2,6 +2,14 @@
   <div id="container" class="container is-widescreen">
     <div>
       <h2>Past Projects</h2>
+      <p>
+        Generations of students have created projects throughout the years as part of Launch Pad -
+        here are some of our favourites!
+      </p>
+      <p>
+        A complete list of our past projects is available on
+        <a href="https://github.com/ubclaunchpad" target="_blank">GitHub</a>, where we have <b>over 100 repositories</b>.
+      </p>
     </div>
 
     <div class="tile project-columns">
