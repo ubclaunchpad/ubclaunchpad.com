@@ -24,6 +24,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { ClubSponsor } from '@/data/types';
+import { generateColumns } from '@/lib/util';
 
 const logoPlaceholder = require('@/assets/logo-placeholder.png');
 
@@ -39,18 +40,8 @@ export default Vue.extend({
     logoPlaceholder,
   }),
   computed: {
-    columns: function() {
-      // sort sponsors into columns
-      const perColumn = 2;
-      const columns: ClubSponsor[][] = [];
-      for (let i = 0; i < this.sponsors.length; i+=perColumn) {
-        const col = [this.sponsors[i]];
-        for (let j = 1; j < perColumn; j+=1) {
-          if (i+j < this.sponsors.length) col.push(this.sponsors[i+j]);
-        }
-        columns.push(col);
-      }
-      return columns;
+    columns: function(): ClubSponsor[][] {
+      return generateColumns<ClubSponsor>(this.sponsors, 2);
     },
   },
 });

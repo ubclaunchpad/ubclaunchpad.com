@@ -37,6 +37,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
+import { generateColumns } from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 
 interface TeamStats {
@@ -65,25 +66,17 @@ export default Vue.extend({
     TeamProjectCard,
   },
   props: {
-    memberCount: Number,
     teams: {
       type: Array as () => Team[],
     },
+    memberCount: Number,
   },
   data: () => ({ stats }),
   computed: {
-    columns: function() {
+    columns: function(): Team[][] {
       const perRow = 2;
       const perColumn = Math.ceil(this.teams.length / perRow);
-      const columns: Team[][] = [];
-      for (let i = 0; i < this.teams.length; i+=perColumn) {
-        const col = [this.teams[i]];
-        for (let j = 1; j < perColumn; j+=1) {
-          if (i+j < this.teams.length) col.push(this.teams[i+j]);
-        }
-        columns.push(col);
-      }
-      return columns;
+      return generateColumns<Team>(this.teams, perColumn);
     },
   },
 });
