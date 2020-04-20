@@ -115,7 +115,7 @@ export const clubConfig: {
         name: 'Physio Space',
         description: 'The physio that’s always at your side',
         images: {
-          bannerURI: 'https://github.com/ubclaunchpad/physiospace-react/blob/master/showcasethumbnail_PhysioSpace.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/physiospace-react/master/showcasethumbnail_PhysioSpace.png',
           bannerHasName: true,
         },
         links: {
