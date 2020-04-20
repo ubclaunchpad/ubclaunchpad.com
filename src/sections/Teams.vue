@@ -26,8 +26,11 @@
       <div class="column">
         <div class="tile">
           <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical project-column">
-            <div v-for="(r, j) in col" :key="'row-'+i+'-'+j" class="tile project-container">
-              <TeamProjectCard :team="r" animated class-on-view="fadeInRight slow" />
+            <div ref="teams-project-card"
+              v-for="(r, j) in col"
+              :key="'row-'+i+'-'+j"
+              class="tile project-container">
+              <TeamProjectCard :team="r" />
             </div>
           </div>
         </div>
@@ -39,7 +42,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns } from '@/lib/util';
+import { generateColumns, attachClassesIfInView } from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 
 interface TeamStats {
@@ -80,6 +83,14 @@ export default Vue.extend({
       const perColumn = Math.ceil(this.teams.length / perRow);
       return generateColumns<Team>(this.teams, perColumn);
     },
+  },
+  methods: {
+    handleScroll() {
+      attachClassesIfInView(window, this.$refs['teams-project-card'], 'animated fadeInRight slow');
+    },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   components: {
     TeamProjectCard,
