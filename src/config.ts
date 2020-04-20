@@ -110,15 +110,18 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Team2',
+      name: 'Physio Space',
       project: {
-        name: 'Placeholder2',
-        description: '',
+        name: 'Physio Space',
+        description: 'The physio that’s always at your side',
         images: {
-          bannerURI: undefined,
+          bannerURI: 'https://github.com/ubclaunchpad/physiospace-react/blob/master/showcasethumbnail_PhysioSpace.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/physiospace-react',
+          website:'https://thephysio.space/',
+          writeup:'https://github.com/ubclaunchpad/physiospace-react/blob/master/README.md',
         },
       },
     },
