@@ -4,7 +4,7 @@ module.exports = {
   theme: 'minimal',
   readme: './CONFIGURING.md',
   mode: 'file',
-  out: './docs/config',
+  out: './dist/config',
   categoryOrder: ['Configuration', '*'],
   defaultCategory: 'Types',
   categorizeByGroup: false,
