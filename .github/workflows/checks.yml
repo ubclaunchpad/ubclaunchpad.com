@@ -1,5 +1,8 @@
 name: Checks
-on: push
+on:
+  push:
+    branches: [ master ]
+  pull_request:
 
 jobs:
   build:
@@ -9,6 +12,4 @@ jobs:
     - uses: actions/setup-node@v1
       with: { node-version: 10.x }
     - run: npm install
-
-    - run: npm run build
     - run: npm run lint
