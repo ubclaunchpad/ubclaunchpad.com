@@ -1,0 +1,22 @@
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'action:build'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with: { node-version: 10.x }
+      - run: npm install
+      - run: npm run build
+      - name: commit build
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "action: update build"
+      - name: push commit
+        run: git push
