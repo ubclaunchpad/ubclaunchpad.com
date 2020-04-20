@@ -323,6 +323,7 @@ export const sponsorshipConfig: {
       name: 'Axiom Zen',
       tier: 'gold',
       logoURL: 'https://res.cloudinary.com/dfgx570fg/image/upload/w_700,h_700,c_limit/v1468362472/f2ed2lbpqujvxa8r6zux.png',
+      logoFilter: 'invert()',
     },
     {
       name: 'East Side Game Studio',

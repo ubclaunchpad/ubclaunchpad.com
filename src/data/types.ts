@@ -108,4 +108,8 @@ export type ClubSponsor = {
    * and use `require`. TODO(@bobheadxi): verify this works as expected
    */
   logoURL: string | any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  /**
+   * Simple CSS filters for the sponsor logo - see https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+   */
+  logoFilter?: string;
 }
