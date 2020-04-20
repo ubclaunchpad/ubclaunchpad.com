@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { goTo, attachClassesIfInView } from '@/lib/util';
+import { goTo } from '@/lib/util';
 
 interface Highlight {
   title: string;
@@ -51,13 +51,7 @@ export default Vue.extend({
   props: {},
   data: () => ({ highlights }),
   methods: {
-    handleScroll() {
-      attachClassesIfInView(window, this.$refs['highlights-container'], 'animated fadeInUp');
-    },
     goTo(anchor: string) { goTo(document, anchor); },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>
