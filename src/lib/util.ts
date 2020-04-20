@@ -32,7 +32,7 @@ export function generateColumns<T>(data: T[], perColumn: number): T[][] {
  *    export default Vue.extend({
  *      name: 'Nav',
  *      methods: {
- *        goTo: function(anchor: string) { goTo(document, anchor); },
+ *        goTo(anchor: string) { goTo(document, anchor); },
  *      },
  *    });
  * 
@@ -43,6 +43,33 @@ export function generateColumns<T>(data: T[], perColumn: number): T[][] {
  * @param document HTML document (in vue components, just provide `document`)
  * @param id element to find and scrhool to
  */
-export function goTo(document: HTMLDocument, id: string) {
+export function goTo(document: HTMLDocument, id: string): void {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+function isInView(w: Window, el: HTMLElement): boolean {
+  const rect = el.getBoundingClientRect();
+  return rect.top < w.innerHeight && rect.bottom >= 0;
+}
+
+function updateClasses(el: HTMLElement, classNames: string, remove: boolean) {
+  const classes = classNames.split(' ');
+  if (!remove) classes.forEach((c) => el.classList.add(c));
+  else classes.forEach((c) => el.classList.remove(c));
+}
+
+/**
+ * Check if given element is within the window bounds (aka "in view") and attach classnames to it
+ * if it is. Useful for making animations.
+ * 
+ * @param w window instance
+ * @param el element to check and update
+ * @param classNames string of classnames (e.g. 'animated fadeInleft')
+ * @param removeIfNot optionally indicate that classes should be removed if the element has left the view
+ */
+export function attachClassesIfInView(w: Window, el: HTMLElement | null, classNames: string, removeIfNot?: boolean) {
+  if (el) {
+    if (isInView(w, el)) updateClasses(el, classNames, false);
+    else if (removeIfNot) updateClasses(el, classNames, true);
+  }
 }

@@ -1,10 +1,10 @@
 <template>
-  <div id="container" class="container is-widescreen">
+  <div id="about-container" class="container is-widescreen" :on-scroll="handleScroll">
     <div class="columns is-vcentered">
-      <div class="column">
+      <div id="about-col-left" class="column">
         <img src="@/assets/about.png">
       </div>
-      <div class="pad-32 column is-three-fifths">
+      <div id="about-col-right" class="pad-32 column is-three-fifths">
         <h2>Who we are</h2>
         <p>
           We’re a student-run software engineering team devoted to building software projects in a
@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { attachClassesIfInView } from '@/lib/util';
 
 /**
  * About implements a section for introducing visitors to Launch Pad.
@@ -34,6 +35,19 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'About',
   props: {},
+  computed: {
+    leftCol() { return document.getElementById('about-col-left'); },
+    rightCol() { return document.getElementById('about-col-right'); },
+  },
+  methods: {
+    handleScroll() {
+      attachClassesIfInView(window, this.leftCol, 'animated fadeInLeft');
+      attachClassesIfInView(window, this.rightCol, 'animated fadeInLeft');
+    },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
 });
 </script>
 

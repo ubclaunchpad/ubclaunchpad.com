@@ -62,7 +62,7 @@ export default Vue.extend({
     Button,
   },
   methods: {
-    goTo: function(anchor: string) { goTo(document, anchor); },
+    goTo(anchor: string) { goTo(document, anchor); },
   },
 });
 </script>

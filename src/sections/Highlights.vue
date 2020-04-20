@@ -1,5 +1,5 @@
 <template>
-  <div id="container" class="container is-widescreen">
+  <div id="highlights-container" class="container is-widescreen">
     <!-- titles -->
     <div class="columns is-vcentered">
       <div v-for="h in highlights" :key="h.title" class="column has-text-centered">
@@ -18,6 +18,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { goTo, attachClassesIfInView } from '@/lib/util';
 
 interface Highlight {
   title: string;
@@ -47,8 +48,20 @@ UBC tech community and increase interest in software development.`,
  */
 export default Vue.extend({
   name: 'Highlights',
-  data: () => ({ highlights }),
   props: {},
+  data: () => ({ highlights }),
+  computed: {
+    container() { return document.getElementById('highlights-container'); },
+  },
+  methods: {
+    handleScroll() {
+      attachClassesIfInView(window, this.container, 'animated fadeInUp');
+    },
+    goTo(anchor: string) { goTo(document, anchor); },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
 });
 </script>
 

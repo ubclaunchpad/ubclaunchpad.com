@@ -34,7 +34,7 @@ export default Vue.extend({
   name: 'Nav',
   props: {},
   methods: {
-    goTo: function(anchor: string) { goTo(document, anchor); },
+    goTo(anchor: string) { goTo(document, anchor); },
   },
 });
 </script>
