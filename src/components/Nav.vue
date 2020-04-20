@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-transparent">
+  <nav class="navbar is-transparent animated slideInDown slow">
     <div class="navbar-brand logo">
       <a class="navbar-item" href="https://ubclaunchpad.com">
         <img id="rocket" src="@/assets/rocket.png"/>
