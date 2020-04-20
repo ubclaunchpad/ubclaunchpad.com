@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: [ master, deploy-to-gh-pages ]
+    branches: [ master ]
 
 jobs:
   deploy:
