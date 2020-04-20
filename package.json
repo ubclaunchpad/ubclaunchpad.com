@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "prebuild": "rm -rf ./docs",
     "build": "vue-cli-service build",
     "postbuild": "npm run docs",
     "lint": "vue-cli-service lint",
