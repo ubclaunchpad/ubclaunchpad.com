@@ -70,9 +70,15 @@ type VueRef = Vue | Element | Vue[] | Element[];
  * @param removeIfNot optionally indicate that classes should be removed if the element has left the view
  */
 export function attachClassesIfInView(w: Window, ref: VueRef, classNames: string, removeIfNot?: boolean) {
-  const el = ref as Element;
-  if (el) {
-    if (isInView(w, el)) updateClasses(el, classNames, false);
-    else if (removeIfNot) updateClasses(el, classNames, true);
+  if (ref instanceof Element) {
+    if (isInView(w, ref)) updateClasses(ref, classNames, false);
+    else if (removeIfNot) updateClasses(ref, classNames, true);
+  } else if (ref instanceof Array) {
+    ref.forEach((r: Vue | Element) => {
+      if (r instanceof Element) {
+        if (isInView(w, r)) updateClasses(r, classNames, false);
+        else if (removeIfNot) updateClasses(r, classNames, true);
+      }
+    });
   }
 }
