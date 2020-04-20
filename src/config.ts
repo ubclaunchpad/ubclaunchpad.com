@@ -316,38 +316,25 @@ export const sponsorshipConfig: {
   /**
    * Current sponsors.
    * 
-   * Each element must satisfy `ClubSponsor`.
+   * Each element must satisfy [[`ClubSponsor`]].
    */
   sponsors: [
     {
-      name: 'Logo 1',
-      tier: undefined,
-      logoURL: '',
+      name: 'Axiom Zen',
+      tier: 'gold',
+      logoURL: 'https://res.cloudinary.com/dfgx570fg/image/upload/w_700,h_700,c_limit/v1468362472/f2ed2lbpqujvxa8r6zux.png',
+      logoFilter: 'invert()',
     },
     {
-      name: 'Logo 2',
-      tier: undefined,
-      logoURL: '',
+      name: 'East Side Game Studio',
+      tier: 'gold',
+      logoURL: 'https://www.eastsidegames.com/wp-content/themes/esgnew/img/logo-final.png',
+      logoFilter: 'invert() grayscale(0.5)',
     },
     {
-      name: 'Logo 3',
-      tier: undefined,
-      logoURL: '',
-    },
-    {
-      name: 'Logo 4',
-      tier: undefined,
-      logoURL: '',
-    },
-    {
-      name: 'Logo 5',
-      tier: undefined,
-      logoURL: '',
-    },
-    {
-      name: 'Logo 6',
-      tier: undefined,
-      logoURL: '',
+      name: 'Cisco',
+      tier: 'gold',
+      logoURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png',
     },
   ],
 };

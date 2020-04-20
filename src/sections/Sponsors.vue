@@ -7,7 +7,10 @@
       <div class="tile sponsor-columns">
         <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical sponsor-column">
           <div v-for="(s, j) in col" :key="'row-'+i+'-'+j" class="tile sponsor-container">
-            <img :src="s.logoURL || logoPlaceholder" :alt="s.name" />
+            <img :src="s.logoURL || logoPlaceholder" :alt="s.name" :style="{
+              filter: s.logoFilter,
+              'object-fit': 'contain',
+            }" />
           </div>
         </div>
       </div>
@@ -44,7 +47,9 @@ export default Vue.extend({
   }),
   computed: {
     columns: function(): ClubSponsor[][] {
-      return generateColumns<ClubSponsor>(this.sponsors, 2);
+      // too few sponsors looks awkward when spread out too much
+      const perColumn = (this.sponsors.length <= 4) ? 1 : 2;
+      return generateColumns<ClubSponsor>(this.sponsors, perColumn);
     },
   },
 });
@@ -60,7 +65,12 @@ h2 {
   align-items: center;
 
   .sponsor-container {
+    height: auto;
+    width: auto;
+    max-width: 320px;
+    max-height: 300px;
     margin-bottom: 37px;
+    object-fit: contain;
   }
 }
 
