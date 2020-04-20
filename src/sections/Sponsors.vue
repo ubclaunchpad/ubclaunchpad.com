@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <p class="package-link-p">
+      <p class="package-link-p" ref="sponsor-cta">
         <a :href="sponsorshipPackage" target="_blank" class="package-link">
           <b>Interested in sponsoring us? View our sponsorship package here ></b>
         </a>
@@ -56,6 +56,7 @@ export default Vue.extend({
   methods: {
     handleScroll() {
       attachClassesIfInView(window, this.$refs['sponsor-logo'], 'animated fadeInUp');
+      attachClassesIfInView(window, this.$refs['sponsor-cta'], 'animated fadeInUp delay-1s');
     },
   },
   created() {
