@@ -328,7 +328,8 @@ export const sponsorshipConfig: {
     {
       name: 'East Side Game Studio',
       tier: 'gold',
-      logoURL: 'https://www.eastsidegames.com/wp-content/uploads/East-Side-Games-Logo-1200-x-628-Facebook.png',
+      logoURL: 'https://www.eastsidegames.com/wp-content/themes/esgnew/img/logo-final.png',
+      logoFilter: 'invert() grayscale(0.5)',
     },
     {
       name: 'Cisco',

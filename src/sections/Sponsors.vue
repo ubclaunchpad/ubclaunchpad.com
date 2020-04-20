@@ -68,6 +68,7 @@ h2 {
     height: auto;
     width: auto;
     max-width: 320px;
+    max-height: 300px;
     margin-bottom: 37px;
     object-fit: contain;
   }
