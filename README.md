@@ -11,6 +11,10 @@
     <img src="https://github.com/ubclaunchpad/new/workflows/Checks/badge.svg"
       alt="Checks Status" />
   </a>
+  <a href="https://github.com/ubclaunchpad/new/actions?workflow=Deploy">
+    <img src="https://github.com/ubclaunchpad/new/workflows/Deploy/badge.svg"
+      alt="Deploy Status" />
+  </a>
   <a href="https://ubclaunchpad.github.io/new">
     <img src="https://img.shields.io/website/https/ubclaunchpad.github.io/new.svg" />
   </a>

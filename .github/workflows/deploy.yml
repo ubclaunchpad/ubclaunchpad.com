@@ -1,0 +1,23 @@
+name: Deploy
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with: { persist-credentials: false }
+
+    - uses: actions/setup-node@v1
+      with: { node-version: 12.x }
+    - run: npm install
+    - run: npm run build
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist

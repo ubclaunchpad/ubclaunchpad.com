@@ -115,17 +115,13 @@ You can view the configuration documentation site locally using a static file se
 
 ```
 npm i -g serve
-serve ./docs/config
+serve ./dist/config
 ```
+
+These changes are published automatically - see [Deployment](#deployment).
 
 ## Deployment
 
-Deployments are currently simply based on the `/docs` folder in the `master` branch. To deploy your
-change, make sure you run:
+Deployments are handled automatically by the [Deploy workflow](https://github.com/ubclaunchpad/new/actions?workflow=Deploy), which publishes changes to the `gh-pages` branch.
 
-```
-npm run build
-```
-
-And open a pull request on this repository with your changes. When your changes are merged, your
-contribution will automatically be deployed!
+When your changes are merged, your contribution will automatically be deployed!
