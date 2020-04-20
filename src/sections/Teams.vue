@@ -27,7 +27,7 @@
         <div class="tile">
           <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical project-column">
             <div v-for="(r, j) in col" :key="'row-'+i+'-'+j" class="tile project-container">
-              <TeamProjectCard :team="r" />
+              <TeamProjectCard :team="r" animated class-on-view="fadeInRight slow" />
             </div>
           </div>
         </div>

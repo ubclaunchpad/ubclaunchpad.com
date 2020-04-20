@@ -1,8 +1,12 @@
 <template>
   <div
     class="project card has-text-centered"
+    :ref="id"
     :style="{
-        'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')'
+      'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')',
+    }"
+    :class="{
+      'animated': animated,
     }">
     <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
       {{ team.project.name }}
@@ -13,6 +17,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
+import { attachClassesIfInView } from '@/lib/util';
 
 const projectPlaceholder = require('@/assets/project-placeholder.png');
 
@@ -28,10 +33,34 @@ export default Vue.extend({
     team: {
       type: Object as () => Team,
     },
+    /**
+     * Class to set on container when this card scrolls into view. Optional.
+     */
+    classOnView: {
+      type: String,
+      required: false,
+    },
+    /**
+     * Assumes `animate.css` animations and adds an `animated` class. Best used with `classOnView`.
+     */
+    animated: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
-  data: () => ({
-    projectPlaceholder,
-  }),
+  data: () => ({ projectPlaceholder }),
+  computed: {
+    id(): string { return `card-${this.team.name.toLowerCase().replace(' ', '-')}`; },
+  },
+  methods: {
+    handleScroll() {
+      attachClassesIfInView(window, this.$refs[this.id], this.classOnView);
+    },
+  },
+  created() {
+    if (this.classOnView) window.addEventListener('scroll', this.handleScroll);
+  },
 });
 </script>
 

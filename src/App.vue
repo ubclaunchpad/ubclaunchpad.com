@@ -45,6 +45,8 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
+
 // configuration for site properties - this should ONLY be imported here
 import { recruitmentConfig, clubConfig, sponsorshipConfig } from './config';
 
@@ -65,7 +67,10 @@ import Projects from '@/sections/Projects.vue';
 import Join from '@/sections/Join.vue';
 import Sponsors from '@/sections/Sponsors.vue';
 
-export default {
+/**
+ * App is the primary entrypoint to the website.
+ */
+export default Vue.extend({
   name: 'App',
   data: () => ({ 
     recruitment: recruitmentConfig,
@@ -84,9 +89,9 @@ export default {
     Sponsors,
   },
   methods: {
-    goTo: function(anchor: string) { goTo(document, anchor); },
+    goTo(anchor: string) { goTo(document, anchor); },
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

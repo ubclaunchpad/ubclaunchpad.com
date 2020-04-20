@@ -32,7 +32,7 @@ export function generateColumns<T>(data: T[], perColumn: number): T[][] {
  *    export default Vue.extend({
  *      name: 'Nav',
  *      methods: {
- *        goTo: function(anchor: string) { goTo(document, anchor); },
+ *        goTo(anchor: string) { goTo(document, anchor); },
  *      },
  *    });
  * 
@@ -43,6 +43,42 @@ export function generateColumns<T>(data: T[], perColumn: number): T[][] {
  * @param document HTML document (in vue components, just provide `document`)
  * @param id element to find and scrhool to
  */
-export function goTo(document: HTMLDocument, id: string) {
+export function goTo(document: HTMLDocument, id: string): void {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+function isInView(w: Window, el: Element): boolean {
+  const rect = el.getBoundingClientRect();
+  return rect.top < w.innerHeight && rect.bottom >= 0;
+}
+
+function updateClasses(el: Element, classNames: string, remove: boolean) {
+  const classes = classNames.split(' ');
+  if (!remove) classes.forEach((c) => el.classList.add(c));
+  else classes.forEach((c) => el.classList.remove(c));
+}
+
+type VueRef = Vue | Element | Vue[] | Element[];
+
+/**
+ * Check if given element is within the window bounds (aka "in view") and attach classnames to it
+ * if it is. Useful for making animations.
+ * 
+ * @param w window instance
+ * @param ref element to check and update, retrieved from `this.$refs`
+ * @param classNames string of classnames (e.g. 'animated fadeInleft')
+ * @param removeIfNot optionally indicate that classes should be removed if the element has left the view
+ */
+export function attachClassesIfInView(w: Window, ref: VueRef, classNames: string, removeIfNot?: boolean) {
+  if (ref instanceof Element) {
+    if (isInView(w, ref)) updateClasses(ref, classNames, false);
+    else if (removeIfNot) updateClasses(ref, classNames, true);
+  } else if (ref instanceof Array) {
+    ref.forEach((r: Vue | Element) => {
+      if (r instanceof Element) {
+        if (isInView(w, r)) updateClasses(r, classNames, false);
+        else if (removeIfNot) updateClasses(r, classNames, true);
+      }
+    });
+  }
 }

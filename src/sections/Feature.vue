@@ -2,7 +2,7 @@
   <div id="container" class="container is-widescreen">
     <div class="columns is-vcentered">
       <div class="pad-32 column is-three-fifths">
-        <div class="columns is-vcentered">
+        <div class="columns is-vcentered animated slideInDown">
           <div class="column is-narrow">
             <h1>
               UBC Launch Pad
@@ -62,7 +62,7 @@ export default Vue.extend({
     Button,
   },
   methods: {
-    goTo: function(anchor: string) { goTo(document, anchor); },
+    goTo(anchor: string) { goTo(document, anchor); },
   },
 });
 </script>

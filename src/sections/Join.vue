@@ -4,9 +4,9 @@
       <div class="column has-text-centered is-half">
         <div v-for="(p, i) in positions" :key="p.name">
           <a class="position-link" :href="p.applicationURL" target="_blank">
-            <h3>{{ p.name }}</h3>
+            <h3 ref="position-animated">{{ p.name }}</h3>
           </a>
-          <hr class="position-divider" v-if="i !== (positions.length-1)" />
+          <hr class="position-divider" v-if="i !== (positions.length-1)" ref="position-animated" />
         </div>
       </div>
 
@@ -29,6 +29,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { ClubPosition } from '@/data/types';
+import { attachClassesIfInView } from '@/lib/util';
 
 /**
  * Join implements a section for encouraging users to apply to Launch Pad. It should only be
@@ -40,6 +41,14 @@ export default Vue.extend({
     positions: {
       type: Array as () => ClubPosition[],
     },
+  },
+  methods: {
+    handleScroll() {
+      attachClassesIfInView(window, this.$refs['position-animated'], 'animated fadeInLeft');
+    },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>
