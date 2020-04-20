@@ -2,7 +2,8 @@ name: Checks
 on:
   push:
     branches: [ master ]
-  pull_request: [ unlabeled, synchronize ]
+  pull_request:
+    types: [ unlabeled, synchronize ]
 
 jobs:
   build:
