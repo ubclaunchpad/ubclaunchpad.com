@@ -48,6 +48,10 @@ export default Vue.extend({
 .position-link {
   h3 {
     color: $white;
+
+    &:hover {
+      color: $rocket;
+    }
   }
 }
 

@@ -57,6 +57,12 @@ h3 {
   color: $rocket;
 }
 
+a {
+  &:hover {
+    color: $rocket;
+  }
+}
+
 .accent {
   color: $accent;
 }
