@@ -63,10 +63,11 @@ export default Vue.extend({
       font-weight: bold;
       color: $rocket;
       margin: 20px;
-    }
 
-    .navbar-item:hover, :focus {
-      color: $white;
+      &:hover, &:focus {
+        color: $white;
+      }
+
     }
   }
 }
