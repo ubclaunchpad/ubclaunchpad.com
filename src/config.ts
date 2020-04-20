@@ -316,7 +316,7 @@ export const sponsorshipConfig: {
   /**
    * Current sponsors.
    * 
-   * Each element must satisfy `ClubSponsor`.
+   * Each element must satisfy [[`ClubSponsor`]].
    */
   sponsors: [
     {

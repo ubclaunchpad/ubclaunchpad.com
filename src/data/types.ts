@@ -98,7 +98,7 @@ export type ClubSponsor = {
    */
   name: string;
   /**
-   * How much support this sponsor provided.
+   * How much support this sponsor provided - must be a string that satisfied one of [[`ClubSponsorTier`]].
    */
   tier?: ClubSponsorTier;
   /**
