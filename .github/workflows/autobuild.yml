@@ -34,10 +34,5 @@ jobs:
             const repo = repoParts[1];
             const pr = context.event.number;
             console.log(`updating PR #${pr} in ${owner}/${repo}`);
-            github.issues.removeLabel({
-              owner,
-              repo,
-              pr,
-              'action:autobuild',
-            });
+            github.issues.removeLabel({ owner, repo, pr, name: 'action:autobuild' });
             console.log('PR updated');
