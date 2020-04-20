@@ -56,11 +56,29 @@ export default Vue.extend({
     border: 2px solid $white;
     box-sizing: border-box;
     background: none;
+
+    &:hover, &:focus {
+      color: $rocket;
+      border: 2px solid $rocket;
+      box-shadow: 0px 1px 4px rgba($rocket, 0.5);
+    }
   }
 
   &.primary {
     border: 2px solid $rocket;
     background: $rocket;
+
+    &:hover, &:focus {
+      color: $rocket;
+      border: 2px solid $white;
+      background: $white;
+      box-shadow: 0px 2px 8px rgba($grey, 0.5);
+    }
+  }
+
+  &:hover, &:focus {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.04);
   }
 }
 </style>
