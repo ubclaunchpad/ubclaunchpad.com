@@ -7,7 +7,7 @@ on:
 jobs:
   autobuild:
     runs-on: ubuntu-latest
-    if: github.event.label.name == 'action:build'
+    if: github.event.label.name == 'action:autobuild'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
