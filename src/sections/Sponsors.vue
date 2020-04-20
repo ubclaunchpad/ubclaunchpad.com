@@ -7,10 +7,13 @@
       <div class="tile sponsor-columns">
         <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical sponsor-column">
           <div v-for="(s, j) in col" :key="'row-'+i+'-'+j" class="tile sponsor-container">
-            <img :src="s.logoURL || logoPlaceholder" :alt="s.name" :style="{
-              filter: s.logoFilter,
-              'object-fit': 'contain',
-            }" />
+            <img ref="sponsor-logo"
+              :src="s.logoURL || logoPlaceholder"
+              :alt="s.name"
+              :style="{
+                filter: s.logoFilter,
+                'object-fit': 'contain',
+              }" />
           </div>
         </div>
       </div>
@@ -27,7 +30,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { ClubSponsor } from '@/data/types';
-import { generateColumns } from '@/lib/util';
+import { generateColumns, attachClassesIfInView } from '@/lib/util';
 
 const logoPlaceholder = require('@/assets/logo-placeholder.png');
 
@@ -42,15 +45,21 @@ export default Vue.extend({
     },
     sponsorshipPackage: String,
   },
-  data: () => ({
-    logoPlaceholder,
-  }),
+  data: () => ({ logoPlaceholder }),
   computed: {
     columns: function(): ClubSponsor[][] {
       // too few sponsors looks awkward when spread out too much
       const perColumn = (this.sponsors.length <= 4) ? 1 : 2;
       return generateColumns<ClubSponsor>(this.sponsors, perColumn);
     },
+  },
+  methods: {
+    handleScroll() {
+      attachClassesIfInView(window, this.$refs['sponsor-logo'], 'animated fadeInUp');
+    },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>
