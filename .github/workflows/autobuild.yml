@@ -23,3 +23,21 @@ jobs:
           git commit -m "autobuild: update build"
       - name: push commit
         run: git push
+
+      - name: remove label from pull request
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const repoParts = context.repository.split('/');
+            const owner = repoParts[0];
+            const repo = repoParts[1];
+            const pr = context.event.number;
+            console.log(`updating PR #${pr} in ${owner}/${repo}`);
+            github.issues.removeLabel({
+              owner,
+              repo,
+              pr,
+              'action:autobuild',
+            });
+            console.log('PR updated');
