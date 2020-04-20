@@ -1,8 +1,12 @@
 <template>
   <div
     class="project card has-text-centered"
+    :ref="id"
     :style="{
-        'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')'
+      'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')',
+    }"
+    :class="{
+      'animated': animated,
     }">
     <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
       {{ team.project.name }}
@@ -29,9 +33,10 @@ export default Vue.extend({
       type: Object as () => Team,
     },
   },
-  data: () => ({
-    projectPlaceholder,
-  }),
+  data: () => ({ projectPlaceholder }),
+  computed: {
+    id(): string { return `card-${this.team.name.toLowerCase().replace(' ', '-')}`; },
+  },
 });
 </script>
 
