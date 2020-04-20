@@ -320,19 +320,19 @@ export const sponsorshipConfig: {
    */
   sponsors: [
     {
-      name: 'Logo 1',
-      tier: undefined,
-      logoURL: '',
+      name: 'Axiom Zen',
+      tier: Gold,
+      logoURL: 'https://res.cloudinary.com/dfgx570fg/image/upload/w_700,h_700,c_limit/v1468362472/f2ed2lbpqujvxa8r6zux.png',
     },
     {
-      name: 'Logo 2',
-      tier: undefined,
-      logoURL: '',
+      name: 'East Side Game Studio',
+      tier: Gold,
+      logoURL: 'https://www.eastsidegames.com/wp-content/uploads/East-Side-Games-Logo-1200-x-628-Facebook.png',
     },
     {
-      name: 'Logo 3',
-      tier: undefined,
-      logoURL: '',
+      name: 'Cisco',
+      tier: Gold,
+      logoURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png',
     },
     {
       name: 'Logo 4',
