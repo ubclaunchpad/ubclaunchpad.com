@@ -6,7 +6,7 @@
       'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')',
     }"
     :class="{
-      'animated': !!classOnView,
+      'animated': animated,
     }">
     <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
       {{ team.project.name }}
@@ -39,6 +39,14 @@ export default Vue.extend({
     classOnView: {
       type: String,
       required: false,
+    },
+    /**
+     * Assumes `animate.css` animations and adds an `animated` class. Best used with `classOnView`.
+     */
+    animated: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data: () => ({ projectPlaceholder }),
