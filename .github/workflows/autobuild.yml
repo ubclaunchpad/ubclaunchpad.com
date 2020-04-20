@@ -10,6 +10,8 @@ jobs:
     if: github.event.label.name == 'action:autobuild'
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-node@v1
         with: { node-version: 10.x }
       - run: npm install
