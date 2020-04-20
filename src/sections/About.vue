@@ -1,10 +1,10 @@
 <template>
-  <div id="about-container" class="container is-widescreen" :on-scroll="handleScroll">
+  <div class="container is-widescreen" :on-scroll="handleScroll">
     <div class="columns is-vcentered">
-      <div id="about-col-left" class="column">
+      <div ref="about-col-left" class="column">
         <img src="@/assets/about.png">
       </div>
-      <div id="about-col-right" class="pad-32 column is-three-fifths">
+      <div ref="about-col-right" class="pad-32 column is-three-fifths">
         <h2>Who we are</h2>
         <p>
           We’re a student-run software engineering team devoted to building software projects in a
@@ -35,14 +35,10 @@ import { attachClassesIfInView } from '@/lib/util';
 export default Vue.extend({
   name: 'About',
   props: {},
-  computed: {
-    leftCol() { return document.getElementById('about-col-left'); },
-    rightCol() { return document.getElementById('about-col-right'); },
-  },
   methods: {
     handleScroll() {
-      attachClassesIfInView(window, this.leftCol, 'animated fadeInLeft');
-      attachClassesIfInView(window, this.rightCol, 'animated fadeInLeft');
+      attachClassesIfInView(window, this.$refs['about-col-left'], 'animated fadeInLeft');
+      attachClassesIfInView(window, this.$refs['about-col-right'], 'animated fadeInLeft');
     },
   },
   created() {

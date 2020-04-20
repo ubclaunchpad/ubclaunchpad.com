@@ -47,27 +47,30 @@ export function goTo(document: HTMLDocument, id: string): void {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 }
 
-function isInView(w: Window, el: HTMLElement): boolean {
+function isInView(w: Window, el: Element): boolean {
   const rect = el.getBoundingClientRect();
   return rect.top < w.innerHeight && rect.bottom >= 0;
 }
 
-function updateClasses(el: HTMLElement, classNames: string, remove: boolean) {
+function updateClasses(el: Element, classNames: string, remove: boolean) {
   const classes = classNames.split(' ');
   if (!remove) classes.forEach((c) => el.classList.add(c));
   else classes.forEach((c) => el.classList.remove(c));
 }
+
+type VueRef = Vue | Element | Vue[] | Element[];
 
 /**
  * Check if given element is within the window bounds (aka "in view") and attach classnames to it
  * if it is. Useful for making animations.
  * 
  * @param w window instance
- * @param el element to check and update
+ * @param ref element to check and update, retrieved from `this.$refs`
  * @param classNames string of classnames (e.g. 'animated fadeInleft')
  * @param removeIfNot optionally indicate that classes should be removed if the element has left the view
  */
-export function attachClassesIfInView(w: Window, el: HTMLElement | null, classNames: string, removeIfNot?: boolean) {
+export function attachClassesIfInView(w: Window, ref: VueRef, classNames: string, removeIfNot?: boolean) {
+  const el = ref as Element;
   if (el) {
     if (isInView(w, el)) updateClasses(el, classNames, false);
     else if (removeIfNot) updateClasses(el, classNames, true);
