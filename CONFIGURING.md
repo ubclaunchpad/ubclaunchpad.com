@@ -6,9 +6,9 @@
 
 Most frequently updated website values (recruitment status, teams, etc.) on the [UBC Launch Pad website](https://github.com/ubclaunchpad/new) can be updated by changing the values in [`src/config.ts`](https://github.com/ubclaunchpad/new/blob/master/src/config.ts). This site describes the different settings available and guidance on what each value should be.
 
-To make an edit, simply edit the values in [`src/config.ts`](https://github.com/ubclaunchpad/new/blob/master/src/config.ts) based on the guidance in the type documentation on this website and open a pull request in [`ubclaunchpad/new`](https://github.com/ubclaunchpad/new). Rebuilding the website will then update the website using the configured values.
+To make an edit, simply edit the values in [`src/config.ts`](https://github.com/ubclaunchpad/new/blob/master/src/config.ts) based on the guidance in the type documentation on this website and open a pull request in [`ubclaunchpad/new`](https://github.com/ubclaunchpad/new). Your changes will be automatically deployed when your pull request is accepted and merged!
 
-For more details on how to rebuild the website, or if something you want to change cannot be updated with `config.ts`, refer to [CONTRIBUTING.md](https://github.com/ubclaunchpad/new/blob/master/CONTRIBUTING.md) for more detailed documentation.
+If something you want to change cannot be updated with `config.ts`, refer to [CONTRIBUTING.md](https://github.com/ubclaunchpad/new/blob/master/CONTRIBUTING.md) for more detailed documentation.
 
 <br />
 
