@@ -1,0 +1,25 @@
+name: Autobuild
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  autobuild:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'action:autobuild'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/setup-node@v1
+        with: { node-version: 10.x }
+      - run: npm install
+      - run: npm run build
+      - name: commit build
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "autobuild: update build"
+      - name: push commit
+        run: git push
