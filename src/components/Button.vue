@@ -60,7 +60,7 @@ export default Vue.extend({
     &:hover, &:focus {
       color: $rocket;
       border: 2px solid $rocket;
-      box-shadow: 0px 1px 4px rgba($rocket, 0.5);
+      box-shadow: 0px 1px 4px rgba($rocket, 0.4);
     }
   }
 
@@ -72,7 +72,7 @@ export default Vue.extend({
       color: $rocket;
       border: 2px solid $white;
       background: $white;
-      box-shadow: 0px 2px 8px rgba($grey, 0.5);
+      box-shadow: 0px 2px 8px rgba($grey, 0.4);
     }
   }
 

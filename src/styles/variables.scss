@@ -10,11 +10,11 @@ $rocket: #809CFF;
 $accent: #FEBCFD;
 
 /* Transitions */
-$link-transition-time: 0.4s;
+$link-transition-time: 0.35s;
 $button-transition-time: 0.6s;
 
 .animation {
   transition-property: all;
   transition-timing-function: ease-in-out;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
