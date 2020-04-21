@@ -1,24 +1,28 @@
 <template>
-  <div id="container" class="container is-widescreen">
-    <div class="columns is-vcentered">
-      <div class="pad-32 column is-three-fifths">
+  <div id="feature-container" class="container is-widescreen">
+    <div class="columns is-vcentered is-desktop">
+      <div class="pad-32 column is-three-fifths-desktop">
+        <img src="@/assets/landing.png" class="is-hidden-mobile is-hidden-tablet" >
+
         <div class="columns is-vcentered animated slideInDown">
           <div class="column is-narrow">
             <h1>
               UBC Launch Pad
             </h1>
           </div>
-          <div id="aside-divider" class="column is-narrow is-hidden-mobile" />
+          <div class="column title-divider is-narrow is-hidden-mobile" />
           <div class="column">
-            <p id="aside" class="main">
-              Software Engineering<br>Design Team
-            </p>
+            <p class="main title-aside is-hidden-mobile">Software Engineering<br>Design Team</p>
+            <p class="main title-aside is-hidden-tablet"><b>Software Engineering Design Team</b></p>
           </div>
         </div>
 
+        <img src="@/assets/landing.png" class="tablet-image is-hidden-desktop" >
+
         <div class="animated fadeIn">
           <p class="secondary">
-            A leading student-run software club devoted to building applications in a collaborative and professional environment.
+            A leading student-run software club based in the University of British Columbia devoted
+            to building applications in a collaborative and professional environment.
           </p>
           <p v-if="applicationsOpen" class="secondary">
             <i>{{ season }} applications are now open!</i>
@@ -38,7 +42,7 @@
       </div>
 
       <div class="column">
-        <img src="@/assets/landing.png">
+        <img src="@/assets/landing.png" class="is-hidden-touch" >
       </div>
     </div>
   </div>
@@ -68,12 +72,27 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-#aside {
+#feature-container {
+  @media(max-width: $tablet) {
+    margin-top: 80px;
+  }
+}
+
+.tablet-image {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.title-aside {
   font-size: 16px;
   line-height: 19px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
-#aside-divider {
+
+.title-divider {
   border-left: 2px solid $white;
   height: 42px;
   margin-left: 8px;
