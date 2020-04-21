@@ -2,8 +2,6 @@
   <div id="feature-container" class="container is-widescreen">
     <div class="columns is-vcentered is-desktop">
       <div class="pad-32 column is-three-fifths-desktop">
-        <img src="@/assets/landing.png" class="is-hidden-mobile is-hidden-tablet" >
-
         <div class="columns is-vcentered animated slideInDown">
           <div class="column is-narrow">
             <h1>
