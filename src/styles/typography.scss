@@ -58,8 +58,12 @@ h3 {
 }
 
 a {
+  display: inline-block;
+
   &:hover {
+    @extend .animation;
     color: $rocket;
+    transition-duration: $link-transition-time;
   }
 }
 

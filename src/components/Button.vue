@@ -77,8 +77,8 @@ export default Vue.extend({
   }
 
   &:hover, &:focus {
-    transition: all 0.5s ease-in-out;
-    transform: scale(1.04);
+    @extend .animation;
+    transition-duration: $button-transition-time;
   }
 }
 </style>
