@@ -5,6 +5,7 @@ assumes basic knowledge of git and pull request workflows.
 
 - [Dependencies](#dependencies)
 - [Development](#development)
+  - [TypeScript Guidelines](#typescript-guidelines)
   - [Vue Guidelines](#vue-guidelines)
     - [Documentation](#documentation)
     - [Styling](#styling)
@@ -17,6 +18,7 @@ assumes basic knowledge of git and pull request workflows.
 The most important dependencies of this project are:
 
 * [Node](https://nodejs.org), which powers all of our Javascript development locally
+* [TypeScript](https://www.typescriptlang.org/), a typed superset of JavaScript
 * [Vue.js](https://vuejs.org), a framework for building web interfaces
 * [Bulma](https://bulma.io), a pure-CSS layout/component framework
 * [animate.css](https://github.com/daneden/animate.css), a pure-CSS animation framework
@@ -35,7 +37,13 @@ You can then run the website locally by running the following and visiting [`loc
 npm run serve
 ```
 
+Refer to the links above for more details on each dependency.
+
+<br />
+
 ## Development
+
+[Visual Studio Code](https://code.visualstudio.com/) with extensions like [Veter](https://marketplace.visualstudio.com/items?itemName=octref.vetur) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is recommended.
 
 This codebase is largely contained in [`src`](/src), where you will find the following directories:
 
@@ -55,12 +63,24 @@ Refer to [Dependencies](#dependencies) for our core dependencies and links to th
 
 Using `npm run serve`, code you write will automatically be visible at [`localhost:8081`](http://localhost:8081).
 
+### TypeScript Guidelines
+
+[TypeScript](https://www.typescriptlang.org/) is a typed superset of JavaScript, and is used as the main programming language in this project.
+
+Most simple style rules are enforced using [`eslint`](https://eslint.org/). Our `eslint` rules are defined in [`package.json`](./package.json). In general:
+
+* always use `<script lang="ts">` in Vue components.
+* always use `.ts` when adding additional source files.
+* follow documentation formats used by existing code in the repository.
+
 ### Vue Guidelines
 
-Most simple rules are enforced using [`eslint`](https://eslint.org/). Our `eslint` rules are defined in [`package.json`](./package.json). Additional advice is described here:
+[Vue.js](https://vuejs.org) is a framework for building web interfaces, and is the framework that drives this project.
 
-* Use [Vue single file components](https://vuejs.org/v2/guide/single-file-components.html).
-* Stick to [`Vue.extend`](https://vuejs.org/v2/api/#Vue-extend) (and not class-based components).
+In general, when working with Vue:
+
+* use [Vue single file components](https://vuejs.org/v2/guide/single-file-components.html) defined in `.vue` files.
+* stick to [`Vue.extend`](https://vuejs.org/v2/api/#Vue-extend) (and not class-based components).
 
 #### Documentation
 
@@ -154,6 +174,8 @@ serve ./dist/config
 ```
 
 These changes are published automatically - see [Deployment](#deployment).
+
+<br />
 
 ## Deployment
 
