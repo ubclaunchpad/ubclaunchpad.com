@@ -1,7 +1,7 @@
 <template>
   <div id="feature-container" class="container is-widescreen">
-    <div class="columns is-vcentered is-desktop">
-      <div class="pad-32 column is-three-fifths-desktop">
+    <div class="columns is-vcentered is-tablet">
+      <div class="pad-32 column is-three-fifths-tablet">
         <div class="columns is-vcentered animated slideInDown">
           <div class="column is-narrow">
             <h1>
@@ -15,7 +15,7 @@
           </div>
         </div>
 
-        <img src="@/assets/landing.png" class="tablet-image is-hidden-desktop" >
+        <img src="@/assets/landing.png" class="small-image is-hidden-tablet" >
 
         <div class="animated fadeIn">
           <p class="club-description secondary">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="column">
-        <img src="@/assets/landing.png" class="is-hidden-touch" >
+        <img src="@/assets/landing.png" class="is-hidden-mobile" >
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@ export default Vue.extend({
   }
 }
 
-.tablet-image {
+.small-image {
   width: 100%;
   max-width: 300px;
   margin-top: 16px;
