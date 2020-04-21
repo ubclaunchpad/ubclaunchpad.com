@@ -24,7 +24,8 @@
 
 <p align="center">
   <a href="https://ubclaunchpad.github.io/new/config"><strong>Configuring</strong></a> · 
-  <a href="./CONTRIBUTING.md"><strong>Contributing</strong></a>
+  <a href="./CONTRIBUTING.md"><strong>Contributing</strong></a> · 
+  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.github.io%2Fnew&tab=desktop"><strong>Performance</strong></a>
 </p>
 
 <br>
