@@ -72,7 +72,7 @@ import Sponsors from '@/sections/Sponsors.vue';
  */
 export default Vue.extend({
   name: 'App',
-  data: () => ({ 
+  data: () => ({
     recruitment: recruitmentConfig,
     club: clubConfig,
     sponsorship: sponsorshipConfig,
