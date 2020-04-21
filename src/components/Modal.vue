@@ -4,10 +4,8 @@
     :class="{
       'modal is-active': isActive,
       modal: !isActive,
-    }"
-  >
+    }">
     <div class="modal-background"></div>
-
     <div class="modal-content">
       <button
         class="modal-button-close delete"
@@ -22,16 +20,10 @@
           <a :href="team.project.links.repository" target="_blank">
             <img alt="github" src="@/assets/icons/github.svg" />
           </a>
-          <a
-            :href="team.project.links.website | this.placeholderDeployment"
-            target="_blank"
-          >
+          <a :href="team.project.links.website | this.placeholderDeployment" target="_blank">
             <img alt="deployment" src="@/assets/icons/desktop.svg" />
           </a>
-          <a
-            :href="team.project.links.writeup | this.placeholderMedium"
-            target="_blank"
-          >
+          <a :href="team.project.links.writeup | this.placeholderMedium" target="_blank">
             <img alt="medium" src="@/assets/icons/medium.svg" />
           </a>
         </p>
