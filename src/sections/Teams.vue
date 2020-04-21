@@ -1,5 +1,7 @@
 <template>
   <div id="container" class="container is-widescreen">
+    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive" 
+    @modalClosed="handleModalClose"/>
     <div class="columns is-vcentered">
       <div class="pad-32 column is-one-third has-text-centered">
         <h2>Our Teams</h2>
@@ -30,7 +32,7 @@
               v-for="(r, j) in col"
               :key="'row-'+i+'-'+j"
               class="tile project-container">
-              <TeamProjectCard :team="r" />
+              <TeamProjectCard @projectClicked="setModalState" :team="r" />
             </div>
           </div>
         </div>
@@ -42,8 +44,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, attachClassesIfInView } from '@/lib/util';
+import { generateColumns, attachClassesIfInView, ModalState } from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
+import Modal from '@/components/Modal.vue';
 
 interface TeamStats {
   value: string;
@@ -76,7 +79,7 @@ export default Vue.extend({
     },
     memberCount: Number,
   },
-  data: () => ({ stats }),
+  data: () => ({ stats, isActive: false, activeTeamName: '0'}),
   computed: {
     columns: function(): Team[][] {
       const perRow = 2;
@@ -87,13 +90,24 @@ export default Vue.extend({
   methods: {
     handleScroll() {
       attachClassesIfInView(window, this.$refs['teams-project-card'], 'animated fadeInRight slow');
+    }, 
+    setModalState(state: ModalState){
+      this.isActive = state.isActive; 
+      this.activeTeamName = state.activeTeamName;
+    },
+    handleModalClose() {
+      this.isActive = false;
+      console.log('hitting modal close');
+    },
+    getSelectedTeam(): Team | undefined {
+      return this.teams.find((team: Team) => team.project.name === this.activeTeamName);
     },
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {
-    TeamProjectCard,
+    TeamProjectCard, Modal,
   },
 });
 </script>

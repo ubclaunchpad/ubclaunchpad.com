@@ -1,40 +1,5 @@
 <template>
-<div id="container" class = "container is-widescreen">
-  <!-- <div class = "container is-widescreen"
-      :class="{
-       'modal modal-full-screen modal-fx-fadeInScale is-active': isActive,
-       'modal ': !isActive
-
-     }">
-  <div class="modal-background"></div>
-  <div class="modal-content">
- 
-
-  </div>
-  <button class="modal-close is-large" aria-label="close" :on-click="() => isActive = !isActive"></button>
-  </div> -->
-
-  <div id="modal-fadeInScale-fs" :class="{
-       'modal is-active modal-full-screen modal-fx-fadeInScale': isActive,
-       'modal modal-full-screen modal-fx-fadeInScale ': !isActive
-
-     }">
-    <div class="modal-content modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">Modal title</p>
-            <button class="modal-button-close delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-        <!-- Modal card body -->
-        </section>
-        <footer class="modal-card-foot">
-            <button class="modal-button-close button is-success">Save changes</button>
-            <button class="modal-button-close button">Cancel</button>
-        </footer>
-    </div>
-</div>
-
-  <div
+<div
     class="project card has-text-centered"
     :ref="id"
     :style="{
@@ -43,16 +8,12 @@
     :class="{
       'animated': animated,
     }"
-    v-on:click = "openModal()">
+    v-on:click = "openModal">
    
     <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
       {{ team.project.name }}
     </h2>
-
   </div>
-     
-  </div>
-  
 </template>
 
 <script lang="ts">
@@ -76,7 +37,7 @@ export default Vue.extend({
   data: () => ({ projectPlaceholder, isActive: false }),
   methods: {
     openModal() {
-      this.$emit('projectClicked', true);
+      this.$emit('projectClicked', {isActive: true, activeTeamName: this.team.project.name});
     },
   },
   computed: {

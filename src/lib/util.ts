@@ -82,3 +82,18 @@ export function attachClassesIfInView(w: Window, ref: VueRef, classNames: string
     });
   }
 }
+
+
+/**
+ * Describes the state of a modal
+ */
+export interface ModalState {
+/**
+ * if the modal is open or closed
+ */
+  isActive: boolean;
+/**
+ * The name of the select team 
+ */
+  activeTeamName: string;
+}

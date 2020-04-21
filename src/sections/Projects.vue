@@ -1,5 +1,7 @@
 <template>
   <div id="container" class="container is-widescreen">
+    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive" 
+    @modalClosed="handleModalClose"/>
     <div>
       <h2>Past Projects</h2>
       <p>
@@ -18,7 +20,7 @@
           v-for="(r, j) in col"
           :key="'row-'+i+'-'+j"
           class="tile project-container">
-          <TeamProjectCard @projectClicked = "setModalState" :team="r" />
+          <TeamProjectCard @projectClicked="setModalState" :team="r" />
         </div>
       </div>
     </div>
@@ -28,8 +30,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, attachClassesIfInView } from '@/lib/util';
+import { generateColumns, attachClassesIfInView, ModalState} from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
+import Modal from '@/components/Modal.vue';
 
 /**
  * Projects implements a section for highlighting past Launch Pad projects.
@@ -46,13 +49,20 @@ export default Vue.extend({
       return generateColumns<Team>(this.teams, 2);
     },
   },
-  data: () => ({isActive: false }),
+  data: () => ({isActive: false, activeTeamName: '0'}),
   methods: {
     handleScroll() {
       attachClassesIfInView(window, this.$refs['projects-project-card'], 'animated fadeInUp slow');
     },
-    setModalState(isActive: boolean){
-      this.isActive = isActive; 
+    setModalState(state: ModalState){
+      this.isActive = state.isActive; 
+      this.activeTeamName = state.activeTeamName;
+    },
+    handleModalClose() {
+      this.isActive = false;
+    },
+    getSelectedTeam() {
+      return this.teams.find((team: Team) => team.project.name === this.activeTeamName) ;  
     },
   },
   created() {
@@ -60,6 +70,7 @@ export default Vue.extend({
   },
   components: {
     TeamProjectCard,
+    Modal, 
   },
 });
 </script>
@@ -74,5 +85,18 @@ export default Vue.extend({
   .project-container {
     margin-bottom: 52px;
   }
+   .p {
+    margin-bottom: 0px;
+  }
+
+  
+  $modal-background-background-color: $dark; 
 }
+.socials {
+    img {
+      width: 32px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  } 
 </style>
