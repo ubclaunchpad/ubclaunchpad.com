@@ -20,10 +20,10 @@
           <a :href="team.project.links.repository" target="_blank">
             <img alt="github" src="@/assets/icons/github.svg" />
           </a>
-          <a :href="team.project.links.website | this.placeholderDeployment" target="_blank">
+          <a :href="team.project.links.website || placeholderDeployment" target="_blank">
             <img alt="deployment" src="@/assets/icons/desktop.svg" />
           </a>
-          <a :href="team.project.links.writeup | this.placeholderMedium" target="_blank">
+          <a :href="team.project.links.writeup || placeholderMedium" target="_blank">
             <img alt="medium" src="@/assets/icons/medium.svg" />
           </a>
         </p>
@@ -46,8 +46,7 @@ export default Vue.extend({
   data() {
     return {
       placeholderDeployment: 'www.ubclaunchpad.github.io',
-      placeholderMedium:
-        'https://medium.com/ubc-launch-pad-software-engineering-blog',
+      placeholderMedium:'https://medium.com/ubc-launch-pad-software-engineering-blog',
     };
   },
   methods: {
@@ -59,7 +58,7 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-$modal-background-background-color: $dark;
+
 .p {
   margin-bottom: 0px;
 }
