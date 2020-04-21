@@ -57,6 +57,16 @@ h3 {
   color: $rocket;
 }
 
+a {
+  display: inline-block;
+
+  &:hover {
+    @extend .animation;
+    color: $rocket;
+    transition-duration: $link-transition-time;
+  }
+}
+
 .accent {
   color: $accent;
 }

@@ -3,9 +3,11 @@
     <div class="columns is-vcentered">
       <div class="column has-text-centered is-half">
         <div v-for="(p, i) in positions" :key="p.name">
-          <a class="position-link" :href="p.applicationURL" target="_blank">
-            <h3 ref="position-animated">{{ p.name }}</h3>
-          </a>
+          <h3 ref="position-animated">
+            <a class="position-link" :href="p.applicationURL" target="_blank">
+              {{ p.name }}
+            </a>
+          </h3>
           <hr class="position-divider" v-if="i !== (positions.length-1)" ref="position-animated" />
         </div>
       </div>
@@ -55,8 +57,10 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .position-link {
-  h3 {
-    color: $white;
+  color: $white;
+
+  &:hover {
+    color: $rocket;
   }
 }
 
