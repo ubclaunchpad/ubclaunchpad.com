@@ -3,7 +3,7 @@
     <div class="columns is-vcentered">
       <div class="pad-32 column is-one-third has-text-centered">
         <h2>Our Teams</h2>
-        <img src="@/assets/screen.png" width="300px" />
+        <img src="@/assets/screen.png" width="300px" class="teams-image" />
 
         <div class="level stats">
           <div v-for="s in stats" :key="s.description" class="level-item has-text-centered">
@@ -99,6 +99,12 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+// this particular asset has a background - round off the corners to make it less jarring when
+// against a lighter section of the backdrop
+.teams-image {
+  border-radius: 12px;
+}
+
 .project-column {
   display: flex;
   align-items: center;
