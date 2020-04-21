@@ -18,7 +18,7 @@
         <img src="@/assets/landing.png" class="tablet-image is-hidden-desktop" >
 
         <div class="animated fadeIn">
-          <p class="secondary">
+          <p class="club-description secondary">
             A leading student-run software club based in the University of British Columbia devoted
             to building applications in a collaborative and professional environment.
           </p>
@@ -95,5 +95,9 @@ export default Vue.extend({
   height: 42px;
   margin-left: 8px;
   margin-right: -12px;
+}
+
+.club-description {
+  max-width: 540px;
 }
 </style>
