@@ -39,7 +39,7 @@ const backdropNormal = require('@/assets/backdrop.svg');
 /**
  * Section should be used to wrap a component from `src/sections`. It automatically provides a
  * suitable backdrop style and space for a child component. For example:
- * 
+ *
  *   <Section :section-id="1" size="large">
  *     <About />
  *   </Section>
@@ -61,7 +61,7 @@ export default Vue.extend({
      */
     nextSectionIndicator: Boolean,
     /**
-     * Provide an on-click callback for the next section indicator arrow. Only applies if 
+     * Provide an on-click callback for the next section indicator arrow. Only applies if
      * nextSectionIndicator is true.
      */
     nextSectionOnClick: { type: Function, default: () => 1 },
@@ -126,11 +126,14 @@ export default Vue.extend({
     }
   }
 }
+a {
+  display: inline;
 
-.indicator {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 48px;
+  .indicator {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 48px;
+  }
 }
 </style>

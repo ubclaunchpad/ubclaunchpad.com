@@ -63,6 +63,11 @@ export default Vue.extend({
       font-weight: bold;
       color: $rocket;
       margin: 20px;
+
+      &:hover, &:focus {
+        color: $white;
+      }
+
     }
   }
 }
