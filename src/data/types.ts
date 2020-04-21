@@ -102,10 +102,11 @@ export type ClubSponsor = {
    */
   tier?: ClubSponsorTier;
   /**
-   * Sponsor logo - must be PNG, transparent, and roughly 140px by 120px.
+   * Sponsor logo - must be PNG, with transparent backgrounds, and roughly 140px by 120px. Try to
+   * source these from online.
    * 
-   * Unlike project images, we can host these in this repository - just add them to `/assets/logos`
-   * and use `require`. TODO(@bobheadxi): verify this works as expected
+   * To make simple adjustments to help the logo look better against the website's background, use
+   * `logoFilter` to apply some simple CSS effects.
    */
   logoURL: string | any; // eslint-disable-line @typescript-eslint/no-explicit-any
   /**

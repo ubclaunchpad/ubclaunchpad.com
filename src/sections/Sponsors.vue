@@ -8,7 +8,7 @@
         <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical sponsor-column">
           <div v-for="(s, j) in col" :key="'row-'+i+'-'+j" class="tile sponsor-container">
             <img ref="sponsor-logo"
-              :src="s.logoURL || logoPlaceholder"
+              :src="s.logoURL"
               :alt="s.name"
               :style="{
                 filter: s.logoFilter,
@@ -32,8 +32,6 @@ import Vue from 'vue';
 import { ClubSponsor } from '@/data/types';
 import { generateColumns, attachClassesIfInView } from '@/lib/util';
 
-const logoPlaceholder = require('@/assets/logo-placeholder.png');
-
 /**
  * Sponsors implements a section to feature Launch Pad's sponsors.
  */
@@ -45,7 +43,6 @@ export default Vue.extend({
     },
     sponsorshipPackage: String,
   },
-  data: () => ({ logoPlaceholder }),
   computed: {
     columns: function(): ClubSponsor[][] {
       // too few sponsors looks awkward when spread out too much

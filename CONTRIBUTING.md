@@ -8,6 +8,7 @@ assumes basic knowledge of git and pull request workflows.
   - [Vue Guidelines](#vue-guidelines)
     - [Documentation](#documentation)
     - [Styling](#styling)
+  - [Handling Assets](#handling-assets)
   - [Configuration](#configuration)
 - [Deployment](#deployment)
 
@@ -102,6 +103,40 @@ Most simple rules are enforced using [`eslint`](https://eslint.org/). Our `eslin
   }
   </style>
   ```
+
+### Handling Assets
+
+Image assets are kept in [`src/assets`](./src/assets), and are bundled alongside our code during build time. To reference images in Vue:
+
+```html
+<img src="@/assets/my-image.png">
+```
+
+To load an image to use it as a variable, use `require` and bind it to `src`:
+
+```vue
+<template>
+  <img :src="myImage">
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+const myImage = require('@/assets/my-image.png');
+
+export default Vue.extend({
+  // ...
+  data: () => ({ myImage }),
+  // ...
+})
+</script>
+```
+
+In general:
+
+* if the image can be hosted elsewhere (i.e. a company website or project repository), host it there instead and reference it by URL
+* use suitably-sized assets that don't exceed 1MB in size
+* do not put assets in `/public`
 
 ### Configuration
 
