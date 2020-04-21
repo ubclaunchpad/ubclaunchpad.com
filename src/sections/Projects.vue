@@ -18,7 +18,7 @@
           v-for="(r, j) in col"
           :key="'row-'+i+'-'+j"
           class="tile project-container">
-          <TeamProjectCard :team="r" />
+          <TeamProjectCard @projectClicked = "setModalState" :team="r" />
         </div>
       </div>
     </div>
@@ -46,9 +46,13 @@ export default Vue.extend({
       return generateColumns<Team>(this.teams, 2);
     },
   },
+  data: () => ({isActive: false }),
   methods: {
     handleScroll() {
       attachClassesIfInView(window, this.$refs['projects-project-card'], 'animated fadeInUp slow');
+    },
+    setModalState(isActive: boolean){
+      this.isActive = isActive; 
     },
   },
   created() {
