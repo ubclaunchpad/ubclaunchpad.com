@@ -20,6 +20,8 @@
           our projects to completion! We are also lucky enough to have sponsors which help provide
           our teams with necessary resources, like servers, to help us achieve our goals.
         </p>
+
+        <ClubSocialsLinks :links="socials" />
       </div>
     </div>
   </div>
@@ -27,6 +29,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import ClubSocialsLinks from '@/components/links/ClubSocialsLinks.vue';
+
+import { ClubSocials } from '@/data/types';
 import { attachClassesIfInView } from '@/lib/util';
 
 /**
@@ -34,7 +39,11 @@ import { attachClassesIfInView } from '@/lib/util';
  */
 export default Vue.extend({
   name: 'About',
-  props: {},
+  props: {
+    socials: {
+      type: Object as () => ClubSocials,
+    },
+  },
   methods: {
     handleScroll() {
       attachClassesIfInView(window, this.$refs['about-col-left'], 'animated fadeInLeft');
@@ -43,6 +52,9 @@ export default Vue.extend({
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
+  },
+  components: {
+    ClubSocialsLinks,
   },
 });
 </script>
