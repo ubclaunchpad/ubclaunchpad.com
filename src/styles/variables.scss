@@ -9,10 +9,17 @@ $offwhite: #E5E5E5;
 $rocket: #809CFF;
 $accent: #FEBCFD;
 
+/* Breakpoints - sourced from https://bulma.io/documentation/customize/variables/ for consistency */
+$gap: 32px;
+$tablet: 769px;
+$desktop: 1344px + (2 * $gap);
+$fullhd: 1344px + (2 * $gap);
+
 /* Transitions */
 $link-transition-time: 0.35s;
 $button-transition-time: 0.6s;
 
+/* @extend-able classes */
 .animation {
   transition-property: all;
   transition-timing-function: ease-in-out;

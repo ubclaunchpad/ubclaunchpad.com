@@ -1,6 +1,6 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <div class="columns is-vcentered">
+    <div class="columns reverse-on-tablet is-vcentered">
       <div class="column has-text-centered is-half">
         <div v-for="(p, i) in positions" :key="p.name">
           <h3 ref="position-animated">

@@ -31,3 +31,13 @@
     }
   }
 }
+
+.columns {
+  // reverses flow direction of a column on tablet
+  &.reverse-on-tablet {
+    @media(max-width: $tablet) {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
+}
