@@ -2,6 +2,7 @@
   <div id="container" class="container is-widescreen">
     <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive" 
     @modalClosed="handleModalClose"/>
+    
     <div>
       <h2>Past Projects</h2>
       <p>
@@ -85,18 +86,5 @@ export default Vue.extend({
   .project-container {
     margin-bottom: 52px;
   }
-   .p {
-    margin-bottom: 0px;
-  }
-
-  
-  $modal-background-background-color: $dark; 
 }
-.socials {
-    img {
-      width: 32px;
-      margin-left: 16px;
-      margin-right: 16px;
-    }
-  } 
 </style>

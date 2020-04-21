@@ -93,7 +93,7 @@ export interface ModalState {
  */
   isActive: boolean;
 /**
- * The name of the select team 
+ * The name of the selected team 
  */
   activeTeamName: string;
 }
