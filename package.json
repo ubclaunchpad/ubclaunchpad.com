@@ -73,6 +73,12 @@
         "error",
         "as-needed"
       ],
+      "no-trailing-spaces": [
+        "error",
+        {
+          "ignoreComments": true
+        }
+      ],
       "@typescript-eslint/no-var-requires": 0,
       "@typescript-eslint/no-explicit-any": ["off"]
     }
