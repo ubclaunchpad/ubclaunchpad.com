@@ -1,21 +1,21 @@
 /**
  * This file contains configuration for most aspects of the website that might need frequent changing.
- * 
+ *
  * It should **only** be imported by the main entrypoint to the website, `App.vue`. All other
  * components should accept *only* what they need as `props`, which `App.vue` will provide.
- * 
+ *
  * Refer to `src/App.vue` for more details and examples.
- * 
+ *
  * @packageDocumentation
  */
- 
+
 import { Team, ClubPosition, ClubSponsor } from './data/types';
 
 /* eslint-disable max-len */
 
 /**
  * Recruitment configuration.
- * 
+ *
  * @category Configuration
  */
 export const recruitmentConfig: {
@@ -36,13 +36,13 @@ export const recruitmentConfig: {
 
   /**
    * Define positions we are recruiting for.
-   * 
+   *
    * Each element must satisfy [[`ClubPosition`]].
    */
   positions: [
     {
       name: 'Developer',
-      description: 
+      description:
         `Join our development team to improve your skills and resume. You have the basics down, but want
         to collaborate with a team to build awesome software and learn professional development practices.
         Realize your ideas with a dedicated project team, and learn
@@ -74,7 +74,7 @@ export const recruitmentConfig: {
 
 /**
  * Club configuration (teams, members, etc.)
- * 
+ *
  * @category Configuration
  */
 export const clubConfig: {
@@ -89,7 +89,7 @@ export const clubConfig: {
 
   /**
    * The current or most recent active Launch Pad teams and their primary project.
-   * 
+   *
    * Each element must satisfy [[`Team`]].
    */
   currentTeams: [
@@ -207,7 +207,7 @@ export const clubConfig: {
 
   /**
    * Feature past teams and their projects.
-   * 
+   *
    * Each element must satisfy [[`Team`]].
    */
   featuredTeams: [
@@ -301,7 +301,7 @@ export const clubConfig: {
 
 /**
  * Sponsorship configuration.
- * 
+ *
  * @category Configuration
  */
 export const sponsorshipConfig: {
@@ -315,24 +315,27 @@ export const sponsorshipConfig: {
 
   /**
    * Current sponsors.
-   * 
+   *
    * Each element must satisfy [[`ClubSponsor`]].
    */
   sponsors: [
     {
       name: 'Axiom Zen',
+      website: 'https://www.axiomzen.co/',
       tier: 'gold',
       logoURL: 'https://res.cloudinary.com/dfgx570fg/image/upload/w_700,h_700,c_limit/v1468362472/f2ed2lbpqujvxa8r6zux.png',
       logoFilter: 'invert()',
     },
     {
       name: 'East Side Game Studio',
+      website: 'https://www.eastsidegames.com/',
       tier: 'gold',
       logoURL: 'https://www.eastsidegames.com/wp-content/themes/esgnew/img/logo-final.png',
       logoFilter: 'invert() grayscale(0.5)',
     },
     {
       name: 'Cisco',
+      website: 'https://www.cisco.com/',
       tier: 'gold',
       logoURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png',
     },

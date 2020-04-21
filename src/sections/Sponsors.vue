@@ -7,13 +7,15 @@
       <div class="tile sponsor-columns">
         <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical sponsor-column">
           <div v-for="(s, j) in col" :key="'row-'+i+'-'+j" class="tile sponsor-container">
-            <img ref="sponsor-logo"
-              :src="s.logoURL"
-              :alt="s.name"
-              :style="{
-                filter: s.logoFilter,
-                'object-fit': 'contain',
-              }" />
+            <a :href="s.website">
+              <img ref="sponsor-logo"
+                :src="s.logoURL"
+                :alt="s.name"
+                :style="{
+                  filter: s.logoFilter,
+                  'object-fit': 'contain'
+                }" />
+            </a>
           </div>
         </div>
       </div>

@@ -16,15 +16,15 @@ export type Project = {
     /**
      * 640px by 320px banner image (or equivalent 2:1 image). Should be hosted on the project
      * repository or elswhere, and NOT in this website repository.
-     * 
+     *
      * If using an image in a repository, make sure it is a direct link to the image, i.e. instead of:
-     * 
+     *
      *    https://github.com/ubclaunchpad/inertia/blob/master/.static/inertia-with-name.png
-     * 
+     *
      * the link should be:
-     * 
+     *
      *    https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/inertia-with-name.png
-     * 
+     *
      * On most browsers, you can do this by right-clicking the image and selecting "Copy Image Location".
      */
     bannerURI?: string;
@@ -98,13 +98,17 @@ export type ClubSponsor = {
    */
   name: string;
   /**
+   * Link to sponsor website.
+   */
+  website: string;
+  /**
    * How much support this sponsor provided - must be a string that satisfied one of [[`ClubSponsorTier`]].
    */
   tier?: ClubSponsorTier;
   /**
    * Sponsor logo - must be PNG, with transparent backgrounds, and roughly 140px by 120px. Try to
    * source these from online.
-   * 
+   *
    * To make simple adjustments to help the logo look better against the website's background, use
    * `logoFilter` to apply some simple CSS effects.
    */
