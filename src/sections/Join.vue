@@ -65,12 +65,12 @@ export default Vue.extend({
 }
 
 .position-divider {
-  width: 350px;
+  width: 60%;
   display: inline-block;
 }
 
 .join-col {
-  width: 350px;
+  max-width: 400px;
   display: inline-grid;
 }
 </style>
