@@ -262,7 +262,7 @@ export const clubConfig: {
         name: 'Eat',
         description: 'Should we eat 🌮, 🍟, or 🍣?',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/eatnow.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/animated-banner.gif',
           bannerHasName: true,
         },
         links: {
@@ -305,7 +305,8 @@ export const clubConfig: {
         name: 'etch.space',
         description: ':memo: A live multi-user collaborative etch-a-sketch built on websockets',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/logo.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/banner.png',
+          bannerHasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/etch.space',
