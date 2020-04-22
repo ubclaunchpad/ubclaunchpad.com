@@ -4,9 +4,6 @@
     :ref="id"
     :style="{
       'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')',
-    }"
-    :class="{
-      'animated': animated,
     }">
     <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
       {{ team.project.name }}

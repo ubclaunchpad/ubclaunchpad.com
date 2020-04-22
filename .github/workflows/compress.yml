@@ -1,5 +1,7 @@
 name: Compress images
-on: pull_request
+on:
+  pull_request:
+    paths: ['**.jpg', '**.png']
 jobs:
   compress:
     runs-on: ubuntu-latest
@@ -9,3 +11,4 @@ jobs:
       uses: calibreapp/image-actions@master
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
+        ignorePaths: 'src/assets/rocket.png'
