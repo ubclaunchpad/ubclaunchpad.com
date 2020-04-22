@@ -21,6 +21,7 @@
           </div>
         </div>
 
+        <!-- put image between title and text on small screens -->
         <img src="@/assets/landing.png" class="small-image is-hidden-tablet" >
 
         <div class="animated fadeIn">
@@ -46,6 +47,7 @@
       </div>
 
       <div class="column">
+        <!-- put image on right side on desktop -->
         <img src="@/assets/landing.png" class="is-hidden-mobile" >
       </div>
     </div>
