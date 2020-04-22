@@ -290,7 +290,8 @@ export const clubConfig: {
         name: 'Cumulus',
         description: '💸 Cryptocurrency that doesn\'t waste your time',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/cumulus/dev/.static/create-transaction.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/cumulus/dev/.static/banner.png',
+          bannerHasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/cumulus',
