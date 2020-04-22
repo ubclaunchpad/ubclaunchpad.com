@@ -2,16 +2,22 @@
   <div id="feature-container" class="container is-widescreen">
     <div class="columns is-vcentered is-tablet">
       <div class="pad-32 column is-three-fifths-tablet">
-        <div class="columns is-vcentered animated slideInDown">
-          <div class="column is-narrow">
-            <h1>
-              UBC Launch Pad
-            </h1>
+        <div class="animated slideInDown">
+          <!-- column-based layout with the "aside" description visible on desktop (hide-mobile, hide-tablet) -->
+          <div class="columns is-vcentered is-hidden-mobile is-hidden-tablet-only">
+            <div class="column is-narrow">
+              <h1>UBC Launch Pad</h1>
+            </div>
+            <div class="column title-divider is-narrow" />
+            <div class="column">
+              <p class="main title-aside">Software Engineering<br>Design Team</p>
+            </div>
           </div>
-          <div class="column title-divider is-narrow is-hidden-mobile" />
-          <div class="column">
-            <p class="main title-aside is-hidden-mobile">Software Engineering<br>Design Team</p>
-            <p class="main title-aside is-hidden-tablet"><b>Software Engineering Design Team</b></p>
+
+          <!-- simple title, description layout visible tablet -->
+          <div class="is-hidden-desktop">
+            <h1>UBC Launch Pad</h1>
+            <p class="main is-hidden-desktop margin-bottom-16 margin-top-16"><b>Software Engineering Design Team</b></p>
           </div>
         </div>
 
