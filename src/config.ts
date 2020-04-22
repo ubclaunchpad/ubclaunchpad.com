@@ -298,6 +298,33 @@ export const clubConfig: {
         },
       },
     },
+    {
+      name: 'Bumper',
+      project: {
+        name: 'Bumper',
+        description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
+        images: {
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper.gif',
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/bumper',
+        },
+      },
+    },
+    {
+      name: 'UBC Launch Pad Website',
+      project: {
+        name: 'ubclaunchpad.com',
+        description: '✨ the new UBC Launch Pad website!',
+        images: {
+          bannerURI: require('../.static/banner.png'),
+          bannerHasName: true, // this one should be self-explanatory
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/new',
+        },
+      },
+    },
   ],
 
   /**
