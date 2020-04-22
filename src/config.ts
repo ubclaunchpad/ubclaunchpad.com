@@ -232,7 +232,7 @@ export const clubConfig: {
         name: 'Inertia',
         description: ':airplane: Effortless, self-hosted continuous deployment',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/inertia-init.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/inertia',
