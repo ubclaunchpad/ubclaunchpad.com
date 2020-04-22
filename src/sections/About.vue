@@ -30,7 +30,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import ClubSocialsLinks from '@/components/links/ClubSocialsLinks.vue';
-
 import { ClubSocials } from '@/data/types';
 import { attachClassesIfInView } from '@/lib/util';
 
