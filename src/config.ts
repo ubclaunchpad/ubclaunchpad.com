@@ -213,34 +213,6 @@ export const clubConfig: {
    */
   featuredTeams: [
     {
-      name: 'Brussel Sprouts',
-      project: {
-        name: 'Rocket 2',
-        description: '🚀 Slack bot, team management, and onboarding system for UBC Launch Pad',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/rocket2',
-          website: 'https://rocket2.readthedocs.io',
-        },
-      },
-    },
-    {
-      name: 'Minutes',
-      project: {
-        name: 'Minutes',
-        description: ':telescope: Speaker diarization via transfer learning',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/minutes',
-          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/speaker-diarisation-using-transfer-learning-47ca1a1226f4',
-        },
-      },
-    },
-    {
       name: 'Inertia',
       project: {
         name: 'Inertia',
@@ -257,17 +229,16 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Eat',
+      name: 'Brussel Sprouts',
       project: {
-        name: 'Eat',
-        description: 'Should we eat 🌮, 🍟, or 🍣?',
+        name: 'Rocket 2',
+        description: '🚀 Slack bot, team management, and onboarding system for UBC Launch Pad',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/animated-banner.gif',
-          bannerHasName: true,
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/eat',
-          website: 'https://apps.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100',
+          repository: 'https://github.com/ubclaunchpad/rocket2',
+          website: 'https://rocket2.readthedocs.io',
         },
       },
     },
@@ -281,6 +252,20 @@ export const clubConfig: {
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/bumper',
+        },
+      },
+    },
+    {
+      name: 'Minutes',
+      project: {
+        name: 'Minutes',
+        description: ':telescope: Speaker diarization via transfer learning',
+        images: {
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/minutes',
+          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/speaker-diarisation-using-transfer-learning-47ca1a1226f4',
         },
       },
     },
@@ -300,6 +285,20 @@ export const clubConfig: {
       },
     },
     {
+      name: 'UBC Launch Pad Website',
+      project: {
+        name: 'ubclaunchpad.com',
+        description: '✨ the new UBC Launch Pad website!',
+        images: {
+          bannerURI: require('../.static/homepage.png'),
+          bannerHasName: true, // this one should be self-explanatory
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/new',
+        },
+      },
+    },
+    {
       name: 'Etch',
       project: {
         name: 'etch.space',
@@ -314,16 +313,17 @@ export const clubConfig: {
       },
     },
     {
-      name: 'UBC Launch Pad Website',
+      name: 'Eat',
       project: {
-        name: 'ubclaunchpad.com',
-        description: '✨ the new UBC Launch Pad website!',
+        name: 'Eat',
+        description: 'Should we eat 🌮, 🍟, or 🍣?',
         images: {
-          bannerURI: require('../.static/homepage.png'),
-          bannerHasName: true, // this one should be self-explanatory
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/animated-banner.gif',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/eat',
+          website: 'https://apps.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100',
         },
       },
     },
