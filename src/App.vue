@@ -11,7 +11,8 @@
     </Section>
 
     <Section :section-id="1" size="large">
-      <About />
+      <About
+        :socials="club.socials" />
     </Section>
 
     <Section :section-id="2" size="medium">
@@ -26,6 +27,7 @@
 
     <Section :section-id="4">
       <Projects
+        :github="club.socials.github"
         :teams="club.featuredTeams" />
     </Section>
 
@@ -40,7 +42,7 @@
         :sponsorship-package="sponsorship.packageURL" />
     </Section>
 
-    <Footer />
+    <Footer :socials="club.socials" />
   </div>
 </template>
 
@@ -72,7 +74,7 @@ import Sponsors from '@/sections/Sponsors.vue';
  */
 export default Vue.extend({
   name: 'App',
-  data: () => ({ 
+  data: () => ({
     recruitment: recruitmentConfig,
     club: clubConfig,
     sponsorship: sponsorshipConfig,
