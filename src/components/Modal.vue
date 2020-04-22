@@ -5,13 +5,14 @@
       'modal is-active': isActive,
       modal: !isActive,
     }">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <button
-        class="modal-button-close delete"
+    <div class="modal-background">
+       <button
+        class="modal-button-close delete is-large"
         aria-label="close"
         v-on:click="handleModalClose()"
       ></button>
+    </div>
+    <div class="modal-content">
       <div class="has-text-centered">
         <h2>{{ team.project.name }}</h2>
         <p>{{ team.project.description }}</p>
