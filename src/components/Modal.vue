@@ -18,13 +18,13 @@
 
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
-            <img alt="github" src="@/assets/icons/github.svg" />
+           <i class="fab fa-github fa-2x"></i>
           </a>
           <a :href="team.project.links.website || placeholderDeployment" target="_blank">
-            <img alt="deployment" src="@/assets/icons/desktop.svg" />
+            <i class="fas fa-desktop fa-2x"></i>
           </a>
           <a :href="team.project.links.writeup || placeholderMedium" target="_blank">
-            <img alt="medium" src="@/assets/icons/medium.svg" />
+            <i class="fab fa-medium-m fa-2x"></i>
           </a>
         </p>
       </div>
@@ -63,7 +63,7 @@ export default Vue.extend({
   margin-bottom: 0px;
 }
 .socials {
-  img {
+  i {
     width: 32px;
     margin-left: 16px;
     margin-right: 16px;
