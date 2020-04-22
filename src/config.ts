@@ -248,7 +248,7 @@ export const clubConfig: {
         name: 'Bumper',
         description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper.gif',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper-small.gif',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/bumper',
