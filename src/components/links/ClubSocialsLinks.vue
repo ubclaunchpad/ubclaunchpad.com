@@ -19,10 +19,10 @@ import Vue from 'vue';
 import { ClubSocials } from '@/data/types';
 
 /**
- * Footer is the website footer.
+ * ClubSocialsLinks renders a row of icons that link to our various social outlets online.
  */
 export default Vue.extend({
-  name: 'Footer',
+  name: 'ClubSocialsLinks',
   props: {
     links: {
       type: Object as () => ClubSocials,

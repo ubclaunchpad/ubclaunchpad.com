@@ -124,6 +124,5 @@ export type ClubSocials = {
   facebook: string;
   medium: string;
   github: string;
-
   email: string;
 }
