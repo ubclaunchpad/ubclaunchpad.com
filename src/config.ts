@@ -9,7 +9,7 @@
  * @packageDocumentation
  */
 
-import { Team, ClubPosition, ClubSponsor } from './data/types';
+import { Team, ClubPosition, ClubSponsor, ClubSocials } from './data/types';
 
 /* eslint-disable max-len */
 
@@ -81,6 +81,7 @@ export const clubConfig: {
   memberCount: number;
   currentTeams: Team[];
   featuredTeams: Team[];
+  socials: ClubSocials;
 } = {
   /**
    * The current club member membership count.
@@ -297,6 +298,17 @@ export const clubConfig: {
       },
     },
   ],
+
+  /**
+   * Links to Launch Pad online!
+   */
+  socials: {
+    instagram: 'https://www.instagram.com/ubclaunchpad',
+    facebook: 'https://www.facebook.com/ubclaunchpad',
+    medium: 'https://medium.com/ubc-launch-pad-software-engineering-blog',
+    github: 'https://github.com/ubclaunchpad',
+    email: 'team@ubclaunchpad.com',
+  },
 };
 
 /**

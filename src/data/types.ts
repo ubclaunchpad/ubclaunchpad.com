@@ -118,3 +118,11 @@ export type ClubSponsor = {
    */
   logoFilter?: string;
 }
+
+export type ClubSocials = {
+  instagram: string;
+  facebook: string;
+  medium: string;
+  github: string;
+  email: string;
+}
