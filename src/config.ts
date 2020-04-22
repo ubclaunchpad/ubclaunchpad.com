@@ -218,7 +218,7 @@ export const clubConfig: {
         name: 'Rocket 2',
         description: '🚀 Slack bot, team management, and onboarding system for UBC Launch Pad',
         images: {
-          bannerURI: undefined,
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/rocket2',
@@ -232,7 +232,7 @@ export const clubConfig: {
         name: 'Inertia',
         description: ':airplane: Effortless, self-hosted continuous deployment',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/homepage.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
           bannerHasName: true,
         },
         links: {
@@ -317,7 +317,7 @@ export const clubConfig: {
         name: 'ubclaunchpad.com',
         description: '✨ the new UBC Launch Pad website!',
         images: {
-          bannerURI: require('../.static/banner.png'),
+          bannerURI: require('../.static/homepage.png'),
           bannerHasName: true, // this one should be self-explanatory
         },
         links: {
