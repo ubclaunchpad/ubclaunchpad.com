@@ -227,6 +227,20 @@ export const clubConfig: {
       },
     },
     {
+      name: 'Minutes',
+      project: {
+        name: 'Minutes',
+        description: ':telescope: Speaker diarization via transfer learning',
+        images: {
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/minutes',
+          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/speaker-diarisation-using-transfer-learning-47ca1a1226f4',
+        },
+      },
+    },
+    {
       name: 'Inertia',
       project: {
         name: 'Inertia',
@@ -243,20 +257,6 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Minutes',
-      project: {
-        name: 'Minutes',
-        description: ':telescope: Speaker diarization via transfer learning',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/minutes',
-          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/speaker-diarisation-using-transfer-learning-47ca1a1226f4',
-        },
-      },
-    },
-    {
       name: 'Eat',
       project: {
         name: 'Eat',
@@ -268,6 +268,19 @@ export const clubConfig: {
         links: {
           repository: 'https://github.com/ubclaunchpad/eat',
           website: 'https://apps.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100',
+        },
+      },
+    },
+    {
+      name: 'Bumper',
+      project: {
+        name: 'Bumper',
+        description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
+        images: {
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper.gif',
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/bumper',
         },
       },
     },
@@ -295,19 +308,6 @@ export const clubConfig: {
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/etch.space',
-        },
-      },
-    },
-    {
-      name: 'Bumper',
-      project: {
-        name: 'Bumper',
-        description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper.gif',
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/bumper',
         },
       },
     },
