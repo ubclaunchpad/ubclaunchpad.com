@@ -222,12 +222,28 @@ export const clubConfig: {
    */
   featuredTeams: [
     {
+      name: 'Inertia',
+      project: {
+        name: 'Inertia',
+        description: ':airplane: Effortless, self-hosted continuous deployment',
+        images: {
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
+          bannerHasName: true,
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/inertia',
+          website: 'https://inertia.ubclaunchpad.com',
+          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/building-continuous-deployment-87a2bd8eedbe',
+        },
+      },
+    },
+    {
       name: 'Brussel Sprouts',
       project: {
         name: 'Rocket 2',
         description: '🚀 Slack bot, team management, and onboarding system for UBC Launch Pad',
         images: {
-          bannerURI: undefined,
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/rocket2',
@@ -236,17 +252,15 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Inertia',
+      name: 'Bumper',
       project: {
-        name: 'Inertia',
-        description: ':airplane: Effortless, self-hosted continuous deployment',
+        name: 'Bumper',
+        description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/inertia-init.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper-small.gif',
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/inertia',
-          website: 'https://inertia.ubclaunchpad.com',
-          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/building-continuous-deployment-87a2bd8eedbe',
+          repository: 'https://github.com/ubclaunchpad/bumper',
         },
       },
     },
@@ -265,31 +279,31 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Eat',
-      project: {
-        name: 'Eat',
-        description: 'Should we eat 🌮, 🍟, or 🍣?',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/eatnow.png',
-          bannerHasName: true,
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/eat',
-          website: 'https://apps.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100',
-        },
-      },
-    },
-    {
       name: 'Cumulus',
       project: {
         name: 'Cumulus',
         description: '💸 Cryptocurrency that doesn\'t waste your time',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/cumulus/dev/.static/create-transaction.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/cumulus/dev/.static/banner.png',
+          bannerHasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/cumulus',
           writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/introducing-cumulus-940456b7e05c',
+        },
+      },
+    },
+    {
+      name: 'UBC Launch Pad Website',
+      project: {
+        name: 'ubclaunchpad.com',
+        description: '✨ the new UBC Launch Pad website!',
+        images: {
+          bannerURI: require('../.static/homepage.png'),
+          bannerHasName: true, // this one should be self-explanatory
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/new',
         },
       },
     },
@@ -299,10 +313,26 @@ export const clubConfig: {
         name: 'etch.space',
         description: ':memo: A live multi-user collaborative etch-a-sketch built on websockets',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/logo.png',
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/banner.png',
+          bannerHasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/etch.space',
+        },
+      },
+    },
+    {
+      name: 'Eat',
+      project: {
+        name: 'Eat',
+        description: 'Should we eat 🌮, 🍟, or 🍣?',
+        images: {
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/animated-banner.gif',
+          bannerHasName: true,
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/eat',
+          website: 'https://apps.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100',
         },
       },
     },
