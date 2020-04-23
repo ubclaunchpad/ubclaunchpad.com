@@ -51,16 +51,16 @@ Refer to the links above for more details on each dependency.
 
 This codebase is largely contained in [`src`](/src), where you will find the following directories:
 
-* [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application
+* [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Handling Assets](#handling-assets) for more details
 * [`src/components`](./src/components): Vue components that are shared throughout the website
 * [`src/sections`](./src/sections): the website is mostly designed around horizontal sections that you scroll through - each section is defined as a Vue component here
 * [`src/lib`](./src/lib): library of utility functions for Vue components
-* [`src/data`](./src/data): data type definitions for configuration used in the website
+* [`src/data`](./src/data): data type definitions for configuration used in the website - see [Configuration](#configuration) for more details
 * [`src/styles`](./src/styles): global styles are declared here and imported throughout the application
 
 Also noteworthy are the following files:
 
-* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.github.io/new/config) documentation site for more details
+* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.github.io/new/config) documentation site and [Configuration](#configuration) for more details
 * [`src/App.vue`](./src/App.vue): the main entrypoint component to the site - it currently declares the site layout and provides data from `src/config.ts` to relevant components (other components *should not* import `src/config.ts`)
 
 Refer to [Dependencies](#dependencies) for our core dependencies and links to their websites, where you can find documentation on how to use them. Also refer to the existing code and components for guidance on how to work with the codebase.
