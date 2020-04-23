@@ -1,5 +1,7 @@
 <template>
   <div id="container" class="container is-widescreen">
+    <TeamProjectModal v-if="getSelectedTeam()" :team="getSelectedTeam()" :isActive="isActive"
+    @modalClosed="handleModalClose"/>
     <div class="description">
       <h2>Past Projects</h2>
       <p>
@@ -22,7 +24,7 @@
           v-for="(r, j) in col"
           :key="'row-'+i+'-'+j"
           class="project-container">
-          <TeamProjectCard :team="r" class="margin-sides-auto" />
+          <TeamProjectCard @projectClicked="setModalState" :team="r" class="margin-sides-auto" />
         </div>
       </div>
     </div>
@@ -33,8 +35,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, attachClassesIfInView } from '@/lib/util';
+import { generateColumns, attachClassesIfInView, ModalState} from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
+import TeamProjectModal from '@/components/TeamProjectModal.vue';
 
 /**
  * Projects implements a section for highlighting past Launch Pad projects.
@@ -52,9 +55,20 @@ export default Vue.extend({
       return generateColumns<Team>(this.teams, 2);
     },
   },
+  data: () => ({isActive: false, activeTeamName: '0'}),
   methods: {
     handleScroll() {
       attachClassesIfInView(window, this.$refs['projects-project-card'], 'animated fadeInUp slow');
+    },
+    setModalState(state: ModalState){
+      this.isActive = state.isActive;
+      this.activeTeamName = state.activeTeamName;
+    },
+    handleModalClose() {
+      this.isActive = false;
+    },
+    getSelectedTeam() {
+      return this.teams.find((team: Team) => team.project.name === this.activeTeamName);
     },
   },
   created() {
@@ -62,6 +76,7 @@ export default Vue.extend({
   },
   components: {
     TeamProjectCard,
+    TeamProjectModal,
   },
 });
 </script>

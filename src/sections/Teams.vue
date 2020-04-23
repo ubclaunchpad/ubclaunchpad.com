@@ -1,5 +1,7 @@
 <template>
   <div id="container" class="container is-widescreen">
+    <TeamProjectModal v-if="getSelectedTeam()" :team="getSelectedTeam()" :isActive="isActive"
+    @modalClosed="handleModalClose"/>
     <div class="columns is-vcentered is-desktop">
       <div class="column is-two-fifths-desktop has-text-centered">
 
@@ -35,8 +37,8 @@
               ref="teams-project-card"
               v-for="(r, j) in col"
               :key="'row-'+i+'-'+j"
-              class="project-container">
-              <TeamProjectCard :team="r" class="margin-sides-auto" />
+              class="tile project-container">
+              <TeamProjectCard @projectClicked="setModalState" :team="r" class="margin-sides-auto"/>
             </div>
           </div>
         </div>
@@ -49,8 +51,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, attachClassesIfInView } from '@/lib/util';
+import { generateColumns, attachClassesIfInView, ModalState } from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
+import TeamProjectModal from '@/components/TeamProjectModal.vue';
 
 interface TeamStats {
   value: string;
@@ -83,7 +86,7 @@ export default Vue.extend({
     },
     memberCount: Number,
   },
-  data: () => ({ stats }),
+  data: () => ({ stats, isActive: false, activeTeamName: '0'}),
   computed: {
     columns: function(): Team[][] {
       const perRow = 2;
@@ -95,12 +98,22 @@ export default Vue.extend({
     handleScroll() {
       attachClassesIfInView(window, this.$refs['teams-project-card'], 'animated fadeInRight slow');
     },
+    setModalState(state: ModalState){
+      this.isActive = state.isActive;
+      this.activeTeamName = state.activeTeamName;
+    },
+    handleModalClose() {
+      this.isActive = false;
+    },
+    getSelectedTeam(): Team | undefined {
+      return this.teams.find((team: Team) => team.project.name === this.activeTeamName);
+    },
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {
-    TeamProjectCard,
+    TeamProjectCard, TeamProjectModal,
   },
 });
 </script>
