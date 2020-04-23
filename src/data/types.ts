@@ -14,18 +14,29 @@ export type Project = {
 
   images: {
     /**
-     * 640px by 320px banner image (or equivalent 2:1 image). Should be hosted on the project
-     * repository or elswhere, and NOT in this website repository.
+     * Link to a **640px by 320px** banner image (or equivalent 2:1 image of reasonable resolution,
+     * i.e. less than 1mb). This image should be hosted on the project repository or elswhere, and
+     * NOT in this website's repository. Note that if you use the gif format, this image *can* be
+     * animated, which looks pretty cool!
      *
-     * If using an image in a repository, make sure it is a direct link to the image, i.e. instead of:
+     * Make sure the provided link is a *direct* link to the image, i.e. instead of:
      *
-     *    https://github.com/ubclaunchpad/inertia/blob/master/.static/inertia-with-name.png
+     * ```
+     * https://github.com/ubclaunchpad/inertia/blob/master/.static/inertia-with-name.png
+     * ```
      *
-     * the link should be:
+     * the link should look something like:
      *
-     *    https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/inertia-with-name.png
+     * ```
+     * https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/inertia-with-name.png
+     * ```
      *
-     * On most browsers, you can do this by right-clicking the image and selecting "Copy Image Location".
+     * On most browsers, you can get this link by right-clicking the image and selecting
+     * "Copy Image Location".
+     * 
+     * Bonus: note that this image format is also used by GitHub to provide link previews when you
+     * share your repository - just go to your repository's Settings and upload the same image under
+     * the "Social preview" option.
      */
     bannerURI?: string;
     /**
@@ -102,7 +113,7 @@ export type ClubSponsor = {
    */
   website: string;
   /**
-   * How much support this sponsor provided - must be a string that satisfied one of [[`ClubSponsorTier`]].
+   * How much support this sponsor provided - must be a string that satisfies one of [[`ClubSponsorTier`]].
    */
   tier?: ClubSponsorTier;
   /**
@@ -117,4 +128,12 @@ export type ClubSponsor = {
    * Simple CSS filters for the sponsor logo - see https://developer.mozilla.org/en-US/docs/Web/CSS/filter
    */
   logoFilter?: string;
+}
+
+export type ClubSocials = {
+  instagram: string;
+  facebook: string;
+  medium: string;
+  github: string;
+  email: string;
 }
