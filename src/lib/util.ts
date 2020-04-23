@@ -73,14 +73,14 @@ type VueRef = Vue | Element | Vue[] | Element[];
  *       },
  *     },
  *     created() {
+ *       this.handleScroll();
  *       window.addEventListener('scroll', this.handleScroll);
  *     },
  *     // ...
  * 
  * For elements animating elements that might load a bit slower, such as the elements including
  * images, it might be useful to mark them as `.hidden` beforehand and removing the classes on
- * scroll by using `removeClasses: 'hidden'`. In those cases, you'll want to `handleScroll` explicitly
- * as part of `created()`.
+ * scroll by using `removeClasses: 'hidden'`.
  * 
  * @param w window instance
  * @param ref element to check and update, retrieved from `this.$refs`
@@ -92,14 +92,12 @@ export function updateClassesIfInView(w: Window, ref: VueRef, options: {
   removeClasses?: string;
 }) {
   if (ref instanceof Element && isInView(w, ref)) {
-    console.log('ref in view', ref);
     if (options.addClasses) updateClasses(ref, options.addClasses, false);
     if (options.removeClasses) updateClasses(ref, options.removeClasses, true);
   } else if (ref instanceof Array) {
     ref.forEach((r: Vue | Element) => {
       if (r instanceof Element) {
         if (isInView(w, r)) {
-          console.log('refs in view', ref);
           if (options.addClasses) updateClasses(r, options.addClasses, false);
           if (options.removeClasses) updateClasses(r, options.removeClasses, true);
         }

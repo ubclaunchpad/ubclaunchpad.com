@@ -52,7 +52,6 @@ export default Vue.extend({
   },
   methods: {
     handleScroll() {
-      console.log(this.$refs['sponsor-logo']);
       updateClassesIfInView(window, this.$refs['sponsor-logo'], {
         addClasses: 'animated fadeInUp',
         removeClasses: 'hidden',
