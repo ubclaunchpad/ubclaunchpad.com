@@ -98,7 +98,7 @@ export const clubConfig: {
       name: 'Sync',
       project: {
         name: 'Sync',
-        description: ':tv: Watch YouTube videos interactively in sync with friends',
+        description: '📺 Watch YouTube videos interactively in sync with friends',
         images: {
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/sync/master/.static/banner.png',
           bannerHasName: true,
@@ -199,7 +199,7 @@ export const clubConfig: {
       name: 'Inertia',
       project: {
         name: 'Inertia',
-        description: ':airplane: Effortless, self-hosted continuous deployment',
+        description: '✈️ Effortless, self-hosted continuous deployment',
         images: {
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
           bannerHasName: true,
@@ -242,7 +242,7 @@ export const clubConfig: {
       name: 'Minutes',
       project: {
         name: 'Minutes',
-        description: ':telescope: Speaker diarization via transfer learning',
+        description: '🔭 Speaker diarization via transfer learning',
         images: {
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
         },
@@ -285,7 +285,7 @@ export const clubConfig: {
       name: 'Etch',
       project: {
         name: 'etch.space',
-        description: ':memo: A live multi-user collaborative etch-a-sketch built on websockets',
+        description: '📝 A live multi-user collaborative etch-a-sketch built on websockets',
         images: {
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/banner.png',
           bannerHasName: true,
