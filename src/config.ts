@@ -132,8 +132,7 @@ export const clubConfig: {
         name: 'Placeholder3',
         description: '',
         images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/physiospace-react/master/showcasethumbnail_PhysioSpace.png',
-          bannerHasName: true,
+          bannerURI: undefined,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/new',
