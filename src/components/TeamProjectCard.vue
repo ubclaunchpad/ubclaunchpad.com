@@ -53,7 +53,7 @@ export default Vue.extend({
   width: 320px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -91,7 +91,7 @@ h2 {
   width: 320px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
@@ -101,7 +101,7 @@ h2 {
   width: 320px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
