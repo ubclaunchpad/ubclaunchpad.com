@@ -145,7 +145,7 @@ export const clubConfig: {
       name: 'ubcsim2',
       project: {
         name: 'UBC Simulator 2',
-        description: ':thought_balloon: A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
+        description: '💭 A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
         images: {
           // TODO: update this when https://github.com/ubclaunchpad/ubcsim2/pull/140 is merged
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
