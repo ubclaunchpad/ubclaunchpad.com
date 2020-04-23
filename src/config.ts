@@ -142,6 +142,21 @@ export const clubConfig: {
       },
     },
     {
+      name: 'ubcsim2',
+      project: {
+        name: 'UBC Simulator 2',
+        description: ':thought_balloon: A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
+        images: {
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
+          bannerHasName: true,
+        },
+        links: {
+          repository: 'https://github.com/ubclaunchpad/ubcsim2',
+          website: 'https://ubclaunchpad.github.io/ubcsim2',
+        },
+      },
+    },
+    {
       name: 'food-doods',
       project: {
         name: 'keepfresh',
@@ -153,19 +168,6 @@ export const clubConfig: {
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/food-doods',
-        },
-      },
-    },
-    {
-      name: 'Team5',
-      project: {
-        name: 'Placeholder5',
-        description: '',
-        images: {
-          bannerURI: undefined,
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/new',
         },
       },
     },
