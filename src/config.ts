@@ -172,15 +172,17 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Team6',
+      name: 'AccessYouth',
       project: {
-        name: 'Placeholder6',
-        description: '',
+        name: 'Access Youth',
+        description: 'Supporting youth outreach and empowerment by facilitating easier communication between Access Youth (NPO) and troubled youth',
         images: {
-          bannerURI: undefined,
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/accessyouth-api/fb271fc2fad9a89a637f58769408ea4efea0faf0/Thumbnail.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/accessyouth-api',
+          writeup: 'https://github.com/ubclaunchpad/accessyouth-api#access-youth-mobile---our-experience-building-this',
         },
       },
     },
