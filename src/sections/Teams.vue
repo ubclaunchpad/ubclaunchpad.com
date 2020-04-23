@@ -1,6 +1,6 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive"
+    <TeamProjectModal v-if="getSelectedTeam()" :team="getSelectedTeam()" :isActive="isActive"
     @modalClosed="handleModalClose"/>
     <div class="columns is-vcentered is-desktop">
       <div class="column is-one-third-desktop has-text-centered">
@@ -47,7 +47,7 @@ import Vue from 'vue';
 import { Team } from '@/data/types';
 import { generateColumns, attachClassesIfInView, ModalState } from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
-import Modal from '@/components/Modal.vue';
+import TeamProjectModal from '@/components/TeamProjectModal.vue';
 
 interface TeamStats {
   value: string;
@@ -98,7 +98,6 @@ export default Vue.extend({
     },
     handleModalClose() {
       this.isActive = false;
-      console.log('hitting modal close');
     },
     getSelectedTeam(): Team | undefined {
       return this.teams.find((team: Team) => team.project.name === this.activeTeamName);
@@ -108,7 +107,7 @@ export default Vue.extend({
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {
-    TeamProjectCard, Modal,
+    TeamProjectCard, TeamProjectModal,
   },
 });
 </script>

@@ -12,7 +12,6 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "bulma": "^0.8.2",
-    "bulma-modal-fx": "^1.1.1",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },

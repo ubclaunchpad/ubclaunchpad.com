@@ -1,6 +1,6 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive"
+    <TeamProjectModal v-if="getSelectedTeam()" :team="getSelectedTeam()" :isActive="isActive"
     @modalClosed="handleModalClose"/>
     <div>
       <h2>Past Projects</h2>
@@ -32,7 +32,7 @@ import Vue from 'vue';
 import { Team } from '@/data/types';
 import { generateColumns, attachClassesIfInView, ModalState} from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
-import Modal from '@/components/Modal.vue';
+import TeamProjectModal from '@/components/TeamProjectModal.vue';
 
 /**
  * Projects implements a section for highlighting past Launch Pad projects.
@@ -71,7 +71,7 @@ export default Vue.extend({
   },
   components: {
     TeamProjectCard,
-    Modal,
+    TeamProjectModal,
   },
 });
 </script>
