@@ -142,15 +142,17 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Team4',
+      name: 'food-doods',
       project: {
-        name: 'Placeholder4',
-        description: '',
+        name: 'keepfresh',
+        description: 'Dabbing out food waste and over-spending on groceries',
         images: {
-          bannerURI: undefined,
+          // TODO: update when they merge this branch
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/keepfresh-thumbnail.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/food-doods',
         },
       },
     },
