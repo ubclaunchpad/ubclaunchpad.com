@@ -1,18 +1,19 @@
 <template>
   <div class="project card has-text-centered">
-    <div :class="{
-         'project-image ': !(!team.project.images.bannerURI || !team.project.images.bannerHasName),
-         'project-blurred-image': (!team.project.images.bannerURI || !team.project.images.bannerHasName)
+    <div
+      class="project-image"
+      :class="{
+        'blurred': !team.project.images.bannerHasName
       }"
       :style="{
-      'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')',
-    }"
-    @click="openModal()">
-    <div class="overlay">
-    <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
-      {{ team.project.name }}
-    </h2>
-    </div>
+        'background-image': 'url(' + (team.project.images.bannerURI) + ')',
+      }"
+      @click="openModal()">
+      <div class="overlay">
+        <h2 v-if="!team.project.images.bannerHasName">
+          {{ team.project.name }}
+        </h2>
+      </div>
    </div>
   </div>
 </template>
@@ -20,7 +21,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-const projectPlaceholder = require('@/assets/project-placeholder.png');
 
 /**
  * TeamProjectCard is a small card used to render a Team. See [[Team]] for more details.
@@ -35,7 +35,7 @@ export default Vue.extend({
       type: Object as () => Team,
     },
   },
-  data: () => ({ projectPlaceholder, isActive: false }),
+  data: () => ({ isActive: false }),
   methods: {
     openModal() {
       this.$emit('projectClicked', {isActive: true, activeTeamName: this.team.project.name});
@@ -57,10 +57,11 @@ export default Vue.extend({
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-   &:hover, &:focus {
-      box-shadow: 0px 4px 15px 8px rgba($white, 0.35);
-    }
+  &:hover, &:focus {
+    box-shadow: 0px 4px 15px 8px rgba($white, 0.35);
+  }
 }
+
 // css to handle animation  of card on hover as well as overlay of text when banner has no title
 .overlay {
   position: absolute;
@@ -86,36 +87,31 @@ h2 {
   font-weight: bold;
 }
 
-.project .project-image {
-  height: 160px;
-  width: 320px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-}
+.project {
+  &.project-image {
+    height: 160px;
+    width: 320px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  }
 
-.project .project-blurred-image {
-  height: 160px;
-  width: 320px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-}
+  &:hover {
+    &.blurred {
+      opacity: 0.8;
+    }
+    &.blurred {
+      &.overlay {
+        opacity: 1;
+      }
+    }
+  }
 
-.project:hover .project-blurred-image {
-  opacity: 0.8;
-}
-
-.project:hover .project-blurred-image .overlay {
-   opacity: 1;
-}
-
-.project:hover, .project:focus {
+  &:hover, &:focus {
     @extend .animation;
     transition-duration: $project-card-transition-time;
   }
+}
 </style>
