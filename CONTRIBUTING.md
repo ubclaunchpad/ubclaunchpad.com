@@ -195,6 +195,8 @@ This means that when your changes are merged to `master`, your contribution will
 
 ## GitHub Actions
 
+[GitHub Actions](https://github.com/features/actions) is a workflow automation platform provided by GitHub. We use it for automating a variety of tasks for this project.
+
 * [![Checks](https://github.com/ubclaunchpad/new/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
 * [![Compress images](https://github.com/ubclaunchpad/new/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
 * [![Deploy](https://github.com/ubclaunchpad/new/workflows/Deploy/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Deploy) ([`deploy.yml`](./.github/workflows/deploy.yml)) runs on every push to the `master` branch to build and update the `gh-pages` branch (in other words, it deploys the website).
