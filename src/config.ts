@@ -187,32 +187,6 @@ export const clubConfig: {
         },
       },
     },
-    {
-      name: 'Team7',
-      project: {
-        name: 'Placeholder7',
-        description: '',
-        images: {
-          bannerURI: undefined,
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/new',
-        },
-      },
-    },
-    {
-      name: 'Team8',
-      project: {
-        name: 'Placeholder8',
-        description: '',
-        images: {
-          bannerURI: undefined,
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/new',
-        },
-      },
-    },
   ],
 
   /**
