@@ -364,5 +364,11 @@ export const sponsorshipConfig: {
       tier: 'gold',
       logoURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png',
     },
+    {
+      name: 'GitHub',
+      website: 'https://github.com',
+      logoURL: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png',
+      logoFilter: 'invert()',
+    },
   ],
 };

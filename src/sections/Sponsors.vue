@@ -76,7 +76,7 @@ h2 {
     width: auto;
     max-width: 320px;
     max-height: 300px;
-    margin-bottom: 37px;
+    margin: 32px;
     object-fit: contain;
   }
 }
