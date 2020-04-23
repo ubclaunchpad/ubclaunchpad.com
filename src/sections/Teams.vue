@@ -2,8 +2,9 @@
   <div id="container" class="container is-widescreen">
     <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive"
     @modalClosed="handleModalClose"/>
-    <div class="columns is-vcentered">
-      <div class="pad-32 column is-one-third has-text-centered">
+    <div class="columns is-vcentered is-desktop">
+      <div class="column is-one-third-desktop has-text-centered">
+
         <h2>Our Teams</h2>
         <img src="@/assets/screen.png" width="300px" class="teams-image" />
 
@@ -133,6 +134,7 @@ export default Vue.extend({
 }
 
 .stats {
+  max-width: 100%;
   align-items: start;
 
   .stat-desc {

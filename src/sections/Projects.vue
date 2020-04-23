@@ -1,8 +1,7 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive" 
+    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive"
     @modalClosed="handleModalClose"/>
-    
     <div>
       <h2>Past Projects</h2>
       <p>
@@ -57,14 +56,14 @@ export default Vue.extend({
       attachClassesIfInView(window, this.$refs['projects-project-card'], 'animated fadeInUp slow');
     },
     setModalState(state: ModalState){
-      this.isActive = state.isActive; 
+      this.isActive = state.isActive;
       this.activeTeamName = state.activeTeamName;
     },
     handleModalClose() {
       this.isActive = false;
     },
     getSelectedTeam() {
-      return this.teams.find((team: Team) => team.project.name === this.activeTeamName) ;  
+      return this.teams.find((team: Team) => team.project.name === this.activeTeamName);
     },
   },
   created() {
@@ -72,7 +71,7 @@ export default Vue.extend({
   },
   components: {
     TeamProjectCard,
-    Modal, 
+    Modal,
   },
 });
 </script>

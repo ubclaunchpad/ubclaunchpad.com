@@ -44,6 +44,10 @@ export default Vue.extend({
   max-height: none;
   width: auto;
   height: 55px;
+  @media(max-width: $touch) {
+    margin-top: 32px;
+    height: 96px;
+  }
 }
 
 .navbar {
