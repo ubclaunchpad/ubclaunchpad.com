@@ -2,7 +2,7 @@
   <div id="container" class="container is-widescreen">
     <TeamProjectModal v-if="getSelectedTeam()" :team="getSelectedTeam()" :isActive="isActive"
     @modalClosed="handleModalClose"/>
-    <div>
+    <div class="description">
       <h2>Past Projects</h2>
       <p>
         Generations of students have created projects throughout the years as part of Launch Pad -
@@ -14,16 +14,21 @@
       </p>
     </div>
 
-    <div class="tile project-columns">
-      <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical project-column">
-        <div ref="projects-project-card"
+    <div class="columns is-multiline is-centered projects">
+      <div
+        v-for="(col, i) in columns"
+        :key="'column-'+i"
+        class="column is-one-quarter-widescreen is-half-desktop project-column">
+        <div
+          ref="projects-project-card"
           v-for="(r, j) in col"
           :key="'row-'+i+'-'+j"
-          class="tile project-container">
-          <TeamProjectCard @projectClicked="setModalState" :team="r" />
+          class="project-container">
+          <TeamProjectCard @projectClicked="setModalState" :team="r" class="margin-sides-auto" />
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -77,14 +82,16 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.project-column {
-  display: flex;
-  align-items: center;
-  padding-left: 8px;
-  padding-right: 8px;
+.projects {
+  padding-top: 24px;
 
-  .project-container {
-    margin-bottom: 52px;
+  .project-column {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .project-container {
+      margin-bottom: 32px;
+    }
   }
 }
 </style>
