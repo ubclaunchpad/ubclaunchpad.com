@@ -54,46 +54,70 @@ function isInView(w: Window, el: Element): boolean {
 
 function updateClasses(el: Element, classNames: string, remove: boolean) {
   const classes = classNames.split(' ');
-  if (!remove) classes.forEach((c) => el.classList.add(c));
-  else classes.forEach((c) => el.classList.remove(c));
+  if (!remove) el.classList.add(...classes);
+  else el.classList.remove(...classes);
 }
 
 type VueRef = Vue | Element | Vue[] | Element[];
 
 /**
- * Check if given element is within the window bounds (aka "in view") and attach classnames to it
- * if it is. Useful for making animations.
+ * Check if given element is within the window bounds (aka "in view") and updates classnames to it
+ * if it is. Useful for making animations:
+ * 
+ *     // ...
+ *     methods: {
+ *       handleScroll() {
+ *         updateClassesIfInView(window, this.$refs['position-animated'], {
+ *           addClasses: 'animated fadeInLeft',
+ *         });
+ *       },
+ *     },
+ *     created() {
+ *       window.addEventListener('scroll', this.handleScroll);
+ *     },
+ *     // ...
+ * 
+ * For elements animating elements that might load a bit slower, such as the elements including
+ * images, it might be useful to mark them as `.hidden` beforehand and removing the classes on
+ * scroll by using `removeClasses: 'hidden'`. In those cases, you'll want to `handleScroll` explicitly
+ * as part of `created()`.
  * 
  * @param w window instance
  * @param ref element to check and update, retrieved from `this.$refs`
  * @param classNames string of classnames (e.g. 'animated fadeInleft')
  * @param removeIfNot optionally indicate that classes should be removed if the element has left the view
  */
-export function attachClassesIfInView(w: Window, ref: VueRef, classNames: string, removeIfNot?: boolean) {
-  if (ref instanceof Element) {
-    if (isInView(w, ref)) updateClasses(ref, classNames, false);
-    else if (removeIfNot) updateClasses(ref, classNames, true);
+export function updateClassesIfInView(w: Window, ref: VueRef, options: {
+  addClasses?: string;
+  removeClasses?: string;
+}) {
+  if (ref instanceof Element && isInView(w, ref)) {
+    console.log('ref in view', ref);
+    if (options.addClasses) updateClasses(ref, options.addClasses, false);
+    if (options.removeClasses) updateClasses(ref, options.removeClasses, true);
   } else if (ref instanceof Array) {
     ref.forEach((r: Vue | Element) => {
       if (r instanceof Element) {
-        if (isInView(w, r)) updateClasses(r, classNames, false);
-        else if (removeIfNot) updateClasses(r, classNames, true);
+        if (isInView(w, r)) {
+          console.log('refs in view', ref);
+          if (options.addClasses) updateClasses(r, options.addClasses, false);
+          if (options.removeClasses) updateClasses(r, options.removeClasses, true);
+        }
       }
     });
   }
 }
 
-
 /**
  * Describes the state of a modal
  */
 export interface ModalState {
-/**
- * if the modal is open or closed
- */
+  /**
+   * if the modal is open or closed
+   */
   isActive: boolean;
-/**
- * The name of the selected team 
- */
+  /**
+   * The name of the selected team 
+   */
   activeTeamName: string;
 }

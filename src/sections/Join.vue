@@ -31,7 +31,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { ClubPosition } from '@/data/types';
-import { attachClassesIfInView } from '@/lib/util';
+import { updateClassesIfInView } from '@/lib/util';
 
 /**
  * Join implements a section for encouraging users to apply to Launch Pad. It should only be
@@ -46,7 +46,9 @@ export default Vue.extend({
   },
   methods: {
     handleScroll() {
-      attachClassesIfInView(window, this.$refs['position-animated'], 'animated fadeInLeft');
+      updateClassesIfInView(window, this.$refs['position-animated'], {
+        addClasses: 'animated fadeInLeft',
+      });
     },
   },
   created() {

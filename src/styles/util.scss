@@ -49,3 +49,9 @@
     }
   }
 }
+
+// use opacity instead of display:none for hiding to avoid messing with element positioning, so that
+// using this class alongside [[`updateClassesIfInView`]] doesn't break.
+.hidden {
+  opacity: 0;
+}
