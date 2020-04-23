@@ -1,7 +1,8 @@
 # ⚒️ Contributing to the UBC Launch Pad Website
 
-This document will guide you through contributing changes to the new UBC Launch Pad website! It
-assumes basic knowledge of git and pull request workflows.
+This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows.
+
+If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/new/issues)!
 
 - [Dependencies](#dependencies)
 - [Development](#development)
@@ -12,6 +13,9 @@ assumes basic knowledge of git and pull request workflows.
   - [Handling Assets](#handling-assets)
   - [Configuration](#configuration)
 - [Deployment](#deployment)
+- [GitHub Actions](#github-actions)
+
+<br />
 
 ## Dependencies
 
@@ -158,6 +162,8 @@ In general:
 * use suitably-sized assets that don't exceed 1MB in size
 * do not put assets in `/public`
 
+We also have an [automated workflow](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
+
 ### Configuration
 
 Site configuration is defined in [`src/config.ts`](./src/config.ts), with additional relevant types defined in [`src/data/types.ts`](./src/data/types.ts). Docstrings and types in these files are used to render the [UBC Launch Pad Site Configuration Guide](https://ubclaunchpad.github.io/new/config) as part of the post-build step to `npm run build` or by running:
@@ -165,6 +171,8 @@ Site configuration is defined in [`src/config.ts`](./src/config.ts), with additi
 ```
 npm run docs
 ```
+
+Included in this documentation website is [CONFIGURING.md](./CONFIGURING.md), where any updated guidance regarding the configuration of the website should be added.
 
 You can view the configuration documentation site locally using a static file server like [`serve`](https://github.com/zeit/serve):
 
@@ -179,6 +187,16 @@ These changes are published automatically - see [Deployment](#deployment).
 
 ## Deployment
 
-Deployments are handled automatically by the [Deploy workflow](https://github.com/ubclaunchpad/new/actions?workflow=Deploy), which publishes changes to the `gh-pages` branch.
+Deployments are handled automatically by the [Deploy workflow](https://github.com/ubclaunchpad/new/actions?workflow=Deploy) (see [GitHub Actions](#github-actions)), which publishes changes to the `gh-pages` branch. The contents of the `gh-pages` branch is what users see when they visit he website - refer to the [official GitHub Pages documentation](https://pages.github.com/) for more details.
 
-When your changes are merged, your contribution will automatically be deployed!
+This means that when your changes are merged to `master`, your contribution will automatically be deployed! This deployment includes both the actual website as well as [configuration documentation](#configuration).
+
+<br />
+
+## GitHub Actions
+
+* [![Checks](https://github.com/ubclaunchpad/new/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
+* [![Compress images](https://github.com/ubclaunchpad/new/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
+* [![Deploy](https://github.com/ubclaunchpad/new/workflows/Deploy/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Deploy) ([`deploy.yml`](./.github/workflows/deploy.yml)) runs on every push to the `master` branch to build and update the `gh-pages` branch (in other words, it deploys the website).
+
+<br />
