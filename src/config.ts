@@ -147,6 +147,7 @@ export const clubConfig: {
         name: 'UBC Simulator 2',
         description: ':thought_balloon: A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
         images: {
+          // TODO: update this when https://github.com/ubclaunchpad/ubcsim2/pull/140 is merged
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
           bannerHasName: true,
         },
@@ -162,7 +163,7 @@ export const clubConfig: {
         name: 'keepfresh',
         description: 'Dabbing out food waste and over-spending on groceries',
         images: {
-          // TODO: update when they merge this branch
+          // TODO: update when https://github.com/ubclaunchpad/food-doods/tree/showcase is merged
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/keepfresh-thumbnail.png',
           bannerHasName: true,
         },
