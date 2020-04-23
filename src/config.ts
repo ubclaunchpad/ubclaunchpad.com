@@ -302,7 +302,7 @@ export const clubConfig: {
       name: 'Etch',
       project: {
         name: 'etch.space',
-        description: '📝A live multi-user collaborative etch-a-sketch built on websockets',
+        description: '📝 A live multi-user collaborative etch-a-sketch built on websockets',
         images: {
           bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/banner.png',
           bannerHasName: true,
