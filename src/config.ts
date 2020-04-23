@@ -127,80 +127,63 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Team3',
+      name: 'Footprint',
       project: {
-        name: 'Placeholder3',
-        description: '',
+        name: 'Footprint',
+        description: '🍃 Learn how the food you eat impacts your carbon footprint ',
         images: {
-          bannerURI: undefined,
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/Footprint/master/project_images/final_design.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/Footprint',
+          writeup: 'https://github.com/ubclaunchpad/Footprint/blob/master/README.md',
         },
       },
     },
     {
-      name: 'Team4',
+      name: 'ubcsim2',
       project: {
-        name: 'Placeholder4',
-        description: '',
+        name: 'UBC Simulator 2',
+        description: '💭 A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
         images: {
-          bannerURI: undefined,
+          // TODO: update this when https://github.com/ubclaunchpad/ubcsim2/pull/140 is merged
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/ubcsim2',
+          website: 'https://ubclaunchpad.github.io/ubcsim2',
         },
       },
     },
     {
-      name: 'Team5',
+      name: 'food-doods',
       project: {
-        name: 'Placeholder5',
-        description: '',
+        name: 'keepfresh',
+        description: 'Dabbing out food waste and over-spending on groceries',
         images: {
-          bannerURI: undefined,
+          // TODO: update when https://github.com/ubclaunchpad/food-doods/tree/showcase is merged
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/keepfresh-thumbnail.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/food-doods',
         },
       },
     },
     {
-      name: 'Team6',
+      name: 'AccessYouth',
       project: {
-        name: 'Placeholder6',
-        description: '',
+        name: 'Access Youth',
+        description: 'Supporting youth outreach and empowerment by facilitating easier communication between Access Youth (NPO) and troubled youth',
         images: {
-          bannerURI: undefined,
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/accessyouth-api/fb271fc2fad9a89a637f58769408ea4efea0faf0/Thumbnail.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
-        },
-      },
-    },
-    {
-      name: 'Team7',
-      project: {
-        name: 'Placeholder7',
-        description: '',
-        images: {
-          bannerURI: undefined,
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/new',
-        },
-      },
-    },
-    {
-      name: 'Team8',
-      project: {
-        name: 'Placeholder8',
-        description: '',
-        images: {
-          bannerURI: undefined,
-        },
-        links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/accessyouth-api',
+          writeup: 'https://github.com/ubclaunchpad/accessyouth-api#access-youth-mobile---our-experience-building-this',
         },
       },
     },
