@@ -56,7 +56,6 @@ export default Vue.extend({
   background-size: 100%;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-  backface-visibility: hidden;
   cursor: pointer;
    &:hover, &:focus {
       box-shadow: 0px 4px 15px 8px rgba($white, 0.35);
@@ -84,6 +83,7 @@ h2 {
   transform: translate(-50%, -50%);
   text-align: center;
   color:$rocket;
+  font-weight: bold;
 }
 
 .project .project-image {
@@ -94,7 +94,6 @@ h2 {
   background-size: 100%;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-  backface-visibility: hidden;
 }
 
 .project .project-blurred-image {
@@ -105,17 +104,9 @@ h2 {
   background-size: 100%;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-  backface-visibility: hidden;
 }
+
 .project:hover .project-blurred-image {
-  height: 160px;
-  width: 320px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-  backface-visibility: hidden;
   opacity: 0.8;
 }
 
