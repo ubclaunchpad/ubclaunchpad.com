@@ -1,6 +1,6 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive" 
+    <Modal :v-if="team" :team="getSelectedTeam()" :isActive="isActive"
     @modalClosed="handleModalClose"/>
     <div class="columns is-vcentered">
       <div class="pad-32 column is-one-third has-text-centered">
@@ -90,9 +90,9 @@ export default Vue.extend({
   methods: {
     handleScroll() {
       attachClassesIfInView(window, this.$refs['teams-project-card'], 'animated fadeInRight slow');
-    }, 
+    },
     setModalState(state: ModalState){
-      this.isActive = state.isActive; 
+      this.isActive = state.isActive;
       this.activeTeamName = state.activeTeamName;
     },
     handleModalClose() {

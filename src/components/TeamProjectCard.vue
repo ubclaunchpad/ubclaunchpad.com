@@ -59,8 +59,7 @@ export default Vue.extend({
   backface-visibility: hidden;
   cursor: pointer;
    &:hover, &:focus {
-      border: 3px solid $rocket;
-      box-shadow: 0px 1px 4px rgba($rocket, 0.4);
+      box-shadow: 0px 15px 8px rgba($white, 0.35);
     }
 }
 // css to handle animation  of card on hover as well as overlay of text when banner has no title
