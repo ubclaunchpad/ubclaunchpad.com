@@ -3,10 +3,10 @@
     <div
       class="project-image"
       :class="{
-        'blurred': !team.project.images.bannerHasName
+        'name-on-hover': !team.project.images.bannerHasName
       }"
       :style="{
-        'background-image': 'url(' + (team.project.images.bannerURI) + ')',
+        'background-image': 'url(' + team.project.images.bannerURI + ')',
       }"
       @click="openModal()">
       <div class="overlay">
@@ -48,20 +48,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.project {
-  height: 160px;
-  width: 320px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  &:hover, &:focus {
-    box-shadow: 0px 4px 15px 8px rgba($white, 0.35);
-  }
-}
-
 // css to handle animation  of card on hover as well as overlay of text when banner has no title
 .overlay {
   position: absolute;
@@ -88,30 +74,33 @@ h2 {
 }
 
 .project {
-  &.project-image {
-    height: 160px;
-    width: 320px;
+  height: 160px;
+  width: 320px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  .project-image {
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-  }
-
-  &:hover {
-    &.blurred {
-      opacity: 0.8;
-    }
-    &.blurred {
-      &.overlay {
-        opacity: 1;
-      }
-    }
   }
 
   &:hover, &:focus {
     @extend .animation;
     transition-duration: $project-card-transition-time;
+    box-shadow: 0px 4px 15px 8px rgba($white, 0.35);
+
+    // show project name on hover
+    .name-on-hover {
+      opacity: 0.8;
+      .overlay {
+        opacity: 1;
+      }
+    }
   }
 }
 </style>
