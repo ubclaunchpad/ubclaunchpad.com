@@ -1,19 +1,19 @@
 <template>
-<div
-    :class="{
-      'project no-img card has-text-centered': !team.project.images.bannerURI || !team.project.images.bannerHasName,
-      'project card has-text-centered': !(!team.project.images.bannerURI || !team.project.images.bannerHasName)
-    }"
-    :ref="id"
-    :style="{
+  <div class="project card has-text-centered">
+    <div :class="{
+         'project-image ': !(!team.project.images.bannerURI || !team.project.images.bannerHasName),
+         'project-blurred-image': (!team.project.images.bannerURI || !team.project.images.bannerHasName)
+      }"
+      :style="{
       'background-image': 'url(' + (team.project.images.bannerURI || projectPlaceholder) + ')',
     }"
-    @click="openModal">
+    @click="openModal()">
     <div class="overlay">
     <h2 v-if="!team.project.images.bannerURI || !team.project.images.bannerHasName">
       {{ team.project.name }}
     </h2>
     </div>
+   </div>
   </div>
 </template>
 
@@ -86,14 +86,41 @@ h2 {
   color:$rocket;
 }
 
-.project:hover .overlay {
-  opacity: 1;
+.project .project-image {
+  height: 160px;
+  width: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  backface-visibility: hidden;
 }
 
-.project:hover {
-  &.no-img {
-     opacity: 0.3;
-  }
+.project .project-blurred-image {
+  height: 160px;
+  width: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  backface-visibility: hidden;
+}
+.project:hover .project-blurred-image {
+  height: 160px;
+  width: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  backface-visibility: hidden;
+  opacity: 0.8;
+}
+
+.project:hover .project-blurred-image .overlay {
+   opacity: 1;
 }
 
 .project:hover, .project:focus {
