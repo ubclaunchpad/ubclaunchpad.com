@@ -1,7 +1,7 @@
 <template>
   <div id="container" class="container is-widescreen">
     <div class="columns is-vcentered is-desktop">
-      <div class="column is-one-third-desktop has-text-centered">
+      <div class="column is-two-fifths-desktop has-text-centered">
 
         <h2>Our Teams</h2>
         <img src="@/assets/screen.png" width="300px" class="teams-image" />
@@ -24,18 +24,24 @@
           This year, we had <b>{{ memberCount }} members</b> across <b>{{ teams.length }} teams</b>.
         </p>
       </div>
+
       <div class="column">
-        <div class="tile">
-          <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical project-column">
-            <div ref="teams-project-card"
+        <div class="columns is-multiline is-centered projects">
+          <div
+            v-for="(col, i) in columns"
+            :key="'column-'+i"
+            class="column is-one-half project-column">
+            <div
+              ref="teams-project-card"
               v-for="(r, j) in col"
               :key="'row-'+i+'-'+j"
-              class="tile project-container">
-              <TeamProjectCard :team="r" />
+              class="project-container">
+              <TeamProjectCard :team="r" class="margin-sides-auto" />
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -106,16 +112,16 @@ export default Vue.extend({
   border-radius: 12px;
 }
 
-.project-column {
-  display: flex;
-  align-items: center;
-  padding-right: 16px;
-  padding-left: 16px;
+.projects {
+  padding-top: 24px;
 
-  .project-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 36px;
+  .project-column {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .project-container {
+      margin-bottom: 32px;
+    }
   }
 }
 
