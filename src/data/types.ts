@@ -38,7 +38,7 @@ export type Project = {
      * share your repository - just go to your repository's Settings and upload the same image under
      * the "Social preview" option.
      */
-    bannerURI?: string;
+    bannerURI: string;
     /**
      * Indicate if the banner has project name, and that a name should not be generated on the website.
      */
