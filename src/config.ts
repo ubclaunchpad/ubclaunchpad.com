@@ -127,15 +127,17 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Team3',
+      name: 'Footprint',
       project: {
-        name: 'Placeholder3',
-        description: '',
+        name: 'Footprint',
+        description: '🍃 Learn how the food you eat impacts your carbon footprint ',
         images: {
-          bannerURI: undefined,
+          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/Footprint/master/project_images/final_design.png',
+          bannerHasName: true,
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/Footprint',
+          writeup: 'https://github.com/ubclaunchpad/Footprint/blob/master/README.md',
         },
       },
     },
