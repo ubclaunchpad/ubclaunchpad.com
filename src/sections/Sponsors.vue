@@ -9,10 +9,10 @@
             <a v-for="(s, j) in col" :key="'row-'+i+'-'+j" :href="s.website" class="tile sponsor-container" target="_blank">
               <img ref="sponsor-logo"
                 class="sponsor-img hidden"
-                :src="s.logoURL"
+                :src="s.logo.url"
                 :alt="s.name"
                 :style="{
-                  filter: s.logoFilter,
+                  filter: s.logo.filter,
                 }" />
             </a>
         </div>

@@ -3,14 +3,14 @@
     <div
       class="project-image"
       :class="{
-        'name-on-hover': !team.project.images.bannerHasName
+        'name-on-hover': !team.project.banner.hasName
       }"
       :style="{
-        'background-image': 'url(' + team.project.images.bannerURI + ')',
+        'background-image': 'url(' + team.project.banner.url + ')',
       }"
       @click="openModal()">
       <div class="overlay">
-        <h2 v-if="!team.project.images.bannerHasName">
+        <h2 v-if="!team.project.banner.hasName">
           {{ team.project.name }}
         </h2>
       </div>
