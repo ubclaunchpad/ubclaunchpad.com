@@ -56,6 +56,17 @@ export type Project = {
      */
     website?: string;
 
+     /**
+     * Link to deployed app on a store
+     */
+    appDownloadLink?: string;
+
+
+     /**
+     * Type of app
+     */
+    appType?: AppType;
+
     /**
      * Link to a blog post or similar writeup
      */
@@ -137,3 +148,7 @@ export type ClubSocials = {
   github: string;
   email: string;
 }
+/**
+ * Describes the platform an app is build on.
+ */
+export type AppType = 'ios' | 'android';

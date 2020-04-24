@@ -17,13 +17,22 @@
 
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
-           <i class="fab fa-github fa-2x"></i>
+           <i class="fab fa-github fa-2x"/>
           </a>
           <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
-            <span v-if="team.project.links.website" class="fas fa-desktop fa-2x"></span>
+            <i v-if="team.project.links.website" class="fas fa-desktop fa-2x"/>
+          </a>
+          <a v-if="team.project.links.appDownloadLink && team.project.links.appType==='ios'"
+             :href="team.project.links.appDownloadLink" target="_blank">
+            <i v-if="team.project.links.appDownloadLink && team.project.links.appType==='ios'" class="fab fa-apple fa-2x"/>
+          </a>
+          <a v-if="team.project.links.appDownloadLink && team.project.links.appType==='android'"
+             :href="team.project.links.appDownloadLink" target="_blank">
+            <i v-if="team.project.links.appDownloadLink && team.project.links.appType==='android'"
+            class="fab fa-android fa-2x"/>
           </a>
           <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
-            <i v-if="team.project.links.writeup" class="fab fa-medium-m fa-2x"></i>
+            <i v-if="team.project.links.writeup" class="fab fa-medium-m fa-2x"/>
           </a>
         </p>
       </div>
