@@ -1,36 +1,18 @@
 /**
- * Minimal asset configuration specification.
+ * Describes a video.
  */
-export type Asset = {
-  /**
-   * URL link or require() pointing to an asset (in the event asset is stored in this repository).
-   * 
-   * To use with require():
-   * 
-   * ```ts
-   * {
-   *    url: require(...) as string,
-   * }
-   * ```
-   */
-  url: string;
-}
-
-/**
- * Describes a typed asset: video.
- * 
- * TODO: flesh out this spec when implementation requirements become more clear
- */
-export type VideoAsset = {
+export type VideoMedia = {
   type: 'video';
-} & Asset;
+  url: string;
+};
 
 /**
- * Describes a typed asset: image.
+ * Describes an image.
  */
-export type ImageAsset = {
+export type ImageMedia = {
   type: 'image';
-} & Asset;
+  url: string;
+};
 
 /**
  * Describes a Launch Pad project.
@@ -56,7 +38,8 @@ export type Project = {
    * share your repository - just go to your repository's Settings and upload the same image under
    * the "Social preview" option.
    */
-  banner: Asset & {
+  banner: {
+    url: string;
     /**
      * Indicate if the banner has project name, and that a name should not be generated on the website.
      */
@@ -64,8 +47,12 @@ export type Project = {
   };
   /**
    * Detailed or more descriptive media to showcase your project - featured in project modals.
+   * 
+   * This can be one of:
+   * - video (`type: 'video'` - see [[`VideoMedia`]])
+   * - image (`type: 'iamge'` - see [[`ImageMedia`]])
    */
-  media?: VideoAsset | ImageAsset;
+  media?: VideoMedia | ImageMedia;
   /**
    * Links to further information about this project.
    */
@@ -74,12 +61,10 @@ export type Project = {
      * Link to GitHub repository
      */
     repository: string;
-
     /**
      * Link to deployed website
      */
     website?: string;
-
     /**
      * Link to a blog post or similar writeup
      */
@@ -120,11 +105,6 @@ export type ClubPosition = {
 }
 
 /**
- * Sponsorship tier achieved by a sponsor. Refer to the sponsorship package for more details.
- */
-export type ClubSponsorTier = 'bronze' | 'silver' | 'gold' | 'platinum';
-
-/**
  * Describes a club sponsor.
  */
 export type ClubSponsor = {
@@ -137,9 +117,9 @@ export type ClubSponsor = {
    */
   website: string;
   /**
-   * How much support this sponsor provided - must be a string that satisfies one of [[`ClubSponsorTier`]].
+   * How much support this sponsor provided. Refer to the sponsorship package for more details.
    */
-  tier?: ClubSponsorTier;
+  tier?: 'bronze' | 'silver' | 'gold' | 'platinum';
   /**
    * Sponsor logo - must be PNG, with transparent backgrounds, and roughly 140px by 120px. Try to
    * source these from online.
@@ -147,7 +127,8 @@ export type ClubSponsor = {
    * To make simple adjustments to help the logo look better against the website's background, use
    * `logoFilter` to apply some simple CSS effects.
    */
-  logo: Asset & {
+  logo: {
+    url: string;
     /**
      * Simple CSS filters for the sponsor logo - see https://developer.mozilla.org/en-US/docs/Web/CSS/filter
      */
@@ -155,6 +136,9 @@ export type ClubSponsor = {
   };
 }
 
+/**
+ * Describes set of links to Launch Pad online.
+ */
 export type ClubSocials = {
   instagram: string;
   facebook: string;
