@@ -61,8 +61,7 @@ export type Project = {
      */
     appDownloadLink?: string;
 
-
-     /**
+    /**
      * Type of app
      */
     appType?: AppType;
