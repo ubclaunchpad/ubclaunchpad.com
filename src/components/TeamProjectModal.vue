@@ -22,7 +22,7 @@
         <p><b>{{ team.project.description }}</b></p>
 
         <div class="banner-container margin-sides-16">
-          <img :src="team.project.images.bannerURI" class="banner" />
+          <img :src="team.project.banner.url" class="banner" />
         </div>
 
         <p class="socials">
