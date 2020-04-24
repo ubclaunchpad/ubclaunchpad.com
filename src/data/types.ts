@@ -29,7 +29,7 @@ export type Project = {
   /**
    * Two or three sentences diving into your project - what does it do? How does it do it?
    */
-  elevatorPitch: string;
+  elevatorPitch?: string;
   /**
    * Small **640px by 320px** banner image (or equivalent 2:1 image of reasonable resolution,
    * i.e. less than 1mb) for featuring your project.

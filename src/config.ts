@@ -99,7 +99,9 @@ export const clubConfig: {
       project: {
         name: 'Sync',
         description: '📺 Watch YouTube videos interactively in sync with friends',
-        elevatorPitch: '',
+        elevatorPitch: `Sync is a synchronous YouTube streaming app for you to watch, share, and talk
+          about videos with your friends. Create stream rooms with your friends. Chat and video call
+          your friends and create endless playlists to watch videos together.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/sync/master/.static/banner.png',
           hasName: true,
@@ -111,6 +113,7 @@ export const clubConfig: {
         links: {
           repository: 'https://github.com/ubclaunchpad/sync',
           website: 'https://thesyncapp.herokuapp.com/',
+          // TODO: update when https://github.com/ubclaunchpad/sync/tree/showcase is merged
           writeup: 'https://github.com/ubclaunchpad/sync/blob/showcase/README.md',
         },
       },
@@ -120,7 +123,10 @@ export const clubConfig: {
       project: {
         name: 'Physio Space',
         description: 'The physio that’s always at your side',
-        elevatorPitch: '',
+        elevatorPitch: `Physio SPace collects real-time 3D position data of the patient's body while
+          doing exercises for the therapist to adjust exercises using a machine learning model directly
+          implemented into the browser, which is first analyzed within the app, and then provided
+          to a physiotherapist who can further analyze the data.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/physiospace-react/master/showcasethumbnail_PhysioSpace.png',
           hasName: true,
@@ -141,7 +147,10 @@ export const clubConfig: {
       project: {
         name: 'Footprint',
         description: '🍃 Learn how the food you eat impacts your carbon footprint ',
-        elevatorPitch: '',
+        elevatorPitch: `Footprint is a React Native application that enables users to scan food items
+          using computer vision and obtain the corresponding ecological footprint of the product.
+          We hope that Footprint will empower individuals to make environmentally informed decisions
+          about the food they consume.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/Footprint/master/project_images/final_design.png',
           hasName: true,
@@ -157,7 +166,6 @@ export const clubConfig: {
       project: {
         name: 'UBC Simulator 2',
         description: '💭 A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
-        elevatorPitch: '',
         banner: {
           // TODO: update this when https://github.com/ubclaunchpad/ubcsim2/pull/140 is merged
           url: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
@@ -174,7 +182,8 @@ export const clubConfig: {
       project: {
         name: 'keepfresh',
         description: 'Dabbing out food waste and over-spending on groceries',
-        elevatorPitch: '',
+        elevatorPitch: `keepfresh is an iOS app that will allow users to track the food in their
+          homes, see when items are expiring, and find recipes based on their inventory.`,
         banner: {
           // TODO: update when https://github.com/ubclaunchpad/food-doods/tree/showcase is merged
           url: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/keepfresh-thumbnail.png',
@@ -187,6 +196,8 @@ export const clubConfig: {
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/food-doods',
+          // TODO: update when https://github.com/ubclaunchpad/food-doods/tree/showcase is merged
+          writeup: 'https://github.com/ubclaunchpad/food-doods/blob/showcase/README.md',
         },
       },
     },
@@ -195,7 +206,10 @@ export const clubConfig: {
       project: {
         name: 'Access Youth',
         description: 'Supporting youth outreach and empowerment by facilitating easier communication between Access Youth (NPO) and troubled youth',
-        elevatorPitch: '',
+        elevatorPitch: `Access Youth is a non-profit organization designed to help at-risk youth
+          across the Greater Vancouver area by providing them with counseling services. The organization
+          has a bus program which serves as a mobile counseling service for at-risk youth. Our mobile
+          app targets the users of the bus program.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/accessyouth-api/fb271fc2fad9a89a637f58769408ea4efea0faf0/Thumbnail.png',
           hasName: true,
@@ -219,7 +233,10 @@ export const clubConfig: {
       project: {
         name: 'Inertia',
         description: '✈️ Effortless, self-hosted continuous deployment',
-        elevatorPitch: '',
+        elevatorPitch: `Inertia is an app that enables effortless setup and management of automated,
+          continuous deployment on any virtual private server. It is used by several Launch Pad projects
+          and features a serverside service, a command-line interface, and the ability to deploy
+          almost anything anywhere.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
           hasName: true,
@@ -240,7 +257,9 @@ export const clubConfig: {
       project: {
         name: 'Rocket 2',
         description: '🚀 Slack bot, team management, and onboarding system for UBC Launch Pad',
-        elevatorPitch: '',
+        elevatorPitch: `Rocket 2 is a from-the-ground-up rebuild of our previous in-house management
+          Slack bot. Rocket 2 handles team formation, GitHub permissions, and more through a diverse
+          set of commands accessible from Slack.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
         },
@@ -255,7 +274,8 @@ export const clubConfig: {
       project: {
         name: 'Bumper',
         description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
-        elevatorPitch: '',
+        elevatorPitch: `Bumper is a game fast-paced multiplayer game where you try to bump other
+          players out of the playing field to stay alive.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper-small.gif',
         },
@@ -269,7 +289,9 @@ export const clubConfig: {
       project: {
         name: 'Minutes',
         description: '🔭 Speaker diarization via transfer learning',
-        elevatorPitch: '',
+        elevatorPitch: `Minutes is a Python library for speaker diarization: the process of splitting
+          up an audio file into its unique speakers. Its base model is trained on hundreds of hours
+          of spoken English text, and it uses transfer learning to predict on new speakers.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
         },
@@ -284,7 +306,10 @@ export const clubConfig: {
       project: {
         name: 'Cumulus',
         description: '💸 Cryptocurrency that doesn\'t waste your time',
-        elevatorPitch: '',
+        elevatorPitch: `Cumulus is a cryptocurrency that allows users to send and receive tokens on
+          a P2P network or "mine" on the network to create tokens for themselves. Cumulus reimagines
+          the proof-of-work mechanism used by Bitcoin and many other major cryptocurrencies to put
+          coin mining computation time to good use.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/cumulus/dev/.static/banner.png',
           hasName: true,
@@ -300,7 +325,8 @@ export const clubConfig: {
       project: {
         name: 'ubclaunchpad.com',
         description: '✨ the new UBC Launch Pad website!',
-        elevatorPitch: '',
+        elevatorPitch: `This website is also a Launch Pad project, designed and implemented from the
+          ground up by members of our team!`,
         banner: {
           url: require('../.static/homepage.png') as string,
           hasName: true, // this one should be self-explanatory
@@ -315,7 +341,9 @@ export const clubConfig: {
       project: {
         name: 'etch.space',
         description: '📝 A live multi-user collaborative etch-a-sketch built on websockets',
-        elevatorPitch: '',
+        elevatorPitch: `Etch is a live multi-user collaborative etch-a-sketch built on websockets.
+          Each user is assigned their own color and can draw whatever their imagination allows while
+          watching others draw at the same time.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/banner.png',
           hasName: true,
@@ -330,7 +358,10 @@ export const clubConfig: {
       project: {
         name: 'Eat',
         description: 'Should we eat 🌮, 🍟, or 🍣?',
-        elevatorPitch: '',
+        elevatorPitch: `Eat helps you decide on a restaurant that accommodates everyone's preferences
+          by suggesting places to eat based the group's location, dietary restrictions, price range,
+          and intended meal time. After everyone has voted on the suggested restaurants the app
+          selects the best one for the group.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/animated-banner.gif',
           hasName: true,
