@@ -18,7 +18,7 @@
         <h2 class="accent">{{ team.project.name }}</h2>
         <h3 class="margin-sides-16">{{ team.project.description }}</h3>
 
-        <div class="media-container margin-sides-16">
+        <div v-if="isActive" class="media-container margin-sides-16">
           <img
             v-if="!team.project.media"
             :src="team.project.banner.url" />
@@ -29,6 +29,7 @@
             v-else-if="team.project.media.type == 'youtube'"
             class="video-container">
             <iframe
+              ref="ytplayer-iframe"
               :src="generateYouTubeEmbedSrc(team.project.media)"
               id="ytplayer" type="text/html" class="video-player"
               frameborder="0"></iframe>
@@ -87,7 +88,6 @@ export default Vue.extend({
       };
       if (media.startAt) params.start = `${media.startAt}`;
       const urlParams = new URLSearchParams(params);
-      console.log(`https://youtube.com/embed/${media.id}?${urlParams.toString()}`);
       return `https://youtube.com/embed/${media.id}?${urlParams.toString()}`;
     },
   },
