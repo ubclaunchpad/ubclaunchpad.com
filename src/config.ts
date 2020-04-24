@@ -99,9 +99,10 @@ export const clubConfig: {
       project: {
         name: 'Sync',
         description: '📺 Watch YouTube videos interactively in sync with friends',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/sync/master/.static/banner.png',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/sync/master/.static/banner.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/sync',
@@ -115,9 +116,10 @@ export const clubConfig: {
       project: {
         name: 'Physio Space',
         description: 'The physio that’s always at your side',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/physiospace-react/master/showcasethumbnail_PhysioSpace.png',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/physiospace-react/master/showcasethumbnail_PhysioSpace.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/physiospace-react',
@@ -131,9 +133,10 @@ export const clubConfig: {
       project: {
         name: 'Footprint',
         description: '🍃 Learn how the food you eat impacts your carbon footprint ',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/Footprint/master/project_images/final_design.png',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/Footprint/master/project_images/final_design.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/Footprint',
@@ -146,10 +149,11 @@ export const clubConfig: {
       project: {
         name: 'UBC Simulator 2',
         description: '💭 A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
-        images: {
+        elevatorPitch: '',
+        banner: {
           // TODO: update this when https://github.com/ubclaunchpad/ubcsim2/pull/140 is merged
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
-          bannerHasName: true,
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/ubcsim2',
@@ -162,10 +166,11 @@ export const clubConfig: {
       project: {
         name: 'keepfresh',
         description: 'Dabbing out food waste and over-spending on groceries',
-        images: {
+        elevatorPitch: '',
+        banner: {
           // TODO: update when https://github.com/ubclaunchpad/food-doods/tree/showcase is merged
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/keepfresh-thumbnail.png',
-          bannerHasName: true,
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/keepfresh-thumbnail.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/food-doods',
@@ -177,9 +182,10 @@ export const clubConfig: {
       project: {
         name: 'Access Youth',
         description: 'Supporting youth outreach and empowerment by facilitating easier communication between Access Youth (NPO) and troubled youth',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/accessyouth-api/fb271fc2fad9a89a637f58769408ea4efea0faf0/Thumbnail.png',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/accessyouth-api/fb271fc2fad9a89a637f58769408ea4efea0faf0/Thumbnail.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/accessyouth-api',
@@ -200,9 +206,10 @@ export const clubConfig: {
       project: {
         name: 'Inertia',
         description: '✈️ Effortless, self-hosted continuous deployment',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/inertia',
@@ -216,8 +223,9 @@ export const clubConfig: {
       project: {
         name: 'Rocket 2',
         description: '🚀 Slack bot, team management, and onboarding system for UBC Launch Pad',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/rocket2',
@@ -230,8 +238,9 @@ export const clubConfig: {
       project: {
         name: 'Bumper',
         description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper-small.gif',
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/bumper/master/.static/bumper-small.gif',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/bumper',
@@ -243,8 +252,9 @@ export const clubConfig: {
       project: {
         name: 'Minutes',
         description: '🔭 Speaker diarization via transfer learning',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/minutes',
@@ -257,9 +267,10 @@ export const clubConfig: {
       project: {
         name: 'Cumulus',
         description: '💸 Cryptocurrency that doesn\'t waste your time',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/cumulus/dev/.static/banner.png',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/cumulus/dev/.static/banner.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/cumulus',
@@ -272,9 +283,10 @@ export const clubConfig: {
       project: {
         name: 'ubclaunchpad.com',
         description: '✨ the new UBC Launch Pad website!',
-        images: {
-          bannerURI: require('../.static/homepage.png'),
-          bannerHasName: true, // this one should be self-explanatory
+        elevatorPitch: '',
+        banner: {
+          url: require('../.static/homepage.png') as string,
+          hasName: true, // this one should be self-explanatory
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/new',
@@ -286,9 +298,10 @@ export const clubConfig: {
       project: {
         name: 'etch.space',
         description: '📝 A live multi-user collaborative etch-a-sketch built on websockets',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/banner.png',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/etch.space/master/banner.png',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/etch.space',
@@ -300,9 +313,10 @@ export const clubConfig: {
       project: {
         name: 'Eat',
         description: 'Should we eat 🌮, 🍟, or 🍣?',
-        images: {
-          bannerURI: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/animated-banner.gif',
-          bannerHasName: true,
+        elevatorPitch: '',
+        banner: {
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/eat/master/Images/animated-banner.gif',
+          hasName: true,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/eat',
@@ -348,27 +362,35 @@ export const sponsorshipConfig: {
       name: 'Axiom Zen',
       website: 'https://www.axiomzen.co/',
       tier: 'gold',
-      logoURL: 'https://res.cloudinary.com/dfgx570fg/image/upload/w_700,h_700,c_limit/v1468362472/f2ed2lbpqujvxa8r6zux.png',
-      logoFilter: 'invert()',
+      logo: {
+        url: 'https://res.cloudinary.com/dfgx570fg/image/upload/w_700,h_700,c_limit/v1468362472/f2ed2lbpqujvxa8r6zux.png',
+        filter: 'invert()',
+      },
     },
     {
       name: 'East Side Game Studio',
       website: 'https://www.eastsidegames.com/',
       tier: 'gold',
-      logoURL: 'https://www.eastsidegames.com/wp-content/themes/esgnew/img/logo-final.png',
-      logoFilter: 'invert() grayscale(0.5)',
+      logo: {
+        url: 'https://www.eastsidegames.com/wp-content/themes/esgnew/img/logo-final.png',
+        filter: 'invert() grayscale(0.5)',
+      },
     },
     {
       name: 'Cisco',
       website: 'https://www.cisco.com/',
       tier: 'gold',
-      logoURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png',
+      logo: {
+        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png',
+      },
     },
     {
       name: 'GitHub',
       website: 'https://github.com',
-      logoURL: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png',
-      logoFilter: 'invert()',
+      logo: {
+        url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png',
+        filter: 'invert()',
+      },
     },
   ],
 };
