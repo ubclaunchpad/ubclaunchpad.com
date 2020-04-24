@@ -69,9 +69,42 @@
   text-shadow:  0px 10px 20px rgba(0, 0, 0, 0.75);
 }
 
-.icon {
-  &-small {
-    width: 24px;
-    height: 24px;
+.unicon {
+  fill: $white;
+  margin: 8px;
+
+  &.icon {
+    &-small {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    &-medium {
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &-large {
+      svg {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  &.margin-sides-auto {
+    svg {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &.accent {
+    fill: $accent;
   }
 }

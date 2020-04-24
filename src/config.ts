@@ -334,6 +334,7 @@ export const clubConfig: {
     facebook: 'https://www.facebook.com/ubclaunchpad',
     medium: 'https://medium.com/ubc-launch-pad-software-engineering-blog',
     github: 'https://github.com/ubclaunchpad',
+    linkedin: 'https://www.linkedin.com/company/10054664',
     email: 'team@ubclaunchpad.com',
   },
 };

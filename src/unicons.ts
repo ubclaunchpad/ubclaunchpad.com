@@ -1,14 +1,16 @@
 import Unicon from 'vue-unicons';
 import {
-  uniTimes,
-  uniAppleAlt,
-  uniGithubAlt,
-  uniAndroidAlt,
-  uniWindow,
-  uniFacebookF,
-  uniLinkedinAlt,
-  uniInstagram,
-  uniAngleDown,
+  uniTimes, // times
+  uniAppleAlt, // apple-alt
+  uniGithubAlt, // github-alt
+  uniAndroidAlt, // android-alt
+  uniWindow, // window
+  uniFacebookF, // facebook-f
+  uniLinkedin, // linkedin-alt
+  uniInstagram, // instagram
+  uniAngleDown, // angle-down
+  uniNotebooks, // notebooks
+  uniMediumM, // medium-m
 } from 'vue-unicons/src/icons';
 
 Unicon.add([
@@ -18,9 +20,11 @@ Unicon.add([
   uniAndroidAlt,
   uniWindow,
   uniFacebookF,
-  uniLinkedinAlt,
+  uniLinkedin,
   uniInstagram,
   uniAngleDown,
+  uniNotebooks,
+  uniMediumM,
 ]);
 
 export default Unicon;

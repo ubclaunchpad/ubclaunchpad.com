@@ -24,13 +24,13 @@
 
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
-            <i class="fab fa-github fa-2x"></i>
+            <unicon name="github-alt" class="icon-medium"></unicon>
           </a>
           <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
-            <span v-if="team.project.links.website" class="fas fa-desktop fa-2x"></span>
+            <unicon name="window" class="icon-medium"></unicon>
           </a>
           <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
-            <i v-if="team.project.links.writeup" class="fab fa-medium-m fa-2x"></i>
+            <unicon name="notebooks" class="icon-medium"></unicon>
           </a>
         </p>
       </div>
@@ -91,7 +91,7 @@ export default Vue.extend({
   }
 
   .socials {
-    margin-top: 16px;
+    margin-top: 32px;
 
     i {
       width: 32px;

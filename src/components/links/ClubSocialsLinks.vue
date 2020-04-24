@@ -1,14 +1,20 @@
 <template>
   <div>
     <p class="links club-socials">
+      <a :href="links.github" target="_blank">
+        <unicon name="github-alt" class="icon-large"></unicon>
+      </a>
       <a :href="links.instagram" target="_blank">
-        <img alt="instagram" src="@/assets/icons/instagram.svg" />
+        <unicon name="instagram" class="icon-large"></unicon>
       </a>
       <a :href="links.facebook" target="_blank">
-        <img alt="facebook" src="@/assets/icons/facebook.svg" />
+        <unicon name="facebook-f" class="icon-large"></unicon>
       </a>
       <a :href="links.medium" target="_blank">
-        <img alt="medium" src="@/assets/icons/medium.svg" />
+        <unicon name="medium-m" class="icon-large"></unicon>
+      </a>
+      <a :href="links.linkedin" target="_blank">
+        <unicon name="linkedin" class="icon-large"></unicon>
       </a>
     </p>
   </div>
@@ -33,8 +39,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .links {
-  img {
-    width: 32px;
+  .img {
     margin-left: 8px;
     margin-right: 8px;
   }
