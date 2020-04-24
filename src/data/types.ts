@@ -1,7 +1,7 @@
 /**
  * Describes a video.
  */
-export type VideoMedia = {
+export type MediaVideo = {
   type: 'video';
   url: string;
 };
@@ -9,7 +9,7 @@ export type VideoMedia = {
 /**
  * Describes an image.
  */
-export type ImageMedia = {
+export type MediaImage = {
   type: 'image';
   url: string;
 };
@@ -49,10 +49,10 @@ export type Project = {
    * Detailed or more descriptive media to showcase your project - featured in project modals.
    * 
    * This can be one of:
-   * - video (`type: 'video'` - see [[`VideoMedia`]])
-   * - image (`type: 'iamge'` - see [[`ImageMedia`]])
+   * - video (`type: 'video'` - see [[`MediaVideo`]])
+   * - image (`type: 'iamge'` - see [[`MediaImage`]])
    */
-  media?: VideoMedia | ImageMedia;
+  media?: MediaVideo | MediaImage;
   /**
    * Links to further information about this project.
    */
