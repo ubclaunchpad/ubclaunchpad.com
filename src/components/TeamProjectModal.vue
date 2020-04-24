@@ -12,10 +12,7 @@
         <img class="modal-bg" src="@/assets/backdrop-first.svg" />
       </div>
 
-      <button
-        class="modal-button-close delete is-large"
-        aria-label="close"
-        v-on:click="handleModalClose()" />
+      <unicon name="times" fill="white" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
 
       <div class="pad-sides-8 has-text-centered">
         <h2 class="accent">{{ team.project.name }}</h2>
@@ -78,7 +75,10 @@ export default Vue.extend({
     }
   }
 
-  .modal-button-close {
+  .close-button {
+    position: relative;
+    z-index: 99;
+    cursor: pointer;
     margin-top: 8px;
     margin-left: 8px;
   }
