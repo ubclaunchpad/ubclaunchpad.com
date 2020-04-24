@@ -145,4 +145,5 @@ export type ClubSocials = {
   medium: string;
   github: string;
   email: string;
+  linkedin: string;
 }
