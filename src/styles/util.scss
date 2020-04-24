@@ -71,7 +71,7 @@
 
 // see unicons.ts
 .unicon {
-  fill: $white;
+  fill: $white !important;
   margin: 8px;
 
   &.icon {
@@ -106,6 +106,6 @@
   }
 
   &.accent {
-    fill: $accent;
+    fill: $accent !important;
   }
 }
