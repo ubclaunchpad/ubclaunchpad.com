@@ -18,7 +18,7 @@
         <h2 class="accent">{{ team.project.name }}</h2>
         <h3 class="margin-sides-16">{{ team.project.description }}</h3>
 
-        <div class="media-container margin-sides-16 margin-bottom-16">
+        <div class="media-container margin-sides-16">
           <img
             v-if="!team.project.media"
             :src="team.project.banner.url" />
@@ -129,6 +129,8 @@ export default Vue.extend({
   }
 
   .media-container {
+    margin-bottom: 24px;
+
     img {
       border-radius: 8px;
     }
@@ -147,7 +149,6 @@ export default Vue.extend({
         height: 100%;
       }
     }
-
   }
 
   .socials {

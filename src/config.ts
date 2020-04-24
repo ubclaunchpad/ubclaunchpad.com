@@ -344,7 +344,7 @@ export const clubConfig: {
       name: 'Etch',
       project: {
         name: 'etch.space',
-        description: '📝 A live multi-user collaborative etch-a-sketch built on websockets',
+        description: '📝 A live multi-user collaborative etch-a-sketch',
         elevatorPitch: `Etch is a live multi-user collaborative etch-a-sketch built on websockets.
           Each user is assigned their own color and can draw whatever their imagination allows while
           watching others draw at the same time.`,
