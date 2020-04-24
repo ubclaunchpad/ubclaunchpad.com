@@ -23,7 +23,7 @@
           ref="projects-project-card"
           v-for="(r, j) in col"
           :key="'row-'+i+'-'+j"
-          class="project-container">
+          class="project-container hidden">
           <TeamProjectCard @projectClicked="setModalState" :team="r" class="margin-sides-auto" />
         </div>
       </div>
@@ -35,7 +35,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, attachClassesIfInView, ModalState} from '@/lib/util';
+import { generateColumns, updateClassesIfInView, ModalState} from '@/lib/util';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 import TeamProjectModal from '@/components/TeamProjectModal.vue';
 
@@ -58,7 +58,10 @@ export default Vue.extend({
   data: () => ({isActive: false, activeTeamName: '0'}),
   methods: {
     handleScroll() {
-      attachClassesIfInView(window, this.$refs['projects-project-card'], 'animated fadeInUp slow');
+      updateClassesIfInView(window, this.$refs['projects-project-card'], {
+        addClasses: 'animated fadeInUp slow',
+        removeClasses: 'hidden',
+      });
     },
     setModalState(state: ModalState){
       this.isActive = state.isActive;
@@ -72,6 +75,7 @@ export default Vue.extend({
     },
   },
   created() {
+    this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {

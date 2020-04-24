@@ -8,17 +8,17 @@
         <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical sponsor-column">
             <a v-for="(s, j) in col" :key="'row-'+i+'-'+j" :href="s.website" class="tile sponsor-container" target="_blank">
               <img ref="sponsor-logo"
+                class="sponsor-img hidden"
                 :src="s.logoURL"
                 :alt="s.name"
                 :style="{
                   filter: s.logoFilter,
-                  'object-fit': 'contain'
                 }" />
             </a>
         </div>
       </div>
 
-      <p class="package-link-p" ref="sponsor-cta">
+      <p ref="sponsor-pkg" class="package-link-p">
         <a :href="sponsorshipPackage" target="_blank" class="package-link">
           <b>Interested in sponsoring us? View our sponsorship package here ></b>
         </a>
@@ -30,7 +30,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { ClubSponsor } from '@/data/types';
-import { generateColumns, attachClassesIfInView } from '@/lib/util';
+import { generateColumns, updateClassesIfInView } from '@/lib/util';
 
 /**
  * Sponsors implements a section to feature Launch Pad's sponsors.
@@ -52,11 +52,17 @@ export default Vue.extend({
   },
   methods: {
     handleScroll() {
-      attachClassesIfInView(window, this.$refs['sponsor-logo'], 'animated fadeInUp');
-      attachClassesIfInView(window, this.$refs['sponsor-cta'], 'animated fadeInUp delay-1s');
+      updateClassesIfInView(window, this.$refs['sponsor-logo'], {
+        addClasses: 'animated fadeInUp',
+        removeClasses: 'hidden',
+      });
+      updateClassesIfInView(window, this.$refs['sponsor-pkg'], {
+        addClasses: 'animated fadeInUp',
+      });
     },
   },
   created() {
+    this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
   },
 });
@@ -77,12 +83,16 @@ h2 {
     max-width: 320px;
     max-height: 300px;
     margin: 32px;
-    object-fit: contain;
+
+    .sponsor-img {
+      object-fit: contain;
+    }
   }
 }
 
 .package-link-p {
   margin-top: 32px;
+  animation-delay: 0.5s;
 
   .package-link {
     margin-top: 62px;

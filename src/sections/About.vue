@@ -31,7 +31,7 @@
 import Vue from 'vue';
 import ClubSocialsLinks from '@/components/links/ClubSocialsLinks.vue';
 import { ClubSocials } from '@/data/types';
-import { attachClassesIfInView } from '@/lib/util';
+import { updateClassesIfInView } from '@/lib/util';
 
 /**
  * About implements a section for introducing visitors to Launch Pad.
@@ -45,11 +45,16 @@ export default Vue.extend({
   },
   methods: {
     handleScroll() {
-      attachClassesIfInView(window, this.$refs['about-col-left'], 'animated fadeInLeft');
-      attachClassesIfInView(window, this.$refs['about-col-right'], 'animated fadeInLeft');
+      updateClassesIfInView(window, this.$refs['about-col-left'], {
+        addClasses: 'animated fadeInLeft',
+      });
+      updateClassesIfInView(window, this.$refs['about-col-right'], {
+        addClasses: 'animated fadeInLeft',
+      });
     },
   },
   created() {
+    this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {
