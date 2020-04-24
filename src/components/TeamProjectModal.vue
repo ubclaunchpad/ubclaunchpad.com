@@ -57,9 +57,17 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+.modal-background {
+  opacity: 0.75;
+}
+
 .modal-content {
   border-radius: 10px;
   background-color: $dark;
+
+  .modal-button-close {
+    margin-top: 8px;
+  }
 
   .banner-container {
     .banner {
