@@ -1,5 +1,5 @@
 <template>
-  <div class="project card has-text-centered">
+  <div class="project card has-text-centered box-shadow">
     <div
       class="project-image"
       :class="{
@@ -10,9 +10,9 @@
       }"
       @click="openModal()">
       <div class="overlay">
-        <h2 v-if="!team.project.banner.hasName">
+        <h3 v-if="!team.project.banner.hasName" class="text-shadow">
           {{ team.project.name }}
-        </h2>
+        </h3>
       </div>
    </div>
   </div>
@@ -61,23 +61,10 @@ export default Vue.extend({
   transition: .5s ease;
 }
 
-h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color:$rocket;
-  font-weight: bold;
-}
-
 .project {
   height: 160px;
   width: 320px;
   border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 
   .project-image {
@@ -89,10 +76,21 @@ h2 {
     border-radius: 5px;
   }
 
+  h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $accent;
+  }
+
   &:hover, &:focus {
     @extend .animation;
     transition-duration: $project-card-transition-time;
-    box-shadow: 0px 4px 15px 8px rgba($white, 0.35);
+    box-shadow: 0 0 25px rgba($accent, 0.35);
 
     // show project name on hover
     .name-on-hover {
