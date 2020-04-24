@@ -1,3 +1,19 @@
+/**
+ * Declare icons to use in the website here. See https://antonreshetov.github.io/vue-unicons/ for
+ * list of available icons.
+ * 
+ * In general, the naming scheme is for some icon `name="some-icon"`, you will need to import and
+ * add `uniSomeIcon`.
+ * 
+ * To use in a component:
+ * 
+ * ```
+ * <unicon name="github-alt" class="icon-medium"></unicon>
+ * ```
+ * 
+ * Styles are available in `util.scss` under `.unicon`.
+ */
+
 import Unicon from 'vue-unicons';
 import {
   uniTimes, // times
