@@ -98,7 +98,7 @@ export const clubConfig: {
       name: 'Sync',
       project: {
         name: 'Sync',
-        description: '📺 Watch YouTube videos interactively in sync with friends',
+        description: '📺 Watch YouTube videos in sync with friends',
         elevatorPitch: `Sync is a synchronous YouTube streaming app for you to watch, share, and talk
           about videos with your friends. Create stream rooms with your friends. Chat and video call
           your friends and create endless playlists to watch videos together.`,
@@ -107,8 +107,8 @@ export const clubConfig: {
           hasName: true,
         },
         media: {
-          type: 'video',
-          url: 'https://youtu.be/Y143tZxDp2A',
+          type: 'youtube',
+          id: 'Y143tZxDp2A',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/sync',
@@ -123,7 +123,7 @@ export const clubConfig: {
       project: {
         name: 'Physio Space',
         description: 'The physio that’s always at your side',
-        elevatorPitch: `Physio SPace collects real-time 3D position data of the patient's body while
+        elevatorPitch: `Physio Space collects real-time 3D position data of the patient's body while
           doing exercises for the therapist to adjust exercises using a machine learning model directly
           implemented into the browser, which is first analyzed within the app, and then provided
           to a physiotherapist who can further analyze the data.`,
@@ -132,8 +132,8 @@ export const clubConfig: {
           hasName: true,
         },
         media: {
-          type: 'video',
-          url: 'https://youtu.be/gNtLn0EDFeQ',
+          type: 'youtube',
+          id: 'gNtLn0EDFeQ',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/physiospace-react',
@@ -165,7 +165,10 @@ export const clubConfig: {
       name: 'ubcsim2',
       project: {
         name: 'UBC Simulator 2',
-        description: '💭 A \'choose your own adventure\' style browser game where the player attempts to survive a year as a student at UBC',
+        description: '💭 A \'choose your own adventure\' game set in UBC',
+        elevatorPitch: `UBC Simulator 2 is a 'choose your own adventure' style browser game where
+          the player attempts to survive a year as a student at UBC, featuring time sensitive events,
+          minigames, and campaign personalization!`,
         banner: {
           // TODO: update this when https://github.com/ubclaunchpad/ubcsim2/pull/140 is merged
           url: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
@@ -205,7 +208,7 @@ export const clubConfig: {
       name: 'AccessYouth',
       project: {
         name: 'Access Youth',
-        description: 'Supporting youth outreach and empowerment by facilitating easier communication between Access Youth (NPO) and troubled youth',
+        description: '💪 Supporting troubled youth outreach and empowerment',
         elevatorPitch: `Access Youth is a non-profit organization designed to help at-risk youth
           across the Greater Vancouver area by providing them with counseling services. The organization
           has a bus program which serves as a mobile counseling service for at-risk youth. Our mobile
@@ -242,8 +245,9 @@ export const clubConfig: {
           hasName: true,
         },
         media: {
-          type: 'video',
-          url: 'https://youtu.be/amBYMEKGzTs?t=17945',
+          type: 'youtube',
+          id: 'amBYMEKGzTs',
+          startAt: 17945,
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/inertia',
