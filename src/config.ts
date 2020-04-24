@@ -104,6 +104,10 @@ export const clubConfig: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/sync/master/.static/banner.png',
           hasName: true,
         },
+        media: {
+          type: 'video',
+          url: 'https://youtu.be/Y143tZxDp2A',
+        },
         links: {
           repository: 'https://github.com/ubclaunchpad/sync',
           website: 'https://thesyncapp.herokuapp.com/',
@@ -120,6 +124,10 @@ export const clubConfig: {
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/physiospace-react/master/showcasethumbnail_PhysioSpace.png',
           hasName: true,
+        },
+        media: {
+          type: 'video',
+          url: 'https://youtu.be/gNtLn0EDFeQ',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/physiospace-react',
@@ -172,6 +180,11 @@ export const clubConfig: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/keepfresh-thumbnail.png',
           hasName: true,
         },
+        media: {
+          type: 'image',
+          // TODO: update when https://github.com/ubclaunchpad/food-doods/tree/showcase is merged
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/hifi-mockups.png',
+        },
         links: {
           repository: 'https://github.com/ubclaunchpad/food-doods',
         },
@@ -210,6 +223,10 @@ export const clubConfig: {
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/banner.png',
           hasName: true,
+        },
+        media: {
+          type: 'video',
+          url: 'https://youtu.be/amBYMEKGzTs?t=17945',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/inertia',
