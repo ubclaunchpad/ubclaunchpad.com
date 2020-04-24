@@ -1,23 +1,29 @@
 <template>
   <div
+    class="modal"
     :class="{
-      'modal is-active': isActive,
-       'modal': !isActive,
+      'is-active': isActive,
     }">
-    <div class="modal-background"></div>
-    <div class="modal-content animated zoomIn">
-         <button
-      class="modal-button-close delete is-large"
+
+    <div class="modal-background" v-on:click="handleModalClose()"></div>
+
+    <div class="modal-content pad-sides-8 box-shadow animated zoomIn faster">
+      <button
+        class="modal-button-close delete is-large"
         aria-label="close"
-        v-on:click="handleModalClose()"
-      ></button>
+        v-on:click="handleModalClose()" />
+
       <div class="has-text-centered">
-        <h2>{{ team.project.name }}</h2>
-        <p>{{ team.project.description }}</p>
+        <h2 class="accent">{{ team.project.name }}</h2>
+        <p><b>{{ team.project.description }}</b></p>
+
+        <div class="banner-container margin-sides-16">
+          <img :src="team.project.images.bannerURI" class="banner" />
+        </div>
 
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
-           <i class="fab fa-github fa-2x"></i>
+            <i class="fab fa-github fa-2x"></i>
           </a>
           <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
             <span v-if="team.project.links.website" class="fas fa-desktop fa-2x"></span>
@@ -51,19 +57,24 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+.modal-content {
+  border-radius: 10px;
+  background-color: $dark;
 
-.p {
-  margin-bottom: 0px;
-}
-.socials {
-  i {
-    width: 32px;
-    margin-left: 16px;
-    margin-right: 16px;
+  .banner-container {
+    .banner {
+      border-radius: 8px;
+    }
   }
 
-}
-.modal-content {
-  background-color: $dark;
+  .socials {
+    margin-top: 16px;
+
+    i {
+      width: 32px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
 }
 </style>

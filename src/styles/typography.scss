@@ -12,6 +12,7 @@ p {
   color: $white;
   opacity: 0.8;
   margin-bottom: 32px;
+  word-break: break-word;
 
   &.main {
     color: $offwhite;
