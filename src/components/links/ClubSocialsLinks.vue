@@ -2,19 +2,19 @@
   <div>
     <p class="links club-socials">
       <a :href="links.github" target="_blank">
-        <unicon name="github-alt" class="icon-large"></unicon>
+        <unicon name="github-alt" class="icon-medium"></unicon>
       </a>
       <a :href="links.instagram" target="_blank">
-        <unicon name="instagram" class="icon-large"></unicon>
+        <unicon name="instagram" class="icon-medium"></unicon>
       </a>
       <a :href="links.facebook" target="_blank">
-        <unicon name="facebook-f" class="icon-large"></unicon>
+        <unicon name="facebook-f" class="icon-medium"></unicon>
       </a>
       <a :href="links.medium" target="_blank">
-        <unicon name="medium-m" class="icon-large"></unicon>
+        <unicon name="medium-m" class="icon-medium"></unicon>
       </a>
       <a :href="links.linkedin" target="_blank">
-        <unicon name="linkedin" class="icon-large"></unicon>
+        <unicon name="linkedin" class="icon-medium"></unicon>
       </a>
     </p>
   </div>
