@@ -5,15 +5,19 @@
       'is-active': isActive,
     }">
 
-    <div class="modal-background" v-on:click="handleModalClose()"></div>
+    <div class="modal-background animated fadeIn faster" v-on:click="handleModalClose()"></div>
 
-    <div class="modal-content pad-sides-8 box-shadow animated zoomIn faster">
+    <div class="modal-content box-shadow animated zoomIn faster">
+      <div class="modal-bg-container">
+        <img class="modal-bg" src="@/assets/backdrop-first.svg" />
+      </div>
+
       <button
         class="modal-button-close delete is-large"
         aria-label="close"
         v-on:click="handleModalClose()" />
 
-      <div class="has-text-centered">
+      <div class="pad-sides-8 has-text-centered">
         <h2 class="accent">{{ team.project.name }}</h2>
         <p><b>{{ team.project.description }}</b></p>
 
@@ -58,20 +62,35 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .modal-background {
-  opacity: 0.75;
+  background-color: rgba($black, 0.9);
 }
 
 .modal-content {
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: $dark;
+  box-shadow: 0 0 50px rgba($accent, 0.3);
+
+  .modal-bg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .modal-bg {
+      overflow: hidden;
+      mix-blend-mode: overlay;
+      width: 100%;
+    }
+  }
 
   .modal-button-close {
     margin-top: 8px;
+    margin-left: 8px;
   }
 
   .banner-container {
     .banner {
       border-radius: 8px;
+      position: relative;
     }
   }
 
