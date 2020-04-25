@@ -15,7 +15,7 @@
       </p>
       <p>
         A complete list of our past projects is available on
-        <a :href="github" target="_blank">GitHub</a>, where we have <b>over 100 repositories</b>.
+        <a :href="github" target="_blank"><b>GitHub</b></a>, where we have <b>over 100 repositories</b>.
       </p>
     </div>
 
