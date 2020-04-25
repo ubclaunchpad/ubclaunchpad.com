@@ -39,6 +39,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .links {
+  margin-bottom: 0px;
   .img {
     margin-left: 8px;
     margin-right: 8px;
