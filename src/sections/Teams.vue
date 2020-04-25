@@ -114,7 +114,6 @@ export default Vue.extend({
     },
   },
   created() {
-    this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {

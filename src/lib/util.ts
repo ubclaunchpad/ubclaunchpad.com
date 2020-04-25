@@ -73,7 +73,6 @@ type VueRef = Vue | Element | Vue[] | Element[];
  *       },
  *     },
  *     created() {
- *       this.handleScroll();
  *       window.addEventListener('scroll', this.handleScroll);
  *     },
  *     // ...
