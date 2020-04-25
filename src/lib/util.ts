@@ -106,6 +106,16 @@ export function updateClassesIfInView(w: Window, ref: VueRef, options: {
 }
 
 /**
+ * Retrieves search params from window location.
+ * 
+ * @param location `window.location` instance
+ */
+export function getURLParams(location: Location): URLSearchParams {
+  const uri = location.search.substring(1);
+  return new URLSearchParams(uri);
+}
+
+/**
  * Describes the state of a modal
  */
 export interface ModalState {

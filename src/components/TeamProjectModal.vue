@@ -8,7 +8,8 @@
     <div class="modal-background animated fadeIn faster" v-on:click="handleModalClose()"></div>
 
     <div class="modal-content box-shadow animated zoomIn faster">
-      <unicon name="times" fill="white" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
+      <unicon name="times" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
+      <unicon id="share-button" name="share-alt" class="share-button icon-small" v-on:click="shareToClipboard()"></unicon>
 
       <div class="pad-sides-8 has-text-centered">
         <h2 class="accent">{{ team.project.name }}</h2>
@@ -28,24 +29,25 @@
               ref="ytplayer-iframe"
               :src="generateYouTubeEmbedSrc(team.project.media)"
               id="ytplayer" type="text/html" class="video-player"
+              allowFullScreen
               frameborder="0"></iframe>
           </div>
         </div>
 
-        <p v-if="team.project.elevatorPitch" class="margin-sides-16">
-          {{ team.project.elevatorPitch }}
-        </p>
-
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
-            <unicon name="github-alt" class="icon-medium"></unicon>
+            <unicon name="github-alt" class="icon-small"></unicon>
           </a>
           <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
-            <unicon name="window" class="icon-medium"></unicon>
+            <unicon name="window" class="icon-small"></unicon>
           </a>
           <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
-            <unicon name="notebooks" class="icon-medium"></unicon>
+            <unicon name="notebooks" class="icon-small"></unicon>
           </a>
+        </p>
+
+        <p v-if="team.project.elevatorPitch" class="margin-sides-16">
+          {{ team.project.elevatorPitch }}
         </p>
       </div>
     </div>
@@ -54,14 +56,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import tippy from 'tippy.js';
 import { Team, MediaYouTube } from '@/data/types';
-
-// used for youtube embeds
-const domain = (process.env.NODE_ENV === 'development') ? 'localhost' : 'https://ubclaunchpad.github.io';
 
 export default Vue.extend({
   name: 'TeamProjectModal',
   props: {
+    section: String,
     team: {
       type: Object as () => Team,
     },
@@ -72,6 +73,25 @@ export default Vue.extend({
       this.$emit('modalClosed');
     },
     /**
+     * Shares this project modal to clipboard, and show a tooltip indicating success
+     */
+    async shareToClipboard() {
+      // encode share link and write to clipboard
+      const urlParams = new URLSearchParams({
+        project: this.team.project.name.toLowerCase(),
+      } as Record<string, string>);
+      await navigator.clipboard.writeText(`${window.location.host}?${urlParams.toString()}#${this.section}`);
+
+      // show and destroy tooltip after a few seconds
+      const tooltip = tippy('#share-button', {
+        content: 'Link copied to clipboard!',
+        trigger: 'manual',
+        placement: 'top-end',
+      })[0];
+      tooltip.show();
+      setTimeout(() => tooltip.destroy(), 3000);
+    },
+    /**
      * Generate a YouTube link specifically for use with our iframe embed.
      */
     generateYouTubeEmbedSrc(media: MediaYouTube): string {
@@ -80,7 +100,7 @@ export default Vue.extend({
         frameborder: '0', // no ugly border
         modestbranding: '1', // reduce youtube branding
         rel: '0', // no related videos
-        origin: domain,
+        origin: window.location.host,
       };
       if (media.startAt) params.start = `${media.startAt}`;
       const urlParams = new URLSearchParams(params);
@@ -99,6 +119,7 @@ export default Vue.extend({
   border-radius: 15px;
   background-color: $dark;
   box-shadow: 0 0 50px rgba($accent, 0.3);
+  max-height: calc(100vh - 24px);
 
   * {
     position: relative;
@@ -107,23 +128,37 @@ export default Vue.extend({
   .close-button {
     z-index: 99;
     cursor: pointer;
-    margin-top: 8px;
-    margin-left: 8px;
+  }
+
+  .share-button {
+    z-index: 99;
+    cursor: pointer;
+    float: right;
+    margin-right: 8px;
   }
 
   h2 {
+    margin-bottom: 8px;
     @media (max-width: $tablet) {
       font-size: 24px;
     }
   }
 
   h3 {
-    margin-top: -16px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+  }
+
+  .socials {
+    margin-bottom: 0px;
+
+    a {
+      margin-right: 12px;
+      margin-left: 12px;
+    }
   }
 
   .media-container {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
 
     img {
       border-radius: 8px;
@@ -142,16 +177,6 @@ export default Vue.extend({
         width: 100%;
         height: 100%;
       }
-    }
-  }
-
-  .socials {
-    margin-top: 32px;
-
-    i {
-      width: 32px;
-      margin-left: 16px;
-      margin-right: 16px;
     }
   }
 }
