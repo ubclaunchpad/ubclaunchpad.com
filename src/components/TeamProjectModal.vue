@@ -15,18 +15,6 @@
         <h2 class="accent">{{ team.project.name }}</h2>
         <h3 class="margin-sides-16">{{ team.project.description }}</h3>
 
-        <p class="socials">
-          <a :href="team.project.links.repository" target="_blank">
-            <unicon name="github-alt" class="icon-small"></unicon>
-          </a>
-          <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
-            <unicon name="window" class="icon-small"></unicon>
-          </a>
-          <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
-            <unicon name="notebooks" class="icon-small"></unicon>
-          </a>
-        </p>
-
         <div v-if="isActive" class="media-container margin-sides-16">
           <img
             v-if="!team.project.media"
@@ -44,6 +32,18 @@
               frameborder="0"></iframe>
           </div>
         </div>
+
+        <p class="socials">
+          <a :href="team.project.links.repository" target="_blank">
+            <unicon name="github-alt" class="icon-small"></unicon>
+          </a>
+          <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
+            <unicon name="window" class="icon-small"></unicon>
+          </a>
+          <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
+            <unicon name="notebooks" class="icon-small"></unicon>
+          </a>
+        </p>
 
         <p v-if="team.project.elevatorPitch" class="margin-sides-16">
           {{ team.project.elevatorPitch }}
@@ -144,22 +144,20 @@ export default Vue.extend({
   }
 
   h3 {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   .socials {
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin-bottom: 0px;
 
-    i {
-      width: 32px;
-      margin-left: 16px;
-      margin-right: 16px;
+    a {
+      margin-right: 12px;
+      margin-left: 12px;
     }
   }
 
   .media-container {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
 
     img {
       border-radius: 8px;
