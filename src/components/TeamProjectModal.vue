@@ -8,10 +8,6 @@
     <div class="modal-background animated fadeIn faster" v-on:click="handleModalClose()"></div>
 
     <div class="modal-content box-shadow animated zoomIn faster">
-      <div class="modal-bg-container">
-        <img class="modal-bg" src="@/assets/backdrop-first.svg" />
-      </div>
-
       <unicon name="times" fill="white" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
 
       <div class="pad-sides-8 has-text-centered">
@@ -106,14 +102,6 @@ export default Vue.extend({
 
   * {
     position: relative;
-  }
-
-  .modal-bg-container {
-    position: absolute;
-    .modal-bg {
-      overflow: hidden;
-      mix-blend-mode: overlay;
-    }
   }
 
   .close-button {
