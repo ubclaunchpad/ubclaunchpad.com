@@ -332,7 +332,7 @@ export const clubConfig: {
         elevatorPitch: `This website is also a Launch Pad project, designed and implemented from the
           ground up by members of our team!`,
         banner: {
-          url: require('../.static/homepage.png') as string,
+          url: require('../.static/banner.png') as string,
           hasName: true, // this one should be self-explanatory
         },
         links: {
