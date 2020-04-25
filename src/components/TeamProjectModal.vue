@@ -111,6 +111,12 @@ export default Vue.extend({
     margin-left: 8px;
   }
 
+  h2 {
+    @media (max-width: $tablet) {
+      font-size: 24px;
+    }
+  }
+
   h3 {
     margin-top: -16px;
     margin-bottom: 24px;
