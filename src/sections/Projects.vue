@@ -1,8 +1,9 @@
 <template>
   <div id="container" class="container is-widescreen">
     <TeamProjectModal
-      v-if="getTeam(this.activeTeamName)"
-      :team="getTeam(this.activeTeamName)"
+      v-if="activeTeam"
+      section="projects"
+      :team="activeTeam"
       :isActive="isActive"
       @modalClosed="handleModalClose" />
 
@@ -55,8 +56,12 @@ export default Vue.extend({
     },
   },
   computed: {
-    columns: function(): Team[][] {
+    columns(): Team[][] {
       return generateColumns<Team>(this.teams, 2);
+    },
+    activeTeam(): Team | undefined {
+      return this.teams.find((team: Team) =>
+        team.project.name.toLowerCase() === this.activeTeamName.toLowerCase());
     },
   },
   data: () => ({isActive: false, activeTeamName: '0'}),
@@ -74,16 +79,13 @@ export default Vue.extend({
     handleModalClose() {
       this.isActive = false;
     },
-    getTeam(name: string) {
-      return this.teams.find((team: Team) => team.project.name.toLowerCase() === name);
-    },
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
 
     // jump to linked project if one is provided
     const linkedProject = getURLParams(window.location).get('project');
-    if (linkedProject && this.getTeam(linkedProject)) {
+    if (linkedProject) {
       this.setModalState({
         isActive: true,
         activeTeamName: linkedProject,

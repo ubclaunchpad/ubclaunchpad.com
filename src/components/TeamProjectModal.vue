@@ -8,7 +8,8 @@
     <div class="modal-background animated fadeIn faster" v-on:click="handleModalClose()"></div>
 
     <div class="modal-content box-shadow animated zoomIn faster">
-      <unicon name="times" fill="white" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
+      <unicon name="times" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
+      <unicon name="share-alt" class="share-button icon-small" v-on:click="shareToClipboard()"></unicon>
 
       <div class="pad-sides-8 has-text-centered">
         <h2 class="accent">{{ team.project.name }}</h2>
@@ -56,12 +57,10 @@
 import Vue from 'vue';
 import { Team, MediaYouTube } from '@/data/types';
 
-// used for youtube embeds
-const domain = (process.env.NODE_ENV === 'development') ? 'localhost' : 'https://ubclaunchpad.github.io';
-
 export default Vue.extend({
   name: 'TeamProjectModal',
   props: {
+    section: String,
     team: {
       type: Object as () => Team,
     },
@@ -72,6 +71,15 @@ export default Vue.extend({
       this.$emit('modalClosed');
     },
     /**
+     * Shares this project modal to clipboard
+     */
+    async shareToClipboard() {
+      const urlParams = new URLSearchParams({
+        project: this.team.project.name.toLowerCase(),
+      } as Record<string, string>);
+      await navigator.clipboard.writeText(`${window.location.host}?${urlParams.toString()}#${this.section}`);
+    },
+    /**
      * Generate a YouTube link specifically for use with our iframe embed.
      */
     generateYouTubeEmbedSrc(media: MediaYouTube): string {
@@ -80,7 +88,7 @@ export default Vue.extend({
         frameborder: '0', // no ugly border
         modestbranding: '1', // reduce youtube branding
         rel: '0', // no related videos
-        origin: domain,
+        origin: window.location.host,
       };
       if (media.startAt) params.start = `${media.startAt}`;
       const urlParams = new URLSearchParams(params);
@@ -107,8 +115,13 @@ export default Vue.extend({
   .close-button {
     z-index: 99;
     cursor: pointer;
-    margin-top: 8px;
-    margin-left: 8px;
+  }
+
+  .share-button {
+    z-index: 99;
+    cursor: pointer;
+    float: right;
+    margin-right: 8px;
   }
 
   h2 {
