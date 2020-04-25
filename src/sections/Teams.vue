@@ -1,7 +1,11 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <TeamProjectModal v-if="getSelectedTeam()" :team="getSelectedTeam()" :isActive="isActive"
-    @modalClosed="handleModalClose"/>
+    <TeamProjectModal
+      v-if="getTeam(this.activeTeamName)"
+      :team="getTeam(this.activeTeamName)"
+      :isActive="isActive"
+      @modalClosed="handleModalClose" />
+
     <div class="columns is-vcentered is-desktop">
       <div class="column is-two-fifths-desktop has-text-centered">
 
@@ -51,7 +55,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, updateClassesIfInView, ModalState } from '@/lib/util';
+import { generateColumns, updateClassesIfInView, getURLParams, ModalState } from '@/lib/util';
 
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 import TeamProjectModal from '@/components/TeamProjectModal.vue';
@@ -109,15 +113,25 @@ export default Vue.extend({
     handleModalClose() {
       this.isActive = false;
     },
-    getSelectedTeam(): Team | undefined {
-      return this.teams.find((team: Team) => team.project.name === this.activeTeamName);
+    getTeam(name: string) {
+      return this.teams.find((team: Team) => team.project.name.toLowerCase() === name);
     },
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
+
+    // jump to linked project if one is provided
+    const linkedProject = getURLParams(window.location).get('project');
+    if (linkedProject && this.getTeam(linkedProject)) {
+      this.setModalState({
+        isActive: true,
+        activeTeamName: linkedProject,
+      });
+    }
   },
   components: {
-    TeamProjectCard, TeamProjectModal,
+    TeamProjectCard,
+    TeamProjectModal,
   },
 });
 </script>
