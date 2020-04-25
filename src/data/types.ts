@@ -57,14 +57,12 @@ export type Project = {
     website?: string;
 
      /**
-     * Link to deployed app on a store
+     * If the project is an app link to the app and type of app. 
      */
-    appDownloadLink?: string;
-
-    /**
-     * Type of app
-     */
-    appType?: AppType;
+    app?: {
+      url?: string;
+      appType: AppType;
+    };
 
     /**
      * Link to a blog post or similar writeup
