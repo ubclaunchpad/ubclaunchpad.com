@@ -9,7 +9,7 @@
 
     <div class="modal-content box-shadow animated zoomIn faster">
       <unicon name="times" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
-      <unicon name="share-alt" class="share-button icon-small" v-on:click="shareToClipboard()"></unicon>
+      <unicon id="share-button" name="share-alt" class="share-button icon-small" v-on:click="shareToClipboard()"></unicon>
 
       <div class="pad-sides-8 has-text-centered">
         <h2 class="accent">{{ team.project.name }}</h2>
@@ -55,6 +55,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import tippy from 'tippy.js';
 import { Team, MediaYouTube } from '@/data/types';
 
 export default Vue.extend({
@@ -71,13 +72,23 @@ export default Vue.extend({
       this.$emit('modalClosed');
     },
     /**
-     * Shares this project modal to clipboard
+     * Shares this project modal to clipboard, and show a tooltip indicating success
      */
     async shareToClipboard() {
+      // encode share link and write to clipboard
       const urlParams = new URLSearchParams({
         project: this.team.project.name.toLowerCase(),
       } as Record<string, string>);
       await navigator.clipboard.writeText(`${window.location.host}?${urlParams.toString()}#${this.section}`);
+
+      // show and destroy tooltip after a few seconds
+      const tooltip = tippy('#share-button', {
+        content: 'Link copied to clipboard!',
+        trigger: 'manual',
+        placement: 'top-end',
+      })[0];
+      tooltip.show();
+      setTimeout(() => tooltip.destroy(), 3000);
     },
     /**
      * Generate a YouTube link specifically for use with our iframe embed.

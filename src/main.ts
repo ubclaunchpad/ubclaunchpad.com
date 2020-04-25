@@ -4,6 +4,7 @@ import Unicon from './unicons';
 // third-party styles - see CONTRIBUTING.md
 import 'bulma/css/bulma.css';
 import 'animate.css';
+import 'tippy.js/dist/tippy.css';
 
 // launch pad global styles
 import './styles/global.scss';
