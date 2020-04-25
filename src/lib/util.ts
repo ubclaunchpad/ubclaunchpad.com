@@ -3,9 +3,9 @@
  * 
  * Useful for displaying grids, for example:
  * 
- *    <div class="tile">
- *      <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical">
- *        <div v-for="(s, j) in col" :key="'row-'+i+'-'+j" class="tile">
+ *    <div class="columns is-multiline">
+ *      <div v-for="(col, i) in columns" :key="'column-'+i" class="column">
+ *        <div v-for="(s, j) in col" :key="'row-'+i+'-'+j">
  *          <!-- s is of type T -->
  *        </div>
  *      </div>
