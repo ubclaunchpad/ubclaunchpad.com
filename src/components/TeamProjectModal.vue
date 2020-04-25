@@ -16,11 +16,29 @@
 
       <div class="pad-sides-8 has-text-centered">
         <h2 class="accent">{{ team.project.name }}</h2>
-        <p><b>{{ team.project.description }}</b></p>
+        <h3 class="margin-sides-16">{{ team.project.description }}</h3>
 
-        <div class="banner-container margin-sides-16">
-          <img :src="team.project.banner.url" class="banner" />
+        <div v-if="isActive" class="media-container margin-sides-16">
+          <img
+            v-if="!team.project.media"
+            :src="team.project.banner.url" />
+          <img
+            v-else-if="team.project.media.type == 'image'"
+            :src="team.project.media.url" />
+          <div
+            v-else-if="team.project.media.type == 'youtube'"
+            class="video-container">
+            <iframe
+              ref="ytplayer-iframe"
+              :src="generateYouTubeEmbedSrc(team.project.media)"
+              id="ytplayer" type="text/html" class="video-player"
+              frameborder="0"></iframe>
+          </div>
         </div>
+
+        <p v-if="team.project.elevatorPitch" class="margin-sides-16">
+          {{ team.project.elevatorPitch }}
+        </p>
 
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
@@ -40,7 +58,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Team } from '@/data/types';
+import { Team, MediaYouTube } from '@/data/types';
+
+// used for youtube embeds
+const domain = (process.env.NODE_ENV === 'development') ? 'localhost' : 'https://ubclaunchpad.github.io';
+
 export default Vue.extend({
   name: 'TeamProjectModal',
   props: {
@@ -52,6 +74,21 @@ export default Vue.extend({
   methods: {
     handleModalClose() {
       this.$emit('modalClosed');
+    },
+    /**
+     * Generate a YouTube link specifically for use with our iframe embed.
+     */
+    generateYouTubeEmbedSrc(media: MediaYouTube): string {
+      // see https://developers.google.com/youtube/player_parameters#Parameters
+      const params: Record<string, string> = {
+        frameborder: '0', // no ugly border
+        modestbranding: '1', // reduce youtube branding
+        rel: '0', // no related videos
+        origin: domain,
+      };
+      if (media.startAt) params.start = `${media.startAt}`;
+      const urlParams = new URLSearchParams(params);
+      return `https://youtube.com/embed/${media.id}?${urlParams.toString()}`;
     },
   },
 });
@@ -67,6 +104,10 @@ export default Vue.extend({
   background-color: $dark;
   box-shadow: 0 0 50px rgba($accent, 0.3);
 
+  * {
+    position: relative;
+  }
+
   .modal-bg-container {
     position: absolute;
     .modal-bg {
@@ -76,17 +117,37 @@ export default Vue.extend({
   }
 
   .close-button {
-    position: relative;
     z-index: 99;
     cursor: pointer;
     margin-top: 8px;
     margin-left: 8px;
   }
 
-  .banner-container {
-    .banner {
+  h3 {
+    margin-top: -16px;
+    margin-bottom: 24px;
+  }
+
+  .media-container {
+    margin-bottom: 24px;
+
+    img {
       border-radius: 8px;
+    }
+
+    // https://css-tricks.com/fluid-width-video/#article-header-id-0
+    .video-container {
       position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      .video-player {
+        border-radius: 8px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
