@@ -29,6 +29,7 @@
               ref="ytplayer-iframe"
               :src="generateYouTubeEmbedSrc(team.project.media)"
               id="ytplayer" type="text/html" class="video-player"
+              allowFullScreen
               frameborder="0"></iframe>
           </div>
         </div>
