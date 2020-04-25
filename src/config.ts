@@ -277,7 +277,7 @@ export const clubConfig: {
       name: 'Bumper',
       project: {
         name: 'Bumper',
-        description: '🥊 Fast-paced multiplayer arcade game, built with Go, Javascript, and WebSockets',
+        description: '🥊 Fast-paced multiplayer arcade game',
         elevatorPitch: `Bumper is a game fast-paced multiplayer game where you try to bump other
           players out of the playing field to stay alive.`,
         banner: {
