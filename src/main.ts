@@ -10,6 +10,10 @@ import 'tippy.js/dist/tippy.css';
 import './styles/global.scss';
 import App from './App.vue';
 
+// polyfills for certain features
+import smoothscroll from 'smoothscroll-polyfill';
+smoothscroll.polyfill();
+
 Vue.config.productionTip = false;
 
 Vue.use(Unicon);

@@ -13,6 +13,7 @@
     "animate.css": "^3.7.2",
     "bulma": "^0.8.2",
     "core-js": "^3.6.4",
+    "smoothscroll-polyfill": "^0.4.4",
     "tippy.js": "^6.2.0",
     "vue": "^2.6.11",
     "vue-unicons": "^2.1.0"
