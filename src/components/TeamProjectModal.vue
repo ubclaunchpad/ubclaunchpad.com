@@ -15,6 +15,18 @@
         <h2 class="accent">{{ team.project.name }}</h2>
         <h3 class="margin-sides-16">{{ team.project.description }}</h3>
 
+        <p class="socials">
+          <a :href="team.project.links.repository" target="_blank">
+            <unicon name="github-alt" class="icon-small"></unicon>
+          </a>
+          <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
+            <unicon name="window" class="icon-small"></unicon>
+          </a>
+          <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
+            <unicon name="notebooks" class="icon-small"></unicon>
+          </a>
+        </p>
+
         <div v-if="isActive" class="media-container margin-sides-16">
           <img
             v-if="!team.project.media"
@@ -35,18 +47,6 @@
 
         <p v-if="team.project.elevatorPitch" class="margin-sides-16">
           {{ team.project.elevatorPitch }}
-        </p>
-
-        <p class="socials">
-          <a :href="team.project.links.repository" target="_blank">
-            <unicon name="github-alt" class="icon-medium"></unicon>
-          </a>
-          <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
-            <unicon name="window" class="icon-medium"></unicon>
-          </a>
-          <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
-            <unicon name="notebooks" class="icon-medium"></unicon>
-          </a>
         </p>
       </div>
     </div>
@@ -118,6 +118,7 @@ export default Vue.extend({
   border-radius: 15px;
   background-color: $dark;
   box-shadow: 0 0 50px rgba($accent, 0.3);
+  max-height: calc(100vh - 24px);
 
   * {
     position: relative;
@@ -136,14 +137,25 @@ export default Vue.extend({
   }
 
   h2 {
+    margin-bottom: 8px;
     @media (max-width: $tablet) {
       font-size: 24px;
     }
   }
 
   h3 {
-    margin-top: -16px;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
+  }
+
+  .socials {
+    margin-bottom: 8px;
+    margin-top: 8px;
+
+    i {
+      width: 32px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
   }
 
   .media-container {
@@ -166,16 +178,6 @@ export default Vue.extend({
         width: 100%;
         height: 100%;
       }
-    }
-  }
-
-  .socials {
-    margin-top: 32px;
-
-    i {
-      width: 32px;
-      margin-left: 16px;
-      margin-right: 16px;
     }
   }
 }
