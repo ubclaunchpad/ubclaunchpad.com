@@ -8,8 +8,14 @@
     <div class="modal-background animated fadeIn faster" v-on:click="handleModalClose()"></div>
 
     <div class="modal-content box-shadow animated zoomIn faster">
-      <unicon name="times" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
-      <unicon id="share-button" name="share-alt" class="share-button icon-small" v-on:click="shareToClipboard()"></unicon>
+      <unicon
+        name="times" class="close-button icon-small hoverable"
+        v-on:click="handleModalClose()"></unicon>
+      <unicon
+        id="share-button"
+        name="share-alt"
+        class="share-button icon-small hoverable"
+        v-on:click="shareToClipboard()"></unicon>
 
       <div class="pad-sides-8 has-text-centered">
         <h2 class="accent">{{ team.project.name }}</h2>
@@ -36,13 +42,13 @@
 
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
-            <unicon name="github-alt" class="icon-small"></unicon>
+            <unicon name="github-alt" class="icon-small hoverable"></unicon>
           </a>
           <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
-            <unicon name="window" class="icon-small"></unicon>
+            <unicon name="window" class="icon-small hoverable"></unicon>
           </a>
           <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
-            <unicon name="notebooks" class="icon-small"></unicon>
+            <unicon name="notebooks" class="icon-small hoverable"></unicon>
           </a>
         </p>
 
