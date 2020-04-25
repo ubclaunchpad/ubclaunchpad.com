@@ -260,10 +260,10 @@ export const clubConfig: {
       name: 'Brussel Sprouts',
       project: {
         name: 'Rocket 2',
-        description: '🚀 Slack bot, team management, and onboarding system for UBC Launch Pad',
+        description: '🚀 Slack bot for UBC Launch Pad',
         elevatorPitch: `Rocket 2 is a from-the-ground-up rebuild of our previous in-house management
-          Slack bot. Rocket 2 handles team formation, GitHub permissions, and more through a diverse
-          set of commands accessible from Slack.`,
+          Slack bot. Rocket 2 handles team management, GitHub permissions, member onboarding, and
+          more through a robust set of commands accessible from Slack.`,
         banner: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/rocket2/master/docs/rocket-banner.gif',
         },
