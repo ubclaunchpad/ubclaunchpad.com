@@ -1,15 +1,26 @@
 <template>
   <div ref="highlights-container" class="container is-widescreen">
-    <!-- titles -->
-    <div class="columns is-vcentered">
-      <div v-for="h in highlights" :key="h.title" class="column has-text-centered">
-        <h3>{{ h.title }}</h3>
+    <!-- default desktop view - use two rows of columns to have titles aligned -->
+    <div class="is-hidden-mobile">
+      <!-- titles -->
+      <div class="columns is-vcentered">
+        <div v-for="h in highlights" :key="h.title" class="column has-text-centered">
+          <h3>{{ h.title }}</h3>
+        </div>
+      </div>
+
+      <!-- descriptions -->
+      <div class="columns is-vcentered">
+        <div v-for="h in highlights" :key="h.title" class="pad-32 column has-text-centered">
+          <p>{{ h.description }}</p>
+        </div>
       </div>
     </div>
 
-    <!-- descriptions -->
-    <div class="columns is-vcentered">
-      <div v-for="h in highlights" :key="h.title" class="pad-32 column has-text-centered">
+    <!-- mobile view has alternative layout since default causes titles and descriptiosn to separate -->
+    <div class="is-hidden-tablet">
+      <div v-for="h in highlights" :key="h.title" class="pad-32 has-text-centered" >
+        <h3 class="margin-bottom-16">{{ h.title }}</h3>
         <p>{{ h.description }}</p>
       </div>
     </div>
