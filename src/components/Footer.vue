@@ -2,13 +2,17 @@
   <footer class="footer">
     <div class="level">
       <div class="level-left">
-        <p>UBC Launch Pad {{ year }}</p>
+        <p class="level-item">UBC Launch Pad {{ year }}</p>
       </div>
 
-      <ClubSocialsLinks :links="socials" class="socials" />
+      <div class="level-item">
+        <ClubSocialsLinks :links="socials" class="socials" />
+      </div>
 
       <div class="level-right">
-        <p><a :href="'mailto:' + socials.email">{{ socials.email }}</a></p>
+        <p class="level-item">
+          <a :href="'mailto:' + socials.email">{{ socials.email }}</a>
+        </p>
       </div>
     </div>
   </footer>
@@ -41,7 +45,7 @@ export default Vue.extend({
   padding-right: 76px;
 
   .socials {
-    margin-bottom: 0px;
+    margin-bottom: 16px;
   }
 }
 </style>
