@@ -350,8 +350,10 @@ export const sponsorshipConfig: {
 } = {
   /**
    * Link to the most recent sponsorship package.
+   * 
+   * TODO: Let's have this hosted on a more attractive link in the future, ie `ubclaunchpad.com/sponsorship.pdf`
    */
-  packageURL: 'TODO',
+  packageURL: 'https://drive.google.com/file/d/1qHG5GDN_2JZbJzOTBEQc8OULsx3VjXEz/view',
 
   /**
    * Current sponsors.
