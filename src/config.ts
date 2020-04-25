@@ -289,19 +289,18 @@ export const clubConfig: {
       },
     },
     {
-      name: 'Minutes',
+      name: 'UBC Launch Pad Website',
       project: {
-        name: 'Minutes',
-        description: '🔭 Speaker diarization via transfer learning',
-        elevatorPitch: `Minutes is a Python library for speaker diarization: the process of splitting
-          up an audio file into its unique speakers. Its base model is trained on hundreds of hours
-          of spoken English text, and it uses transfer learning to predict on new speakers.`,
+        name: 'ubclaunchpad.com',
+        description: '✨ the new UBC Launch Pad website!',
+        elevatorPitch: `This website is also a Launch Pad project, designed and implemented from the
+          ground up by members of our team!`,
         banner: {
-          url: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
+          url: require('../.static/banner.png') as string,
+          hasName: true, // this one should be self-explanatory
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/minutes',
-          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/speaker-diarisation-using-transfer-learning-47ca1a1226f4',
+          repository: 'https://github.com/ubclaunchpad/new',
         },
       },
     },
@@ -325,18 +324,19 @@ export const clubConfig: {
       },
     },
     {
-      name: 'UBC Launch Pad Website',
+      name: 'Minutes',
       project: {
-        name: 'ubclaunchpad.com',
-        description: '✨ the new UBC Launch Pad website!',
-        elevatorPitch: `This website is also a Launch Pad project, designed and implemented from the
-          ground up by members of our team!`,
+        name: 'Minutes',
+        description: '🔭 Speaker diarization via transfer learning',
+        elevatorPitch: `Minutes is a Python library for speaker diarization: the process of splitting
+          up an audio file into its unique speakers. Its base model is trained on hundreds of hours
+          of spoken English text, and it uses transfer learning to predict on new speakers.`,
         banner: {
-          url: require('../.static/banner.png') as string,
-          hasName: true, // this one should be self-explanatory
+          url: 'https://raw.githubusercontent.com/ubclaunchpad/minutes/master/.static/spec.png',
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/minutes',
+          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/speaker-diarisation-using-transfer-learning-47ca1a1226f4',
         },
       },
     },
