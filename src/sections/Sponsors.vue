@@ -4,17 +4,20 @@
 
       <h2>Sponsors</h2>
 
-      <div class="tile sponsor-columns">
-        <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical sponsor-column">
-            <a v-for="(s, j) in col" :key="'row-'+i+'-'+j" :href="s.website" class="tile sponsor-container" target="_blank">
-              <img ref="sponsor-logo"
-                class="sponsor-img hidden"
-                :src="s.logo.url"
-                :alt="s.name"
-                :style="{
-                  filter: s.logo.filter,
-                }" />
-            </a>
+      <div class="sponsors columns is-multiline is-centered">
+        <div
+          v-for="(col, i) in columns"
+          :key="'column-'+i"
+          class="column is-one-quarter-widescreen is-half-desktop">
+          <a v-for="(s, j) in col" :key="'row-'+i+'-'+j" :href="s.website" class="sponsor" target="_blank">
+            <img ref="sponsor-logo"
+              class="sponsor-img hidden"
+              :src="s.logo.url"
+              :alt="s.name"
+              :style="{
+                filter: s.logo.filter,
+              }" />
+          </a>
         </div>
       </div>
 
@@ -73,19 +76,14 @@ h2 {
   margin-bottom: 84px;
 }
 
-.sponsor-column {
+.sponsors {
   display: flex;
   align-items: center;
 
-  .sponsor-container {
-    height: auto;
-    width: auto;
-    max-width: 320px;
-    max-height: 300px;
-    margin: 32px;
-
-    .sponsor-img {
-      object-fit: contain;
+  .sponsor {
+    img {
+      padding: 32px;
+      min-width: 320px;
     }
   }
 }
@@ -98,5 +96,4 @@ h2 {
     margin-top: 62px;
   }
 }
-
 </style>
