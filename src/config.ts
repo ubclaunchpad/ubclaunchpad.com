@@ -155,6 +155,10 @@ export const clubConfig: {
           url: 'https://raw.githubusercontent.com/ubclaunchpad/Footprint/master/project_images/final_design.png',
           hasName: true,
         },
+        media: {
+          type: 'youtube',
+          id: 'iA3D2AmhkZE',
+        },
         links: {
           repository: 'https://github.com/ubclaunchpad/Footprint',
           writeup: 'https://github.com/ubclaunchpad/Footprint/blob/master/README.md',
@@ -193,9 +197,8 @@ export const clubConfig: {
           hasName: true,
         },
         media: {
-          type: 'image',
-          // TODO: update when https://github.com/ubclaunchpad/food-doods/tree/showcase is merged
-          url: 'https://raw.githubusercontent.com/ubclaunchpad/food-doods/showcase/photos/hifi-mockups.png',
+          type: 'youtube',
+          id: 'TWh32lj3Yjs',
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/food-doods',
@@ -402,7 +405,7 @@ export const sponsorshipConfig: {
 } = {
   /**
    * Link to the most recent sponsorship package.
-   * 
+   *
    * TODO: Let's have this hosted on a more attractive link in the future, ie `ubclaunchpad.com/sponsorship.pdf`
    */
   packageURL: 'https://drive.google.com/file/d/1qHG5GDN_2JZbJzOTBEQc8OULsx3VjXEz/view',
