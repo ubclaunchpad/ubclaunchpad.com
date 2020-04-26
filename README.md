@@ -15,15 +15,15 @@
     <img src="https://api.netlify.com/api/v1/badges/63f72100-a34c-4ad7-b47c-8b85c179202f/deploy-status"
       alt="Deploy Status" />
   </a>
-  <a href="https://ubclaunchpad.github.io/new">
-    <img src="https://img.shields.io/website/https/ubclaunchpad.github.io/new.svg" />
+  <a href="https://ubclaunchpad.com">
+    <img src="https://img.shields.io/website/https/ubclaunchpad.com.svg" />
   </a>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://ubclaunchpad.github.io/new/config"><strong>Configuring</strong></a> · 
+  <a href="https://ubclaunchpad.com/config"><strong>Configuring</strong></a> · 
   <a href="./CONTRIBUTING.md"><strong>Contributing</strong></a> · 
   <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.github.io%2Fnew&tab=desktop"><strong>Performance</strong></a>
 </p>

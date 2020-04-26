@@ -1,6 +1,6 @@
 # ⚙️ Configuring the UBC Launch Pad Website
 
-> ⚠️ This page is meant to be read from the [UBC Launch Pad Configuration Guide](https://ubclaunchpad.github.io/new/config)!
+> ⚠️ This page is meant to be read from the [UBC Launch Pad Configuration Guide](https://ubclaunchpad.com/config)!
 
 <br />
 

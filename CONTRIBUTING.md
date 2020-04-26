@@ -60,7 +60,7 @@ This codebase is largely contained in [`src`](/src), where you will find the fol
 
 Also noteworthy are the following files:
 
-* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.github.io/new/config) documentation site and [Configuration](#configuration) for more details
+* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.com/config) documentation site and [Configuration](#configuration) for more details
 * [`src/App.vue`](./src/App.vue): the main entrypoint component to the site - it currently declares the site layout and provides data from `src/config.ts` to relevant components (other components *should not* import `src/config.ts`)
 
 Refer to [Dependencies](#dependencies) for our core dependencies and links to their websites, where you can find documentation on how to use them. Also refer to the existing code and components for guidance on how to work with the codebase.
@@ -167,7 +167,7 @@ We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpa
 
 ### Configuration
 
-Site configuration is defined in [`src/config.ts`](./src/config.ts), with additional relevant types defined in [`src/data/types.ts`](./src/data/types.ts). Docstrings and types in these files are used to render the [UBC Launch Pad Site Configuration Guide](https://ubclaunchpad.github.io/new/config) as part of the post-build step to `npm run build` or by running:
+Site configuration is defined in [`src/config.ts`](./src/config.ts), with additional relevant types defined in [`src/data/types.ts`](./src/data/types.ts). Docstrings and types in these files are used to render the [UBC Launch Pad Site Configuration Guide](https://ubclaunchpad.com/config) as part of the post-build step to `npm run build` or by running:
 
 ```
 npm run docs
