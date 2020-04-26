@@ -22,9 +22,9 @@
     <!-- next section indicator - if an onclick is provided, wrap in href, otherwise just show indicator -->
     <div v-if="nextSectionIndicator">
       <a v-if="nextSectionOnClick" v-on:click="nextSectionOnClick">
-        <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto"></unicon>
+        <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"></unicon>
       </a>
-      <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto"
+      <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"
         v-if="!nextSectionOnClick"></unicon>
     </div>
   </section>

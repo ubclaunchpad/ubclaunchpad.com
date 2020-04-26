@@ -1,8 +1,15 @@
 # ⚒️ Contributing to the UBC Launch Pad Website
 
-This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows.
+This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows. If you are looking for *what* you can contribute, see:
 
-If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/new/issues)!
+* [our issue tracker](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)
+* [TODOs in the codebase](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+TODO+-file:.md&patternType=literal)
+
+If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)!
+
+<br />
+
+**Table of Contents**
 
 - [Dependencies](#dependencies)
 - [Development](#development)
@@ -10,7 +17,9 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [Vue Guidelines](#vue-guidelines)
     - [Documentation](#documentation)
     - [Styling](#styling)
+      - [Responsive Design](#responsive-design)
   - [Handling Assets](#handling-assets)
+  - [Analytics](#analytics)
   - [Configuration](#configuration)
 - [Deployment](#deployment)
 - [GitHub Actions](#github-actions)
@@ -60,7 +69,7 @@ This codebase is largely contained in [`src`](/src), where you will find the fol
 
 Also noteworthy are the following files:
 
-* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.github.io/new/config) documentation site and [Configuration](#configuration) for more details
+* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.com/config) documentation site and [Configuration](#configuration) for more details
 * [`src/App.vue`](./src/App.vue): the main entrypoint component to the site - it currently declares the site layout and provides data from `src/config.ts` to relevant components (other components *should not* import `src/config.ts`)
 
 Refer to [Dependencies](#dependencies) for our core dependencies and links to their websites, where you can find documentation on how to use them. Also refer to the existing code and components for guidance on how to work with the codebase.
@@ -84,7 +93,7 @@ Most simple style rules are enforced using [`eslint`](https://eslint.org/). Our 
 In general, when working with Vue:
 
 * use [Vue single file components](https://vuejs.org/v2/guide/single-file-components.html) defined in `.vue` files.
-* stick to [`Vue.extend`](https://vuejs.org/v2/api/#Vue-extend) (and not class-based components).
+* stick to [`Vue.extend`](https://vuejs.org/v2/api/#Vue-extend) (and not class-based components) - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+Vue.extend+lang:vue&patternType=literal)
 
 #### Documentation
 
@@ -128,6 +137,16 @@ In general, when working with Vue:
   </style>
   ```
 
+See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%3Cstyle+lang:vue&patternType=literal).
+
+##### Responsive Design
+
+There are several strategies to handle responsiveness (in other words, how well the website scales onto smaller/larger screens):
+
+* [Bulma](https://bulma.io) has a variety of [helpers](https://bulma.io/documentation/modifiers/responsive-helpers/) for implementing responsiveness, and each Bulma component likely has a few modifiers to handle scaling on various screen sizes - see their respective class documentation for more details.
+  * Bulma hide/show helpers (`is-hidden-` classes) are particularly useful for hiding/showing alternative layouts on different screen sizes - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+is-hidden-+lang:vue&patternType=literal)
+* [`variables.scss`](./src/styles/variables.scss) has definitions for breakpoints (`$tablet`, `$touch`, etc.) that you can use with `@media` queries in your styles to define screen-size-specific properties - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40media+lang:vue&patternType=literal).
+
 ### Handling Assets
 
 Image assets are kept in [`src/assets`](./src/assets), and are bundled alongside our code during build time. To reference images in Vue:
@@ -156,6 +175,8 @@ export default Vue.extend({
 </script>
 ```
 
+See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40/assets+lang:vue&patternType=literal).
+
 In general:
 
 * if the image can be hosted elsewhere (i.e. a company website or project repository), host it there instead and reference it by URL
@@ -163,11 +184,27 @@ In general:
 * do not put assets in `/public`
 * **icons**: see [`unicons.ts`](./src/unicons.ts).
 
-We also have an [automated workflow](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
+We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
+
+### Analytics
+
+We use [Google Analytics](https://analytics.google.com/analytics/web) to log events. In general, track interesting actions as [events](https://support.google.com/analytics/answer/1033068), and use the following scheme:
+
+```ts
+this.$gtag.event(
+  'my-action-name', // name of event, namespaced if appropriate - such as 'project-modal-link-click'
+  {
+    event_category: 'section-name', // name of section or part of website - be consistent with this
+    event_label: 'Some Value', // value associated with event, such as a team name 
+  },
+);
+```
+
+The library we use for this is [`vue-gtag`](https://matteo-gabriele.gitbook.io/vue-gtag/), and the client is available through `this.$gtag` in Vue. Analytics are available under the `team@ubclaunchpad.com` account in [Google Analytics](https://analytics.google.com/analytics/web).
 
 ### Configuration
 
-Site configuration is defined in [`src/config.ts`](./src/config.ts), with additional relevant types defined in [`src/data/types.ts`](./src/data/types.ts). Docstrings and types in these files are used to render the [UBC Launch Pad Site Configuration Guide](https://ubclaunchpad.github.io/new/config) as part of the post-build step to `npm run build` or by running:
+Site configuration is defined in [`src/config.ts`](./src/config.ts), with additional relevant types defined in [`src/data/types.ts`](./src/data/types.ts). Docstrings and types in these files are used to render the [UBC Launch Pad Site Configuration Guide](https://ubclaunchpad.com/config) as part of the post-build step to `npm run build` or by running:
 
 ```
 npm run docs
@@ -188,9 +225,13 @@ These changes are published automatically - see [Deployment](#deployment).
 
 ## Deployment
 
-Deployments are handled automatically by the [Deploy workflow](https://github.com/ubclaunchpad/new/actions?workflow=Deploy) (see [GitHub Actions](#github-actions)), which publishes changes to the `gh-pages` branch. The contents of the `gh-pages` branch is what users see when they visit he website - refer to the [official GitHub Pages documentation](https://pages.github.com/) for more details.
+Deployments are handled automatically by the [Netlify](https://www.netlify.com/).
 
 This means that when your changes are merged to `master`, your contribution will automatically be deployed! This deployment includes both the actual website as well as [configuration documentation](#configuration).
+
+Also note that individual pull requests also get their own preview deployment - you can find a link by clicking on "Details" next to the `deploy/netlify` check at the bottom of your pull request:
+
+![deploy preview](./.static/deploy-preview.png)
 
 <br />
 
@@ -198,8 +239,7 @@ This means that when your changes are merged to `master`, your contribution will
 
 [GitHub Actions](https://github.com/features/actions) is a workflow automation platform provided by GitHub. We use it for automating a variety of tasks for this project.
 
-* [![Checks](https://github.com/ubclaunchpad/new/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
-* [![Compress images](https://github.com/ubclaunchpad/new/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
-* [![Deploy](https://github.com/ubclaunchpad/new/workflows/Deploy/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Deploy) ([`deploy.yml`](./.github/workflows/deploy.yml)) runs on every push to the `master` branch to build and update the `gh-pages` branch (in other words, it deploys the website).
+* [![Checks](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
+* [![Compress images](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
 
 <br />

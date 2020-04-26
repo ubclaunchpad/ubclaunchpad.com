@@ -105,7 +105,11 @@
     }
   }
 
-  &.accent {
-    fill: $accent !important;
+  &.hoverable {
+    &:hover, &:focus {
+      @extend .animation;
+      fill: $rocket !important;
+      transition-duration: $link-transition-time;
+    }
   }
 }

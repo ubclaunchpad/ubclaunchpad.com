@@ -29,6 +29,10 @@ export default Vue.extend({
   name: 'TeamProjectCard',
   props: {
     /**
+     * Name of section this card was rendered in
+     */
+    section: String,
+    /**
      * Team to render
      */
     team: {
@@ -38,6 +42,10 @@ export default Vue.extend({
   data: () => ({ isActive: false }),
   methods: {
     openModal() {
+      this.$gtag.event('project-card-click', {
+        event_category: this.section,
+        event_label: this.team.project.name,
+      });
       this.$emit('projectClicked', {isActive: true, activeTeamName: this.team.project.name});
     },
   },

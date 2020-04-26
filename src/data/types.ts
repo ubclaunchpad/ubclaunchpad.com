@@ -1,9 +1,22 @@
 /**
- * Describes a video.
+ * Describes a video. Currently, we only support YouTube embeds.
  */
-export type MediaVideo = {
-  type: 'video';
-  url: string;
+export type MediaYouTube = {
+  type: 'youtube';
+  /**
+   * The video ID, usually found at the end of the link. For example, the following link:
+   * 
+   * ```
+   * https://youtu.be/gNtLn0EDFeQ
+   * ```
+   * 
+   * has video ID `gNtLn0EDFeQ`.
+   */
+  id: string;
+  /**
+   * Number of seconds into the video to start at by default.
+   */
+  startAt?: number;
 };
 
 /**
@@ -49,10 +62,10 @@ export type Project = {
    * Detailed or more descriptive media to showcase your project - featured in project modals.
    * 
    * This can be one of:
-   * - video (`type: 'video'` - see [[`MediaVideo`]])
-   * - image (`type: 'iamge'` - see [[`MediaImage`]])
+   * - video (`type: 'youtube'` - see [[`MediaYouTube`]])
+   * - image (`type: 'image'` - see [[`MediaImage`]])
    */
-  media?: MediaVideo | MediaImage;
+  media?: MediaYouTube | MediaImage;
   /**
    * Links to further information about this project.
    */

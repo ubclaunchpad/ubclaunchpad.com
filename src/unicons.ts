@@ -27,6 +27,7 @@ import {
   uniAngleDown, // angle-down
   uniNotebooks, // notebooks
   uniMediumM, // medium-m
+  uniShareAlt, // share-alt
 } from 'vue-unicons/src/icons';
 
 Unicon.add([
@@ -41,6 +42,7 @@ Unicon.add([
   uniAngleDown,
   uniNotebooks,
   uniMediumM,
+  uniShareAlt,
 ]);
 
 export default Unicon;
