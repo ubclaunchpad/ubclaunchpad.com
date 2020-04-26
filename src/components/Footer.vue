@@ -44,6 +44,11 @@ export default Vue.extend({
   padding-left: 76px;
   padding-right: 76px;
 
+  @media (max-width: $tablet) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .socials {
     margin-bottom: 16px;
   }
