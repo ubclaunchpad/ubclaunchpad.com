@@ -304,6 +304,7 @@ export const clubConfig: {
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/ubclaunchpad.com',
+          writeup: 'https://medium.com/ubc-launch-pad-software-engineering-blog/introducing-the-new-launch-pad-website-42175181d644',
         },
       },
     },
