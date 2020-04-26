@@ -40,14 +40,16 @@
           </div>
         </div>
 
-        <p class="socials">
-          <a :href="team.project.links.repository" target="_blank">
+        <p v-if="isActive" class="socials">
+          <a :href="team.project.links.repository" target="_blank" data-tippy-content="GitHub">
             <unicon name="github-alt" class="icon-small hoverable"></unicon>
           </a>
-          <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
+          <a v-if="team.project.links.website" data-tippy-content="Website"
+            :href="team.project.links.website" target="_blank">
             <unicon name="window" class="icon-small hoverable"></unicon>
           </a>
-          <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
+          <a v-if="team.project.links.writeup" data-tippy-content="Writeup"
+            :href="team.project.links.writeup" target="_blank">
             <unicon name="notebooks" class="icon-small hoverable"></unicon>
           </a>
         </p>
@@ -112,6 +114,16 @@ export default Vue.extend({
       const urlParams = new URLSearchParams(params);
       return `https://youtube.com/embed/${media.id}?${urlParams.toString()}`;
     },
+  },
+  updated() {
+    // only attach tooltips after entire view has been rendered
+    if (this.isActive) {
+      this.$nextTick(function() { tippy('[data-tippy-content]'); });
+    }
+  },
+  mounted() {
+    // check for tooltips on first mount as well
+    if (this.isActive) tippy('[data-tippy-content]');
   },
 });
 </script>
