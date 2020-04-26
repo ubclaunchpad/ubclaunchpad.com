@@ -458,7 +458,7 @@ export const sponsorshipConfig: {
 };
 
 /**
- * Defines a redirect - see [[`redirectsConfig``]].
+ * Defines a redirect - see [[`redirectsConfig`]].
  */
 type Redirect = {
   /**

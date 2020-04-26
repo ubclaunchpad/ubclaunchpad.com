@@ -37,7 +37,7 @@ More details are available in the [`recruitmentConfig` documentation](/globals.h
 
 ### Adding a Custom Redirect
 
-When preparing an event, you might want to be able to share `https://ubclaunchpad.com/my-amazing-event` as a nicer URL for people to access, which could then redirect them to another website. To add such a redirect, just add a new item to [`#redirectsConfig`](#redirectsconfig):
+When preparing an event, you might want to be able to share `https://ubclaunchpad.com/my-amazing-event` as a nicer URL for people to access, which could then redirect them to another website. To add such a redirect, just add a new [`Redirect`](#redirect) to [`redirectsConfig`](#redirectsconfig):
 
 ```ts
 {
@@ -46,7 +46,7 @@ When preparing an event, you might want to be able to share `https://ubclaunchpa
 }
 ```
 
-Also refer to [USING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md#redirect-links)
+Also refer to [USING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md#redirect-links) for more details.
 
 <br />
 
