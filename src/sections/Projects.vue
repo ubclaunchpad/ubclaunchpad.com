@@ -84,7 +84,7 @@ export default Vue.extend({
 
     // jump to linked project if one is provided
     const linkedProject = getURLParams(window.location).get('project');
-    if (linkedProject && getTeamByName(this.teams, this.activeTeamName)) {
+    if (linkedProject && getTeamByName(this.teams, linkedProject)) {
       this.$gtag.event('direct-project-link', {
         event_category: 'projects',
         event_label: linkedProject,
