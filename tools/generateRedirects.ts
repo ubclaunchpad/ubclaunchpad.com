@@ -6,7 +6,7 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./node.d.ts" />
 import { writeFileSync } from 'fs';
-import { clubConfig, sponsorshipConfig, recruitmentConfig } from '../src/config';
+import { clubConfig, sponsorshipConfig, recruitmentConfig, redirectsConfig } from '../src/config';
 
 // Redirects have format: '/path' + '\t' + 'targetURL'
 const redirects = [
@@ -28,6 +28,11 @@ if (recruitmentConfig.applicationsOpen) {
   });
 }
 
-console.log('generated redirects', redirects);
+// custom redirects
+redirectsConfig.forEach((r) => {
+  redirects.push(`${r.path}\t${r.target}`);
+});
 
+// write to output
+console.log('generated redirects', redirects);
 writeFileSync('./dist/_redirects', redirects.join('\n'));

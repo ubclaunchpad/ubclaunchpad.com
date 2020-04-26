@@ -12,6 +12,7 @@ If something you want to change cannot be updated with `config.ts`, refer to [CO
 
 - [Examples](#examples)
   - [Configuring Recruitment Status](#configuring-recruitment-status)
+  - [Adding a Custom Redirect](#adding-a-custom-redirect)
 - [Providing Images](#providing-images)
 
 <br />
@@ -20,7 +21,7 @@ If something you want to change cannot be updated with `config.ts`, refer to [CO
 
 ### Configuring Recruitment Status
 
-One example of an easily configurable component of the website is recruitment and applications information. To open applications for a new season, simply update [`recruitmentConfig`](/globals.html#recruitmentconfig) with the appropriate values, for example:
+One example of an easily configurable component of the website is recruitment and applications information. To open applications for a new season, simply update [`recruitmentConfig`](#recruitmentconfig) with the appropriate values, for example:
 
 ```diff
 - season: 'Fall 2019'
@@ -33,6 +34,21 @@ One example of an easily configurable component of the website is recruitment an
 ```
 
 More details are available in the [`recruitmentConfig` documentation](/globals.html#recruitmentconfig).
+
+### Adding a Custom Redirect
+
+When preparing an event, you might want to be able to share `https://ubclaunchpad.com/my-amazing-event` as a nicer URL for people to access, which could then redirect them to another website. To add such a redirect, just add a new item to [`#redirectsConfig`](#redirectsconfig):
+
+```ts
+{
+  path: '/my-amazing-event',
+  target: 'https://my-amazing-event-website.com',
+}
+```
+
+Also refer to [USING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md#redirect-links)
+
+<br />
 
 ## Providing Images
 

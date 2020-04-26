@@ -26,6 +26,6 @@ https://ubclaunchpad.com/facebook -> https://www.facebook.com/ubclaunchpad
 https://ubclaunchpad.com/medium   -> https://medium.com/ubc-launch-pad-software-engineering-blog
 ```
 
-See [`tools/generateRedirects.ts`](./tools/generateRedirects.ts) for a full list of redirects.
+See [`tools/generateRedirects.ts`](./tools/generateRedirects.ts) for a full list of redirects. You can also add custom redirects - see the [Website Configuration Guide](https://ubclaunchpad.com/config) for more details.
 
 <br />
