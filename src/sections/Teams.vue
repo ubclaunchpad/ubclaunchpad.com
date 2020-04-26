@@ -43,7 +43,7 @@
               v-for="(r, j) in col"
               :key="'row-'+i+'-'+j"
               class="project-container hidden">
-              <TeamProjectCard @projectClicked="setModalState" :team="r" class="margin-sides-auto"/>
+              <TeamProjectCard @projectClicked="setModalState" :team="r" section="teams" class="margin-sides-auto"/>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, updateClassesIfInView, getURLParams, ModalState } from '@/lib/util';
+import { generateColumns, updateClassesIfInView, getURLParams, ModalState, getTeamByName } from '@/lib/util';
 
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 import TeamProjectModal from '@/components/TeamProjectModal.vue';
@@ -92,7 +92,7 @@ export default Vue.extend({
     },
     memberCount: Number,
   },
-  data: () => ({ stats, isActive: false, activeTeamName: '0'}),
+  data: () => ({ stats, isActive: false, activeTeamName: '0' }),
   computed: {
     columns(): Team[][] {
       const perRow = 2;
@@ -100,8 +100,7 @@ export default Vue.extend({
       return generateColumns<Team>(this.teams, perColumn);
     },
     activeTeam(): Team | undefined {
-      return this.teams.find((team: Team) =>
-        team.project.name.toLowerCase() === this.activeTeamName.toLowerCase());
+      return getTeamByName(this.teams, this.activeTeamName);
     },
   },
   methods: {
@@ -111,7 +110,7 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-    setModalState(state: ModalState){
+    setModalState(state: ModalState) {
       this.isActive = state.isActive;
       this.activeTeamName = state.activeTeamName;
     },
@@ -124,7 +123,11 @@ export default Vue.extend({
 
     // jump to linked project if one is provided
     const linkedProject = getURLParams(window.location).get('project');
-    if (linkedProject) {
+    if (linkedProject && getTeamByName(this.teams, linkedProject)) {
+      this.$gtag.event('direct-project-link', {
+        event_category: 'teams',
+        event_label: linkedProject,
+      });
       this.setModalState({
         isActive: true,
         activeTeamName: linkedProject,

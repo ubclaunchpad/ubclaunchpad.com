@@ -15,13 +15,19 @@ import App from './App.vue';
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 
-Vue.config.productionTip = false;
-
+// load vue plugins
 Vue.use(VueGtag, {
   config: { id: 'UA-63529563-1' },
 });
 Vue.use(Unicon);
 
+// set up vue configuration
+Vue.config.productionTip = false;
+Vue.config.errorHandler = function(err, vm, info) {
+  vm.$gtag.exception({ description: JSON.stringify({ err, info }) });
+};
+
+// init vue app
 new Vue({
   render: h => h(App),
 }).$mount('#app');
