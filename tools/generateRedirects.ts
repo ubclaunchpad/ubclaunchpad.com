@@ -1,8 +1,9 @@
 /**
- * This script generates Netlify redirects for some relevant links.
+ * This script generates Netlify redirects for some relevant links. It is run as part of the post-build
+ * step in `npm run build` (more specifically, `npm run redirects`).
  */
 
-/* eslint-disable @typescript-eslint/triple-slash-reference */
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./node.d.ts" />
 import { writeFileSync } from 'fs';
 import { clubConfig, sponsorshipConfig, recruitmentConfig } from '../src/config';

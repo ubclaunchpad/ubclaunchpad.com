@@ -21,6 +21,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [Handling Assets](#handling-assets)
   - [Analytics](#analytics)
   - [Configuration](#configuration)
+  - [Tools](#tools)
 - [Deployment](#deployment)
 - [GitHub Actions](#github-actions)
 
@@ -220,6 +221,13 @@ serve ./dist/config
 ```
 
 These changes are published automatically - see [Deployment](#deployment).
+
+### Tools
+
+[`/tools`](./tools) contains useful scripts, such as:
+
+* [`generateRedirect.ts`](./tools/generateRedirects.ts): generates [Netlify redirects](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) from [`config.ts`](./src/config.ts) (see [USING.md](./USING.md#redirect-links))
+* [`stripRequire.sh`](./tools/stripRequire.sh): pre-processes compiled JavaScript for execution
 
 <br />
 

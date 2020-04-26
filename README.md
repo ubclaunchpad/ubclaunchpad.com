@@ -23,6 +23,7 @@
 <br>
 
 <p align="center">
+  <a href="./USING.md"><strong>Using</strong></a> · 
   <a href="https://ubclaunchpad.com/config"><strong>Configuring</strong></a> · 
   <a href="./CONTRIBUTING.md"><strong>Contributing</strong></a> · 
   <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.com&tab=desktop"><strong>Performance</strong></a>
