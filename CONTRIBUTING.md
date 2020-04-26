@@ -12,6 +12,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
 **Table of Contents**
 
 - [Dependencies](#dependencies)
+  - [npm Dependencies](#npm-dependencies)
 - [Development](#development)
   - [TypeScript Guidelines](#typescript-guidelines)
   - [Vue Guidelines](#vue-guidelines)
@@ -39,9 +40,9 @@ The most important dependencies of this project are:
 
 To get started, make sure you have [Node](https://nodejs.org/en/download) installed:
 
-```
+```sh
 node -v
-npm install
+npm ci  # install dependencies strictly with our lockfile
 ```
 
 You can then run the website locally by running the following and visiting [`localhost:8081`](http://localhost:8081):
@@ -51,6 +52,14 @@ npm run serve
 ```
 
 Refer to the links above for more details on each dependency.
+
+### npm Dependencies
+
+[npm](https://docs.npmjs.com/about-npm/) is a package registry for JavaScript/Typescript/etc libraries. Our npm dependencies are declared in [`package.json`](./package.json), with resolved versions tracked in [`package-lock.json`](./package-lock.json).
+
+In general, when declaring dependencies in `package.json`, use the [`~` operator](https://docs.npmjs.com/about-semantic-versioning#using-semantic-versioning-to-specify-update-types-your-package-can-accept), which specifies that the `npm install` should only update patch dependencies.
+
+Note that `npm install` *can* change dependencies in `package-lock.json` - in general, use `npm ci` to install dependencies unless explicitly performing an update.
 
 <br />
 
