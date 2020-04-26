@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  preview of the new UBC Launch Pad website
+  the new, official UBC Launch Pad website - <a href="https://ubclaunchpad.com">ubclaunchpad.com</a>
 </p>
 
 <p align="center">
