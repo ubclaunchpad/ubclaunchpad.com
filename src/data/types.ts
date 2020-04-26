@@ -84,7 +84,7 @@ export type Project = {
      */
     app?: {
       url: string;
-      appType: AppType;
+      appType: 'ios' | 'android';
     };
 
     /**
@@ -169,7 +169,4 @@ export type ClubSocials = {
   email: string;
   linkedin: string;
 }
-/**
- * Describes the platform an app is build on.
- */
-export type AppType = 'ios' | 'android';
+
