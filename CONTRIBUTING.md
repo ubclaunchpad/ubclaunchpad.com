@@ -1,6 +1,9 @@
 # ⚒️ Contributing to the UBC Launch Pad Website
 
-This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows.
+This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows. If you are looking for *what* you can contribute, see:
+
+* [our issue tracker](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)
+* [TODOs in the codebase](https://sourcegraph.com/search?q=TODO+r:ubclaunchpad/ubclaunchpad.com&patternType=literal)
 
 If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)!
 
