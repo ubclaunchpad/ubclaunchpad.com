@@ -1,19 +1,30 @@
 <template>
   <footer class="footer">
-    <div class="level">
-      <div class="level-left">
-        <p class="level-item">UBC Launch Pad {{ year }}</p>
+    <div class="columns is-vcentered is-desktop">
+      <div class="column has-text-centered-touch">
+        <p class="footer-item">UBC Launch Pad {{ year }}</p>
       </div>
 
-      <div class="level-item">
+      <div class="footer-item column has-text-centered">
         <ClubSocialsLinks :links="socials" class="socials" />
       </div>
 
-      <div class="level-right">
-        <p class="level-item">
+      <div class="footer-item column has-text-centered-touch has-text-right-desktop">
+        <p>
           <a :href="'mailto:' + socials.email">{{ socials.email }}</a>
         </p>
       </div>
+    </div>
+
+    <div class="has-text-centered">
+      <p class="tertiary">
+        See any problems, or have some feedback?
+        <a href="https://github.com/ubclaunchpad/ubclaunchpad.com/issues/new" target="_blank">Let us know!</a>
+      </p>
+
+      <p class="tertiary">
+        This site is powered by <a href="https://www.netlify.com" target="_blank">Netlify</a>.
+      </p>
     </div>
   </footer>
 </template>
@@ -49,8 +60,12 @@ export default Vue.extend({
     padding-right: 0px;
   }
 
+  .footer-item {
+    margin-bottom: 0px;
+  }
+
   .socials {
-    margin-bottom: 16px;
+    margin-bottom: 0px;
   }
 }
 </style>
