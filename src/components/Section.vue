@@ -22,10 +22,10 @@
     <!-- next section indicator - if an onclick is provided, wrap in href, otherwise just show indicator -->
     <div v-if="nextSectionIndicator">
       <a v-if="nextSectionOnClick" v-on:click="nextSectionOnClick">
-        <img src="@/assets/icons/indicator-down.svg" class="indicator animated bounce delay-1s" />
+        <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"></unicon>
       </a>
-      <img v-if="!nextSectionOnClick"
-        src="@/assets/icons/indicator-down.svg" class="indicator animated bounce delay-1s" />
+      <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"
+        v-if="!nextSectionOnClick"></unicon>
     </div>
   </section>
 </template>
@@ -126,14 +126,13 @@ export default Vue.extend({
     }
   }
 }
+
 a {
   display: inline;
+}
 
-  .indicator {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 48px;
-  }
+.indicator {
+  width: 100%;
+  margin-bottom: 48px;
 }
 </style>

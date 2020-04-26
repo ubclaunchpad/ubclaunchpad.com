@@ -3,9 +3,9 @@
  * 
  * Useful for displaying grids, for example:
  * 
- *    <div class="tile">
- *      <div v-for="(col, i) in columns" :key="'column-'+i" class="tile is-vertical">
- *        <div v-for="(s, j) in col" :key="'row-'+i+'-'+j" class="tile">
+ *    <div class="columns is-multiline">
+ *      <div v-for="(col, i) in columns" :key="'column-'+i" class="column">
+ *        <div v-for="(s, j) in col" :key="'row-'+i+'-'+j">
  *          <!-- s is of type T -->
  *        </div>
  *      </div>
@@ -73,7 +73,6 @@ type VueRef = Vue | Element | Vue[] | Element[];
  *       },
  *     },
  *     created() {
- *       this.handleScroll();
  *       window.addEventListener('scroll', this.handleScroll);
  *     },
  *     // ...
@@ -104,6 +103,16 @@ export function updateClassesIfInView(w: Window, ref: VueRef, options: {
       }
     });
   }
+}
+
+/**
+ * Retrieves search params from window location.
+ * 
+ * @param location `window.location` instance
+ */
+export function getURLParams(location: Location): URLSearchParams {
+  const uri = location.search.substring(1);
+  return new URLSearchParams(uri);
 }
 
 /**
