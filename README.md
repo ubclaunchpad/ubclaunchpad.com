@@ -11,8 +11,8 @@
     <img src="https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg"
       alt="Checks Status" />
   </a>
-  <a href="https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Deploy">
-    <img src="https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Deploy/badge.svg"
+  <a href="https://app.netlify.com/sites/ubclaunchpad/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/63f72100-a34c-4ad7-b47c-8b85c179202f/deploy-status"
       alt="Deploy Status" />
   </a>
   <a href="https://ubclaunchpad.github.io/new">
