@@ -3,9 +3,11 @@
 This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows. If you are looking for *what* you can contribute, see:
 
 * [our issue tracker](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)
-* [TODOs in the codebase](https://sourcegraph.com/search?q=TODO+r:ubclaunchpad/ubclaunchpad.com&patternType=literal)
+* [TODOs in the codebase](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+TODO+-file:.md&patternType=literal)
 
 If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)!
+
+<br />
 
 **Table of Contents**
 
@@ -91,7 +93,7 @@ Most simple style rules are enforced using [`eslint`](https://eslint.org/). Our 
 In general, when working with Vue:
 
 * use [Vue single file components](https://vuejs.org/v2/guide/single-file-components.html) defined in `.vue` files.
-* stick to [`Vue.extend`](https://vuejs.org/v2/api/#Vue-extend) (and not class-based components).
+* stick to [`Vue.extend`](https://vuejs.org/v2/api/#Vue-extend) (and not class-based components) - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+Vue.extend+lang:vue&patternType=literal)
 
 #### Documentation
 
@@ -135,6 +137,8 @@ In general, when working with Vue:
   </style>
   ```
 
+See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%3Cstyle+lang:vue&patternType=literal).
+
 ##### Responsive Design
 
 There are several strategies to handle responsiveness (in other words, how well the website scales onto smaller/larger screens):
@@ -170,6 +174,8 @@ export default Vue.extend({
 })
 </script>
 ```
+
+See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40/assets+lang:vue&patternType=literal).
 
 In general:
 
