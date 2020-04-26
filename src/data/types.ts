@@ -84,7 +84,7 @@ export type Project = {
      */
     app?: {
       url: string;
-      appType: 'ios' | 'android';
+      type: 'ios' | 'android';
     };
 
     /**
