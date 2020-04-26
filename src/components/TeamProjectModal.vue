@@ -1,38 +1,36 @@
 <template>
   <div
+    class="modal"
     :class="{
-      'modal is-active': isActive,
-       'modal': !isActive,
+      'is-active': isActive,
     }">
-    <div class="modal-background"></div>
-    <div class="modal-content animated zoomIn">
-         <button
-      class="modal-button-close delete is-large"
-        aria-label="close"
-        v-on:click="handleModalClose()"
-      ></button>
-      <div class="has-text-centered">
-        <h2>{{ team.project.name }}</h2>
-        <p>{{ team.project.description }}</p>
+
+    <div class="modal-background animated fadeIn faster" v-on:click="handleModalClose()"></div>
+
+    <div class="modal-content box-shadow animated zoomIn faster">
+      <div class="modal-bg-container">
+        <img class="modal-bg" src="@/assets/backdrop-first.svg" />
+      </div>
+
+      <unicon name="times" fill="white" class="close-button icon-small" v-on:click="handleModalClose()"></unicon>
+
+      <div class="pad-sides-8 has-text-centered">
+        <h2 class="accent">{{ team.project.name }}</h2>
+        <p><b>{{ team.project.description }}</b></p>
+
+        <div class="banner-container margin-sides-16">
+          <img :src="team.project.banner.url" class="banner" />
+        </div>
 
         <p class="socials">
           <a :href="team.project.links.repository" target="_blank">
-           <i class="fab fa-github fa-2x"/>
+            <unicon name="github-alt" class="icon-medium"></unicon>
           </a>
           <a v-if="team.project.links.website" :href="team.project.links.website" target="_blank">
-            <i v-if="team.project.links.website" class="fas fa-desktop fa-2x"/>
-          </a>
-          <a v-if="team.project.links.appDownloadLink && team.project.links.appType==='ios'"
-             :href="team.project.links.appDownloadLink" target="_blank">
-            <i v-if="team.project.links.appDownloadLink && team.project.links.appType==='ios'" class="fab fa-apple fa-2x"/>
-          </a>
-          <a v-if="team.project.links.appDownloadLink && team.project.links.appType==='android'"
-             :href="team.project.links.appDownloadLink" target="_blank">
-            <i v-if="team.project.links.appDownloadLink && team.project.links.appType==='android'"
-            class="fab fa-android fa-2x"/>
+            <unicon name="window" class="icon-medium"></unicon>
           </a>
           <a v-if="team.project.links.writeup" :href="team.project.links.writeup" target="_blank">
-            <i v-if="team.project.links.writeup" class="fab fa-medium-m fa-2x"/>
+            <unicon name="notebooks" class="icon-medium"></unicon>
           </a>
         </p>
       </div>
@@ -60,19 +58,46 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-
-.p {
-  margin-bottom: 0px;
+.modal-background {
+  background-color: rgba($black, 0.9);
 }
-.socials {
-  i {
-    width: 32px;
-    margin-left: 16px;
-    margin-right: 16px;
+
+.modal-content {
+  border-radius: 15px;
+  background-color: $dark;
+  box-shadow: 0 0 50px rgba($accent, 0.3);
+
+  .modal-bg-container {
+    position: absolute;
+    .modal-bg {
+      overflow: hidden;
+      mix-blend-mode: overlay;
+    }
   }
 
-}
-.modal-content {
-  background-color: $dark;
+  .close-button {
+    position: relative;
+    z-index: 99;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+
+  .banner-container {
+    .banner {
+      border-radius: 8px;
+      position: relative;
+    }
+  }
+
+  .socials {
+    margin-top: 32px;
+
+    i {
+      width: 32px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
 }
 </style>

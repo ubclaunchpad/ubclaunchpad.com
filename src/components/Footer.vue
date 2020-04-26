@@ -5,7 +5,7 @@
         <p>UBC Launch Pad {{ year }}</p>
       </div>
 
-      <ClubSocialsLinks :links="socials" />
+      <ClubSocialsLinks :links="socials" class="socials" />
 
       <div class="level-right">
         <p><a :href="'mailto:' + socials.email">{{ socials.email }}</a></p>
@@ -40,7 +40,7 @@ export default Vue.extend({
   padding-left: 76px;
   padding-right: 76px;
 
-  p {
+  .socials {
     margin-bottom: 0px;
   }
 }

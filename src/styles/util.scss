@@ -32,6 +32,11 @@
   }
 
   &-sides {
+    &-16 {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+
     // essentially horizontal centers on block elements
     &-auto {
       margin-left: auto;
@@ -54,4 +59,53 @@
 // using this class alongside [[`updateClassesIfInView`]] doesn't break.
 .hidden {
   opacity: 0;
+}
+
+.box-shadow {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow {
+  text-shadow:  0px 10px 20px rgba(0, 0, 0, 0.75);
+}
+
+// see unicons.ts
+.unicon {
+  fill: $white !important;
+  margin: 8px;
+
+  &.icon {
+    &-small {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    &-medium {
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &-large {
+      svg {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  &.margin-sides-auto {
+    svg {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &.accent {
+    fill: $accent !important;
+  }
 }

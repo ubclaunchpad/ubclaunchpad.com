@@ -161,6 +161,7 @@ In general:
 * if the image can be hosted elsewhere (i.e. a company website or project repository), host it there instead and reference it by URL
 * use suitably-sized assets that don't exceed 1MB in size
 * do not put assets in `/public`
+* **icons**: see [`unicons.ts`](./src/unicons.ts).
 
 We also have an [automated workflow](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
 
