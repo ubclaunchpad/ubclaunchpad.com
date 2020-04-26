@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  preview of the new UBC Launch Pad website
+  the new, official UBC Launch Pad website - <a href="https://ubclaunchpad.com">ubclaunchpad.com</a>
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 <p align="center">
   <a href="https://ubclaunchpad.com/config"><strong>Configuring</strong></a> · 
   <a href="./CONTRIBUTING.md"><strong>Contributing</strong></a> · 
-  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.github.io%2Fnew&tab=desktop"><strong>Performance</strong></a>
+  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.com&tab=desktop"><strong>Performance</strong></a>
 </p>
 
 <br>
