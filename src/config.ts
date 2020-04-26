@@ -303,7 +303,7 @@ export const clubConfig: {
           hasName: true, // this one should be self-explanatory
         },
         links: {
-          repository: 'https://github.com/ubclaunchpad/new',
+          repository: 'https://github.com/ubclaunchpad/ubclaunchpad.com',
         },
       },
     },
