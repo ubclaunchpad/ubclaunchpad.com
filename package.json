@@ -5,9 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "postbuild": "npm run docs",
+    "postbuild": "npm run docs && npm run redirects",
     "lint": "vue-cli-service lint",
-    "docs": "typedoc --options typedoc.js src/config.ts"
+    "docs": "typedoc --options typedoc.js src/config.ts",
+    "redirects": "tsc ./tools/generateRedirects.ts --outDir bin && FILE='bin/src/config.js' ./tools/stripRequire.sh && node ./bin/tools/generateRedirects.js"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
