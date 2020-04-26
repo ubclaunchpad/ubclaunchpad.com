@@ -2,7 +2,7 @@
 
 This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows.
 
-If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/new/issues)!
+If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)!
 
 - [Dependencies](#dependencies)
 - [Development](#development)
@@ -163,7 +163,7 @@ In general:
 * do not put assets in `/public`
 * **icons**: see [`unicons.ts`](./src/unicons.ts).
 
-We also have an [automated workflow](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
+We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
 
 ### Configuration
 
@@ -188,7 +188,7 @@ These changes are published automatically - see [Deployment](#deployment).
 
 ## Deployment
 
-Deployments are handled automatically by the [Deploy workflow](https://github.com/ubclaunchpad/new/actions?workflow=Deploy) (see [GitHub Actions](#github-actions)), which publishes changes to the `gh-pages` branch. The contents of the `gh-pages` branch is what users see when they visit he website - refer to the [official GitHub Pages documentation](https://pages.github.com/) for more details.
+Deployments are handled automatically by the [Deploy workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Deploy) (see [GitHub Actions](#github-actions)), which publishes changes to the `gh-pages` branch. The contents of the `gh-pages` branch is what users see when they visit he website - refer to the [official GitHub Pages documentation](https://pages.github.com/) for more details.
 
 This means that when your changes are merged to `master`, your contribution will automatically be deployed! This deployment includes both the actual website as well as [configuration documentation](#configuration).
 
@@ -198,8 +198,8 @@ This means that when your changes are merged to `master`, your contribution will
 
 [GitHub Actions](https://github.com/features/actions) is a workflow automation platform provided by GitHub. We use it for automating a variety of tasks for this project.
 
-* [![Checks](https://github.com/ubclaunchpad/new/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
-* [![Compress images](https://github.com/ubclaunchpad/new/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
-* [![Deploy](https://github.com/ubclaunchpad/new/workflows/Deploy/badge.svg)](https://github.com/ubclaunchpad/new/actions?workflow=Deploy) ([`deploy.yml`](./.github/workflows/deploy.yml)) runs on every push to the `master` branch to build and update the `gh-pages` branch (in other words, it deploys the website).
+* [![Checks](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
+* [![Compress images](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
+* [![Deploy](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Deploy/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Deploy) ([`deploy.yml`](./.github/workflows/deploy.yml)) runs on every push to the `master` branch to build and update the `gh-pages` branch (in other words, it deploys the website).
 
 <br />

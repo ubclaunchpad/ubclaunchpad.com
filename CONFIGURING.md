@@ -4,11 +4,11 @@
 
 <br />
 
-Most frequently updated website values (recruitment status, teams, etc.) on the [UBC Launch Pad website](https://github.com/ubclaunchpad/new) can be updated by changing the values in [`src/config.ts`](https://github.com/ubclaunchpad/new/blob/master/src/config.ts), a configuration file written in TypeScript. This site describes the different settings available and guidance on what each value should be.
+Most frequently updated website values (recruitment status, teams, etc.) on the [UBC Launch Pad website](https://github.com/ubclaunchpad/ubclaunchpad.com) can be updated by changing the values in [`src/config.ts`](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/src/config.ts), a configuration file written in TypeScript. This site describes the different settings available and guidance on what each value should be.
 
-To make a change, simply edit the values in [`src/config.ts`](https://github.com/ubclaunchpad/new/blob/master/src/config.ts) based on the guidance in the type documentation on this website and open a pull request in [`ubclaunchpad/new`](https://github.com/ubclaunchpad/new). Your changes will be automatically deployed when your pull request is accepted and merged!
+To make a change, simply edit the values in [`src/config.ts`](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/src/config.ts) based on the guidance in the type documentation on this website and open a pull request in [`ubclaunchpad/ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com). Your changes will be automatically deployed when your pull request is accepted and merged!
 
-If something you want to change cannot be updated with `config.ts`, refer to [CONTRIBUTING.md](https://github.com/ubclaunchpad/new/blob/master/CONTRIBUTING.md) for more detailed documentation.
+If something you want to change cannot be updated with `config.ts`, refer to [CONTRIBUTING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md) for more detailed documentation.
 
 - [Providing Images](#providing-images)
 

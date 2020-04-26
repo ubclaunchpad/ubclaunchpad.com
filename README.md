@@ -7,12 +7,12 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ubclaunchpad/new/actions?workflow=Checks">
-    <img src="https://github.com/ubclaunchpad/new/workflows/Checks/badge.svg"
+  <a href="https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Checks">
+    <img src="https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg"
       alt="Checks Status" />
   </a>
-  <a href="https://github.com/ubclaunchpad/new/actions?workflow=Deploy">
-    <img src="https://github.com/ubclaunchpad/new/workflows/Deploy/badge.svg"
+  <a href="https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Deploy">
+    <img src="https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Deploy/badge.svg"
       alt="Deploy Status" />
   </a>
   <a href="https://ubclaunchpad.github.io/new">
