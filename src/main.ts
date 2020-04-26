@@ -18,7 +18,7 @@ smoothscroll.polyfill();
 Vue.config.productionTip = false;
 
 Vue.use(VueGtag, {
-  config: { id: 'TODO' },
+  config: { id: 'UA-63529563-1' },
 });
 Vue.use(Unicon);
 
