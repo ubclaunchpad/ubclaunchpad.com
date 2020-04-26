@@ -22,7 +22,7 @@
       </div>
 
       <p ref="sponsor-pkg" class="package-link-p">
-        <a :href="sponsorshipPackage" target="_blank" class="package-link">
+        <a :href="sponsorshipPackage" target="_blank" class="package-link" v-on:click="onSponsorPackageClick">
           <b>Interested in sponsoring us? View our sponsorship package here ></b>
         </a>
       </p>
@@ -47,7 +47,7 @@ export default Vue.extend({
     sponsorshipPackage: String,
   },
   computed: {
-    columns: function(): ClubSponsor[][] {
+    columns(): ClubSponsor[][] {
       // too few sponsors looks awkward when spread out too much
       const perColumn = (this.sponsors.length <= 4) ? 1 : 2;
       return generateColumns<ClubSponsor>(this.sponsors, perColumn);
@@ -61,6 +61,15 @@ export default Vue.extend({
       });
       updateClassesIfInView(window, this.$refs['sponsor-pkg'], {
         addClasses: 'animated fadeInUp',
+      });
+    },
+    /**
+     * Track clicks on the sponsorship package
+     */
+    onSponsorPackageClick() {
+      this.$gtag.event('sponsor-package-click', {
+        event_category: 'sponsor',
+        event_label: 'Sponsorship Package',
       });
     },
   },

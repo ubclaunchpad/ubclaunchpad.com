@@ -1,8 +1,13 @@
 # ⚒️ Contributing to the UBC Launch Pad Website
 
-This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows.
+This document will guide you through contributing changes to the new UBC Launch Pad website! It assumes basic knowledge of git and pull request workflows. If you are looking for *what* you can contribute, see:
+
+* [our issue tracker](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)
+* [TODOs in the codebase](https://sourcegraph.com/search?q=TODO+r:ubclaunchpad/ubclaunchpad.com&patternType=literal)
 
 If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)!
+
+**Table of Contents**
 
 - [Dependencies](#dependencies)
 - [Development](#development)
@@ -11,6 +16,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
     - [Documentation](#documentation)
     - [Styling](#styling)
   - [Handling Assets](#handling-assets)
+  - [Analytics](#analytics)
   - [Configuration](#configuration)
 - [Deployment](#deployment)
 - [GitHub Actions](#github-actions)
@@ -164,6 +170,22 @@ In general:
 * **icons**: see [`unicons.ts`](./src/unicons.ts).
 
 We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
+
+### Analytics
+
+We use [Google Analytics](https://analytics.google.com/analytics/web) to log events. In general, track interesting actions as [events](https://support.google.com/analytics/answer/1033068), and use the following scheme:
+
+```ts
+this.$gtag.event(
+  'my-action-name', // name of event, namespaced if appropriate - such as 'project-modal-link-click'
+  {
+    event_category: 'section-name', // name of section or part of website - be consistent with this
+    event_label: 'Some Value', // value associated with event, such as a team name 
+  },
+);
+```
+
+The library we use for this is [`vue-gtag`](https://matteo-gabriele.gitbook.io/vue-gtag/), and the client is available through `this.$gtag` in Vue. Analytics are available under the `team@ubclaunchpad.com` account in [Google Analytics](https://analytics.google.com/analytics/web).
 
 ### Configuration
 

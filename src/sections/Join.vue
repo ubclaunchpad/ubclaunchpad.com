@@ -4,7 +4,7 @@
       <div class="column has-text-centered is-half">
         <div v-for="(p, i) in positions" :key="p.name">
           <h3 ref="position-animated">
-            <a class="position-link" :href="p.applicationURL" target="_blank">
+            <a class="position-link" :href="p.applicationURL" target="_blank" v-on:click="onApplicationClick(p.name)">
               {{ p.name }}
             </a>
           </h3>
@@ -48,6 +48,12 @@ export default Vue.extend({
     handleScroll() {
       updateClassesIfInView(window, this.$refs['position-animated'], {
         addClasses: 'animated fadeInLeft',
+      });
+    },
+    onApplicationClick(position: string) {
+      this.$gtag.event('join-application-click', {
+        event_category: 'join',
+        event_label: position,
       });
     },
   },

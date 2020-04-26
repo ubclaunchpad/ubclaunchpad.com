@@ -41,15 +41,16 @@
         </div>
 
         <p v-if="isActive" class="socials">
-          <a :href="team.project.links.repository" target="_blank" data-tippy-content="GitHub">
+          <a data-tippy-content="GitHub"
+            :href="team.project.links.repository" target="_blank"  v-on:click="onLinkClick">
             <unicon name="github-alt" class="icon-small hoverable"></unicon>
           </a>
           <a v-if="team.project.links.website" data-tippy-content="Website"
-            :href="team.project.links.website" target="_blank">
+            :href="team.project.links.website" target="_blank" v-on:click="onLinkClick">
             <unicon name="window" class="icon-small hoverable"></unicon>
           </a>
           <a v-if="team.project.links.writeup" data-tippy-content="Writeup"
-            :href="team.project.links.writeup" target="_blank">
+            :href="team.project.links.writeup" target="_blank" v-on:click="onLinkClick">
             <unicon name="notebooks" class="icon-small hoverable"></unicon>
           </a>
         </p>
@@ -70,13 +71,34 @@ import { Team, MediaYouTube } from '@/data/types';
 export default Vue.extend({
   name: 'TeamProjectModal',
   props: {
+    /**
+     * Name of section this modal is based in
+     */
     section: String,
+    /**
+     * Team to display
+     */
     team: {
       type: Object as () => Team,
     },
+    /**
+     * Toggle whether team is active
+     */
     isActive: Boolean,
   },
   methods: {
+    /**
+     * Reports an analytics event
+     */
+    reportEvent(action: string, team: Team) {
+      this.$gtag.event(action, {
+        event_category: 'project-modal',
+        event_label: `${this.section}-${team.project.name}`,
+      });
+    },
+    /**
+     * Closes this modal
+     */
     handleModalClose() {
       this.$emit('modalClosed');
     },
@@ -84,6 +106,8 @@ export default Vue.extend({
      * Shares this project modal to clipboard, and show a tooltip indicating success
      */
     async shareToClipboard() {
+      this.reportEvent('project-modal-share', this.team);
+
       // encode share link and write to clipboard
       const urlParams = new URLSearchParams({
         project: this.team.project.name.toLowerCase(),
@@ -114,6 +138,13 @@ export default Vue.extend({
       const urlParams = new URLSearchParams(params);
       return `https://youtube.com/embed/${media.id}?${urlParams.toString()}`;
     },
+    /**
+     * Report a link click - for now, don't bother checking which exact link, since any click is
+     * probably an exciting event.
+     */
+    onLinkClick() {
+      this.reportEvent('project-modal-link-click', this.team);
+    },
   },
   updated() {
     // only attach tooltips after entire view has been rendered
@@ -121,9 +152,9 @@ export default Vue.extend({
       this.$nextTick(function() { tippy('[data-tippy-content]'); });
     }
   },
-  mounted() {
-    // check for tooltips on first mount as well
-    if (this.isActive) tippy('[data-tippy-content]');
+  created() {
+    // check for tooltips on first mount as well - modal is only ever active on mount if 
+    if (this.isActive) { tippy('[data-tippy-content]'); }
   },
 });
 </script>
