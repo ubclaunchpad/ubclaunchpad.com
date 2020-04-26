@@ -42,7 +42,7 @@ To get started, make sure you have [Node](https://nodejs.org/en/download) instal
 
 ```sh
 node -v
-npm ci  # install dependencies strictly with our lockfile
+npm install
 ```
 
 You can then run the website locally by running the following and visiting [`localhost:8081`](http://localhost:8081):
@@ -55,11 +55,9 @@ Refer to the links above for more details on each dependency.
 
 ### npm Dependencies
 
-[npm](https://docs.npmjs.com/about-npm/) is a package registry for JavaScript/Typescript/etc libraries. Our npm dependencies are declared in [`package.json`](./package.json), with resolved versions tracked in [`package-lock.json`](./package-lock.json).
+[npm](https://docs.npmjs.com/about-npm/) is a package registry for JavaScript/Typescript/etc libraries. Our npm dependencies are declared in [`package.json`](./package.json)/
 
-In general, when declaring dependencies in `package.json`, use the [`~` operator](https://docs.npmjs.com/about-semantic-versioning#using-semantic-versioning-to-specify-update-types-your-package-can-accept), which specifies that the `npm install` should only update patch dependencies.
-
-Note that `npm install` *can* change dependencies in `package-lock.json` - in general, use `npm ci` to install dependencies unless explicitly performing an update.
+When declaring dependencies in `package.json`, always use the [`~` operator](https://docs.npmjs.com/about-semantic-versioning#using-semantic-versioning-to-specify-update-types-your-package-can-accept), which specifies that the `npm install` should only use the latest patch updates of dependencies, and not automatically upgrade to the latest minor updates without explicitly being told to do so.
 
 <br />
 
