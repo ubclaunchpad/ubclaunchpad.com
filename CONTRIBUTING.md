@@ -7,6 +7,8 @@ This document will guide you through contributing changes to the new UBC Launch 
 
 If you spot anything out of date or incorrect, please [open an issue](https://github.com/ubclaunchpad/ubclaunchpad.com/issues)!
 
+**Table of Contents**
+
 - [Dependencies](#dependencies)
 - [Development](#development)
   - [TypeScript Guidelines](#typescript-guidelines)
