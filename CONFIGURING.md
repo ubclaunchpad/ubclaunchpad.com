@@ -10,9 +10,29 @@ To make a change, simply edit the values in [`src/config.ts`](https://github.com
 
 If something you want to change cannot be updated with `config.ts`, refer to [CONTRIBUTING.md](https://github.com/ubclaunchpad/new/blob/master/CONTRIBUTING.md) for more detailed documentation.
 
+- [Examples](#examples)
+  - [Configuring Recruitment Status](#configuring-recruitment-status)
 - [Providing Images](#providing-images)
 
 <br />
+
+## Examples
+
+### Configuring Recruitment Status
+
+One example of an easily configurable component of the website is recruitment and applications information. To open applications for a new season, simply update [`recruitmentConfig`](/globals.html#recruitmentconfig) with the appropriate values, for example:
+
+```diff
+- season: 'Fall 2019'
++ season: 'Spring 2020'
+```
+
+```diff
+- applicationsOpen: false
++ applicationsOpen: true
+```
+
+More details are available in the [`recruitmentConfig` documentation](/globals.html#recruitmentconfig).
 
 ## Providing Images
 
