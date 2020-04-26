@@ -213,14 +213,16 @@ npm run docs
 
 Included in this documentation website is [CONFIGURING.md](./CONFIGURING.md), where any updated guidance regarding the configuration of the website should be added.
 
-You can view the configuration documentation site locally using a static file server like [`serve`](https://github.com/zeit/serve):
+You can view the configuration documentation site locally using `npm run serve-dist`
 
-```
-npm i -g serve
-serve ./dist/config
+```sh
+npm run build # includes `npm run docs`
+npm run serve-dist
 ```
 
-These changes are published automatically - see [Deployment](#deployment).
+The website will be available at `http://localhost:5000/config`.
+
+These changes are published automatically when merged into the `master` branch - see [Deployment](#deployment).
 
 ### Tools
 

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve-dist": "serve ./dist",
     "build": "vue-cli-service build",
     "postbuild": "npm run docs && npm run redirects",
     "lint": "vue-cli-service lint",
@@ -15,6 +16,7 @@
     "bulma": "^0.8.2",
     "clipboard-polyfill": "^2.8.6",
     "core-js": "^3.6.4",
+    "serve": "^11.3.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tippy.js": "^6.2.0",
     "vue": "^2.6.11",
