@@ -80,7 +80,7 @@ export type Project = {
     website?: string;
 
      /**
-     * If the project is an app link to the app and type of app. 
+     * If the project is an app, link to the app and type of app. 
      */
     app?: {
       url?: string;
