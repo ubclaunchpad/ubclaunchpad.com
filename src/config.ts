@@ -376,7 +376,10 @@ export const clubConfig: {
         },
         links: {
           repository: 'https://github.com/ubclaunchpad/eat',
-          website: 'https://apps.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100',
+          app: {
+            url: 'https://apps.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100',
+            appType: 'ios',
+          },
         },
       },
     },
