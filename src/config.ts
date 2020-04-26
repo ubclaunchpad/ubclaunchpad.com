@@ -477,4 +477,9 @@ type Redirect = {
  * 
  * See [[`Redirect`]].
  */
-export const redirectsConfig: Redirect[] = [];
+export const redirectsConfig: Redirect[] = [
+  {
+    path: '/events',
+    target: 'https://www.facebook.com/ubclaunchpad/events',
+  },
+];
