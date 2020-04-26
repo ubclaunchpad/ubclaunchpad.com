@@ -49,6 +49,14 @@
             :href="team.project.links.website" target="_blank" v-on:click="onLinkClick">
             <unicon name="window" class="icon-small hoverable"></unicon>
           </a>
+           <a v-if="team.project.links.app && team.project.links.app.appType === 'ios'" data-tippy-content="App"
+            :href="team.project.links.app.url" target="_blank" v-on:click="onLinkClick">
+            <unicon name="apple-alt" class="icon-small hoverable"></unicon>
+          </a>
+           <a v-if="team.project.links.app && team.project.links.app.appType === 'android'" data-tippy-content="App"
+            :href="team.project.links.app.url" target="_blank" v-on:click="onLinkClick">
+            <unicon name="android-alt" class="icon-small hoverable"></unicon>
+          </a>
           <a v-if="team.project.links.writeup" data-tippy-content="Writeup"
             :href="team.project.links.writeup" target="_blank" v-on:click="onLinkClick">
             <unicon name="notebooks" class="icon-small hoverable"></unicon>
