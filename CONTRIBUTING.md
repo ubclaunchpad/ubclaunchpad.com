@@ -192,6 +192,10 @@ Deployments are handled automatically by the [Netlify](https://www.netlify.com/)
 
 This means that when your changes are merged to `master`, your contribution will automatically be deployed! This deployment includes both the actual website as well as [configuration documentation](#configuration).
 
+Also note that individual pull requests also get their own preview deployment - you can find a link by clicking on "Details" next to the `deploy/netlify` check at the bottom of your pull request:
+
+![deploy preview](./.static/deploy-preview.png)
+
 <br />
 
 ## GitHub Actions
