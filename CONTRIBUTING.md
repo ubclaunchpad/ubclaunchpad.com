@@ -17,6 +17,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [Vue Guidelines](#vue-guidelines)
     - [Documentation](#documentation)
     - [Styling](#styling)
+      - [Responsive Design](#responsive-design)
   - [Handling Assets](#handling-assets)
   - [Analytics](#analytics)
   - [Configuration](#configuration)
@@ -137,6 +138,14 @@ In general, when working with Vue:
   ```
 
 See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%3Cstyle+lang:vue&patternType=literal).
+
+##### Responsive Design
+
+There are several strategies to handle responsiveness (in other words, how well the website scales onto smaller/larger screens):
+
+* [Bulma](https://bulma.io) has a variety of [helpers](https://bulma.io/documentation/modifiers/responsive-helpers/) for implementing responsiveness, and each Bulma component likely has a few modifiers to handle scaling on various screen sizes - see their respective class documentation for more details.
+  * Bulma hide/show helpers (`is-hidden-` classes) are particularly useful for hiding/showing alternative layouts on different screen sizes - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+is-hidden-+lang:vue&patternType=literal)
+* [`variables.scss`](./src/styles/variables.scss) has definitions for breakpoints (`$tablet`, `$touch`, etc.) that you can use with `@media` queries in your styles to define screen-size-specific properties - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40media+lang:vue&patternType=literal).
 
 ### Handling Assets
 
