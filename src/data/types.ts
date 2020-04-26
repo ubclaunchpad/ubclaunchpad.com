@@ -83,7 +83,7 @@ export type Project = {
      * If the project is an app, link to the app and type of app. 
      */
     app?: {
-      url?: string;
+      url: string;
       appType: AppType;
     };
 
