@@ -123,7 +123,8 @@ export default Vue.extend({
       const urlParams = new URLSearchParams({
         project: this.team.project.name.toLowerCase(),
       } as Record<string, string>);
-      await clipboard.writeText(`${window.location.host}?${urlParams.toString()}#${this.section}`);
+      const { protocol, host } = window.location;
+      await clipboard.writeText(`${protocol}//${host}?${urlParams.toString()}#${this.section}`);
 
       // show and destroy tooltip after a few seconds
       const tooltip = tippy('#share-button', {
