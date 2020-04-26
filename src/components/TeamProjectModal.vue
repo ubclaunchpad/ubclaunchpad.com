@@ -68,6 +68,9 @@ import Vue from 'vue';
 import tippy from 'tippy.js';
 import { Team, MediaYouTube } from '@/data/types';
 
+// see https://github.com/ubclaunchpad/ubclaunchpad.com/issues/105
+import * as clipboard from 'clipboard-polyfill';
+
 export default Vue.extend({
   name: 'TeamProjectModal',
   props: {
@@ -112,7 +115,7 @@ export default Vue.extend({
       const urlParams = new URLSearchParams({
         project: this.team.project.name.toLowerCase(),
       } as Record<string, string>);
-      await navigator.clipboard.writeText(`${window.location.host}?${urlParams.toString()}#${this.section}`);
+      await clipboard.writeText(`${window.location.host}?${urlParams.toString()}#${this.section}`);
 
       // show and destroy tooltip after a few seconds
       const tooltip = tippy('#share-button', {
