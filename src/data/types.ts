@@ -78,6 +78,15 @@ export type Project = {
      * Link to deployed website
      */
     website?: string;
+
+     /**
+     * If the project is an app, link to the app and type of app. 
+     */
+    app?: {
+      url: string;
+      type: 'ios' | 'android';
+    };
+
     /**
      * Link to a blog post or similar writeup
      */
@@ -160,3 +169,4 @@ export type ClubSocials = {
   email: string;
   linkedin: string;
 }
+
