@@ -33,6 +33,7 @@ redirectsConfig.forEach((r) => {
   redirects.push(`${r.path}\t${r.target}`);
 });
 
-// write to output
+// write to Netlify `_redirects`, as well as a more accesssible `redirects.txt` that we can access
 console.log('generated redirects', redirects);
 writeFileSync('./dist/_redirects', redirects.join('\n'));
+writeFileSync('./dist/redirects.txt', redirects.join('\n'));
