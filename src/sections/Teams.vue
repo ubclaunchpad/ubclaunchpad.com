@@ -5,7 +5,7 @@
       :section="$options.name"
       :team="activeTeam"
       :isActive="isActive"
-      @modalClosed="handleModalClose" />
+      @modalClosed="closeModal" />
 
     <div class="columns is-vcentered is-desktop">
       <div class="column is-two-fifths-desktop has-text-centered">
@@ -56,8 +56,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Team } from '@/data/types';
-import { generateColumns, updateClassesIfInView, getURLParams, ModalState, getTeamByName } from '@/lib/util';
+import { generateColumns, updateClassesIfInView } from '@/lib/util';
 
+import teamProjectModalController from '@/mixins/teamProjectModalController';
 import TeamProjectCard from '@/components/TeamProjectCard.vue';
 import TeamProjectModal from '@/components/TeamProjectModal.vue';
 
@@ -86,6 +87,7 @@ const stats: TeamStats[] = [
  */
 export default Vue.extend({
   name: 'Teams',
+  mixins: [teamProjectModalController],
   props: {
     teams: {
       type: Array as () => Team[],
@@ -99,9 +101,6 @@ export default Vue.extend({
       const perColumn = Math.ceil(this.teams.length / perRow);
       return generateColumns<Team>(this.teams, perColumn);
     },
-    activeTeam(): Team | undefined {
-      return getTeamByName(this.teams, this.activeTeamName);
-    },
   },
   methods: {
     handleScroll() {
@@ -110,29 +109,9 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-    setModalState(state: ModalState) {
-      this.isActive = state.isActive;
-      this.activeTeamName = state.activeTeamName;
-    },
-    handleModalClose() {
-      this.isActive = false;
-    },
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
-
-    // jump to linked project if one is provided
-    const linkedProject = getURLParams(window.location).get('project');
-    if (linkedProject && getTeamByName(this.teams, linkedProject)) {
-      this.$gtag.event('direct-project-link', {
-        event_category: this.$options.name,
-        event_label: linkedProject,
-      });
-      this.setModalState({
-        isActive: true,
-        activeTeamName: linkedProject,
-      });
-    }
   },
   components: {
     TeamProjectCard,

@@ -1,5 +1,3 @@
-import { Team } from '@/data/types';
-
 /**
  * Turns a single array into an array of arrays, each one representing a column.
  * 
@@ -118,9 +116,9 @@ export function getURLParams(location: Location): URLSearchParams {
 }
 
 /**
- * Describes the state of a modal
+ * Describes the state of a TeamProjectModal
  */
-export interface ModalState {
+export interface TeamProjectModalState {
   /**
    * if the modal is open or closed
    */
@@ -129,15 +127,4 @@ export interface ModalState {
    * The name of the selected team 
    */
   activeTeamName: string;
-}
-
-/**
- * Simple find function for teams
- * 
- * @param teams set of teams to query
- * @param name name of project to find
- */
-export function getTeamByName(teams: Team[], name: string): Team | undefined {
-  return teams.find((team: Team) =>
-    team.project.name.toLowerCase() === name.toLowerCase());
 }
