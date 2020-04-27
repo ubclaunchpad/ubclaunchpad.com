@@ -8,11 +8,11 @@
           <p>
             Almost all of our work is done in the open - you can browse each project's source code,
             as well as the discussions that happen around that code, online! Each project maintains
-            documentation and guides that anyone can access to learn about our work.
+            documentation and guides that anyone can access to learn about how every project was built.
           </p>
           <p>
             <a :href="github" target="_blank">
-              <b>See our work on GitHub ></b>
+              <b>See our projects on GitHub ></b>
             </a>
           </p>
         </div>
@@ -26,7 +26,7 @@
 
           <p>
             <a href="https://docs.ubclaunchpad.com" target="_blank">
-              <b>View our documentation website here ></b>
+              <b>View our documentation, guides, and resources website ></b>
             </a>
           </p>
         </div>
