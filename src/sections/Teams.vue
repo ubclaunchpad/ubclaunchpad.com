@@ -125,7 +125,7 @@ export default Vue.extend({
     const linkedProject = getURLParams(window.location).get('project');
     if (linkedProject && getTeamByName(this.teams, linkedProject)) {
       this.$gtag.event('direct-project-link', {
-        event_category: 'teams',
+        event_category: this.$options.name,
         event_label: linkedProject,
       });
       this.setModalState({

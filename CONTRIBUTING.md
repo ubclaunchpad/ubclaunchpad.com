@@ -22,6 +22,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [Handling Assets](#handling-assets)
   - [Analytics](#analytics)
   - [Configuration](#configuration)
+  - [Tools](#tools)
 - [Deployment](#deployment)
 - [GitHub Actions](#github-actions)
 
@@ -199,15 +200,21 @@ We use [Google Analytics](https://analytics.google.com/analytics/web) to log eve
 
 ```ts
 this.$gtag.event(
-  'my-action-name', // name of event, namespaced if appropriate - such as 'project-modal-link-click'
+  // name of event, namespaced if appropriate - such as 'project-modal-link-click'
+  'my-action-name',
   {
-    event_category: 'section-name', // name of section or part of website - be consistent with this
-    event_label: 'Some Value', // value associated with event, such as a team name 
+    // name of section or part of website - be consistent with this. In general, the name of the
+    // component, accesisble via `this.$options.name`, should suffice
+    event_category: this.$options.name,
+    // value associated with event, such as a team name 
+    event_label: 'Some Value',
   },
 );
 ```
 
-The library we use for this is [`vue-gtag`](https://matteo-gabriele.gitbook.io/vue-gtag/), and the client is available through `this.$gtag` in Vue. Analytics are available under the `team@ubclaunchpad.com` account in [Google Analytics](https://analytics.google.com/analytics/web).
+The library we use for this is [`vue-gtag`](https://matteo-gabriele.gitbook.io/vue-gtag/), and the client is available through `this.$gtag` in Vue.
+
+Reported analytics are available under the `team@ubclaunchpad.com` account in [Google Analytics](https://analytics.google.com/analytics/web), where you can see visitor counts, browser statistics, the events reported by `$gtag.event`, and more.
 
 ### Configuration
 
@@ -219,14 +226,23 @@ npm run docs
 
 Included in this documentation website is [CONFIGURING.md](./CONFIGURING.md), where any updated guidance regarding the configuration of the website should be added.
 
-You can view the configuration documentation site locally using a static file server like [`serve`](https://github.com/zeit/serve):
+You can view the configuration documentation site locally using `npm run serve-dist`
 
-```
-npm i -g serve
-serve ./dist/config
+```sh
+npm run build # includes `npm run docs`
+npm run serve-dist
 ```
 
-These changes are published automatically - see [Deployment](#deployment).
+The website will be available at `http://localhost:5000/config`.
+
+These changes are published automatically when merged into the `master` branch - see [Deployment](#deployment).
+
+### Tools
+
+[`/tools`](./tools) contains useful scripts, such as:
+
+* [`generateRedirect.ts`](./tools/generateRedirects.ts): generates [Netlify redirects](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) from [`config.ts`](./src/config.ts) (see [USING.md](./USING.md#redirect-links))
+* [`stripRequire.sh`](./tools/stripRequire.sh): pre-processes compiled JavaScript for execution
 
 <br />
 

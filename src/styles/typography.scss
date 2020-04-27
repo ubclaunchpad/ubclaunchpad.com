@@ -24,6 +24,13 @@ p {
     opacity: 1;
   }
 
+  &.tertiary {
+    color: $grey;
+    opacity: 0.8;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
   a {
     color: $white
   }
