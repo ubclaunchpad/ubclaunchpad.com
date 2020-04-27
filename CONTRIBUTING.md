@@ -14,6 +14,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
 - [Dependencies](#dependencies)
   - [npm Dependencies](#npm-dependencies)
 - [Development](#development)
+  - [Project Overview](#project-overview)
   - [TypeScript Guidelines](#typescript-guidelines)
   - [Vue Guidelines](#vue-guidelines)
     - [Documentation](#documentation)
@@ -66,12 +67,15 @@ When declaring dependencies in `package.json`, always use the [`~` operator](htt
 
 [Visual Studio Code](https://code.visualstudio.com/) with extensions like [Veter](https://marketplace.visualstudio.com/items?itemName=octref.vetur) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is recommended.
 
+### Project Overview
+
 This codebase is largely contained in [`src`](/src), where you will find the following directories:
 
 * [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Handling Assets](#handling-assets) for more details
 * [`src/components`](./src/components): Vue components that are shared throughout the website
 * [`src/sections`](./src/sections): the website is mostly designed around horizontal sections that you scroll through - each section is defined as a Vue component here
 * [`src/lib`](./src/lib): library of utility functions for Vue components
+* [`src/mixins`](./src/mixins): Vue components can share logic through [Mixins](https://vuejs.org/v2/guide/mixins.html) - Mixins in use in this project are included here
 * [`src/data`](./src/data): data type definitions for configuration used in the website - see [Configuration](#configuration) for more details
 * [`src/styles`](./src/styles): global styles are declared here and imported throughout the application
 
