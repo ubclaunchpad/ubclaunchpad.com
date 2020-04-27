@@ -2,7 +2,7 @@
   <div id="container" class="container is-widescreen">
     <TeamProjectModal
       v-if="activeTeam"
-      section="teams"
+      :section="$options.name"
       :team="activeTeam"
       :isActive="isActive"
       @modalClosed="handleModalClose" />
@@ -43,7 +43,7 @@
               v-for="(r, j) in col"
               :key="'row-'+i+'-'+j"
               class="project-container hidden">
-              <TeamProjectCard @projectClicked="setModalState" :team="r" section="teams" class="margin-sides-auto"/>
+              <TeamProjectCard @projectClicked="setModalState" :team="r" :section="$options.name" class="margin-sides-auto"/>
             </div>
           </div>
         </div>
