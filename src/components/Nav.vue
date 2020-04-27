@@ -11,10 +11,10 @@
         ABOUT
       </a>
       <a v-on:click="goTo('teams')" class="navbar-item">
-        TEAMS
+        TEAMS &amp; PROJECTS
       </a>
-      <a v-on:click="goTo('projects')" class="navbar-item">
-        PROJECTS
+      <a v-on:click="goTo('resources')" class="navbar-item">
+        RESOURCES
       </a>
       <a v-on:click="goTo('sponsors')" class="navbar-item">
         SPONSORS
