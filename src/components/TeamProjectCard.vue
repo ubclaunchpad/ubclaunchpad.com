@@ -43,7 +43,7 @@ export default Vue.extend({
   methods: {
     openModal() {
       this.$gtag.event('project-card-click', {
-        event_category: this.section,
+        event_category: this.$options.name,
         event_label: this.team.project.name,
       });
       this.$emit('projectClicked', {isActive: true, activeTeamName: this.team.project.name});

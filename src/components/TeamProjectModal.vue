@@ -103,8 +103,9 @@ export default Vue.extend({
      */
     reportEvent(action: string, team: Team) {
       this.$gtag.event(action, {
-        event_category: 'project-modal',
-        event_label: `${this.section}-${team.project.name}`,
+        event_category: this.$options.name,
+        // include which section this modal interaction came from
+        event_label: `${this.section}: ${team.project.name}`,
       });
     },
     /**
