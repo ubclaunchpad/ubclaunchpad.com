@@ -1,4 +1,4 @@
-// configuration documentation configuration ;)
+// configuration documentation configuration ;) see https://typedoc.org/
 module.exports = {
   name: 'UBC Launch Pad Site Configuration Guide',
   theme: 'minimal',
