@@ -21,6 +21,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [Handling Assets](#handling-assets)
   - [Analytics](#analytics)
   - [Configuration](#configuration)
+  - [Tools](#tools)
 - [Deployment](#deployment)
 - [GitHub Actions](#github-actions)
 
@@ -218,14 +219,23 @@ npm run docs
 
 Included in this documentation website is [CONFIGURING.md](./CONFIGURING.md), where any updated guidance regarding the configuration of the website should be added.
 
-You can view the configuration documentation site locally using a static file server like [`serve`](https://github.com/zeit/serve):
+You can view the configuration documentation site locally using `npm run serve-dist`
 
-```
-npm i -g serve
-serve ./dist/config
+```sh
+npm run build # includes `npm run docs`
+npm run serve-dist
 ```
 
-These changes are published automatically - see [Deployment](#deployment).
+The website will be available at `http://localhost:5000/config`.
+
+These changes are published automatically when merged into the `master` branch - see [Deployment](#deployment).
+
+### Tools
+
+[`/tools`](./tools) contains useful scripts, such as:
+
+* [`generateRedirect.ts`](./tools/generateRedirects.ts): generates [Netlify redirects](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) from [`config.ts`](./src/config.ts) (see [USING.md](./USING.md#redirect-links))
+* [`stripRequire.sh`](./tools/stripRequire.sh): pre-processes compiled JavaScript for execution
 
 <br />
 
