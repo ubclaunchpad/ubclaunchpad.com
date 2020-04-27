@@ -41,8 +41,8 @@
         :positions="recruitment.positions" />
     </Section>
 
-    <!-- depends if join section exists or not -->
-    <Section :section-id="recruitment.applicationsOpen ? 7 : 6" size="medium">
+    <!-- section-id depends on if join section exists or not -->
+    <Section :section-id="recruitment.applicationsOpen ? 6 : 7" size="medium">
       <Sponsors
         :sponsors="sponsorship.sponsors"
         :sponsorship-package="sponsorship.packageURL" />
