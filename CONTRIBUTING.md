@@ -192,9 +192,12 @@ We use [Google Analytics](https://analytics.google.com/analytics/web) to log eve
 
 ```ts
 this.$gtag.event(
-  'my-action-name', // name of event, namespaced if appropriate - such as 'project-modal-link-click'
+  // name of event, namespaced if appropriate - such as 'project-modal-link-click'
+  'my-action-name',
   {
-    event_category: 'section-name', // name of section or part of website - be consistent with this
+    // name of section or part of website - be consistent with this. In general, the name of the
+    // component, accesisble via `this.$options.name`, should suffice
+    event_category: this.$options.name,
     event_label: 'Some Value', // value associated with event, such as a team name 
   },
 );

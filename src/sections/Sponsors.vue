@@ -68,7 +68,7 @@ export default Vue.extend({
      */
     onSponsorPackageClick() {
       this.$gtag.event('sponsor-package-click', {
-        event_category: 'sponsor',
+        event_category: this.$options.name,
         event_label: 'Sponsorship Package',
       });
     },

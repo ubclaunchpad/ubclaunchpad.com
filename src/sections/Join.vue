@@ -52,7 +52,7 @@ export default Vue.extend({
     },
     onApplicationClick(position: string) {
       this.$gtag.event('join-application-click', {
-        event_category: 'join',
+        event_category: this.$options.name,
         event_label: position,
       });
     },
