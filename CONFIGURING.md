@@ -46,7 +46,7 @@ When preparing an event, you might want to be able to share `https://ubclaunchpa
 }
 ```
 
-Also refer to [USING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md#redirect-links) for more details.
+Also refer to [USING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md#redirect-links) for more details. You can also check [`redirects.txt`](https://ubclaunchpad.com/redirects.txt) for a full list of currently active redirects.
 
 <br />
 

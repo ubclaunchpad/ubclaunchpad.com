@@ -22,10 +22,11 @@ https://ubclaunchpad.com#projects
 The website automatically generates useful redirects such as:
 
 ```
-https://ubclaunchpad.com/facebook -> https://www.facebook.com/ubclaunchpad
-https://ubclaunchpad.com/medium   -> https://medium.com/ubc-launch-pad-software-engineering-blog
+https://ubclaunchpad.com/sponsorship -> redirects to current sponsorship package
+https://ubclaunchpad.com/facebook    -> redirects to https://www.facebook.com/ubclaunchpad
+https://ubclaunchpad.com/medium      -> redirects to https://medium.com/ubc-launch-pad-software-engineering-blog
 ```
 
-See [`tools/generateRedirects.ts`](./tools/generateRedirects.ts) for a full list of redirects. You can also add custom redirects - see the [Website Configuration Guide](https://ubclaunchpad.com/config) for more details.
+See [`redirects.txt`](https://ubclaunchpad.com/redirects.txt) for a full list of currently active redirects. You can also add additional custom redirects as needed - see the [Website Configuration Guide](https://ubclaunchpad.com/config) for more details!
 
 <br />
