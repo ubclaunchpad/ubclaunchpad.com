@@ -6,9 +6,10 @@
 
         <div class="margin-bottom-64">
           <p>
-            Almost all of our work is done in the open - you can browse each project's source code,
-            as well as the discussions that happen around that code, online! Each project maintains
-            documentation and guides that anyone can access to learn about how every project was built.
+            Almost all of our work is done in the open - you can browse each project's source code
+            as well as the discussions that happen around that code online! On top of that, each
+            project maintains documentation and guides that anyone can access to learn about how
+            every project was built.
           </p>
           <p>
             <a :href="github" target="_blank">
@@ -19,11 +20,10 @@
 
         <div>
           <p>
-            In addition to each project's documentation, we also maintain a club-wide repository of
-            information, accumulated by generations of Launch Pad members, almost all of which is
-            publicly accessible as well!
+            In addition to each project's documentation, we also maintain a club-wide educational
+            repository of documentation, guides, and resources accumulated by generations of Launch
+            Pad members. This website is publicly accessible as well!
           </p>
-
           <p>
             <a href="https://docs.ubclaunchpad.com" target="_blank">
               <b>View our documentation, guides, and resources website ></b>
