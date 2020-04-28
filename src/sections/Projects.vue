@@ -13,10 +13,6 @@
         Generations of students have created projects throughout the years as part of Launch Pad -
         here are some of our favourites!
       </p>
-      <p>
-        A complete list of our past projects is available on
-        <a :href="github" target="_blank"><b>GitHub</b></a>, where we have <b>over 100 repositories</b>.
-      </p>
     </div>
 
     <div class="columns is-multiline is-centered projects">

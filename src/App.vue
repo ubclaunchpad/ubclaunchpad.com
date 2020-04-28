@@ -31,13 +31,18 @@
         :teams="club.featuredTeams" />
     </Section>
 
-    <Section :section-id="5" v-if="recruitment.applicationsOpen" size="medium">
+    <Section :section-id="5" size="large">
+      <Resources
+        :github="club.socials.github" />
+    </Section>
+
+    <Section :section-id="6" v-if="recruitment.applicationsOpen" size="medium">
       <Join
         :positions="recruitment.positions" />
     </Section>
 
     <!-- section-id depends on if join section exists or not -->
-    <Section :section-id="recruitment.applicationsOpen ? 6 : 5" size="medium">
+    <Section :section-id="recruitment.applicationsOpen ? 7 : 6" size="medium">
       <Sponsors
         :sponsors="sponsorship.sponsors"
         :sponsorship-package="sponsorship.packageURL" />
@@ -67,6 +72,7 @@ import About from '@/sections/About.vue';
 import Highlights from '@/sections/Highlights.vue';
 import Teams from '@/sections/Teams.vue';
 import Projects from '@/sections/Projects.vue';
+import Resources from '@/sections/Resources.vue';
 import Join from '@/sections/Join.vue';
 import Sponsors from '@/sections/Sponsors.vue';
 
@@ -86,8 +92,9 @@ export default Vue.extend({
     Feature,
     About,
     Highlights,
-    Projects,
     Teams,
+    Projects,
+    Resources,
     Join,
     Sponsors,
   },
