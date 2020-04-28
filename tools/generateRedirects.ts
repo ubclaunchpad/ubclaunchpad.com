@@ -33,6 +33,18 @@ redirectsConfig.forEach((r) => {
   redirects.push(`${r.path}\t${r.target}`);
 });
 
-// write to output
+// write to Netlify `_redirects`, as well as a `redirects.txt` that we can access
 console.log('generated redirects', redirects);
 writeFileSync('./dist/_redirects', redirects.join('\n'));
+writeFileSync('./dist/redirects.txt', `#
+# redirects.txt
+#
+# This file lists all currently active redirects for https://ubclaunchpad.com - on the left of each
+# row is the path that gets redirected, and on the right is the destination.
+#
+# For example, the first entry indicates that 'https://ubclaunchpad.com/facebook' will redirect to
+# '${clubConfig.socials.facebook}'.
+#
+
+${redirects.join('\n')}
+`);
