@@ -30,7 +30,7 @@
           </p>
           <p>
             <a href="https://docs.ubclaunchpad.com" target="_blank" @click="reportClick('Docs')">
-              <b>View our knowledge base ></b>
+              <b>Browse our knowledge base ></b>
             </a>
           </p>
         </div>
