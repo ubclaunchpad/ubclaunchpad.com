@@ -21,12 +21,12 @@
         <div>
           <p>
             In addition to each project's documentation, we also maintain a club-wide educational
-            repository of documentation, guides, and resources accumulated by generations of Launch
-            Pad members. This website is publicly accessible as well!
+            repository of documentation, guides, and resources compiled by generations of Launch
+            Pad members to help you get started and keep learning, open for anyone to leverage.
           </p>
           <p>
             <a href="https://docs.ubclaunchpad.com" target="_blank">
-              <b>View our documentation, guides, and resources website ></b>
+              <b>View our knowledge base ></b>
             </a>
           </p>
         </div>
