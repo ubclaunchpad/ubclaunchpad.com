@@ -13,6 +13,7 @@ If something you want to change cannot be updated with `config.ts`, refer to [CO
 - [Examples](#examples)
   - [Configuring Recruitment Status](#configuring-recruitment-status)
   - [Adding a Custom Redirect](#adding-a-custom-redirect)
+  - [Updating Projects on the Website](#updating-projects-on-the-website)
 - [Providing Images](#providing-images)
 
 <br />
@@ -33,7 +34,7 @@ One example of an easily configurable component of the website is recruitment an
 + applicationsOpen: true
 ```
 
-More details are available in the [`recruitmentConfig` documentation](/globals.html#recruitmentconfig).
+More details are available in the [`recruitmentConfig` documentation](#recruitmentconfig).
 
 ### Adding a Custom Redirect
 
@@ -47,6 +48,12 @@ When preparing an event, you might want to be able to share `https://ubclaunchpa
 ```
 
 Also refer to [USING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/USING.md#redirect-links) for more details. You can also check [`redirects.txt`](https://ubclaunchpad.com/redirects.txt) for a full list of currently active redirects.
+
+### Updating Projects on the Website
+
+Projects featured on the website are configured in [`clubConfig`](#clubconfig) under `clubConfig.currentTeams` and `clubConfig.featuredTeams`, which provides the teams in the "Teams" and "Past Projects" sections of the website respectively.
+
+To make a change, simply add/remove/update one of the entries in `clubConfig.currentTeams` or `clubConfig.featuredTeams` - see [`Team`](#team) for more details.
 
 <br />
 
