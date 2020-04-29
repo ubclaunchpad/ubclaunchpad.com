@@ -268,7 +268,9 @@ Also note that individual pull requests also get their own preview deployment - 
 
 ### Performance
 
-You can use [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.com&tab=desktop) to check on the performance of `ubclaunchpad.com`. You can also provide the link to a Netlify deploy preview to PageSpeed.
+You can use [`web.dev/measure`](https://web.dev/measure/) to check on the performance of `ubclaunchpad.com`. You can also provide the link to a Netlify deploy preview to the tool.
+
+`web.dev` points out areas for improvement in web performance, accessibility, best practices, and search engine optimization - you can see a full report for the deployed website [here](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fubclaunchpad.com).
 
 <br />
 
