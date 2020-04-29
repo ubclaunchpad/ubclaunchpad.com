@@ -39,4 +39,4 @@ Want to make a change to the website? Most content can be updated using the webs
 
 ## ⚒️ Contributing
 
-Want to hack on the website, fix bugs, develop new features, or make changes that can't but made using [site configuration](#configuring)? Our [Contribution Guide](./CONTRIBUTING.md) has everything you need to get started!
+Want to hack on the website, fix bugs, develop new features, or make changes that can't be made using [site configuration](#configuring)? Our [Contribution Guide](./CONTRIBUTING.md) has everything you need to get started!
