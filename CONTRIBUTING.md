@@ -21,6 +21,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
     - [Styling](#styling)
       - [Responsive Design](#responsive-design)
   - [Handling Assets](#handling-assets)
+    - [Icons](#icons)
   - [Analytics](#analytics)
   - [Configuration](#configuration)
   - [Tools](#tools)
@@ -193,13 +194,17 @@ See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchp
 In general:
 
 * if the image can be hosted elsewhere (i.e. a company website or project repository), host it there instead and reference it by URL
+* if you do add an asset to this repository, do not put assets in `/public`, and prefer to import them as demonstrated above from the `/assets` folder.
 * use suitably-sized assets that don't exceed 1MB in size
-* do not put assets in `/public`
-* **icons**: see [`unicons.ts`](./src/unicons.ts).
+* **lazy-loading**: [`vue-lazyload`](https://github.com/hilongjw/vue-lazyload) provides some lazy-loading capabilities for images, but *be careful where you use this*! Especially when animated, lazy-loaded images can look quite bad, since they can just pop up mid-animation ([more context here](https://github.com/ubclaunchpad/ubclaunchpad.com/pull/142))
 
 We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
 
-⚠️ Note that some of these assets are leveraged in other projects - [this query](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+%22https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com%22&patternType=regexp) shows all repositories that current depend on assets in this repository. Be careful not to remove these without updating their respective dependents!
+⚠️ Note that some of our assets are leveraged in other projects - [this query](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+%22https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com%22&patternType=regexp) shows all repositories that currently depend on assets in this repository. Be careful not to remove these without updating their respective dependents!
+
+#### Icons
+
+Try not to use images for icons! We use a third-party icon set - for more details, see [`unicons.ts`](./src/unicons.ts).
 
 ### Analytics
 
