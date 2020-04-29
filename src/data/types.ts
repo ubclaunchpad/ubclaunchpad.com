@@ -160,6 +160,8 @@ export type ClubSponsor = {
 
 /**
  * Describes set of links to Launch Pad online.
+ * 
+ * We will generate redirects for most links here, for example https://ubclaunchpad.com/facebook
  */
 export type ClubSocials = {
   instagram: string;

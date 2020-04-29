@@ -25,6 +25,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [Configuration](#configuration)
   - [Tools](#tools)
 - [Deployment](#deployment)
+  - [Performance](#performance)
 - [GitHub Actions](#github-actions)
 
 <br />
@@ -69,20 +70,20 @@ When declaring dependencies in `package.json`, always use the [`~` operator](htt
 
 ### Project Overview
 
-This codebase is largely contained in [`src`](/src), where you will find the following directories:
+This codebase is largely contained in [`src`](/src), where you will find the following directories, with particularly important ones highlighted:
 
-* [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Handling Assets](#handling-assets) for more details
+* ⭐ [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Handling Assets](#handling-assets) for more details
 * [`src/components`](./src/components): Vue components that are shared throughout the website
-* [`src/sections`](./src/sections): the website is mostly designed around horizontal sections that you scroll through - each section is defined as a Vue component here
+* ⭐ [`src/sections`](./src/sections): the website is mostly designed around horizontal sections that you scroll through - each section you see is defined as a Vue component here. Any content that cannot be configured with `config.ts` will likely be hardcoded in one of these sections.
 * [`src/lib`](./src/lib): library of utility functions for Vue components
 * [`src/mixins`](./src/mixins): Vue components can share logic through [Mixins](https://vuejs.org/v2/guide/mixins.html) - Mixins in use in this project are included here
 * [`src/data`](./src/data): data type definitions for configuration used in the website - see [Configuration](#configuration) for more details
-* [`src/styles`](./src/styles): global styles are declared here and imported throughout the application
+* ⭐ [`src/styles`](./src/styles): global styles are declared here and imported throughout the application
 
 Also noteworthy are the following files:
 
-* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.com/config) documentation site and [Configuration](#configuration) for more details
-* [`src/App.vue`](./src/App.vue): the main entrypoint component to the site - it currently declares the site layout and provides data from `src/config.ts` to relevant components (other components *should not* import `src/config.ts`)
+* [`src/config.ts`](./src/config.ts): website configuration for frequently updated values - refer to the [Configuring the UBC Launch Pad Website](https://ubclaunchpad.com/config) documentation site and [Configuration](#configuration) for more details. It should *only* be imported by `App.vue`.
+* [`src/App.vue`](./src/App.vue): the main entrypoint component to the site - it declares the site layout and provides data from `src/config.ts` to relevant sections components. When you create a new Section, add it here.
 
 Refer to [Dependencies](#dependencies) for our core dependencies and links to their websites, where you can find documentation on how to use them. Also refer to the existing code and components for guidance on how to work with the codebase.
 
@@ -198,6 +199,8 @@ In general:
 
 We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
 
+⚠️ Note that some of these assets are leveraged in other projects - [this query](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+%22https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com%22&patternType=regexp) shows all repositories that current depend on assets in this repository. Be careful not to remove these without updating their respective dependents!
+
 ### Analytics
 
 We use [Google Analytics](https://analytics.google.com/analytics/web) to log events. In general, track interesting actions as [events](https://support.google.com/analytics/answer/1033068), and use the following scheme:
@@ -245,7 +248,7 @@ These changes are published automatically when merged into the `master` branch -
 
 [`/tools`](./tools) contains useful scripts, such as:
 
-* [`generateRedirect.ts`](./tools/generateRedirects.ts): generates [Netlify redirects](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) from [`config.ts`](./src/config.ts) (see [USING.md](./USING.md#redirect-links))
+* [`generateRedirects.ts`](./tools/generateRedirects.ts): generates [Netlify redirects](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) from [`config.ts`](./src/config.ts) (see [USING.md](./USING.md#redirect-links))
 * [`stripRequire.sh`](./tools/stripRequire.sh): pre-processes compiled JavaScript for execution
 
 <br />
@@ -260,13 +263,17 @@ Also note that individual pull requests also get their own preview deployment - 
 
 ![deploy preview](./.static/deploy-preview.png)
 
+### Performance
+
+You can use [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.com&tab=desktop) to check on the performance of `ubclaunchpad.com`. You can also provide the link to a Netlify deploy preview to PageSpeed.
+
 <br />
 
 ## GitHub Actions
 
 [GitHub Actions](https://github.com/features/actions) is a workflow automation platform provided by GitHub. We use it for automating a variety of tasks for this project.
 
-* [![Checks](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
+* [![Checks](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) is our continuous integration workflow: it runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
 * [![Compress images](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
 
 <br />

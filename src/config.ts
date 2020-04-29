@@ -35,7 +35,8 @@ export const recruitmentConfig: {
   applicationsOpen: false,
 
   /**
-   * Define positions we are recruiting for.
+   * Define positions we are recruiting for. Each position will get a redirect generated under
+   * `https://ubclaunchpad.com/apply/$POSITION_NAME`
    *
    * Each element must satisfy [[`ClubPosition`]].
    */
@@ -410,7 +411,7 @@ export const sponsorshipConfig: {
   /**
    * Link to the most recent sponsorship package.
    *
-   * TODO: Let's have this hosted on a more attractive link in the future, ie `ubclaunchpad.com/sponsorship.pdf`
+   * We will generate a redirect for this link under https://ubclaunchpad.com/sponsorship
    */
   packageURL: 'https://drive.google.com/file/d/1qHG5GDN_2JZbJzOTBEQc8OULsx3VjXEz/view',
 
