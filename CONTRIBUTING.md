@@ -20,7 +20,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
     - [Documentation](#documentation)
     - [Styling](#styling)
       - [Responsive Design](#responsive-design)
-  - [Handling Assets](#handling-assets)
+  - [Assets and Images](#assets-and-images)
     - [Icons](#icons)
   - [Analytics](#analytics)
   - [Configuration](#configuration)
@@ -73,7 +73,7 @@ When declaring dependencies in `package.json`, always use the [`~` operator](htt
 
 This codebase is largely contained in [`src`](/src), where you will find the following directories, with particularly important ones highlighted:
 
-* ⭐ [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Handling Assets](#handling-assets) for more details
+* ⭐ [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Assets and Images](#assets-and-images) for more details
 * [`src/components`](./src/components): Vue components that are shared throughout the website
 * ⭐ [`src/sections`](./src/sections): the website is mostly designed around horizontal sections that you scroll through - each section you see is defined as a Vue component here. Any content that cannot be configured with `config.ts` will likely be hardcoded in one of these sections.
 * [`src/lib`](./src/lib): library of utility functions for Vue components
@@ -161,7 +161,7 @@ There are several strategies to handle responsiveness (in other words, how well 
   * Bulma hide/show helpers (`is-hidden-` classes) are particularly useful for hiding/showing alternative layouts on different screen sizes - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+is-hidden-+lang:vue&patternType=literal)
 * [`variables.scss`](./src/styles/variables.scss) has definitions for breakpoints (`$tablet`, `$touch`, etc.) that you can use with `@media` queries in your styles to define screen-size-specific properties - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40media+lang:vue&patternType=literal).
 
-### Handling Assets
+### Assets and Images
 
 Image assets are kept in [`src/assets`](./src/assets), and are bundled alongside our code during build time. To reference images in Vue:
 
@@ -279,6 +279,6 @@ You can use [Google PageSpeed](https://developers.google.com/speed/pagespeed/ins
 [GitHub Actions](https://github.com/features/actions) is a workflow automation platform provided by GitHub. We use it for automating a variety of tasks for this project.
 
 * [![Checks](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) is our continuous integration workflow: it runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
-* [![Compress images](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
+* [![Compress images](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Assets and Images](#assets-and-images).
 
 <br />
