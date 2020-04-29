@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueGtag from 'vue-gtag';
-import Unicon from './unicons';
+import VueLazyload from 'vue-lazyload';
+import VueUnicons from './unicons';
 
 // third-party styles - see CONTRIBUTING.md
 import 'bulma/css/bulma.css';
@@ -19,7 +20,8 @@ smoothscroll.polyfill();
 Vue.use(VueGtag, {
   config: { id: 'UA-63529563-1' },
 });
-Vue.use(Unicon);
+Vue.use(VueLazyload);
+Vue.use(VueUnicons);
 
 // set up vue configuration
 Vue.config.productionTip = false;
