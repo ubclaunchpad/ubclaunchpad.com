@@ -8,7 +8,7 @@ Most frequently updated website values (recruitment status, teams, etc.) on the 
 
 To make a change, simply edit the values in [`src/config.ts`](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/src/config.ts) based on the guidance in the type documentation on this website and open a pull request in [`ubclaunchpad/ubclaunchpad.com`](https://github.com/ubclaunchpad/ubclaunchpad.com). Your changes will be automatically deployed when your pull request is accepted and merged!
 
-If something you want to change cannot be updated with `config.ts`, refer to [CONTRIBUTING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md) for more detailed documentation.
+If something you want to change that cannot be configured with `config.ts`, refer to [CONTRIBUTING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md) for more detailed documentation on making changes to the website.
 
 - [Examples](#examples)
   - [Configuring Recruitment Status](#configuring-recruitment-status)
