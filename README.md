@@ -22,11 +22,16 @@
 
 <br>
 
-<p align="center">
-  <a href="./USING.md"><strong>Using</strong></a> · 
-  <a href="https://ubclaunchpad.com/config"><strong>Configuring</strong></a> · 
-  <a href="./CONTRIBUTING.md"><strong>Contributing</strong></a> · 
-  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.com&tab=desktop"><strong>Performance</strong></a>
-</p>
+## 🔎 Using
+
+The [Usage Guide](./USING.md) documents tips for using this website, such as how to check what redirects are currently available.
+
+## ⚙️ Configuring
+
+Want to make a change to the website? Most content can be updated using the website's configuration file - for example, the currently featured projects or recruitment status. Head on over to the [Site Configuration Guide](https://ubclaunchpad.com/config) for more details.
+
+## ⚒️ Contributing
+
+Want to hack on the website, fix bugs, develop new features, or make changes that can't but made using [site configuration](#configuring)? Out [Contribution Guide](./CONTRIBUTING.md) has everything you need to get started!
 
 <br>
