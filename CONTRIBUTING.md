@@ -59,7 +59,7 @@ Refer to the links above for more details on each dependency.
 
 ### npm Dependencies
 
-[npm](https://docs.npmjs.com/about-npm/) is a package registry for JavaScript/Typescript/etc libraries. Our npm dependencies are declared in [`package.json`](./package.json)/
+[npm](https://docs.npmjs.com/about-npm/) is a package registry for JavaScript/Typescript/etc libraries. Our npm dependencies are declared in [`package.json`](./package.json).
 
 When declaring dependencies in `package.json`, always use the [`~` operator](https://docs.npmjs.com/about-semantic-versioning#using-semantic-versioning-to-specify-update-types-your-package-can-accept), which specifies that the `npm install` should only use the latest patch updates of dependencies, and not automatically upgrade to the latest minor updates without explicitly being told to do so.
 
@@ -169,7 +169,7 @@ Image assets are kept in [`src/assets`](./src/assets), and are bundled alongside
 <img src="@/assets/my-image.png">
 ```
 
-To load an image to use it as a variable, use `require` and bind it to `src`:
+To load an image to use it as a variable, use `require` and bind it to `src` ([examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40/assets+lang:vue&patternType=literal))
 
 ```vue
 <template>
@@ -189,8 +189,6 @@ export default Vue.extend({
 </script>
 ```
 
-See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40/assets+lang:vue&patternType=literal).
-
 In general:
 
 * if the image can be hosted elsewhere (i.e. a company website or project repository), host it there instead and reference it by URL
@@ -200,7 +198,7 @@ In general:
 
 We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
 
-⚠️ Note that some of our assets are leveraged in other projects - [this query](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+%22https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com%22&patternType=regexp) shows all repositories that currently depend on assets in this repository. Be careful not to remove these without updating their respective dependents!
+⚠️ Note that some of our assets are leveraged in other projects - [this query](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+%22https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com%22&patternType=regexp) shows all repositories that currently depend on assets in this repository. Be careful not to remove assets without updating their respective dependents!
 
 #### Icons
 
