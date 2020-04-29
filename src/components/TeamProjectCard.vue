@@ -5,9 +5,7 @@
       :class="{
         'name-on-hover': !team.project.banner.hasName
       }"
-      :style="{
-        'background-image': 'url(' + team.project.banner.url + ')',
-      }"
+      v-lazy:background-image="team.project.banner.url"
       @click="openModal()">
       <div class="overlay">
         <h3 v-if="!team.project.banner.hasName" class="text-shadow">

@@ -20,7 +20,8 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
     - [Documentation](#documentation)
     - [Styling](#styling)
       - [Responsive Design](#responsive-design)
-  - [Handling Assets](#handling-assets)
+  - [Assets and Images](#assets-and-images)
+    - [Icons](#icons)
   - [Analytics](#analytics)
   - [Configuration](#configuration)
   - [Tools](#tools)
@@ -58,7 +59,7 @@ Refer to the links above for more details on each dependency.
 
 ### npm Dependencies
 
-[npm](https://docs.npmjs.com/about-npm/) is a package registry for JavaScript/Typescript/etc libraries. Our npm dependencies are declared in [`package.json`](./package.json)/
+[npm](https://docs.npmjs.com/about-npm/) is a package registry for JavaScript/Typescript/etc libraries. Our npm dependencies are declared in [`package.json`](./package.json).
 
 When declaring dependencies in `package.json`, always use the [`~` operator](https://docs.npmjs.com/about-semantic-versioning#using-semantic-versioning-to-specify-update-types-your-package-can-accept), which specifies that the `npm install` should only use the latest patch updates of dependencies, and not automatically upgrade to the latest minor updates without explicitly being told to do so.
 
@@ -72,7 +73,7 @@ When declaring dependencies in `package.json`, always use the [`~` operator](htt
 
 This codebase is largely contained in [`src`](/src), where you will find the following directories, with particularly important ones highlighted:
 
-* ⭐ [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Handling Assets](#handling-assets) for more details
+* ⭐ [`src/assets`](./src/assets): assets (images, etc.) that get bundled in the application - see [Assets and Images](#assets-and-images) for more details
 * [`src/components`](./src/components): Vue components that are shared throughout the website
 * ⭐ [`src/sections`](./src/sections): the website is mostly designed around horizontal sections that you scroll through - each section you see is defined as a Vue component here. Any content that cannot be configured with `config.ts` will likely be hardcoded in one of these sections.
 * [`src/lib`](./src/lib): library of utility functions for Vue components
@@ -160,7 +161,7 @@ There are several strategies to handle responsiveness (in other words, how well 
   * Bulma hide/show helpers (`is-hidden-` classes) are particularly useful for hiding/showing alternative layouts on different screen sizes - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+is-hidden-+lang:vue&patternType=literal)
 * [`variables.scss`](./src/styles/variables.scss) has definitions for breakpoints (`$tablet`, `$touch`, etc.) that you can use with `@media` queries in your styles to define screen-size-specific properties - see [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40media+lang:vue&patternType=literal).
 
-### Handling Assets
+### Assets and Images
 
 Image assets are kept in [`src/assets`](./src/assets), and are bundled alongside our code during build time. To reference images in Vue:
 
@@ -168,7 +169,7 @@ Image assets are kept in [`src/assets`](./src/assets), and are bundled alongside
 <img src="@/assets/my-image.png">
 ```
 
-To load an image to use it as a variable, use `require` and bind it to `src`:
+To load an image to use it as a variable, use `require` and bind it to `src` ([examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40/assets+lang:vue&patternType=literal))
 
 ```vue
 <template>
@@ -188,18 +189,20 @@ export default Vue.extend({
 </script>
 ```
 
-See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40/assets+lang:vue&patternType=literal).
-
 In general:
 
 * if the image can be hosted elsewhere (i.e. a company website or project repository), host it there instead and reference it by URL
+* if you do add an asset to this repository, do not put assets in `/public`, and prefer to import them as demonstrated above from the `/assets` folder.
 * use suitably-sized assets that don't exceed 1MB in size
-* do not put assets in `/public`
-* **icons**: see [`unicons.ts`](./src/unicons.ts).
+* **lazy-loading**: [`vue-lazyload`](https://github.com/hilongjw/vue-lazyload) provides some lazy-loading capabilities for images, but *be careful where you use this*! Especially when animated, lazy-loaded images can look quite bad, since they can just pop up mid-animation ([more context here](https://github.com/ubclaunchpad/ubclaunchpad.com/pull/142))
 
 We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
 
-⚠️ Note that some of these assets are leveraged in other projects - [this query](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+%22https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com%22&patternType=regexp) shows all repositories that current depend on assets in this repository. Be careful not to remove these without updating their respective dependents!
+⚠️ Note that some of our assets are leveraged in other projects - [this query](https://sourcegraph.com/search?q=repo:ubclaunchpad/*+%22https://raw.githubusercontent.com/ubclaunchpad/ubclaunchpad.com%22&patternType=regexp) shows all repositories that currently depend on assets in this repository. Be careful not to remove assets without updating their respective dependents!
+
+#### Icons
+
+Try not to use images for icons! We use a third-party icon set - for more details, see [`unicons.ts`](./src/unicons.ts).
 
 ### Analytics
 
@@ -265,7 +268,9 @@ Also note that individual pull requests also get their own preview deployment - 
 
 ### Performance
 
-You can use [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fubclaunchpad.com&tab=desktop) to check on the performance of `ubclaunchpad.com`. You can also provide the link to a Netlify deploy preview to PageSpeed.
+You can use [`web.dev/measure`](https://web.dev/measure/) to check on the performance of `ubclaunchpad.com`. You can also provide the link to a Netlify deploy preview to the tool.
+
+`web.dev` points out areas for improvement in web performance, accessibility, best practices, and search engine optimization - you can see a full report for the deployed website [here](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fubclaunchpad.com).
 
 <br />
 
@@ -274,6 +279,6 @@ You can use [Google PageSpeed](https://developers.google.com/speed/pagespeed/ins
 [GitHub Actions](https://github.com/features/actions) is a workflow automation platform provided by GitHub. We use it for automating a variety of tasks for this project.
 
 * [![Checks](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Checks/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Checks) ([`checks.yml`](./.github/workflows/checks.yml)) is our continuous integration workflow: it runs on every single pull request to run linters and verify the website builds correctly. Every pull request should pass these checks.
-* [![Compress images](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Handling Assets](#handling-assets).
+* [![Compress images](https://github.com/ubclaunchpad/ubclaunchpad.com/workflows/Compress%20images/badge.svg)](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) ([`compress.yml`](./.github/workflows/compress.yml)) runs on pull requests that modify image assets and, if possible, compresses them without losing too much quality. You should still only add images of suitable size regardless - see [Assets and Images](#assets-and-images).
 
 <br />
