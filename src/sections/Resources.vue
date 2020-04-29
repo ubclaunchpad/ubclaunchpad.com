@@ -1,11 +1,11 @@
 <template>
   <div class="container is-widescreen" :on-scroll="handleScroll">
     <div class="columns is-vcentered">
-      <div ref="resources-col-left" class="column">
+      <div ref="resources-col-left" class="hidden column">
         <img src="@/assets/explore.png" class="hero-image">
       </div>
 
-      <div ref="resources-col-right" class="column pad-32 is-three-fifths">
+      <div ref="resources-col-right" class="hidden column pad-32 is-three-fifths">
         <h2>Resources</h2>
 
         <div class="margin-bottom-64">
@@ -49,6 +49,9 @@ import { updateClassesIfInView } from '@/lib/util';
 export default Vue.extend({
   name: 'Resources',
   props: {
+    /**
+     * Link to the UBC Launch Pad GitHub
+     */
     github: String,
   },
   methods: {
@@ -61,9 +64,11 @@ export default Vue.extend({
     handleScroll() {
       updateClassesIfInView(window, this.$refs['resources-col-left'], {
         addClasses: 'animated fadeInRight',
+        removeClasses: 'hidden',
       });
       updateClassesIfInView(window, this.$refs['resources-col-right'], {
         addClasses: 'animated fadeInRight',
+        removeClasses: 'hidden',
       });
     },
   },
