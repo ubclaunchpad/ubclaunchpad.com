@@ -1,10 +1,10 @@
 <template>
   <div class="container is-widescreen" :on-scroll="handleScroll">
     <div class="columns is-vcentered">
-      <div ref="about-col-left" class="column">
+      <div ref="about-col-left" class="hidden column">
         <img src="@/assets/about.png">
       </div>
-      <div ref="about-col-right" class="pad-32 column is-three-fifths">
+      <div ref="about-col-right" class="hidden column is-three-fifths pad-32">
         <h2>Who we are</h2>
         <p>
           We’re a student-run software engineering team devoted to building software projects in a
@@ -47,9 +47,11 @@ export default Vue.extend({
     handleScroll() {
       updateClassesIfInView(window, this.$refs['about-col-left'], {
         addClasses: 'animated fadeInLeft',
+        removeClasses: 'hidden',
       });
       updateClassesIfInView(window, this.$refs['about-col-right'], {
         addClasses: 'animated fadeInLeft',
+        removeClasses: 'hidden',
       });
     },
   },
