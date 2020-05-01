@@ -53,16 +53,16 @@
             class="column is-one-half project-column"
           >
             <div
-              ref="teams-project-card"
               v-for="(r, j) in col"
+              ref="teams-project-card"
               :key="'row-'+i+'-'+j"
               class="project-container hidden"
             >
               <ProjectCard
-                @projectClicked="setModalState"
                 :project="r"
                 :section="$options.name"
                 class="margin-sides-auto"
+                @projectClicked="setModalState"
               />
             </div>
           </div>
@@ -106,6 +106,7 @@ const stats: TeamStats[] = [
  */
 export default Vue.extend({
   name: 'Teams',
+  components: { ProjectCard, ProjectModal },
   mixins: [projectModalController],
   props: {
     /**
@@ -128,6 +129,9 @@ export default Vue.extend({
       return generateColumns<Project>(this.projects, perColumn);
     },
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     handleScroll() {
       updateClassesIfInView(window, this.$refs['teams-project-card'], {
@@ -135,13 +139,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  components: {
-    ProjectCard,
-    ProjectModal,
   },
 });
 </script>

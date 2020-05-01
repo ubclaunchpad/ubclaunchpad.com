@@ -3,67 +3,131 @@
     class="modal"
     :class="{
       'is-active': isActive,
-    }">
-
-    <div class="modal-background animated fadeIn faster" v-on:click="handleModalClose()"></div>
+    }"
+  >
+    <div
+      class="modal-background animated fadeIn faster"
+      @click="handleModalClose()"
+    />
 
     <div class="modal-content box-shadow animated zoomIn faster">
       <unicon
-        name="times" class="close-button icon-small hoverable"
-        v-on:click="handleModalClose()"></unicon>
+        name="times"
+        class="close-button icon-small hoverable"
+        @click="handleModalClose()"
+      />
       <unicon
         id="share-button"
         name="share-alt"
         class="share-button icon-small hoverable"
-        v-on:click="shareToClipboard()"></unicon>
+        @click="shareToClipboard()"
+      />
 
       <div class="pad-sides-8 has-text-centered">
-        <h2 class="accent">{{ project.name }}</h2>
-        <h3 class="margin-sides-16">{{ project.description }}</h3>
+        <h2 class="accent">
+          {{ project.name }}
+        </h2>
+        <h3 class="margin-sides-16">
+          {{ project.description }}
+        </h3>
 
-        <div v-if="isActive" class="media-container margin-sides-16">
+        <div
+          v-if="isActive"
+          class="media-container margin-sides-16"
+        >
           <img
             v-if="!project.media"
-            :src="project.banner.url" />
+            :src="project.banner.url"
+          >
           <img
             v-else-if="project.media.type == 'image'"
-            :src="project.media.url" />
+            :src="project.media.url"
+          >
           <div
             v-else-if="project.media.type == 'youtube'"
-            class="video-container">
+            class="video-container"
+          >
             <iframe
+              id="ytplayer"
               ref="ytplayer-iframe"
               :src="generateYouTubeEmbedSrc(project.media)"
-              id="ytplayer" type="text/html" class="video-player"
+              type="text/html"
+              class="video-player"
               allowFullScreen
-              frameborder="0"></iframe>
+              frameborder="0"
+            />
           </div>
         </div>
 
-        <p v-if="isActive" class="socials">
-          <a data-tippy-content="GitHub"
-            :href="project.links.repository" target="_blank"  v-on:click="onLinkClick">
-            <unicon name="github-alt" class="icon-small hoverable"></unicon>
+        <p
+          v-if="isActive"
+          class="socials"
+        >
+          <a
+            data-tippy-content="GitHub"
+            :href="project.links.repository"
+            target="_blank"
+            @click="onLinkClick"
+          >
+            <unicon
+              name="github-alt"
+              class="icon-small hoverable"
+            />
           </a>
-          <a v-if="project.links.website" data-tippy-content="Website"
-            :href="project.links.website" target="_blank" v-on:click="onLinkClick">
-            <unicon name="window" class="icon-small hoverable"></unicon>
+          <a
+            v-if="project.links.website"
+            data-tippy-content="Website"
+            :href="project.links.website"
+            target="_blank"
+            @click="onLinkClick"
+          >
+            <unicon
+              name="window"
+              class="icon-small hoverable"
+            />
           </a>
-           <a v-if="project.links.app && project.links.app.type === 'ios'" data-tippy-content="App Store"
-            :href="project.links.app.url" target="_blank" v-on:click="onLinkClick">
-            <unicon name="apple-alt" class="icon-small hoverable"></unicon>
+          <a
+            v-if="project.links.app && project.links.app.type === 'ios'"
+            data-tippy-content="App Store"
+            :href="project.links.app.url"
+            target="_blank"
+            @click="onLinkClick"
+          >
+            <unicon
+              name="apple-alt"
+              class="icon-small hoverable"
+            />
           </a>
-           <a v-if="project.links.app && project.links.app.type === 'android'" data-tippy-content="Play Store"
-            :href="project.links.app.url" target="_blank" v-on:click="onLinkClick">
-            <unicon name="android-alt" class="icon-small hoverable"></unicon>
+          <a
+            v-if="project.links.app && project.links.app.type === 'android'"
+            data-tippy-content="Play Store"
+            :href="project.links.app.url"
+            target="_blank"
+            @click="onLinkClick"
+          >
+            <unicon
+              name="android-alt"
+              class="icon-small hoverable"
+            />
           </a>
-          <a v-if="project.links.writeup" data-tippy-content="Writeup"
-            :href="project.links.writeup" target="_blank" v-on:click="onLinkClick">
-            <unicon name="notebooks" class="icon-small hoverable"></unicon>
+          <a
+            v-if="project.links.writeup"
+            data-tippy-content="Writeup"
+            :href="project.links.writeup"
+            target="_blank"
+            @click="onLinkClick"
+          >
+            <unicon
+              name="notebooks"
+              class="icon-small hoverable"
+            />
           </a>
         </p>
 
-        <p v-if="project.elevatorPitch" class="margin-sides-16">
+        <p
+          v-if="project.elevatorPitch"
+          class="margin-sides-16"
+        >
           {{ project.elevatorPitch }}
         </p>
       </div>
@@ -97,6 +161,16 @@ export default Vue.extend({
      * Toggle whether modal is active
      */
     isActive: Boolean,
+  },
+  updated() {
+    // only attach tooltips after entire view has been rendered
+    if (this.isActive) {
+      this.$nextTick(function() { tippy('[data-tippy-content]'); });
+    }
+  },
+  created() {
+    // check for tooltips on first mount as well - modal is only ever active on mount if 
+    if (this.isActive) { tippy('[data-tippy-content]'); }
   },
   methods: {
     /**
@@ -159,16 +233,6 @@ export default Vue.extend({
     onLinkClick() {
       this.reportEvent('project-modal-link-click', this.project);
     },
-  },
-  updated() {
-    // only attach tooltips after entire view has been rendered
-    if (this.isActive) {
-      this.$nextTick(function() { tippy('[data-tippy-content]'); });
-    }
-  },
-  created() {
-    // check for tooltips on first mount as well - modal is only ever active on mount if 
-    if (this.isActive) { tippy('[data-tippy-content]'); }
   },
 });
 </script>

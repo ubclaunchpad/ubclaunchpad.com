@@ -56,8 +56,8 @@
     </Section>
 
     <Section
-      :section-id="6"
       v-if="recruitment.applicationsOpen"
+      :section-id="6"
       size="medium"
     >
       <Join
@@ -109,11 +109,6 @@ import Sponsors from '@/sections/Sponsors.vue';
  */
 export default Vue.extend({
   name: 'App',
-  data: () => ({
-    recruitment: recruitmentConfig,
-    club: clubConfig,
-    sponsorship: sponsorshipConfig,
-  }),
   components: {
     Nav, Footer, Section,
 
@@ -126,6 +121,11 @@ export default Vue.extend({
     Join,
     Sponsors,
   },
+  data: () => ({
+    recruitment: recruitmentConfig,
+    club: clubConfig,
+    sponsorship: sponsorshipConfig,
+  }),
   methods: {
     goTo(anchor: string) { goTo(document, anchor); },
   },

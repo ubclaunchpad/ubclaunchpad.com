@@ -14,26 +14,26 @@
 
     <div class="navbar-end links is-hidden-touch">
       <a
-        @click="goTo('about')"
         class="navbar-item"
+        @click="goTo('about')"
       >
         ABOUT
       </a>
       <a
-        @click="goTo('teams')"
         class="navbar-item"
+        @click="goTo('teams')"
       >
         TEAMS &amp; PROJECTS
       </a>
       <a
-        @click="goTo('resources')"
         class="navbar-item"
+        @click="goTo('resources')"
       >
         RESOURCES
       </a>
       <a
-        @click="goTo('sponsors')"
         class="navbar-item"
+        @click="goTo('sponsors')"
       >
         SPONSORS
       </a>

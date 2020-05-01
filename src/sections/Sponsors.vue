@@ -79,6 +79,9 @@ export default Vue.extend({
       return generateColumns<ClubSponsor>(this.sponsors, perColumn);
     },
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     handleScroll() {
       updateClassesIfInView(window, this.$refs['sponsor-logo'], {
@@ -98,9 +101,6 @@ export default Vue.extend({
         event_label: 'Sponsorship Package',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>

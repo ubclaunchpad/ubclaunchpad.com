@@ -36,9 +36,9 @@
         />
       </a>
       <unicon
+        v-if="!nextSectionOnClick"
         name="angle-down"
         class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"
-        v-if="!nextSectionOnClick"
       />
     </div>
   </section>

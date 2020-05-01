@@ -1,11 +1,11 @@
 <template>
   <button
     class="button"
-    @click="onClick"
     :class="{
       'simple': !primary,
       'primary': primary,
     }"
+    @click="onClick"
   >
     {{ text }}
   </button>

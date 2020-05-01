@@ -82,12 +82,12 @@ import { goTo } from '@/lib/util';
  */
 export default Vue.extend({
   name: 'Feature',
+  components: {
+    Button,
+  },
   props: {
     applicationsOpen: Boolean,
     season: { type: String, required: true },
-  },
-  components: {
-    Button,
   },
   methods: {
     goTo(anchor: string) { goTo(document, anchor); },

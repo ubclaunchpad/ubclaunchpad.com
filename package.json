@@ -49,7 +49,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/strongly-recommended",
+      "plugin:vue/recommended",
       "eslint:recommended",
       "@vue/typescript",
       "@vue/typescript/recommended"

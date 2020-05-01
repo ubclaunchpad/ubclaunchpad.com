@@ -20,9 +20,9 @@
             </a>
           </h3>
           <hr
-            class="position-divider"
             v-if="i !== (positions.length-1)"
             ref="position-animated"
+            class="position-divider"
           >
         </div>
       </div>
@@ -63,6 +63,9 @@ export default Vue.extend({
       required: true,
     },
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     handleScroll() {
       updateClassesIfInView(window, this.$refs['position-animated'], {
@@ -75,9 +78,6 @@ export default Vue.extend({
         event_label: position,
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>

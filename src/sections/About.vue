@@ -47,6 +47,7 @@ import { updateClassesIfInView } from '@/lib/util';
  */
 export default Vue.extend({
   name: 'About',
+  components: { ClubSocialsLinks },
   props: {
     /**
      * ClubSocials configuration
@@ -55,6 +56,9 @@ export default Vue.extend({
       type: Object as () => ClubSocials,
       required: true,
     },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {
@@ -67,12 +71,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  components: {
-    ClubSocialsLinks,
   },
 });
 </script>

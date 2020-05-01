@@ -50,6 +50,7 @@ import { ClubSocials } from '@/data/types';
  */
 export default Vue.extend({
   name: 'Footer',
+  components: { ClubSocialsLinks },
   props: {
     socials: {
       type: Object as () => ClubSocials,
@@ -57,7 +58,6 @@ export default Vue.extend({
     },
   },
   data: () => ({ year: new Date().getFullYear() }),
-  components: { ClubSocialsLinks },
 });
 </script>
 

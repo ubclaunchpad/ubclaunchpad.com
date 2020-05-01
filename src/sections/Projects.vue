@@ -26,16 +26,16 @@
         class="column is-one-quarter-widescreen is-half-desktop project-column"
       >
         <div
-          ref="projects-project-card"
           v-for="(r, j) in col"
+          ref="projects-project-card"
           :key="'row-'+i+'-'+j"
           class="project-container hidden"
         >
           <ProjectCard
-            @projectClicked="setModalState"
             :project="r"
             :section="$options.name"
             class="margin-sides-auto"
+            @projectClicked="setModalState"
           />
         </div>
       </div>
@@ -57,6 +57,7 @@ import ProjectModal from '@/components/ProjectModal.vue';
  */
 export default Vue.extend({
   name: 'Projects',
+  components: { ProjectCard, ProjectModal },
   mixins: [projectModalController],
   props: {
     /**
@@ -71,12 +72,15 @@ export default Vue.extend({
      */
     github: { type: String, required: true },
   },
+  data: () => ({ isActive: false, activeProjectName: '0' }),
   computed: {
     columns(): Project[][] {
       return generateColumns<Project>(this.projects, 2);
     },
   },
-  data: () => ({ isActive: false, activeProjectName: '0' }),
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     handleScroll() {
       updateClassesIfInView(window, this.$refs['projects-project-card'], {
@@ -84,13 +88,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  components: {
-    ProjectCard,
-    ProjectModal,
   },
 });
 </script>

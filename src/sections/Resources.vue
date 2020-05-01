@@ -74,6 +74,9 @@ export default Vue.extend({
      */
     github: { type: String, required: true },
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     reportClick(label: string) {
       this.$gtag.event('resources-link-click', {
@@ -91,9 +94,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>
