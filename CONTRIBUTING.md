@@ -216,7 +216,7 @@ this.$gtag.event(
     // name of section or part of website - be consistent with this. In general, the name of the
     // component, accesisble via `this.$options.name`, should suffice
     event_category: this.$options.name,
-    // value associated with event, such as a team name 
+    // value associated with event, such as a project name 
     event_label: 'Some Value',
   },
 );
