@@ -71,7 +71,9 @@ the link should look something like:
 https://raw.githubusercontent.com/ubclaunchpad/inertia/master/.static/inertia-with-name.png
 ```
 
-On most browsers, you can get this link by right-clicking the image and selecting "Copy Image Location". Be wary of the image size! Large images load slowly and can directly impact the experience of using the website.
+On most browsers, you can get this link by right-clicking the image and selecting "Copy Image Location".
+
+Be wary of the image size! Large images load slowly and can directly impact the experience of using the website.
 
 Note that in some cases, if you use the gif or similar format, provided images *can* be animated, which looks pretty cool in the right situations!
 
