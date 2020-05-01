@@ -15,6 +15,7 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [npm Dependencies](#npm-dependencies)
 - [Development](#development)
   - [Project Overview](#project-overview)
+    - [Scripts](#scripts)
   - [TypeScript Guidelines](#typescript-guidelines)
   - [Vue Guidelines](#vue-guidelines)
     - [Documentation](#documentation)
@@ -49,13 +50,13 @@ node -v
 npm install
 ```
 
-You can then run the website locally by running the following and visiting [`localhost:8081`](http://localhost:8081):
+Refer to the links above for more details on each dependency.
+
+Once you are set up, you can run the website locally by running the following and visiting [`localhost:8081`](http://localhost:8081) - see [Scripts](#scripts) for more details:
 
 ```
 npm run serve
 ```
-
-Refer to the links above for more details on each dependency.
 
 ### npm Dependencies
 
@@ -88,7 +89,16 @@ Also noteworthy are the following files:
 
 Refer to [Dependencies](#dependencies) for our core dependencies and links to their websites, where you can find documentation on how to use them. Also refer to the existing code and components for guidance on how to work with the codebase.
 
-Using `npm run serve`, code you write will automatically be visible at [`localhost:8081`](http://localhost:8081). You can also use `npm run vue-ui` to start up the Vue tooling UI, which you might find helpful!
+#### Scripts
+
+Some handy scripts/tasks are available in `package.json`:
+
+* `npm run serve` publishes code you write automatically at [`localhost:8081`](http://localhost:8081).
+* `npm run build` builds the website and runs other build-related tasks (see `postbuild`), placing the output into `/dist`. You can preview the contents of a build with `npm run serve-dist`.
+* `npm run lint` reports style and static analysis errors, and can fix some of them for you.
+* `npm run vue-ui` starts up the Vue tooling user interface, which you might find helpful! All the above scripts can be run using this UI.
+
+![vue cli ui](https://miro.medium.com/max/1400/1*gFc-hzoWXxts2VT40pic1Q.png)
 
 ### TypeScript Guidelines
 
@@ -253,6 +263,8 @@ These changes are published automatically when merged into the `master` branch -
 
 * [`generateRedirects.ts`](./tools/generateRedirects.ts): generates [Netlify redirects](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) from [`config.ts`](./src/config.ts) (see [USING.md](./USING.md#redirect-links))
 * [`stripRequire.sh`](./tools/stripRequire.sh): pre-processes compiled JavaScript for execution
+
+Tools are generally used through one of our [Scripts](#scripts).
 
 <br />
 
