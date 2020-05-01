@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="container"
-    class="container is-widescreen"
-  >
+  <div class="container is-widescreen">
     <div class="has-text-centered">
       <h2>Sponsors</h2>
 

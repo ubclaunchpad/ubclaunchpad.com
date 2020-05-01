@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="container"
-    class="container is-widescreen"
-  >
+  <div class="container is-widescreen">
     <div class="columns reverse-on-tablet is-vcentered">
       <div class="column has-text-centered is-half">
         <div

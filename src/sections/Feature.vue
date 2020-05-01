@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="feature-container"
-    class="container is-widescreen"
-  >
+  <div class="feature container is-widescreen">
     <div class="columns is-vcentered is-tablet">
       <div class="pad-32 column is-three-fifths-tablet">
         <div class="animated slideInDown">
@@ -98,30 +95,30 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-#feature-container {
+.feature {
   @media(max-width: $tablet) {
     margin-top: 80px;
   }
-}
 
-.small-image {
-  width: 100%;
-  max-width: 300px;
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
+  .small-image {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
 
-.title-aside {
-  font-size: 16px;
-  line-height: 19px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
+  .title-aside {
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 
-.title-divider {
-  border-left: 2px solid $white;
-  height: 42px;
-  margin-left: 8px;
-  margin-right: -12px;
+  .title-divider {
+    border-left: 2px solid $white;
+    height: 42px;
+    margin-left: 8px;
+    margin-right: -12px;
+  }
 }
 </style>

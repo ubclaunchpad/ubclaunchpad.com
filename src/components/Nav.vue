@@ -6,7 +6,7 @@
         href="https://ubclaunchpad.com"
       >
         <img
-          id="rocket"
+          class="rocket"
           src="@/assets/rocket.png"
           alt="logo"
         >
@@ -59,16 +59,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-#rocket {
-  max-height: none;
-  width: auto;
-  height: 55px;
-  @media(max-width: $touch) {
-    margin-top: 32px;
-    height: 96px;
-  }
-}
-
 .navbar {
   background: none;
   position: absolute;
@@ -77,6 +67,16 @@ export default Vue.extend({
 
   .logo {
     margin-left: 32px;
+
+    .rocket {
+      max-height: none;
+      width: auto;
+      height: 55px;
+      @media(max-width: $touch) {
+        margin-top: 32px;
+        height: 96px;
+      }
+    }
   }
 
   .links {
