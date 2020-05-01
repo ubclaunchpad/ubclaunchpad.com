@@ -1,9 +1,9 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <TeamProjectModal
-      v-if="activeTeam"
+    <ProjectModal
+      v-if="activeProject"
       :section="$options.name"
-      :team="activeTeam"
+      :project="activeProject"
       :isActive="isActive"
       @modalClosed="closeModal" />
 
@@ -28,7 +28,7 @@
           Our teams are made up of around 8 people across various disciplines, lead by an experienced tech lead.
         </p>
         <p class="secondary">
-          This year, we had <b>{{ memberCount }} members</b> across <b>{{ teams.length }} teams</b>.
+          This year, we had <b>{{ memberCount }} members</b> across <b>{{ projects.length }} teams</b>.
         </p>
       </div>
 
@@ -43,7 +43,7 @@
               v-for="(r, j) in col"
               :key="'row-'+i+'-'+j"
               class="project-container hidden">
-              <TeamProjectCard @projectClicked="setModalState" :team="r" :section="$options.name" class="margin-sides-auto"/>
+              <ProjectCard @projectClicked="setModalState" :project="r" :section="$options.name" class="margin-sides-auto"/>
             </div>
           </div>
         </div>
@@ -55,12 +55,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Team } from '@/data/types';
+import { Project } from '@/data/types';
 import { generateColumns, updateClassesIfInView } from '@/lib/util';
 
-import teamProjectModalController from '@/mixins/teamProjectModalController';
-import TeamProjectCard from '@/components/TeamProjectCard.vue';
-import TeamProjectModal from '@/components/TeamProjectModal.vue';
+import projectModalController from '@/mixins/projectModalController';
+import ProjectCard from '@/components/ProjectCard.vue';
+import ProjectModal from '@/components/ProjectModal.vue';
 
 interface TeamStats {
   value: string;
@@ -87,19 +87,19 @@ const stats: TeamStats[] = [
  */
 export default Vue.extend({
   name: 'Teams',
-  mixins: [teamProjectModalController],
+  mixins: [projectModalController],
   props: {
-    teams: {
-      type: Array as () => Team[],
+    projects: {
+      type: Array as () => Project[],
     },
     memberCount: Number,
   },
-  data: () => ({ stats, isActive: false, activeTeamName: '0' }),
+  data: () => ({ stats, isActive: false, activeProjectName: '0' }),
   computed: {
-    columns(): Team[][] {
+    columns(): Project[][] {
       const perRow = 2;
-      const perColumn = Math.ceil(this.teams.length / perRow);
-      return generateColumns<Team>(this.teams, perColumn);
+      const perColumn = Math.ceil(this.projects.length / perRow);
+      return generateColumns<Project>(this.projects, perColumn);
     },
   },
   methods: {
@@ -114,8 +114,8 @@ export default Vue.extend({
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {
-    TeamProjectCard,
-    TeamProjectModal,
+    ProjectCard,
+    ProjectModal,
   },
 });
 </script>

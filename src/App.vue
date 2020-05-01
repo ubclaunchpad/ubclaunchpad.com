@@ -22,13 +22,13 @@
     <Section :section-id="3">
       <Teams
         :member-count="club.memberCount"
-        :teams="club.currentTeams" />
+        :projects="club.currentProjects" />
     </Section>
 
     <Section :section-id="4">
       <Projects
         :github="club.socials.github"
-        :teams="club.featuredTeams" />
+        :projects="club.featuredProjects" />
     </Section>
 
     <Section :section-id="5" size="large">

@@ -1,9 +1,9 @@
 <template>
   <div id="container" class="container is-widescreen">
-    <TeamProjectModal
-      v-if="activeTeam"
+    <ProjectModal
+      v-if="activeProject"
       :section="$options.name"
-      :team="activeTeam"
+      :project="activeProject"
       :isActive="isActive"
       @modalClosed="closeModal" />
 
@@ -25,7 +25,7 @@
           v-for="(r, j) in col"
           :key="'row-'+i+'-'+j"
           class="project-container hidden">
-          <TeamProjectCard @projectClicked="setModalState" :team="r" :section="$options.name" class="margin-sides-auto" />
+          <ProjectCard @projectClicked="setModalState" :project="r" :section="$options.name" class="margin-sides-auto" />
         </div>
       </div>
     </div>
@@ -35,22 +35,22 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Team } from '@/data/types';
+import { Project } from '@/data/types';
 import { generateColumns, updateClassesIfInView } from '@/lib/util';
 
-import teamProjectModalController from '@/mixins/teamProjectModalController';
-import TeamProjectCard from '@/components/TeamProjectCard.vue';
-import TeamProjectModal from '@/components/TeamProjectModal.vue';
+import projectModalController from '@/mixins/projectModalController';
+import ProjectCard from '@/components/ProjectCard.vue';
+import ProjectModal from '@/components/ProjectModal.vue';
 
 /**
  * Projects implements a section for highlighting past Launch Pad projects.
  */
 export default Vue.extend({
   name: 'Projects',
-  mixins: [teamProjectModalController],
+  mixins: [projectModalController],
   props: {
-    teams: {
-      type: Array as () => Team[],
+    projects: {
+      type: Array as () => Project[],
     },
     /**
      * Link to UBC Launch Pad GitHub account
@@ -58,11 +58,11 @@ export default Vue.extend({
     github: String,
   },
   computed: {
-    columns(): Team[][] {
-      return generateColumns<Team>(this.teams, 2);
+    columns(): Project[][] {
+      return generateColumns<Project>(this.projects, 2);
     },
   },
-  data: () => ({isActive: false, activeTeamName: '0'}),
+  data: () => ({ isActive: false, activeProjectName: '0' }),
   methods: {
     handleScroll() {
       updateClassesIfInView(window, this.$refs['projects-project-card'], {
@@ -75,8 +75,8 @@ export default Vue.extend({
     window.addEventListener('scroll', this.handleScroll);
   },
   components: {
-    TeamProjectCard,
-    TeamProjectModal,
+    ProjectCard,
+    ProjectModal,
   },
 });
 </script>

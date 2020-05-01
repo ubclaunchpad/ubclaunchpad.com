@@ -114,17 +114,3 @@ export function getURLParams(location: Location): URLSearchParams {
   const uri = location.search.substring(1);
   return new URLSearchParams(uri);
 }
-
-/**
- * Describes the state of a TeamProjectModal
- */
-export interface TeamProjectModalState {
-  /**
-   * if the modal is open or closed
-   */
-  isActive: boolean;
-  /**
-   * The name of the selected team 
-   */
-  activeTeamName: string;
-}
