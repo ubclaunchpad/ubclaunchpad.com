@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "vue-ui": "vue ui",
     "serve": "vue-cli-service serve",
     "serve-dist": "serve ./dist",
     "build": "vue-cli-service build",

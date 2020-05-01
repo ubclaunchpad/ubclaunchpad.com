@@ -88,7 +88,7 @@ Also noteworthy are the following files:
 
 Refer to [Dependencies](#dependencies) for our core dependencies and links to their websites, where you can find documentation on how to use them. Also refer to the existing code and components for guidance on how to work with the codebase.
 
-Using `npm run serve`, code you write will automatically be visible at [`localhost:8081`](http://localhost:8081).
+Using `npm run serve`, code you write will automatically be visible at [`localhost:8081`](http://localhost:8081). You can also use `npm run vue-ui` to start up the Vue tooling UI, which you might find helpful!
 
 ### TypeScript Guidelines
 
