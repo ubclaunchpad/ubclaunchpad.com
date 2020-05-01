@@ -78,6 +78,8 @@ Be wary of the image size! Large images load slowly and can directly impact the 
 
 Note that in some cases, if you use the gif or similar format, provided images *can* be animated, which looks pretty cool in the right situations!
 
+<br />
+
 ## Verifying Changes
 
 When you open a pull request, [Netlify will automatically deploy a preview website for us](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/master/CONTRIBUTING.md#deployment), where we can verify the output of a configuration change.
