@@ -20,8 +20,12 @@ interface ProjectModalState {
  */
 export default Vue.extend({
   props: {
+    /**
+     * Projects available for modal
+     */
     projects: {
       type: Array as () => Project[],
+      required: true,
     },
   },
   data: () => ({ isActive: false, activeProjectName: '0' }),

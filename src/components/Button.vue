@@ -1,11 +1,12 @@
 <template>
   <button
     class="button"
-    v-on:click="onClick"
+    @click="onClick"
     :class="{
       'simple': !primary,
       'primary': primary,
-    }">
+    }"
+  >
     {{ text }}
   </button>
 </template>
@@ -22,7 +23,7 @@ export default Vue.extend({
     /**
      * Text to include in the button
      */
-    text: String,
+    text: { type: String, required: true },
     /**
      * Toggle whether to use a primary, attention-grabbing style or a more lowkey style for this button
      */
@@ -30,7 +31,7 @@ export default Vue.extend({
     /**
      * Something that should happen on-click.
      */
-    onClick: Function,
+    onClick: { type: Function, default: undefined },
   },
 });
 </script>

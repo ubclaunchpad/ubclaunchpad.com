@@ -2,11 +2,16 @@
   <footer class="footer">
     <div class="columns is-vcentered is-desktop">
       <div class="column has-text-centered-touch">
-        <p class="footer-item">UBC Launch Pad {{ year }}</p>
+        <p class="footer-item">
+          UBC Launch Pad {{ year }}
+        </p>
       </div>
 
       <div class="footer-item column has-text-centered">
-        <ClubSocialsLinks :links="socials" class="socials" />
+        <ClubSocialsLinks
+          :links="socials"
+          class="socials"
+        />
       </div>
 
       <div class="footer-item column has-text-centered-touch has-text-right-desktop">
@@ -19,11 +24,17 @@
     <div class="has-text-centered">
       <p class="tertiary">
         See any problems, or have some feedback?
-        <a href="https://github.com/ubclaunchpad/ubclaunchpad.com/issues/new" target="_blank">Let us know!</a>
+        <a
+          href="https://github.com/ubclaunchpad/ubclaunchpad.com/issues/new"
+          target="_blank"
+        >Let us know!</a>
       </p>
 
       <p class="tertiary">
-        This site is powered by <a href="https://www.netlify.com" target="_blank">Netlify</a>.
+        This site is powered by <a
+          href="https://www.netlify.com"
+          target="_blank"
+        >Netlify</a>.
       </p>
     </div>
   </footer>
@@ -42,6 +53,7 @@ export default Vue.extend({
   props: {
     socials: {
       type: Object as () => ClubSocials,
+      required: true,
     },
   },
   data: () => ({ year: new Date().getFullYear() }),

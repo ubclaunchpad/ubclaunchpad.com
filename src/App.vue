@@ -4,48 +4,76 @@
 
     <!-- sections: refer to each section's component documentation for more details -->
 
-    <Section :section-id="0" size="max" next-section-indicator :next-section-on-click="() => goTo('about')">
+    <Section
+      :section-id="0"
+      size="max"
+      next-section-indicator
+      :next-section-on-click="() => goTo('about')"
+    >
       <Feature
         :applications-open="recruitment.applicationsOpen"
-        :season="recruitment.season" />
+        :season="recruitment.season"
+      />
     </Section>
 
-    <Section :section-id="1" size="large">
+    <Section
+      :section-id="1"
+      size="large"
+    >
       <About
-        :socials="club.socials" />
+        :socials="club.socials"
+      />
     </Section>
 
-    <Section :section-id="2" size="medium">
+    <Section
+      :section-id="2"
+      size="medium"
+    >
       <Highlights />
     </Section>
 
     <Section :section-id="3">
       <Teams
         :member-count="club.memberCount"
-        :projects="club.currentProjects" />
+        :projects="club.currentProjects"
+      />
     </Section>
 
     <Section :section-id="4">
       <Projects
         :github="club.socials.github"
-        :projects="club.featuredProjects" />
+        :projects="club.featuredProjects"
+      />
     </Section>
 
-    <Section :section-id="5" size="large">
+    <Section
+      :section-id="5"
+      size="large"
+    >
       <Resources
-        :github="club.socials.github" />
+        :github="club.socials.github"
+      />
     </Section>
 
-    <Section :section-id="6" v-if="recruitment.applicationsOpen" size="medium">
+    <Section
+      :section-id="6"
+      v-if="recruitment.applicationsOpen"
+      size="medium"
+    >
       <Join
-        :positions="recruitment.positions" />
+        :positions="recruitment.positions"
+      />
     </Section>
 
     <!-- section-id depends on if join section exists or not -->
-    <Section :section-id="recruitment.applicationsOpen ? 7 : 6" size="medium">
+    <Section
+      :section-id="recruitment.applicationsOpen ? 7 : 6"
+      size="medium"
+    >
       <Sponsors
         :sponsors="sponsorship.sponsors"
-        :sponsorship-package="sponsorship.packageURL" />
+        :sponsorship-package="sponsorship.packageURL"
+      />
     </Section>
 
     <Footer :socials="club.socials" />

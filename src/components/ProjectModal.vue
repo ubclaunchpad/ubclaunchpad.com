@@ -85,12 +85,13 @@ export default Vue.extend({
     /**
      * Name of section this modal is based in
      */
-    section: String,
+    section: { type: String, required: true },
     /**
      * Project to display
      */
     project: {
       type: Object as () => Project,
+      required: true,
     },
     /**
      * Toggle whether modal is active
