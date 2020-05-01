@@ -29,6 +29,7 @@
         <img
           src="@/assets/landing.png"
           class="small-image is-hidden-tablet"
+          alt="feature image"
         >
 
         <div class="animated fadeIn">
@@ -63,6 +64,7 @@
         <img
           src="@/assets/landing.png"
           class="is-hidden-mobile"
+          alt="feature image"
         >
       </div>
     </div>

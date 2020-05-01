@@ -16,6 +16,7 @@
         class="section-bg"
         :src="backdrop.src"
         :class="backdrop.class"
+        alt=""
       >
     </div>
 

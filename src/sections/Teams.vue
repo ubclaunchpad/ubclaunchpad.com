@@ -13,8 +13,8 @@
         <h2>Our Teams</h2>
         <img
           src="@/assets/screen.png"
-          width="300px"
           class="teams-image"
+          alt="feature image"
         >
 
         <div class="level stats">
@@ -144,6 +144,7 @@ export default Vue.extend({
 // this particular asset has a background - round off the corners to make it less jarring when
 // against a lighter section of the backdrop
 .teams-image {
+  width: 300px;
   border-radius: 12px;
 }
 

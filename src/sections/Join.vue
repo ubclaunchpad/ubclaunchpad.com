@@ -33,6 +33,7 @@
           <img
             src="@/assets/computer.png"
             width="100%"
+            alt="feature image"
           >
           <p class="margin-top-24">
             Are you a programmer, designer, or business student looking for an opportunity to work on

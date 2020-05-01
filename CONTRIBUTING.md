@@ -166,14 +166,14 @@ There are several strategies to handle responsiveness (in other words, how well 
 Image assets are kept in [`src/assets`](./src/assets), and are bundled alongside our code during build time. To reference images in Vue:
 
 ```html
-<img src="@/assets/my-image.png">
+<img src="@/assets/my-image.png" alt="some alt text">
 ```
 
 To load an image to use it as a variable, use `require` and bind it to `src` ([examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+%40/assets+lang:vue&patternType=literal))
 
 ```vue
 <template>
-  <img :src="myImage">
+  <img :src="myImage" alt="some alt text">
 </template>
 
 <script lang="ts">

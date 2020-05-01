@@ -38,10 +38,12 @@
           <img
             v-if="!project.media"
             :src="project.banner.url"
+            :alt="project.name"
           >
           <img
             v-else-if="project.media.type == 'image'"
             :src="project.media.url"
+            :alt="project.name"
           >
           <div
             v-else-if="project.media.type == 'youtube'"
