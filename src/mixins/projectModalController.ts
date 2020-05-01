@@ -8,7 +8,7 @@ interface ProjectModalState {
    */
   isActive: boolean;
   /**
-   * The name of the selected team 
+   * The name of the selected project 
    */
   activeProjectName: string;
 }
