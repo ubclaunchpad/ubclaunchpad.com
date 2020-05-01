@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="container"
-    class="container is-widescreen"
-  >
+  <div class="container is-widescreen">
     <ProjectModal
       v-if="activeProject"
       :section="$options.name"
