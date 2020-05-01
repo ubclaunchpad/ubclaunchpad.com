@@ -98,7 +98,7 @@ Some handy scripts/tasks are available in `package.json`:
 * `npm run lint` reports style and static analysis errors, and can fix some of them for you.
 * `npm run vue-ui` starts up the Vue tooling user interface, which you might find helpful! All the above scripts can be run using this UI.
 
-![vue cli ui](https://miro.medium.com/max/1400/1*gFc-hzoWXxts2VT40pic1Q.png)
+[![vue cli ui](https://miro.medium.com/max/1400/1*gFc-hzoWXxts2VT40pic1Q.png)](https://medium.com/the-vue-point/vue-cli-3-0-is-here-c42bebe28fbb)
 
 ### TypeScript Guidelines
 
