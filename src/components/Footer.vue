@@ -27,6 +27,7 @@
         <a
           href="https://github.com/ubclaunchpad/ubclaunchpad.com/issues/new"
           target="_blank"
+          rel="noopener noreferrer"
         >Let us know!</a>
       </p>
 
@@ -34,6 +35,7 @@
         This site is powered by <a
           href="https://www.netlify.com"
           target="_blank"
+          rel="noopener noreferrer"
         >Netlify</a>.
       </p>
     </div>

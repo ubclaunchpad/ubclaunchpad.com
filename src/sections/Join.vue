@@ -14,6 +14,7 @@
               class="position-link"
               :href="p.applicationURL"
               target="_blank"
+              rel="noopener noreferrer"
               @click="onApplicationClick(p.name)"
             >
               {{ p.name }}

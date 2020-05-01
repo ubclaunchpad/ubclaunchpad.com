@@ -4,6 +4,7 @@
       <a
         :href="links.github"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <unicon
           name="github-alt"
@@ -13,6 +14,7 @@
       <a
         :href="links.instagram"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <unicon
           name="instagram"
@@ -22,6 +24,7 @@
       <a
         :href="links.facebook"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <unicon
           name="facebook-f"
@@ -31,6 +34,7 @@
       <a
         :href="links.medium"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <unicon
           name="medium-m"
@@ -40,6 +44,7 @@
       <a
         :href="links.linkedin"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <unicon
           name="linkedin"
