@@ -8,7 +8,10 @@
         ref="about-col-left"
         class="hidden column"
       >
-        <img src="@/assets/about.png">
+        <img
+          src="@/assets/about.png"
+          alt="feature image"
+        >
       </div>
       <div
         ref="about-col-right"

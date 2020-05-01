@@ -11,6 +11,7 @@
         <img
           src="@/assets/explore.png"
           class="hero-image"
+          alt="feature image"
         >
       </div>
 

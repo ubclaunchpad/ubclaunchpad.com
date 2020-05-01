@@ -8,6 +8,7 @@
         <img
           id="rocket"
           src="@/assets/rocket.png"
+          alt="logo"
         >
       </a>
     </div>
