@@ -1,10 +1,19 @@
 <template>
-  <div class="container is-widescreen" :on-scroll="handleScroll">
+  <div
+    class="container is-widescreen"
+    :on-scroll="handleScroll"
+  >
     <div class="columns is-vcentered">
-      <div ref="about-col-left" class="hidden column">
+      <div
+        ref="about-col-left"
+        class="hidden column"
+      >
         <img src="@/assets/about.png">
       </div>
-      <div ref="about-col-right" class="hidden column is-three-fifths pad-32">
+      <div
+        ref="about-col-right"
+        class="hidden column is-three-fifths pad-32"
+      >
         <h2>Who we are</h2>
         <p>
           We’re a student-run software engineering team devoted to building software projects in a
@@ -38,10 +47,18 @@ import { updateClassesIfInView } from '@/lib/util';
  */
 export default Vue.extend({
   name: 'About',
+  components: { ClubSocialsLinks },
   props: {
+    /**
+     * ClubSocials configuration
+     */
     socials: {
       type: Object as () => ClubSocials,
+      required: true,
     },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {
@@ -54,12 +71,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  components: {
-    ClubSocialsLinks,
   },
 });
 </script>

@@ -1,11 +1,15 @@
 <template>
-  <div id="container" class="container is-widescreen">
+  <div
+    id="container"
+    class="container is-widescreen"
+  >
     <ProjectModal
       v-if="activeProject"
       :section="$options.name"
       :project="activeProject"
-      :isActive="isActive"
-      @modalClosed="closeModal" />
+      :is-active="isActive"
+      @modalClosed="closeModal"
+    />
 
     <div class="description">
       <h2>Past Projects</h2>
@@ -19,17 +23,23 @@
       <div
         v-for="(col, i) in columns"
         :key="'column-'+i"
-        class="column is-one-quarter-widescreen is-half-desktop project-column">
+        class="column is-one-quarter-widescreen is-half-desktop project-column"
+      >
         <div
-          ref="projects-project-card"
           v-for="(r, j) in col"
+          ref="projects-project-card"
           :key="'row-'+i+'-'+j"
-          class="project-container hidden">
-          <ProjectCard @projectClicked="setModalState" :project="r" :section="$options.name" class="margin-sides-auto" />
+          class="project-container hidden"
+        >
+          <ProjectCard
+            :project="r"
+            :section="$options.name"
+            class="margin-sides-auto"
+            @projectClicked="setModalState"
+          />
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -47,22 +57,30 @@ import ProjectModal from '@/components/ProjectModal.vue';
  */
 export default Vue.extend({
   name: 'Projects',
+  components: { ProjectCard, ProjectModal },
   mixins: [projectModalController],
   props: {
+    /**
+     * Featured projects
+     */
     projects: {
       type: Array as () => Project[],
+      required: true,
     },
     /**
      * Link to UBC Launch Pad GitHub account
      */
-    github: String,
+    github: { type: String, required: true },
   },
+  data: () => ({ isActive: false, activeProjectName: '0' }),
   computed: {
     columns(): Project[][] {
       return generateColumns<Project>(this.projects, 2);
     },
   },
-  data: () => ({ isActive: false, activeProjectName: '0' }),
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     handleScroll() {
       updateClassesIfInView(window, this.$refs['projects-project-card'], {
@@ -70,13 +88,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  components: {
-    ProjectCard,
-    ProjectModal,
   },
 });
 </script>

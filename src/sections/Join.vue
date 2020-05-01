@@ -1,14 +1,29 @@
 <template>
-  <div id="container" class="container is-widescreen">
+  <div
+    id="container"
+    class="container is-widescreen"
+  >
     <div class="columns reverse-on-tablet is-vcentered">
       <div class="column has-text-centered is-half">
-        <div v-for="(p, i) in positions" :key="p.name">
+        <div
+          v-for="(p, i) in positions"
+          :key="p.name"
+        >
           <h3 ref="position-animated">
-            <a class="position-link" :href="p.applicationURL" target="_blank" v-on:click="onApplicationClick(p.name)">
+            <a
+              class="position-link"
+              :href="p.applicationURL"
+              target="_blank"
+              @click="onApplicationClick(p.name)"
+            >
               {{ p.name }}
             </a>
           </h3>
-          <hr class="position-divider" v-if="i !== (positions.length-1)" ref="position-animated" />
+          <hr
+            v-if="i !== (positions.length-1)"
+            ref="position-animated"
+            class="position-divider"
+          >
         </div>
       </div>
 
@@ -17,7 +32,10 @@
           <h2 class="accent">
             Join Us
           </h2>
-          <img src="@/assets/computer.png" width="100%" />
+          <img
+            src="@/assets/computer.png"
+            width="100%"
+          >
           <p class="margin-top-24">
             Are you a programmer, designer, or business student looking for an opportunity to work on
             interesting projects with fun people? Apply today!
@@ -42,7 +60,11 @@ export default Vue.extend({
   props: {
     positions: {
       type: Array as () => ClubPosition[],
+      required: true,
     },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {
@@ -56,9 +78,6 @@ export default Vue.extend({
         event_label: position,
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>

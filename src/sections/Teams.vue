@@ -1,22 +1,35 @@
 <template>
-  <div id="container" class="container is-widescreen">
+  <div
+    id="container"
+    class="container is-widescreen"
+  >
     <ProjectModal
       v-if="activeProject"
       :section="$options.name"
       :project="activeProject"
-      :isActive="isActive"
-      @modalClosed="closeModal" />
+      :is-active="isActive"
+      @modalClosed="closeModal"
+    />
 
     <div class="columns is-vcentered is-desktop">
       <div class="column is-two-fifths-desktop has-text-centered">
-
         <h2>Our Teams</h2>
-        <img src="@/assets/screen.png" width="300px" class="teams-image" />
+        <img
+          src="@/assets/screen.png"
+          width="300px"
+          class="teams-image"
+        >
 
         <div class="level stats">
-          <div v-for="s in stats" :key="s.description" class="level-item has-text-centered">
+          <div
+            v-for="s in stats"
+            :key="s.description"
+            class="level-item has-text-centered"
+          >
             <div>
-              <h2 class="margin-bottom-16">{{ s.value }}</h2>
+              <h2 class="margin-bottom-16">
+                {{ s.value }}
+              </h2>
               <p class="stat-desc pad-sides-8">
                 <b>{{ s.description }}</b>
               </p>
@@ -37,18 +50,24 @@
           <div
             v-for="(col, i) in columns"
             :key="'column-'+i"
-            class="column is-one-half project-column">
+            class="column is-one-half project-column"
+          >
             <div
-              ref="teams-project-card"
               v-for="(r, j) in col"
+              ref="teams-project-card"
               :key="'row-'+i+'-'+j"
-              class="project-container hidden">
-              <ProjectCard @projectClicked="setModalState" :project="r" :section="$options.name" class="margin-sides-auto"/>
+              class="project-container hidden"
+            >
+              <ProjectCard
+                :project="r"
+                :section="$options.name"
+                class="margin-sides-auto"
+                @projectClicked="setModalState"
+              />
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -87,12 +106,20 @@ const stats: TeamStats[] = [
  */
 export default Vue.extend({
   name: 'Teams',
+  components: { ProjectCard, ProjectModal },
   mixins: [projectModalController],
   props: {
+    /**
+     * Current projects
+     */
     projects: {
       type: Array as () => Project[],
+      required: true,
     },
-    memberCount: Number,
+    /**
+     * Current member count in UBC Launch Pad (from configuration)
+     */
+    memberCount: { type: Number, required: true },
   },
   data: () => ({ stats, isActive: false, activeProjectName: '0' }),
   computed: {
@@ -102,6 +129,9 @@ export default Vue.extend({
       return generateColumns<Project>(this.projects, perColumn);
     },
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     handleScroll() {
       updateClassesIfInView(window, this.$refs['teams-project-card'], {
@@ -109,13 +139,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  components: {
-    ProjectCard,
-    ProjectModal,
   },
 });
 </script>

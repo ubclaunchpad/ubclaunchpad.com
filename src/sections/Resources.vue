@@ -1,11 +1,23 @@
 <template>
-  <div class="container is-widescreen" :on-scroll="handleScroll">
+  <div
+    class="container is-widescreen"
+    :on-scroll="handleScroll"
+  >
     <div class="columns is-vcentered">
-      <div ref="resources-col-left" class="hidden column">
-        <img src="@/assets/explore.png" class="hero-image">
+      <div
+        ref="resources-col-left"
+        class="hidden column"
+      >
+        <img
+          src="@/assets/explore.png"
+          class="hero-image"
+        >
       </div>
 
-      <div ref="resources-col-right" class="hidden column pad-32 is-three-fifths">
+      <div
+        ref="resources-col-right"
+        class="hidden column pad-32 is-three-fifths"
+      >
         <h2>Resources</h2>
 
         <div class="margin-bottom-64">
@@ -16,7 +28,11 @@
             every project was built.
           </p>
           <p>
-            <a :href="github" target="_blank" @click="reportClick('GitHub')">
+            <a
+              :href="github"
+              target="_blank"
+              @click="reportClick('GitHub')"
+            >
               <b>See our projects on GitHub ></b>
             </a>
           </p>
@@ -29,7 +45,11 @@
             Pad members to help you get started and keep learning, open for anyone to leverage.
           </p>
           <p>
-            <a href="https://docs.ubclaunchpad.com" target="_blank" @click="reportClick('Docs')">
+            <a
+              href="https://docs.ubclaunchpad.com"
+              target="_blank"
+              @click="reportClick('Docs')"
+            >
               <b>Browse our knowledge base ></b>
             </a>
           </p>
@@ -52,7 +72,10 @@ export default Vue.extend({
     /**
      * Link to the UBC Launch Pad GitHub
      */
-    github: String,
+    github: { type: String, required: true },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     reportClick(label: string) {
@@ -71,9 +94,6 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>

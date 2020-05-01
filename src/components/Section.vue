@@ -9,9 +9,14 @@
 
       // add more space for every section except first
       'margin-bottom-96': sectionId > 0,
-    }">
+    }"
+  >
     <div class="section-bg-container">
-      <img class="section-bg" :src="backdrop.src" :class="backdrop.class" />
+      <img
+        class="section-bg"
+        :src="backdrop.src"
+        :class="backdrop.class"
+      >
     </div>
 
     <div class="hero-body">
@@ -21,11 +26,20 @@
 
     <!-- next section indicator - if an onclick is provided, wrap in href, otherwise just show indicator -->
     <div v-if="nextSectionIndicator">
-      <a v-if="nextSectionOnClick" v-on:click="nextSectionOnClick">
-        <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"></unicon>
+      <a
+        v-if="nextSectionOnClick"
+        @click="nextSectionOnClick"
+      >
+        <unicon
+          name="angle-down"
+          class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"
+        />
       </a>
-      <unicon name="angle-down" class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"
-        v-if="!nextSectionOnClick"></unicon>
+      <unicon
+        v-if="!nextSectionOnClick"
+        name="angle-down"
+        class="indicator animated bounce delay-1s icon-medium margin-sides-auto hoverable"
+      />
     </div>
   </section>
 </template>
@@ -51,11 +65,11 @@ export default Vue.extend({
     /**
      * Unique identifier for this section. Sections should be ordered from 0 onwards.
      */
-    sectionId: Number,
+    sectionId: { type: Number, required: true },
     /**
      * One of 'max', 'medium', or 'large' - dictates the height of this section.
      */
-    size: String,
+    size: { type: String, default: undefined },
     /**
      * Toggle whether to display a next section indicator arrow for this section. Optional.
      */

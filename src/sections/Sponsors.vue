@@ -1,28 +1,47 @@
 <template>
-  <div id="container" class="container is-widescreen">
+  <div
+    id="container"
+    class="container is-widescreen"
+  >
     <div class="has-text-centered">
-
       <h2>Sponsors</h2>
 
       <div class="sponsors columns is-multiline is-centered">
         <div
           v-for="(col, i) in columns"
           :key="'column-'+i"
-          class="column is-one-quarter-widescreen is-half-desktop">
-          <a v-for="(s, j) in col" :key="'row-'+i+'-'+j" :href="s.website" class="sponsor" target="_blank">
-            <img ref="sponsor-logo"
+          class="column is-one-quarter-widescreen is-half-desktop"
+        >
+          <a
+            v-for="(s, j) in col"
+            :key="'row-'+i+'-'+j"
+            :href="s.website"
+            class="sponsor"
+            target="_blank"
+          >
+            <img
+              ref="sponsor-logo"
               class="sponsor-img hidden"
               :src="s.logo.url"
               :alt="s.name"
               :style="{
                 filter: s.logo.filter,
-              }" />
+              }"
+            >
           </a>
         </div>
       </div>
 
-      <p ref="sponsor-pkg" class="package-link-p">
-        <a :href="sponsorshipPackage" target="_blank" class="package-link" v-on:click="onSponsorPackageClick">
+      <p
+        ref="sponsor-pkg"
+        class="package-link-p"
+      >
+        <a
+          :href="sponsorshipPackage"
+          target="_blank"
+          class="package-link"
+          @click="onSponsorPackageClick"
+        >
           <b>Interested in sponsoring us? View our sponsorship package here ></b>
         </a>
       </p>
@@ -43,8 +62,15 @@ export default Vue.extend({
   props: {
     sponsors: {
       type: Array as () => ClubSponsor[],
+      required: true,
     },
-    sponsorshipPackage: String,
+    /**
+     * Link to sponsorship package in configuration
+     */
+    sponsorshipPackage: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     columns(): ClubSponsor[][] {
@@ -52,6 +78,9 @@ export default Vue.extend({
       const perColumn = (this.sponsors.length <= 4) ? 1 : 2;
       return generateColumns<ClubSponsor>(this.sponsors, perColumn);
     },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {
@@ -72,9 +101,6 @@ export default Vue.extend({
         event_label: 'Sponsorship Package',
       });
     },
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 });
 </script>

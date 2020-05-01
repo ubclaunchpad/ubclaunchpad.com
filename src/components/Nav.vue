@@ -1,22 +1,40 @@
 <template>
   <nav class="navbar is-transparent animated slideInDown slow">
     <div class="navbar-brand logo">
-      <a class="navbar-item" href="https://ubclaunchpad.com">
-        <img id="rocket" src="@/assets/rocket.png"/>
+      <a
+        class="navbar-item"
+        href="https://ubclaunchpad.com"
+      >
+        <img
+          id="rocket"
+          src="@/assets/rocket.png"
+        >
       </a>
     </div>
 
     <div class="navbar-end links is-hidden-touch">
-      <a v-on:click="goTo('about')" class="navbar-item">
+      <a
+        class="navbar-item"
+        @click="goTo('about')"
+      >
         ABOUT
       </a>
-      <a v-on:click="goTo('teams')" class="navbar-item">
+      <a
+        class="navbar-item"
+        @click="goTo('teams')"
+      >
         TEAMS &amp; PROJECTS
       </a>
-      <a v-on:click="goTo('resources')" class="navbar-item">
+      <a
+        class="navbar-item"
+        @click="goTo('resources')"
+      >
         RESOURCES
       </a>
-      <a v-on:click="goTo('sponsors')" class="navbar-item">
+      <a
+        class="navbar-item"
+        @click="goTo('sponsors')"
+      >
         SPONSORS
       </a>
     </div>

@@ -1,5 +1,8 @@
 <template>
-  <div id="feature-container" class="container is-widescreen">
+  <div
+    id="feature-container"
+    class="container is-widescreen"
+  >
     <div class="columns is-vcentered is-tablet">
       <div class="pad-32 column is-three-fifths-tablet">
         <div class="animated slideInDown">
@@ -10,26 +13,36 @@
             </div>
             <div class="column title-divider is-narrow" />
             <div class="column">
-              <p class="main title-aside">Software Engineering<br>Design Team</p>
+              <p class="main title-aside">
+                Software Engineering<br>Design Team
+              </p>
             </div>
           </div>
 
           <!-- simple title, description layout visible tablet -->
           <div class="is-hidden-desktop">
             <h1>UBC Launch Pad</h1>
-            <p class="main is-hidden-desktop margin-bottom-16 margin-top-16"><b>Software Engineering Design Team</b></p>
+            <p class="main is-hidden-desktop margin-bottom-16 margin-top-16">
+              <b>Software Engineering Design Team</b>
+            </p>
           </div>
         </div>
 
         <!-- put image between title and text on small screens -->
-        <img src="@/assets/landing.png" class="small-image is-hidden-tablet" >
+        <img
+          src="@/assets/landing.png"
+          class="small-image is-hidden-tablet"
+        >
 
         <div class="animated fadeIn">
           <p class="secondary">
             A leading student-run software club based in the University of British Columbia devoted
             to building applications in a collaborative and professional environment.
           </p>
-          <p v-if="applicationsOpen" class="secondary">
+          <p
+            v-if="applicationsOpen"
+            class="secondary"
+          >
             <i>{{ season }} applications are now open!</i>
           </p>
         </div>
@@ -39,16 +52,21 @@
             v-if="applicationsOpen"
             text="join us"
             primary
-            :on-click="() => goTo('join')" />
+            :on-click="() => goTo('join')"
+          />
           <Button
             text="our projects"
-            :on-click="() => goTo('teams')" />
+            :on-click="() => goTo('teams')"
+          />
         </div>
       </div>
 
       <div class="column">
         <!-- put image on right side on desktop -->
-        <img src="@/assets/landing.png" class="is-hidden-mobile" >
+        <img
+          src="@/assets/landing.png"
+          class="is-hidden-mobile"
+        >
       </div>
     </div>
   </div>
@@ -64,12 +82,12 @@ import { goTo } from '@/lib/util';
  */
 export default Vue.extend({
   name: 'Feature',
-  props: {
-    applicationsOpen: Boolean,
-    season: String,
-  },
   components: {
     Button,
+  },
+  props: {
+    applicationsOpen: Boolean,
+    season: { type: String, required: true },
   },
   methods: {
     goTo(anchor: string) { goTo(document, anchor); },

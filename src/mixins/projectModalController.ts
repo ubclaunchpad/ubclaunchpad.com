@@ -20,24 +20,15 @@ interface ProjectModalState {
  */
 export default Vue.extend({
   props: {
+    /**
+     * Projects available for modal
+     */
     projects: {
       type: Array as () => Project[],
+      required: true,
     },
   },
   data: () => ({ isActive: false, activeProjectName: '0' }),
-  methods: {
-    getProjectByName(name: string): Project | undefined {
-      return this.projects.find((project: Project) =>
-        project.name.toLowerCase() === name.toLowerCase());
-    },
-    setModalState(state: ProjectModalState) {
-      this.isActive = state.isActive;
-      this.activeProjectName = state.activeProjectName;
-    },
-    closeModal() {
-      this.isActive = false;
-    },
-  },
   computed: {
     activeProject(): Project | undefined {
       return this.getProjectByName(this.activeProjectName);
@@ -56,5 +47,18 @@ export default Vue.extend({
         activeProjectName: linkedProject,
       });
     }
+  },
+  methods: {
+    getProjectByName(name: string): Project | undefined {
+      return this.projects.find((project: Project) =>
+        project.name.toLowerCase() === name.toLowerCase());
+    },
+    setModalState(state: ProjectModalState) {
+      this.isActive = state.isActive;
+      this.activeProjectName = state.activeProjectName;
+    },
+    closeModal() {
+      this.isActive = false;
+    },
   },
 });

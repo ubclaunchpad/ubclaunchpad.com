@@ -1,18 +1,22 @@
 <template>
   <div class="project card has-text-centered box-shadow">
     <div
+      v-lazy:background-image="project.banner.url"
       class="project-image"
       :class="{
         'name-on-hover': !project.banner.hasName
       }"
-      v-lazy:background-image="project.banner.url"
-      @click="openModal()">
+      @click="openModal()"
+    >
       <div class="overlay">
-        <h3 v-if="!project.banner.hasName" class="text-shadow">
+        <h3
+          v-if="!project.banner.hasName"
+          class="text-shadow"
+        >
           {{ project.name }}
         </h3>
       </div>
-   </div>
+    </div>
   </div>
 </template>
 
@@ -29,15 +33,19 @@ export default Vue.extend({
     /**
      * Name of section this card was rendered in
      */
-    section: String,
+    section: { type: String, required: true },
     /**
      * Project to render
      */
     project: {
       type: Object as () => Project,
+      required: true,
     },
   },
   data: () => ({ isActive: false }),
+  computed: {
+    id(): string { return `card-${this.project.name.toLowerCase().replace(' ', '-')}`; },
+  },
   methods: {
     openModal() {
       this.$gtag.event('project-card-click', {
@@ -47,9 +55,6 @@ export default Vue.extend({
       });
       this.$emit('projectClicked', { isActive: true, activeProjectName: this.project.name });
     },
-  },
-  computed: {
-    id(): string { return `card-${this.project.name.toLowerCase().replace(' ', '-')}`; },
   },
 });
 </script>
