@@ -31,6 +31,7 @@
             <a
               :href="github"
               target="_blank"
+              rel="noopener noreferrer"
               @click="reportClick('GitHub')"
             >
               <b>See our projects on GitHub ></b>
@@ -48,6 +49,7 @@
             <a
               href="https://docs.ubclaunchpad.com"
               target="_blank"
+              rel="noopener noreferrer"
               @click="reportClick('Docs')"
             >
               <b>Browse our knowledge base ></b>

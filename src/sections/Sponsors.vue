@@ -18,6 +18,7 @@
             :href="s.website"
             class="sponsor"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               ref="sponsor-logo"
@@ -39,6 +40,7 @@
         <a
           :href="sponsorshipPackage"
           target="_blank"
+          rel="noopener noreferrer"
           class="package-link"
           @click="onSponsorPackageClick"
         >

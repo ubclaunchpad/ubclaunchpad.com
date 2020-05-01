@@ -67,6 +67,7 @@
             data-tippy-content="GitHub"
             :href="project.links.repository"
             target="_blank"
+            rel="noopener noreferrer"
             @click="onLinkClick"
           >
             <unicon
@@ -79,6 +80,7 @@
             data-tippy-content="Website"
             :href="project.links.website"
             target="_blank"
+            rel="noopener noreferrer"
             @click="onLinkClick"
           >
             <unicon
@@ -91,6 +93,7 @@
             data-tippy-content="App Store"
             :href="project.links.app.url"
             target="_blank"
+            rel="noopener noreferrer"
             @click="onLinkClick"
           >
             <unicon
@@ -103,6 +106,7 @@
             data-tippy-content="Play Store"
             :href="project.links.app.url"
             target="_blank"
+            rel="noopener noreferrer"
             @click="onLinkClick"
           >
             <unicon
@@ -115,6 +119,7 @@
             data-tippy-content="Writeup"
             :href="project.links.writeup"
             target="_blank"
+            rel="noopener noreferrer"
             @click="onLinkClick"
           >
             <unicon
