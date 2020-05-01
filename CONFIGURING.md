@@ -51,9 +51,9 @@ Also refer to [USING.md](https://github.com/ubclaunchpad/ubclaunchpad.com/blob/m
 
 ### Updating Projects on the Website
 
-Projects featured on the website are configured in [`clubConfig`](#clubconfig) under `clubConfig.currentTeams` and `clubConfig.featuredTeams`, which provides the teams in the "Teams" and "Past Projects" sections of the website respectively.
+Projects featured on the website are configured in [`clubConfig`](#clubconfig) under `clubConfig.currentProjects` and `clubConfig.featuredProjects`, which provides the teams in the "Teams" and "Past Projects" sections of the website respectively.
 
-To make a change, simply add/remove/update one of the entries in `clubConfig.currentTeams` or `clubConfig.featuredTeams` - see [`Team`](#team) for more details.
+To make a change, simply add/remove/update one of the entries in `clubConfig.currentProjects` or `clubConfig.featuredProjects` - see [`Project`](#project) for more details.
 
 <br />
 

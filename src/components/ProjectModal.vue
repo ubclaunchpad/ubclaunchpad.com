@@ -18,22 +18,22 @@
         v-on:click="shareToClipboard()"></unicon>
 
       <div class="pad-sides-8 has-text-centered">
-        <h2 class="accent">{{ team.project.name }}</h2>
-        <h3 class="margin-sides-16">{{ team.project.description }}</h3>
+        <h2 class="accent">{{ project.name }}</h2>
+        <h3 class="margin-sides-16">{{ project.description }}</h3>
 
         <div v-if="isActive" class="media-container margin-sides-16">
           <img
-            v-if="!team.project.media"
-            :src="team.project.banner.url" />
+            v-if="!project.media"
+            :src="project.banner.url" />
           <img
-            v-else-if="team.project.media.type == 'image'"
-            :src="team.project.media.url" />
+            v-else-if="project.media.type == 'image'"
+            :src="project.media.url" />
           <div
-            v-else-if="team.project.media.type == 'youtube'"
+            v-else-if="project.media.type == 'youtube'"
             class="video-container">
             <iframe
               ref="ytplayer-iframe"
-              :src="generateYouTubeEmbedSrc(team.project.media)"
+              :src="generateYouTubeEmbedSrc(project.media)"
               id="ytplayer" type="text/html" class="video-player"
               allowFullScreen
               frameborder="0"></iframe>
@@ -42,29 +42,29 @@
 
         <p v-if="isActive" class="socials">
           <a data-tippy-content="GitHub"
-            :href="team.project.links.repository" target="_blank"  v-on:click="onLinkClick">
+            :href="project.links.repository" target="_blank"  v-on:click="onLinkClick">
             <unicon name="github-alt" class="icon-small hoverable"></unicon>
           </a>
-          <a v-if="team.project.links.website" data-tippy-content="Website"
-            :href="team.project.links.website" target="_blank" v-on:click="onLinkClick">
+          <a v-if="project.links.website" data-tippy-content="Website"
+            :href="project.links.website" target="_blank" v-on:click="onLinkClick">
             <unicon name="window" class="icon-small hoverable"></unicon>
           </a>
-           <a v-if="team.project.links.app && team.project.links.app.type === 'ios'" data-tippy-content="App Store"
-            :href="team.project.links.app.url" target="_blank" v-on:click="onLinkClick">
+           <a v-if="project.links.app && project.links.app.type === 'ios'" data-tippy-content="App Store"
+            :href="project.links.app.url" target="_blank" v-on:click="onLinkClick">
             <unicon name="apple-alt" class="icon-small hoverable"></unicon>
           </a>
-           <a v-if="team.project.links.app && team.project.links.app.type === 'android'" data-tippy-content="Play Store"
-            :href="team.project.links.app.url" target="_blank" v-on:click="onLinkClick">
+           <a v-if="project.links.app && project.links.app.type === 'android'" data-tippy-content="Play Store"
+            :href="project.links.app.url" target="_blank" v-on:click="onLinkClick">
             <unicon name="android-alt" class="icon-small hoverable"></unicon>
           </a>
-          <a v-if="team.project.links.writeup" data-tippy-content="Writeup"
-            :href="team.project.links.writeup" target="_blank" v-on:click="onLinkClick">
+          <a v-if="project.links.writeup" data-tippy-content="Writeup"
+            :href="project.links.writeup" target="_blank" v-on:click="onLinkClick">
             <unicon name="notebooks" class="icon-small hoverable"></unicon>
           </a>
         </p>
 
-        <p v-if="team.project.elevatorPitch" class="margin-sides-16">
-          {{ team.project.elevatorPitch }}
+        <p v-if="project.elevatorPitch" class="margin-sides-16">
+          {{ project.elevatorPitch }}
         </p>
       </div>
     </div>
@@ -74,26 +74,26 @@
 <script lang="ts">
 import Vue from 'vue';
 import tippy from 'tippy.js';
-import { Team, MediaYouTube } from '@/data/types';
+import { Project, MediaYouTube } from '@/data/types';
 
 // see https://github.com/ubclaunchpad/ubclaunchpad.com/issues/105
 import * as clipboard from 'clipboard-polyfill';
 
 export default Vue.extend({
-  name: 'TeamProjectModal',
+  name: 'ProjectModal',
   props: {
     /**
      * Name of section this modal is based in
      */
     section: String,
     /**
-     * Team to display
+     * Project to display
      */
-    team: {
-      type: Object as () => Team,
+    project: {
+      type: Object as () => Project,
     },
     /**
-     * Toggle whether team is active
+     * Toggle whether modal is active
      */
     isActive: Boolean,
   },
@@ -101,11 +101,11 @@ export default Vue.extend({
     /**
      * Reports an analytics event
      */
-    reportEvent(action: string, team: Team) {
+    reportEvent(action: string, project: Project) {
       this.$gtag.event(action, {
         event_category: this.$options.name,
         // include which section this modal interaction came from
-        event_label: `${this.section}: ${team.project.name}`,
+        event_label: `${this.section}: ${project.name}`,
       });
     },
     /**
@@ -118,11 +118,11 @@ export default Vue.extend({
      * Shares this project modal to clipboard, and show a tooltip indicating success
      */
     async shareToClipboard() {
-      this.reportEvent('project-modal-share', this.team);
+      this.reportEvent('project-modal-share', this.project);
 
       // encode share link and write to clipboard
       const urlParams = new URLSearchParams({
-        project: this.team.project.name.toLowerCase(),
+        project: this.project.name.toLowerCase(),
       } as Record<string, string>);
       const { protocol, host } = window.location;
       await clipboard.writeText(`${protocol}//${host}?${urlParams.toString()}#${this.section.toLowerCase()}`);
@@ -156,7 +156,7 @@ export default Vue.extend({
      * probably an exciting event.
      */
     onLinkClick() {
-      this.reportEvent('project-modal-link-click', this.team);
+      this.reportEvent('project-modal-link-click', this.project);
     },
   },
   updated() {

@@ -3,13 +3,13 @@
     <div
       class="project-image"
       :class="{
-        'name-on-hover': !team.project.banner.hasName
+        'name-on-hover': !project.banner.hasName
       }"
-      v-lazy:background-image="team.project.banner.url"
+      v-lazy:background-image="project.banner.url"
       @click="openModal()">
       <div class="overlay">
-        <h3 v-if="!team.project.banner.hasName" class="text-shadow">
-          {{ team.project.name }}
+        <h3 v-if="!project.banner.hasName" class="text-shadow">
+          {{ project.name }}
         </h3>
       </div>
    </div>
@@ -18,23 +18,23 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Team } from '@/data/types';
+import { Project } from '@/data/types';
 
 /**
- * TeamProjectCard is a small card used to render a Team. See [[Team]] for more details.
+ * ProjectCard is a small card used to render a Project. See [[Project]] for more details.
  */
 export default Vue.extend({
-  name: 'TeamProjectCard',
+  name: 'ProjectCard',
   props: {
     /**
      * Name of section this card was rendered in
      */
     section: String,
     /**
-     * Team to render
+     * Project to render
      */
-    team: {
-      type: Object as () => Team,
+    project: {
+      type: Object as () => Project,
     },
   },
   data: () => ({ isActive: false }),
@@ -43,13 +43,13 @@ export default Vue.extend({
       this.$gtag.event('project-card-click', {
         // attribute a project card click to the section it belongs in
         event_category: this.section,
-        event_label: this.team.project.name,
+        event_label: this.project.name,
       });
-      this.$emit('projectClicked', {isActive: true, activeTeamName: this.team.project.name});
+      this.$emit('projectClicked', { isActive: true, activeProjectName: this.project.name });
     },
   },
   computed: {
-    id(): string { return `card-${this.team.name.toLowerCase().replace(' ', '-')}`; },
+    id(): string { return `card-${this.project.name.toLowerCase().replace(' ', '-')}`; },
   },
 });
 </script>

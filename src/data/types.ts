@@ -95,20 +95,6 @@ export type Project = {
 }
 
 /**
- * Describes a Launch Pad team.
- */
-export type Team = {
-  /**
-   * Team name!
-   */
-  name: string;
-  /**
-   * The team's most recent/relevant project
-   */
-  project: Project;
-}
-
-/**
  * Describes a Launch Pad position (e.g. 'Developer', 'Designer')
  */
 export type ClubPosition = {
