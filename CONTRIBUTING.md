@@ -203,7 +203,7 @@ In general:
 
 * if the image can be hosted elsewhere (i.e. a company website or project repository), host it there instead and reference it by URL
 * if you do add an asset to this repository, do not put assets in `/public`, and prefer to import them as demonstrated above from the `/assets` folder.
-* use suitably-sized assets that don't exceed 1MB in size (try an online image compressor, such as [compresspng](https://compresspng.com/))
+* use suitably-sized assets that don't exceed roughly **300kB** in size (try an online image compressor, such as [compresspng](https://compresspng.com/))
 * **lazy-loading**: [`vue-lazyload`](https://github.com/hilongjw/vue-lazyload) provides some lazy-loading capabilities for images, but *be careful where you use this*! Especially when animated, lazy-loaded images can look quite bad, since they can just pop up mid-animation ([more context here](https://github.com/ubclaunchpad/ubclaunchpad.com/pull/142))
 
 We also have an [automated workflow](https://github.com/ubclaunchpad/ubclaunchpad.com/actions?workflow=Compress+images) that runs on PRs that edit images and automatically adds a commit to compress them if possible while minimizing quality loss - see [GitHub Actions](#github-actions).
@@ -270,7 +270,7 @@ Tools are generally used through one of our [Scripts](#scripts).
 
 ## Deployment
 
-Deployments are handled automatically by the [Netlify](https://www.netlify.com/).
+Deployments are handled automatically by the [Netlify](https://www.netlify.com/) - the website is managed under the "Launch Pad OSS Sponsored" team.
 
 This means that when your changes are merged to `master`, your contribution will automatically be deployed! This deployment includes both the actual website as well as [configuration documentation](#configuration).
 

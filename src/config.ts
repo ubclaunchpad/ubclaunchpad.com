@@ -111,9 +111,7 @@ export const clubConfig: {
       },
       links: {
         repository: 'https://github.com/ubclaunchpad/sync',
-        website: 'https://thesyncapp.herokuapp.com/',
-        // TODO: update when https://github.com/ubclaunchpad/sync/tree/showcase is merged
-        writeup: 'https://github.com/ubclaunchpad/sync/blob/showcase/README.md',
+        website: 'https://sync.ubclaunchpad.com/',
       },
     },
     {
@@ -164,13 +162,12 @@ export const clubConfig: {
         the player attempts to survive a year as a student at UBC, featuring time sensitive events,
         minigames, and campaign personalization!`,
       banner: {
-        // TODO: update this when https://github.com/ubclaunchpad/ubcsim2/pull/140 is merged
-        url: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/115b59fcc1a26fb478d64f66363548dcdfa39643/.static/thumbnail.png',
+        url: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/master/.static/thumbnail.png',
         hasName: true,
       },
       links: {
         repository: 'https://github.com/ubclaunchpad/ubcsim2',
-        website: 'https://ubclaunchpad.github.io/ubcsim2',
+        website: 'https://ubcsim2.ubclaunchpad.com',
       },
     },
     {
@@ -411,6 +408,13 @@ export const sponsorshipConfig: {
       logo: {
         url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png',
         filter: 'invert()',
+      },
+    },
+    {
+      name: 'Netlify',
+      website: 'https://netlify.com',
+      logo: {
+        url: 'https://www.netlify.com/img/press/logos/full-logo-dark.png',
       },
     },
   ],
