@@ -102,5 +102,6 @@ export default Vue.extend({
 .highlight-image {
   border-radius: 5px;
   max-height: 200px;
+  filter: saturate(0.5) brightness(1.2) opacity(0.85);
 }
 </style>
