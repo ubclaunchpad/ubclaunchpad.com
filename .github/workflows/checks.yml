@@ -20,5 +20,4 @@ jobs:
       uses: treosh/lighthouse-ci-action@v2
       with:
         configPath: ./.github/lighthouse/lighthouserc.json
-        budgetPath: ./.github/lighthouse/budget.json
         uploadArtifacts: true
