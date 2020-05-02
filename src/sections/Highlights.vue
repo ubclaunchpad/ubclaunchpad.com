@@ -13,8 +13,8 @@
           class="column has-text-centered"
         >
           <img
+            v-lazy="h.image"
             class="highlight-image box-shadow margin-bottom-32"
-            :src="h.image"
             :alt="h.title"
           >
           <h3>{{ h.title }}</h3>
@@ -41,8 +41,8 @@
         class="pad-32 has-text-centered"
       >
         <img
+          v-lazy="h.image"
           class="highlight-image box-shadow margin-bottom-16"
-          :src="h.image"
           :alt="h.title"
         >
         <h3 class="margin-bottom-16">
