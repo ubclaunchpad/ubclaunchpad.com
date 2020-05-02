@@ -70,11 +70,12 @@ export default Vue.extend({
 
     .rocket {
       max-height: none;
-      width: auto;
       height: 55px;
       @media(max-width: $touch) {
-        margin-top: 32px;
         height: 96px;
+        margin-top: 32px;
+        margin-left: -18px; // align rocket to left
+        object-fit: cover;
       }
     }
   }
