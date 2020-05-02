@@ -1,0 +1,11 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "dist"
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {}
+    }
+  }
+}

@@ -14,3 +14,11 @@ jobs:
     - run: npm install
     - run: npm run lint
     - run: npm run build
+
+    # lighthouse checks
+    - name: Lighthouse test
+      uses: treosh/lighthouse-ci-action@v2
+      with:
+        configPath: ./.github/lighthouse/lighthouserc.json
+        budgetPath: ./.github/lighthouse/budget.json
+        uploadArtifacts: true
