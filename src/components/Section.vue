@@ -7,8 +7,8 @@
       'is-medium': size === 'medium',
       'is-large': size === 'large',
 
-      // add more space for every section except first
-      'margin-bottom-96': sectionId > 0,
+      // add more space for every section except first and large sections
+      'margin-bottom-96': sectionId > 0 && size !== 'large',
     }"
   >
     <div class="section-bg-container">
