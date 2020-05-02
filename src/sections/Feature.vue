@@ -47,7 +47,7 @@
             v-else
             class="secondary"
           >
-            <i> We are not currently accepting new applications. In the meantime, keep an eye on this space for updates!</i>
+            <i> We are not currently accepting new applications. In the meantime, keep an eye on this page for updates!</i>
           </p>
         </div>
 
