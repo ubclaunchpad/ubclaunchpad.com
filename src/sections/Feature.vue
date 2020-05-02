@@ -43,6 +43,12 @@
           >
             <i>{{ season }} applications are now open!</i>
           </p>
+          <p
+            v-if="!applicationsOpen"
+            class="secondary"
+          >
+            <i> We are not currently accepting new applications. In the meantime, keep an eye on this space for updates!</i>
+          </p>
         </div>
 
         <div class="animated fadeInUp">
