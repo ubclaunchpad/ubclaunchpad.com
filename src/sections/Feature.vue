@@ -56,16 +56,16 @@
             v-if="applicationsOpen"
             text="join us"
             primary
-            :on-click="() => goTo('join')"
+            :on-click="goTo('Join Us', 'join')"
           />
           <Button
             v-if="!applicationsOpen"
             text="about us"
-            :on-click="() => goTo('about')"
+            :on-click="goTo('About Us', 'about')"
           />
           <Button
             text="our projects"
-            :on-click="() => goTo('teams')"
+            :on-click="goTo('Our Projects', 'teams')"
           />
         </div>
       </div>
@@ -100,7 +100,13 @@ export default Vue.extend({
     season: { type: String, required: true },
   },
   methods: {
-    goTo(anchor: string) { goTo(document, anchor); },
+    goTo(btn: string, anchor: string) {
+      this.$gtag.event('cta-click', {
+        event_category: this.$options.name,
+        event_label: btn,
+      });
+      goTo(document, anchor);
+    },
   },
 });
 </script>
