@@ -61,7 +61,6 @@
           <Button
             v-if="!applicationsOpen"
             text="about us"
-            primary
             :on-click="() => goTo('about')"
           />
           <Button
