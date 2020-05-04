@@ -13,6 +13,7 @@
       <Feature
         :applications-open="recruitment.applicationsOpen"
         :season="recruitment.season"
+        :socials="club.socials"
       />
     </Section>
 

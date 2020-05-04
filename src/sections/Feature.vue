@@ -43,6 +43,12 @@
           >
             <i>{{ season }} applications are now open!</i>
           </p>
+          <p
+            v-else
+            class="secondary"
+          >
+            <i>We open applications every semester - follow us on social media for updates!</i>
+          </p>
         </div>
 
         <div class="animated fadeInUp">
@@ -51,6 +57,11 @@
             text="join us"
             primary
             :on-click="() => goTo('join')"
+          />
+          <Button
+            v-if="!applicationsOpen"
+            text="about us"
+            :on-click="() => goTo('about')"
           />
           <Button
             text="our projects"
