@@ -56,16 +56,16 @@
             v-if="applicationsOpen"
             text="join us"
             primary
-            :on-click="goTo('Join Us', 'join')"
+            :on-click="() => goTo('Join Us', 'join')"
           />
           <Button
             v-if="!applicationsOpen"
             text="about us"
-            :on-click="goTo('About Us', 'about')"
+            :on-click="() => goTo('About Us', 'about')"
           />
           <Button
             text="our projects"
-            :on-click="goTo('Our Projects', 'teams')"
+            :on-click="() => goTo('Our Projects', 'teams')"
           />
         </div>
       </div>
