@@ -5,6 +5,7 @@
         :href="links.github"
         target="_blank"
         rel="noopener noreferrer"
+        @click="reportClick('github')"
       >
         <unicon
           name="github-alt"
@@ -15,6 +16,7 @@
         :href="links.instagram"
         target="_blank"
         rel="noopener noreferrer"
+        @click="reportClick('instagram')"
       >
         <unicon
           name="instagram"
@@ -25,6 +27,7 @@
         :href="links.facebook"
         target="_blank"
         rel="noopener noreferrer"
+        @click="reportClick('facebook')"
       >
         <unicon
           name="facebook-f"
@@ -35,6 +38,7 @@
         :href="links.medium"
         target="_blank"
         rel="noopener noreferrer"
+        @click="reportClick('medium')"
       >
         <unicon
           name="medium-m"
@@ -45,6 +49,7 @@
         :href="links.linkedin"
         target="_blank"
         rel="noopener noreferrer"
+        @click="reportClick('linkedin')"
       >
         <unicon
           name="linkedin"
@@ -66,11 +71,26 @@ export default Vue.extend({
   name: 'ClubSocialsLinks',
   props: {
     /**
+     * Parent section name
+     */
+    section: {
+      type: String,
+      required: true,
+    },
+    /**
      * ClubSocials configuration
      */
     links: {
       type: Object as () => ClubSocials,
       required: true,
+    },
+  },
+  methods: {
+    reportClick(link: string) {
+      this.$gtag.event('social-click', {
+        event_category: this.section,
+        event_label: link,
+      });
     },
   },
 });
