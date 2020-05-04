@@ -165,6 +165,10 @@ export const clubConfig: {
         url: 'https://raw.githubusercontent.com/ubclaunchpad/ubcsim2/master/.static/thumbnail.png',
         hasName: true,
       },
+      media: {
+        type: 'youtube',
+        id: 'xWBKmqTYMYc',
+      },
       links: {
         repository: 'https://github.com/ubclaunchpad/ubcsim2',
         website: 'https://ubcsim2.ubclaunchpad.com',
