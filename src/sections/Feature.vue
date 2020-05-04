@@ -55,6 +55,7 @@
           <Button
             v-if="applicationsOpen"
             text="join us"
+            primary
             :on-click="() => goTo('join')"
           />
           <Button
