@@ -33,7 +33,10 @@
           our teams with necessary resources, like servers, to help us achieve our goals.
         </p>
 
-        <ClubSocialsLinks :links="socials" />
+        <ClubSocialsLinks
+          :section="$options.name"
+          :links="socials"
+        />
       </div>
     </div>
   </div>

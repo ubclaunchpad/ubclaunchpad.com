@@ -9,6 +9,7 @@
 
       <div class="footer-item column has-text-centered">
         <ClubSocialsLinks
+          :section="$options.name"
           :links="socials"
           class="socials"
         />
