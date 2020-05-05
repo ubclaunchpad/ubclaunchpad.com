@@ -1,2 +1,9 @@
-# mark docs as generated
-docs/* linguist-generated
+*.sh    text eol=lf
+*.js    text eol=lf
+*.ts    text eol=lf
+*.vue   text eol=lf
+*.html  text eol=lf
+*.scss  text eol=lf
+*.md    text eol=lf
+*.toml  text eol=lf
+*.json  text eol=lf
