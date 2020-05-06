@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import VueFathom from '@ubclaunchpad/vue-fathom';
 import VueGtag from 'vue-gtag';
 import VueLazyload from 'vue-lazyload';
 import VueUnicons from './unicons';
@@ -17,6 +18,9 @@ import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 
 // load vue plugins
+Vue.use(VueFathom, {
+  siteID: 'FTSSPSGR',
+});
 Vue.use(VueGtag, {
   config: { id: 'UA-63529563-1' },
 });

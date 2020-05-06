@@ -99,6 +99,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: 'Sponsorship Package',
       });
+      this.$fathom.trackGoal('UDHX3QIV', 0);
     },
   },
 });

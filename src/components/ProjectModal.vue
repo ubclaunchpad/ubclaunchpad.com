@@ -189,6 +189,7 @@ export default Vue.extend({
         // include which section this modal interaction came from
         event_label: `${this.section}: ${project.name}`,
       });
+      this.$fathom.trackGoal('INWBK8ID', 0);
     },
     /**
      * Closes this modal

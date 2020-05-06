@@ -91,6 +91,7 @@ export default Vue.extend({
         event_category: this.section,
         event_label: link,
       });
+      this.$fathom.trackGoal('WQWZMWMV', 0);
     },
   },
 });

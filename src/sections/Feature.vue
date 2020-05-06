@@ -105,6 +105,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: btn,
       });
+      this.$fathom.trackGoal('AEL83VZC', 0);
       goTo(document, anchor);
     },
   },

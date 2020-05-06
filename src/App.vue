@@ -127,6 +127,9 @@ export default Vue.extend({
     club: clubConfig,
     sponsorship: sponsorshipConfig,
   }),
+  created() {
+    this.$fathom.trackPageview();
+  },
   methods: {
     goTo(anchor: string) { goTo(document, anchor); },
   },

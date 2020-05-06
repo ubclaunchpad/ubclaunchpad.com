@@ -13,10 +13,12 @@
     "redirects": "tsc ./tools/generateRedirects.ts --outDir bin && FILE='bin/src/config.js' ./tools/stripRequire.sh && node ./bin/tools/generateRedirects.js"
   },
   "dependencies": {
+    "@ubclaunchpad/vue-fathom": "^1.0.7",
     "animate.css": "~3.7.2",
     "bulma": "~0.8.2",
     "clipboard-polyfill": "~2.8.6",
     "core-js": "~3.6.5",
+    "fathom-client": "^2.0.3",
     "smoothscroll-polyfill": "~0.4.4",
     "tippy.js": "~6.2.0",
     "vue": "~2.6.11",
