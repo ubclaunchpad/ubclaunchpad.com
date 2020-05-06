@@ -76,7 +76,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: position,
       });
-      this.$fathom.trackGoal('MIJKXAKR', 0);
+      this.$fathom.trackGoal('MIJKXAKR');
     },
   },
 });

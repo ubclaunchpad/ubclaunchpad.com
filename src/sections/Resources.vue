@@ -86,7 +86,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: label,
       });
-      this.$fathom.trackGoal('VZF6R0EN', 0);
+      this.$fathom.trackGoal('VZF6R0EN');
     },
     handleScroll() {
       updateClassesIfInView(window, this.$refs['resources-col-left'], {

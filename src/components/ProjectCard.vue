@@ -53,7 +53,7 @@ export default Vue.extend({
         event_category: this.section,
         event_label: this.project.name,
       });
-      this.$fathom.trackGoal('DGBRC44Q', 0);
+      this.$fathom.trackGoal('DGBRC44Q');
       this.$emit('projectClicked', { isActive: true, activeProjectName: this.project.name });
     },
   },
