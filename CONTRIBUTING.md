@@ -11,24 +11,25 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
 
 **Table of Contents**
 
-- [Dependencies](#dependencies)
-  - [npm Dependencies](#npm-dependencies)
-- [Development](#development)
-  - [Project Overview](#project-overview)
-    - [Scripts](#scripts)
-  - [TypeScript Guidelines](#typescript-guidelines)
-  - [Vue Guidelines](#vue-guidelines)
-    - [Documentation](#documentation)
-    - [Styling](#styling)
-      - [Responsive Design](#responsive-design)
-  - [Assets and Images](#assets-and-images)
-    - [Icons](#icons)
-  - [Analytics](#analytics)
-  - [Configuration](#configuration)
-  - [Tools](#tools)
-- [Deployment](#deployment)
-  - [Performance](#performance)
-- [GitHub Actions](#github-actions)
+- [⚒️ Contributing to the UBC Launch Pad Website](#%e2%9a%92%ef%b8%8f-contributing-to-the-ubc-launch-pad-website)
+  - [Dependencies](#dependencies)
+    - [npm Dependencies](#npm-dependencies)
+  - [Development](#development)
+    - [Project Overview](#project-overview)
+      - [Scripts](#scripts)
+    - [TypeScript Guidelines](#typescript-guidelines)
+    - [Vue Guidelines](#vue-guidelines)
+      - [Documentation](#documentation)
+      - [Styling](#styling)
+        - [Responsive Design](#responsive-design)
+    - [Assets and Images](#assets-and-images)
+      - [Icons](#icons)
+    - [Analytics](#analytics)
+    - [Configuration](#configuration)
+    - [Tools](#tools)
+  - [Deployment](#deployment)
+    - [Performance](#performance)
+  - [GitHub Actions](#github-actions)
 
 <br />
 
@@ -125,7 +126,7 @@ In general, when working with Vue:
   ```ts
   /**
    * About implements a section for introducing visitors to Launch Pad.
-      */
+   */
   export default Vue.extend({
     name: 'About',
     props: {},
@@ -135,13 +136,13 @@ In general, when working with Vue:
   ```ts
   /**
    * Button is a simple stylized Launch Pad button.
-    */
+   */
   export default Vue.extend({
     name: 'Button',
     props: {
       /**
        * Toggle whether to use a primary, attention-grabbing style or a more lowkey style for this button
-        */
+       */
       primary: Boolean,
     },
   });
