@@ -3,8 +3,6 @@
  * step in `npm run build` (more specifically, `npm run redirects`).
  */
 
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="./node.d.ts" />
 import { writeFileSync } from 'fs';
 import { clubConfig, sponsorshipConfig, recruitmentConfig, redirectsConfig } from '../src/config';
 

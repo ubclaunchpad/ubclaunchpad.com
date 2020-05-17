@@ -10,7 +10,7 @@
     "postbuild": "npm run docs && npm run redirects",
     "lint": "vue-cli-service lint --max-warnings=0",
     "docs": "typedoc --options typedoc.js src/config.ts",
-    "redirects": "tsc ./tools/generateRedirects.ts ./tools/node.d.ts --outDir bin && FILE='bin/src/config.js' ./tools/stripRequire.sh && node ./bin/tools/generateRedirects.js"
+    "redirects": "tsc ./tools/generateRedirects.ts --outDir bin && FILE='bin/src/config.js' ./tools/stripRequire.sh && node ./bin/tools/generateRedirects.js"
   },
   "dependencies": {
     "animate.css": "~3.7.2",
@@ -26,6 +26,7 @@
     "vue-unicons": "~2.1.0"
   },
   "devDependencies": {
+    "@types/node": "~14.0.1",
     "@typescript-eslint/eslint-plugin": "~2.30.0",
     "@typescript-eslint/parser": "~2.30.0",
     "@vue/cli-plugin-babel": "~4.3.1",
