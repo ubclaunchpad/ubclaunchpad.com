@@ -127,7 +127,7 @@ In general, when working with Vue:
   ```ts
   /**
    * About implements a section for introducing visitors to Launch Pad.
-      */
+   */
   export default Vue.extend({
     name: 'About',
     props: {},
@@ -137,13 +137,13 @@ In general, when working with Vue:
   ```ts
   /**
    * Button is a simple stylized Launch Pad button.
-    */
+   */
   export default Vue.extend({
     name: 'Button',
     props: {
       /**
        * Toggle whether to use a primary, attention-grabbing style or a more lowkey style for this button
-        */
+       */
       primary: Boolean,
     },
   });
