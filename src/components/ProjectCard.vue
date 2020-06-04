@@ -54,6 +54,14 @@ export default Vue.extend({
         event_label: this.project.name,
       });
       this.$fathom.trackGoal('DGBRC44Q');
+      // TODO: extract to helper
+      const urlParams = new URLSearchParams({
+        project: this.project.name.toLowerCase(),
+      } as Record<string, string>);
+      const { protocol, host } = window.location;
+      this.$fathom.trackPageview({
+        url: `${protocol}//${host}?${urlParams.toString()}#${this.section.toLowerCase()}`,
+      });
       this.$emit('projectClicked', { isActive: true, activeProjectName: this.project.name });
     },
   },
