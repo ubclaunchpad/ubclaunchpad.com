@@ -20,6 +20,9 @@ smoothscroll.polyfill();
 // load vue plugins
 Vue.use(VueFathom, {
   siteID: 'FTSSPSGR',
+  settings: {
+    url: 'https://chinchilla.ubclaunchpad.com/script.js',
+  },
 });
 Vue.use(VueGtag, {
   config: { id: 'UA-63529563-1' },
