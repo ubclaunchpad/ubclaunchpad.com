@@ -55,7 +55,7 @@
 
         <div>
           <h3 class="margin-bottom-16">
-            Updates
+            Get Updates
           </h3>
 
           <p>
