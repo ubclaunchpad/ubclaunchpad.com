@@ -1,8 +1,9 @@
+# always tag exec, leads
 * @ubclaunchpad/exec @ubclaunchpad/leads
 
 # design assets
-public @ubclaunchpad/design
-src/assets @ubclaunchpad/design
+public @ubclaunchpad/design @ubclaunchpad/exec @ubclaunchpad/leads
+src/assets @ubclaunchpad/design @ubclaunchpad/exec @ubclaunchpad/leads
 
 # configuration
-src/config.ts @ubclaunchpad/design @ubclaunchpad/strategy
+src/config.ts @ubclaunchpad/design @ubclaunchpad/strategy @ubclaunchpad/exec @ubclaunchpad/leads
