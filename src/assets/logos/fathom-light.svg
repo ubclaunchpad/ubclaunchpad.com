@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="200" viewBox="0 0 600 200">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="76" height="76" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-ubc">
+      <rect width="600" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="ubc" clip-path="url(#clip-ubc)">
+    <g id="Group_84" data-name="Group 84" transform="translate(-4394 -4830)">
+      <text id="Fathom_Analytics" data-name="Fathom
+Analytics" transform="translate(4485 4921)" fill="#fff" font-size="91" font-family="SFProDisplay-Bold, SF Pro Display" font-weight="700"><tspan x="0" y="0">Fathom</tspan><tspan x="0" y="83">Analytics</tspan></text>
+      <g id="logo_1" data-name="logo – 1" transform="translate(4827 4847)" clip-path="url(#clip-path)">
+        <path id="Path_20" data-name="Path 20" d="M284.381,809.117l38.189,12.548-7.638-22.586Z" transform="translate(-284.381 -784.022)" fill="#a89ef5"/>
+        <path id="Path_21" data-name="Path 21" d="M334.448,828.237l12.729-37.643-38.189,12.548-7.638,2.51,7.638,22.585,22.913,7.529Z" transform="translate(-270.8 -790.593)" fill="#533feb"/>
+        <path id="Path_22" data-name="Path 22" d="M328.507,819.335l-22.913-7.528,12.729,37.643Z" transform="translate(-267.405 -774.164)" fill="#8efdd2"/>
+      </g>
+    </g>
+  </g>
+</svg>

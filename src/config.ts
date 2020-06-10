@@ -421,6 +421,13 @@ export const sponsorshipConfig: {
         url: 'https://www.netlify.com/img/press/logos/full-logo-dark.png',
       },
     },
+    {
+      name: 'Fathom Analytics',
+      website: 'https://usefathom.com',
+      logo: {
+        url: require('./assets/logos/fathom-light.svg'),
+      },
+    },
   ],
 };
 
