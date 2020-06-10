@@ -51,6 +51,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { ClubSponsor } from '@/data/types';
+import goals from '@/lib/fathomGoals';
 import { generateColumns, updateClassesIfInView } from '@/lib/util';
 
 /**
@@ -99,6 +100,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: 'Sponsorship Package',
       });
+      this.$fathom.trackGoal(goals.SPONSORPACKAGE_CLICK);
     },
   },
 });

@@ -62,6 +62,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import goals from '@/lib/fathomGoals';
 import { ClubSocials } from '@/data/types';
 
 /**
@@ -91,6 +92,7 @@ export default Vue.extend({
         event_category: this.section,
         event_label: link,
       });
+      this.$fathom.trackGoal(goals.SOCIALS_CLICK);
     },
   },
 });

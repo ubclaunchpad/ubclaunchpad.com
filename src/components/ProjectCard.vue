@@ -22,6 +22,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { createURLParams } from '@/lib/util';
+import goals from '@/lib/fathomGoals';
 import { Project } from '@/data/types';
 
 /**
@@ -52,6 +54,11 @@ export default Vue.extend({
         // attribute a project card click to the section it belongs in
         event_category: this.section,
         event_label: this.project.name,
+      });
+      this.$fathom.trackGoal(goals.PROJECTCARD_CLICK);
+      this.$fathom.trackPageview({
+        // 'fake' encode URL parameters as normal path components, since fathom discards URL queries
+        url: `/${createURLParams({ project: this.project.name })}`,
       });
       this.$emit('projectClicked', { isActive: true, activeProjectName: this.project.name });
     },

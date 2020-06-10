@@ -64,6 +64,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import goals from '@/lib/fathomGoals';
 import { updateClassesIfInView } from '@/lib/util';
 
 /**
@@ -86,6 +87,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: label,
       });
+      this.$fathom.trackGoal(goals.RESOURCES_CLICK);
     },
     handleScroll() {
       updateClassesIfInView(window, this.$refs['resources-col-left'], {

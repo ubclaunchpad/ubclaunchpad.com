@@ -11,25 +11,26 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
 
 **Table of Contents**
 
-- [⚒️ Contributing to the UBC Launch Pad Website](#%e2%9a%92%ef%b8%8f-contributing-to-the-ubc-launch-pad-website)
-  - [Dependencies](#dependencies)
-    - [npm Dependencies](#npm-dependencies)
-  - [Development](#development)
-    - [Project Overview](#project-overview)
-      - [Scripts](#scripts)
-    - [TypeScript Guidelines](#typescript-guidelines)
-    - [Vue Guidelines](#vue-guidelines)
-      - [Documentation](#documentation)
-      - [Styling](#styling)
-        - [Responsive Design](#responsive-design)
-    - [Assets and Images](#assets-and-images)
-      - [Icons](#icons)
-    - [Analytics](#analytics)
-    - [Configuration](#configuration)
-    - [Tools](#tools)
-  - [Deployment](#deployment)
-    - [Performance](#performance)
-  - [GitHub Actions](#github-actions)
+- [Dependencies](#dependencies)
+  - [npm Dependencies](#npm-dependencies)
+- [Development](#development)
+  - [Project Overview](#project-overview)
+    - [Scripts](#scripts)
+  - [TypeScript Guidelines](#typescript-guidelines)
+  - [Vue Guidelines](#vue-guidelines)
+    - [Documentation](#documentation)
+    - [Styling](#styling)
+      - [Responsive Design](#responsive-design)
+  - [Assets and Images](#assets-and-images)
+    - [Icons](#icons)
+  - [Analytics](#analytics)
+    - [Google Analytics](#google-analytics)
+    - [Fathom Analytics](#fathom-analytics)
+  - [Configuration](#configuration)
+  - [Tools](#tools)
+- [Deployment](#deployment)
+  - [Performance](#performance)
+- [GitHub Actions](#github-actions)
 
 <br />
 
@@ -217,6 +218,8 @@ Try not to use images for icons! We use a third-party icon set - for more detail
 
 ### Analytics
 
+#### Google Analytics
+
 We use [Google Analytics](https://analytics.google.com/analytics/web) to log events. In general, track interesting actions as [events](https://support.google.com/analytics/answer/1033068), and use the following scheme:
 
 ```ts
@@ -236,6 +239,16 @@ this.$gtag.event(
 The library we use for this is [`vue-gtag`](https://matteo-gabriele.gitbook.io/vue-gtag/), and the client is available through `this.$gtag` in Vue.
 
 Reported analytics are available under the `team@ubclaunchpad.com` account in [Google Analytics](https://analytics.google.com/analytics/web), where you can see visitor counts, browser statistics, the events reported by `$gtag.event`, and more.
+
+#### Fathom Analytics
+
+We are trialing integration with [Fathom Analytics](https://usefathom.com/). For the time being, we will tee events to both providers - at each `this.$gtag` call site, add the following as well:
+
+```ts
+this.$fathom.trackGoal(goalID)
+```
+
+Where a goal ID is a goal set up in the [ubclaunchpad.com Fathom dashboard](https://app.usefathom.com/share/ftsspsgr/ubclaunchpad.com). Define them in [`lib/fathomGoals.ts`](./src/lib/fathomGoals.ts).
 
 ### Configuration
 
