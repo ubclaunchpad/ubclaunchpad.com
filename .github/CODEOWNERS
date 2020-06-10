@@ -1,1 +1,8 @@
-* @ubclaunchpad/exec
+* @ubclaunchpad/exec @ubclaunchpad/leads
+
+# design assets
+public @ubclaunchpad/design
+src/assets @ubclaunchpad/design
+
+# configuration
+src/config.ts @ubclaunchpad/design @ubclaunchpad/strategy
