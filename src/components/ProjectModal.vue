@@ -205,9 +205,12 @@ export default Vue.extend({
     async shareToClipboard() {
       this.reportEvent('project-modal-share', this.project);
 
-      // encode share link and write to clipboard
+      // encode share link to include the full URL, project name, and section
+      // and write the string clipboard for users to paste
       const { protocol, host } = window.location;
-      await clipboard.writeText(`${protocol}//${host}?${createURLParams({ project: this.project.name })}#${this.section.toLowerCase()}`);
+      const query = createURLParams({ project: this.project.name });
+      const section = this.section.toLowerCase();
+      await clipboard.writeText(`${protocol}//${host}?${query}#${section}`);
 
       // show and destroy tooltip after a few seconds
       const tooltip = tippy('#share-button', {
