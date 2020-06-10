@@ -21,9 +21,7 @@
       :section-id="1"
       size="large"
     >
-      <About
-        :socials="club.socials"
-      />
+      <About />
     </Section>
 
     <Section
@@ -52,7 +50,7 @@
       size="large"
     >
       <Resources
-        :github="club.socials.github"
+        :socials="club.socials"
       />
     </Section>
 

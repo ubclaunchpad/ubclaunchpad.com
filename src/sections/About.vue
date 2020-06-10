@@ -32,11 +32,6 @@
           our projects to completion! We are also lucky enough to have sponsors which help provide
           our teams with necessary resources, like servers, to help us achieve our goals.
         </p>
-
-        <ClubSocialsLinks
-          :section="$options.name"
-          :links="socials"
-        />
       </div>
     </div>
   </div>
@@ -44,8 +39,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import ClubSocialsLinks from '@/components/links/ClubSocialsLinks.vue';
-import { ClubSocials } from '@/data/types';
 import { updateClassesIfInView } from '@/lib/util';
 
 /**
@@ -53,16 +46,6 @@ import { updateClassesIfInView } from '@/lib/util';
  */
 export default Vue.extend({
   name: 'About',
-  components: { ClubSocialsLinks },
-  props: {
-    /**
-     * ClubSocials configuration
-     */
-    socials: {
-      type: Object as () => ClubSocials,
-      required: true,
-    },
-  },
   created() {
     window.addEventListener('scroll', this.handleScroll);
   },
