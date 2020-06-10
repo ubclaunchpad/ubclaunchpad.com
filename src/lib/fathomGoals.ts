@@ -22,6 +22,9 @@ enum goals {
 
   // when a user subscribes to our newsletter
   NEWSLETTER_SUBSCRIBE = 'LY2AY8PP',
+
+  // when a user clicks the about us article
+  ABOUTUSARTICLE_CLICK = 'H499LUWG',
 }
 
 export default goals;

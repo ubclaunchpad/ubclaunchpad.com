@@ -32,6 +32,18 @@
           our projects to completion! We are also lucky enough to have sponsors which help provide
           our teams with necessary resources, like servers, to help us achieve our goals.
         </p>
+
+        <p>
+          <a
+            href="https://medium.com/ubc-launch-pad-software-engineering-blog/what-is-ubc-launch-pad-d3bbfe6322dc"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click="reportArticleClick"
+          >
+            <b>Read the Medium article ></b>
+          </a>
+          <br>
+        </p>
       </div>
     </div>
   </div>
@@ -39,6 +51,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import goals from '@/lib/fathomGoals';
 import { updateClassesIfInView } from '@/lib/util';
 
 /**
@@ -50,6 +63,9 @@ export default Vue.extend({
     window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
+    reportArticleClick() {
+      this.$fathom.trackGoal(goals.ABOUTUSARTICLE_CLICK);
+    },
     handleScroll() {
       updateClassesIfInView(window, this.$refs['about-col-left'], {
         addClasses: 'animated fadeInLeft',
