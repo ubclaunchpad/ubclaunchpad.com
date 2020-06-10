@@ -1,6 +1,7 @@
 <template>
   <button
     class="button"
+    :type="type"
     :class="{
       'simple': !primary,
       'primary': primary,
@@ -32,6 +33,10 @@ export default Vue.extend({
      * Something that should happen on-click.
      */
     onClick: { type: Function, default: undefined },
+    /**
+     * Type this button should take (for example, "submit")
+     */
+    type: { type: String, default: undefined },
   },
 });
 </script>

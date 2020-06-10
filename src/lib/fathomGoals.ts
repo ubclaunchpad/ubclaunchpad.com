@@ -14,11 +14,17 @@ enum goals {
   // when a user clicks on an application link
   APPLICATION_CLICK = 'MIJKXAKR',
 
-  // when a user clicks the link to docs.ubclaunchpad.com
-  RESOURCES_CLICK = 'VZF6R0EN',
+  // when a user clicks a link in the Resources section's Learn paragraph
+  LEARN_CLICK = 'VZF6R0EN',
 
   // when a user clicks the link to the sponsorship package
   SPONSORPACKAGE_CLICK = 'UDHX3QIV',
+
+  // when a user subscribes to our newsletter
+  NEWSLETTER_SUBSCRIBE = 'LY2AY8PP',
+
+  // when a user clicks the about us article
+  ABOUTUSARTICLE_CLICK = 'H499LUWG',
 }
 
 export default goals;

@@ -47,7 +47,7 @@
             v-else
             class="secondary"
           >
-            <i>We open applications every semester - follow us on social media for updates!</i>
+            <i>We open applications every semester - subscribe to our newsletter for updates!</i>
           </p>
         </div>
 
@@ -60,8 +60,9 @@
           />
           <Button
             v-if="!applicationsOpen"
-            text="about us"
-            :on-click="() => goTo('About Us', 'about')"
+            text="get updates"
+            primary
+            :on-click="() => goTo('Get Updates', 'resources')"
           />
           <Button
             text="our projects"
