@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import goals from '@/lib/fathomGoals';
 import { Project } from '@/data/types';
 
 /**
@@ -53,7 +54,7 @@ export default Vue.extend({
         event_category: this.section,
         event_label: this.project.name,
       });
-      this.$fathom.trackGoal('DGBRC44Q');
+      this.$fathom.trackGoal(goals.PROJECTCARD_CLICK);
       // TODO: extract to helper
       const urlParams = new URLSearchParams({
         project: this.project.name.toLowerCase(),

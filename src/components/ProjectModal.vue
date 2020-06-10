@@ -145,6 +145,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import tippy from 'tippy.js';
+import goals from '@/lib/fathomGoals';
 import { Project, MediaYouTube } from '@/data/types';
 
 // see https://github.com/ubclaunchpad/ubclaunchpad.com/issues/105
@@ -189,7 +190,7 @@ export default Vue.extend({
         // include which section this modal interaction came from
         event_label: `${this.section}: ${project.name}`,
       });
-      this.$fathom.trackGoal('INWBK8ID');
+      this.$fathom.trackGoal(goals.PROJECTMODAL_INTERACTION);
     },
     /**
      * Closes this modal

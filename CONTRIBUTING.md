@@ -245,10 +245,10 @@ Reported analytics are available under the `team@ubclaunchpad.com` account in [G
 We are trialing integration with [Fathom Analytics](https://usefathom.com/). For the time being, we will tee events to both providers - at each `this.$gtag` call site, add the following as well:
 
 ```ts
-this.$fathom.trackGoal(goalID, 0)
+this.$fathom.trackGoal(goalID)
 ```
 
-Where a goal ID is a goal set up in the [ubclaunchpad.com Fathom dashboard](https://app.usefathom.com/share/ftsspsgr/ubclaunchpad.com).
+Where a goal ID is a goal set up in the [ubclaunchpad.com Fathom dashboard](https://app.usefathom.com/share/ftsspsgr/ubclaunchpad.com). Define them in [`lib/fathomGoals.ts`](./src/lib/fathomGoals.ts).
 
 ### Configuration
 

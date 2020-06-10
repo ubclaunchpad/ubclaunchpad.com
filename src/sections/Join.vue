@@ -48,6 +48,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { ClubPosition } from '@/data/types';
+import goals from '@/lib/fathomGoals';
 import { updateClassesIfInView } from '@/lib/util';
 
 /**
@@ -76,7 +77,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: position,
       });
-      this.$fathom.trackGoal('MIJKXAKR');
+      this.$fathom.trackGoal(goals.APPLICATION_CLICK);
     },
   },
 });

@@ -85,6 +85,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Button from '@/components/Button.vue';
+import goals from '@/lib/fathomGoals';
 import { goTo } from '@/lib/util';
 
 /**
@@ -105,7 +106,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: btn,
       });
-      this.$fathom.trackGoal('AEL83VZC');
+      this.$fathom.trackGoal(goals.CALLTOACTION_CLICK);
       goTo(document, anchor);
     },
   },
