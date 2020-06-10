@@ -19,6 +19,9 @@ enum goals {
 
   // when a user clicks the link to the sponsorship package
   SPONSORPACKAGE_CLICK = 'UDHX3QIV',
+
+  // when a user subscribes to our newsletter
+  NEWSLETTER_SUBSCRIBE = 'LY2AY8PP',
 }
 
 export default goals;

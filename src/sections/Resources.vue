@@ -87,6 +87,7 @@
                 text="Subscribe"
                 type="submit"
                 class="subscribe-button"
+                :on-click="reportNewsletterSubscribe"
               />
             </form>
           </div>
@@ -136,6 +137,9 @@ export default Vue.extend({
         event_label: label,
       });
       this.$fathom.trackGoal(goals.RESOURCES_CLICK);
+    },
+    reportNewsletterSubscribe() {
+      this.$fathom.trackGoal(goals.NEWSLETTER_SUBSCRIBE);
     },
     handleScroll() {
       updateClassesIfInView(window, this.$refs['resources-col-left'], {
