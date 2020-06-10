@@ -114,3 +114,12 @@ export function getURLParams(location: Location): URLSearchParams {
   const uri = location.search.substring(1);
   return new URLSearchParams(uri);
 }
+
+/**
+ * Generates normalized URL search parameters encoding the given arguments.
+ * 
+ * @param args arguments to encode in URL
+ */
+export function createURLParams(args: object): string {
+  return new URLSearchParams(args as Record<string, string>).toString().toLowerCase();
+}

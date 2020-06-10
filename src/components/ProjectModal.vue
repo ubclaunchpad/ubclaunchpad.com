@@ -146,6 +146,7 @@
 import Vue from 'vue';
 import tippy from 'tippy.js';
 import goals from '@/lib/fathomGoals';
+import { createURLParams } from '@/lib/util';
 import { Project, MediaYouTube } from '@/data/types';
 
 // see https://github.com/ubclaunchpad/ubclaunchpad.com/issues/105
@@ -205,11 +206,8 @@ export default Vue.extend({
       this.reportEvent('project-modal-share', this.project);
 
       // encode share link and write to clipboard
-      const urlParams = new URLSearchParams({
-        project: this.project.name.toLowerCase(),
-      } as Record<string, string>);
       const { protocol, host } = window.location;
-      await clipboard.writeText(`${protocol}//${host}?${urlParams.toString()}#${this.section.toLowerCase()}`);
+      await clipboard.writeText(`${protocol}//${host}?${createURLParams({ project: this.project.name })}#${this.section.toLowerCase()}`);
 
       // show and destroy tooltip after a few seconds
       const tooltip = tippy('#share-button', {
