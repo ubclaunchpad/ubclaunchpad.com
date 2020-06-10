@@ -20,6 +20,7 @@ smoothscroll.polyfill();
 // load vue plugins
 Vue.use(VueFathom, {
   siteID: 'FTSSPSGR',
+  disabled: (process.env.NODE_ENV !== 'production'),
   settings: {
     url: 'https://chinchilla.ubclaunchpad.com/script.js',
   },
