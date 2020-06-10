@@ -33,23 +33,14 @@
           </p>
           <p>
             <a
-              :href="socials.github"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="margin-bottom-16"
-              @click="reportClick('GitHub')"
-            >
-              <b>See our projects on GitHub ></b>
-            </a>
-            <br>
-            <a
               href="https://docs.ubclaunchpad.com"
               target="_blank"
               rel="noopener noreferrer"
               @click="reportClick('Docs')"
             >
-              <b>Browse our knowledge base ></b>
+              <b>Browse and search our code and documentation ></b>
             </a>
+            <br>
           </p>
         </div>
 
@@ -58,18 +49,19 @@
             Get Updates
           </h3>
 
-          <p>
-            Stay in the loop by signing up for our newsletter and following us on social media
-            for club updates, events, articles, and more!
+          <p class="margin-bottom-16">
+            Sign up for our newsletter and follow us on social media to get notified when
+            applications open! You'll also be able to stay in the loop for events, articles, club
+            updates, and more!
           </p>
 
-          <div class="margin-bottom-16">
+          <div>
             <form
               action="https://buttondown.email/api/emails/embed-subscribe/ubclaunchpad"
               method="post"
               target="popupwindow"
               onsubmit="window.open('https://buttondown.email/ubclaunchpad', 'popupwindow')"
-              class="embeddable-buttondown-form"
+              class="embeddable-buttondown-form newsletter-form"
             >
               <Textbox
                 id="bd-email"
@@ -136,7 +128,7 @@ export default Vue.extend({
         event_category: this.$options.name,
         event_label: label,
       });
-      this.$fathom.trackGoal(goals.RESOURCES_CLICK);
+      this.$fathom.trackGoal(goals.LEARN_CLICK);
     },
     reportNewsletterSubscribe() {
       this.$fathom.trackGoal(goals.NEWSLETTER_SUBSCRIBE);
@@ -160,16 +152,20 @@ export default Vue.extend({
   border-radius: 12px;
 }
 
-.email-input {
-  min-width: 320px;
-  @media (max-width: $tablet) {
-    min-width: unset;
-    width: 100%;
+.newsletter-form {
+  margin-bottom: 4px;
+
+  .email-input {
+    min-width: 320px;
+    @media (max-width: $tablet) {
+      min-width: unset;
+      width: 100%;
+    }
   }
-}
-.subscribe-button {
-  @media (max-width: $tablet) {
-    width: 100%;
+  .subscribe-button {
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
   }
 }
 </style>
