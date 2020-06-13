@@ -57,7 +57,7 @@
 
           <div>
             <form
-              action="https://buttondown.email/api/emails/embed-subscribe/ubclaunchpad"
+              :action="'https://buttondown.email/api/emails/embed-subscribe/' + socials.buttondown.split('/').pop()"
               method="post"
               target="popupwindow"
               :onsubmit="'window.open(\'' + socials.buttondown + '\', \'popupwindow\')'"
