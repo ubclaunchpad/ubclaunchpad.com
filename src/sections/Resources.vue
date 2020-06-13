@@ -61,7 +61,7 @@
               method="post"
               target="popupwindow"
               :onsubmit="'window.open(\'' + socials.buttondown + '\', \'popupwindow\')'"
-              class="embeddable-buttondown-form newsletter-form"
+              class="embeddable-buttondown-form"
             >
               <Textbox
                 id="bd-email"
@@ -152,18 +152,18 @@ export default Vue.extend({
   border-radius: 12px;
 }
 
-.newsletter-form {
+.embeddable-buttondown-form {
   margin-bottom: 4px;
 
   .email-input {
     min-width: 320px;
-    @media (max-width: $tablet) {
+    @media (max-width: $touch) {
       min-width: unset;
       width: 100%;
     }
   }
   .subscribe-button {
-    @media (max-width: $tablet) {
+    @media (max-width: $touch) {
       width: 100%;
     }
   }
