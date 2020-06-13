@@ -60,7 +60,7 @@
               action="https://buttondown.email/api/emails/embed-subscribe/ubclaunchpad"
               method="post"
               target="popupwindow"
-              :onsubmit="window.open(socials.buttondown, 'popupwindow')"
+              :onsubmit="'window.open(\'' + socials.buttondown + '\', \'popupwindow\')'"
               class="embeddable-buttondown-form newsletter-form"
             >
               <Textbox
