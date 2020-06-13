@@ -14,6 +14,10 @@ const redirects = [
   `/github\t${clubConfig.socials.github}`,
   `/medium\t${clubConfig.socials.medium}`,
   `/linkedin\t${clubConfig.socials.linkedin}`,
+  `/buttondown\t${clubConfig.socials.buttondown}`,
+
+  // newsletter redirect to #resources, which is nicer-looking than the buttondown page
+  `/newsletter\t/#resources`,
 
   // sponsorship package
   `/sponsorship\t${sponsorshipConfig.packageURL}`,

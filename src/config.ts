@@ -355,6 +355,7 @@ export const clubConfig: {
     github: 'https://github.com/ubclaunchpad',
     linkedin: 'https://www.linkedin.com/company/10054664',
     email: 'team@ubclaunchpad.com',
+    buttondown: 'https://buttondown.email/ubclaunchpad',
   },
 };
 
