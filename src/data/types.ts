@@ -129,8 +129,11 @@ export type ClubSponsor = {
    */
   tier?: 'bronze' | 'silver' | 'gold' | 'platinum';
   /**
-   * Sponsor logo - must be PNG, with transparent backgrounds, and roughly 140px by 120px. Try to
-   * source these from online.
+   * Sponsor logo - the `url` must be PNG, with transparent backgrounds, and roughly 140px by 120px
+   * (or a 3:2 aspect ratio).
+   *
+   * Try to source logos from online. If the company does not have a linkable logo suitable for
+   * the sponsors section, add the logo to `/src/assets/logos`.
    *
    * To make simple adjustments to help the logo look better against the website's background, use
    * `logoFilter` to apply some simple CSS effects.
