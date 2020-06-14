@@ -75,6 +75,11 @@
                 value="1"
                 name="embed"
               >
+              <input
+                type="hidden"
+                name="tag"
+                value="subscribe-dot-com"
+              >
               <Button
                 text="Subscribe"
                 type="submit"
