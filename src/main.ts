@@ -23,6 +23,7 @@ Vue.use(VueFathom, {
   disabled: (process.env.NODE_ENV !== 'production'),
   settings: {
     url: 'https://chinchilla.ubclaunchpad.com/script.js',
+    excludedDomains: ['localhost'],
   },
 });
 Vue.use(VueGtag, {
