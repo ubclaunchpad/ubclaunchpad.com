@@ -457,7 +457,7 @@ type Redirect = {
 export const redirectsConfig: Redirect[] = [
   {
     path: '/events',
-    target: 'https://www.facebook.com/ubclaunchpad/events',
+    target: `${clubConfig.socials.facebook}/events`,
   },
   {
     path: '/slack',
