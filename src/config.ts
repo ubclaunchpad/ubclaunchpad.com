@@ -463,4 +463,9 @@ export const redirectsConfig: Redirect[] = [
     path: '/slack',
     target: 'https://ubclaunchpad.slack.com',
   },
+  {
+    // newsletter redirect to #resources, which is nicer-looking than the buttondown page
+    path: '/newsletter',
+    target: '/#resources',
+  },
 ];
