@@ -1,3 +1,8 @@
+/**
+ * Fathom Analytics goals - see CONTRIBUTING.md#analytics for more details.
+ * 
+ * View goals and analytics in https://app.usefathom.com/share/ftsspsgr/ubclaunchpad.com
+ */
 enum goals {
   // when a user clicks a project card
   PROJECTCARD_CLICK = 'DGBRC44Q',

@@ -70,7 +70,7 @@
             :href="project.links.repository"
             target="_blank"
             rel="noopener noreferrer"
-            @click="onLinkClick"
+            @click="trackModalInteraction"
           >
             <unicon
               name="github-alt"
@@ -83,7 +83,7 @@
             :href="project.links.website"
             target="_blank"
             rel="noopener noreferrer"
-            @click="onLinkClick"
+            @click="trackModalInteraction"
           >
             <unicon
               name="window"
@@ -96,7 +96,7 @@
             :href="project.links.app.url"
             target="_blank"
             rel="noopener noreferrer"
-            @click="onLinkClick"
+            @click="trackModalInteraction"
           >
             <unicon
               name="apple-alt"
@@ -109,7 +109,7 @@
             :href="project.links.app.url"
             target="_blank"
             rel="noopener noreferrer"
-            @click="onLinkClick"
+            @click="trackModalInteraction"
           >
             <unicon
               name="android-alt"
@@ -122,7 +122,7 @@
             :href="project.links.writeup"
             target="_blank"
             rel="noopener noreferrer"
-            @click="onLinkClick"
+            @click="trackModalInteraction"
           >
             <unicon
               name="notebooks"
@@ -183,14 +183,9 @@ export default Vue.extend({
   },
   methods: {
     /**
-     * Reports an analytics event
+     * Report an interaction!
      */
-    reportEvent(action: string, project: Project) {
-      this.$gtag.event(action, {
-        event_category: this.$options.name,
-        // include which section this modal interaction came from
-        event_label: `${this.section}: ${project.name}`,
-      });
+    trackModalInteraction() {
       this.$fathom.trackGoal(goals.PROJECTMODAL_INTERACTION);
     },
     /**
@@ -203,7 +198,7 @@ export default Vue.extend({
      * Shares this project modal to clipboard, and show a tooltip indicating success
      */
     async shareToClipboard() {
-      this.reportEvent('project-modal-share', this.project);
+      this.trackModalInteraction();
 
       // encode share link to include the full URL, project name, and section
       // and write the string clipboard for users to paste
@@ -235,13 +230,6 @@ export default Vue.extend({
       if (media.startAt) params.start = `${media.startAt}`;
       const urlParams = new URLSearchParams(params);
       return `https://youtube.com/embed/${media.id}?${urlParams.toString()}`;
-    },
-    /**
-     * Report a link click - for now, don't bother checking which exact link, since any click is
-     * probably an exciting event.
-     */
-    onLinkClick() {
-      this.reportEvent('project-modal-link-click', this.project);
     },
   },
 });

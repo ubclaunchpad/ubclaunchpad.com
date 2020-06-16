@@ -72,11 +72,7 @@ export default Vue.extend({
         addClasses: 'animated fadeInLeft',
       });
     },
-    onApplicationClick(position: string) {
-      this.$gtag.event('join-application-click', {
-        event_category: this.$options.name,
-        event_label: position,
-      });
+    onApplicationClick() {
       this.$fathom.trackGoal(goals.APPLICATION_CLICK);
     },
   },
