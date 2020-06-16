@@ -87,11 +87,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    reportClick(link: string) {
-      this.$gtag.event('social-click', {
-        event_category: this.section,
-        event_label: link,
-      });
+    reportClick() {
       this.$fathom.trackGoal(goals.SOCIALS_CLICK);
     },
   },

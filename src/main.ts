@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueFathom from '@ubclaunchpad/vue-fathom';
-import VueGtag from 'vue-gtag';
 import VueLazyload from 'vue-lazyload';
 import VueUnicons from './unicons';
 
@@ -26,17 +25,11 @@ Vue.use(VueFathom, {
     excludedDomains: ['localhost'],
   },
 });
-Vue.use(VueGtag, {
-  config: { id: 'UA-63529563-1' },
-});
 Vue.use(VueLazyload);
 Vue.use(VueUnicons);
 
 // set up vue configuration
 Vue.config.productionTip = false;
-Vue.config.errorHandler = function(err, vm, info) {
-  vm.$gtag.exception({ description: JSON.stringify({ err, info }) });
-};
 
 // init vue app
 new Vue({

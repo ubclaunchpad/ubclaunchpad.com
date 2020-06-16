@@ -36,7 +36,7 @@
               href="https://docs.ubclaunchpad.com"
               target="_blank"
               rel="noopener noreferrer"
-              @click="reportClick('Docs')"
+              @click="reportLearnClick"
             >
               <b>Browse and search our code and documentation ></b>
             </a>
@@ -128,11 +128,7 @@ export default Vue.extend({
     window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
-    reportClick(label: string) {
-      this.$gtag.event('resources-link-click', {
-        event_category: this.$options.name,
-        event_label: label,
-      });
+    reportLearnClick() {
       this.$fathom.trackGoal(goals.LEARN_CLICK);
     },
     reportNewsletterSubscribe() {

@@ -24,8 +24,6 @@ If you spot anything out of date or incorrect, please [open an issue](https://gi
   - [Assets and Images](#assets-and-images)
     - [Icons](#icons)
   - [Analytics](#analytics)
-    - [Google Analytics](#google-analytics)
-    - [Fathom Analytics](#fathom-analytics)
   - [Configuration](#configuration)
   - [Tools](#tools)
 - [Deployment](#deployment)
@@ -218,37 +216,15 @@ Try not to use images for icons! We use a third-party icon set - for more detail
 
 ### Analytics
 
-#### Google Analytics
-
-We use [Google Analytics](https://analytics.google.com/analytics/web) to log events. In general, track interesting actions as [events](https://support.google.com/analytics/answer/1033068), and use the following scheme:
-
-```ts
-this.$gtag.event(
-  // name of event, namespaced if appropriate - such as 'project-modal-link-click'
-  'my-action-name',
-  {
-    // name of section or part of website - be consistent with this. In general, the name of the
-    // component, accesisble via `this.$options.name`, should suffice
-    event_category: this.$options.name,
-    // value associated with event, such as a project name 
-    event_label: 'Some Value',
-  },
-);
-```
-
-The library we use for this is [`vue-gtag`](https://matteo-gabriele.gitbook.io/vue-gtag/), and the client is available through `this.$gtag` in Vue.
-
-Reported analytics are available under the `team@ubclaunchpad.com` account in [Google Analytics](https://analytics.google.com/analytics/web), where you can see visitor counts, browser statistics, the events reported by `$gtag.event`, and more.
-
-#### Fathom Analytics
-
-We are trialing integration with [Fathom Analytics](https://usefathom.com/). For the time being, we will tee events to both providers - at each `this.$gtag` call site, add the following as well:
+We use [Fathom Analytics](https://usefathom.com/) to track visits and interactions on the website. The Fathom client is available within Vue components via `this.$fathom`. For the most part, you won't have to manually track page views (see [exceptions](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+lang:vue+%24fathom.trackPageview&patternType=literal)), but [goals](https://usefathom.com/support/goals) are something you'll need to use the client for:
 
 ```ts
 this.$fathom.trackGoal(goalID)
 ```
 
-Where a goal ID is a goal set up in the [ubclaunchpad.com Fathom dashboard](https://app.usefathom.com/share/ftsspsgr/ubclaunchpad.com). Define them in [`lib/fathomGoals.ts`](./src/lib/fathomGoals.ts).
+A `goalID` is a goal set up in the [ubclaunchpad.com Fathom dashboard](https://app.usefathom.com/share/ftsspsgr/ubclaunchpad.com) - reach out to [`#ask-leads`](https://ubclaunchpad.slack.com/archives/CK935RD3Q) to add or remove goals. Define and document these goals in [`lib/fathomGoals.ts`](./src/lib/fathomGoals.ts).
+
+See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+lang:vue+%24fathom.trackGoal%28goals.&patternType=literal).
 
 ### Configuration
 

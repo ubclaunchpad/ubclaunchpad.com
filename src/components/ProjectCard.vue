@@ -50,16 +50,15 @@ export default Vue.extend({
   },
   methods: {
     openModal() {
-      this.$gtag.event('project-card-click', {
-        // attribute a project card click to the section it belongs in
-        event_category: this.section,
-        event_label: this.project.name,
-      });
+      // track that button was clicked
       this.$fathom.trackGoal(goals.PROJECTCARD_CLICK);
+
+      // track the view of a project card as if it were a page
       this.$fathom.trackPageview({
         // 'fake' encode URL parameters as normal path components, since fathom discards URL queries
         url: `/${createURLParams({ project: this.project.name })}`,
       });
+
       this.$emit('projectClicked', { isActive: true, activeProjectName: this.project.name });
     },
   },

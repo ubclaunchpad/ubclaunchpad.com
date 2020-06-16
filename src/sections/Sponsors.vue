@@ -39,7 +39,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="package-link"
-          @click="onSponsorPackageClick"
+          @click="reportSponsorPackageClick"
         >
           <b>Interested in sponsoring us? View our sponsorship package here ></b>
         </a>
@@ -95,11 +95,7 @@ export default Vue.extend({
     /**
      * Track clicks on the sponsorship package
      */
-    onSponsorPackageClick() {
-      this.$gtag.event('sponsor-package-click', {
-        event_category: this.$options.name,
-        event_label: 'Sponsorship Package',
-      });
+    reportSponsorPackageClick() {
       this.$fathom.trackGoal(goals.SPONSORPACKAGE_CLICK);
     },
   },

@@ -25,6 +25,10 @@
     <img src="https://img.shields.io/website/https/ubclaunchpad.com.svg"
       alt="Website Status"/>
   </a>
+  <a href="https://app.usefathom.com/share/ftsspsgr/ubclaunchpad.com">
+    <img src="https://img.shields.io/badge/dynamic/json?color=%23533feb&label=current&query=%24.total&suffix=%20visitors&url=https%3A%2F%2Fapp.usefathom.com%2Fsites%2F4916%2Fcurrent_visitors"
+      alt="Current Visitors">
+  </a>
 </p>
 
 <br>

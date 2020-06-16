@@ -56,17 +56,17 @@
             v-if="applicationsOpen"
             text="join us"
             primary
-            :on-click="() => goTo('Join Us', 'join')"
+            :on-click="() => goTo('join')"
           />
           <Button
             v-if="!applicationsOpen"
             text="get updates"
             primary
-            :on-click="() => goTo('Get Updates', 'resources')"
+            :on-click="() => goTo('resources')"
           />
           <Button
             text="our projects"
-            :on-click="() => goTo('Our Projects', 'teams')"
+            :on-click="() => goTo('teams')"
           />
         </div>
       </div>
@@ -102,11 +102,10 @@ export default Vue.extend({
     season: { type: String, required: true },
   },
   methods: {
-    goTo(btn: string, anchor: string) {
-      this.$gtag.event('cta-click', {
-        event_category: this.$options.name,
-        event_label: btn,
-      });
+    /**
+     * Called when one of the main buttons are clicked - these are "call-to-action" buttons.
+     */
+    goTo(anchor: string) {
       this.$fathom.trackGoal(goals.CALLTOACTION_CLICK);
       goTo(document, anchor);
     },
