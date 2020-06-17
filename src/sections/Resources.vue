@@ -55,39 +55,9 @@
             updates, and more!
           </p>
 
-          <div>
-            <form
-              :action="'https://buttondown.email/api/emails/embed-subscribe/' + socials.buttondown.split('/').pop()"
-              method="post"
-              target="popupwindow"
-              :onsubmit="'window.open(\'' + socials.buttondown + '\', \'popupwindow\')'"
-              class="embeddable-buttondown-form"
-            >
-              <Textbox
-                id="bd-email"
-                type="email"
-                name="email"
-                class="email-input"
-                placeholder="enter email"
-              />
-              <input
-                type="hidden"
-                value="1"
-                name="embed"
-              >
-              <input
-                type="hidden"
-                name="tag"
-                value="subscribe-dot-com"
-              >
-              <Button
-                text="Subscribe"
-                type="submit"
-                class="subscribe-button"
-                :on-click="reportNewsletterSubscribe"
-              />
-            </form>
-          </div>
+          <NewsletterSignup
+            :buttondown="socials.buttondown"
+          />
 
           <ClubSocialsLinks
             :section="$options.name"
@@ -102,8 +72,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import ClubSocialsLinks from '@/components/links/ClubSocialsLinks.vue';
-import Button from '@/components/Button.vue';
-import Textbox from '@/components/Textbox.vue';
+import NewsletterSignup from '@/components/NewsletterSignup.vue';
 
 import { ClubSocials } from '@/data/types';
 import goals from '@/lib/fathomGoals';
@@ -114,7 +83,7 @@ import { updateClassesIfInView } from '@/lib/util';
  */
 export default Vue.extend({
   name: 'Resources',
-  components: { ClubSocialsLinks, Button, Textbox },
+  components: { NewsletterSignup, ClubSocialsLinks },
   props: {
     /**
      * ClubSocials configuration
@@ -130,9 +99,6 @@ export default Vue.extend({
   methods: {
     reportLearnClick() {
       this.$fathom.trackGoal(goals.LEARN_CLICK);
-    },
-    reportNewsletterSubscribe() {
-      this.$fathom.trackGoal(goals.NEWSLETTER_SUBSCRIBE);
     },
     handleScroll() {
       updateClassesIfInView(window, this.$refs['resources-col-left'], {
@@ -151,22 +117,5 @@ export default Vue.extend({
 <style scoped lang="scss">
 .hero-image {
   border-radius: 12px;
-}
-
-.embeddable-buttondown-form {
-  margin-bottom: 4px;
-
-  .email-input {
-    min-width: 320px;
-    @media (max-width: $touch) {
-      min-width: unset;
-      width: 100%;
-    }
-  }
-  .subscribe-button {
-    @media (max-width: $touch) {
-      width: 100%;
-    }
-  }
 }
 </style>
