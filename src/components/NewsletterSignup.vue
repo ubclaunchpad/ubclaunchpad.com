@@ -42,7 +42,7 @@ import Textbox from '@/components/Textbox.vue';
 import goals from '@/lib/fathomGoals';
 
 /**
- * About implements a section for introducing visitors to Launch Pad.
+ * NewsletterSignup implements a component where users can sign up for the Launch Pad newsletter.
  */
 export default Vue.extend({
   name: 'NewsletterSignup',
