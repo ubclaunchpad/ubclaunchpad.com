@@ -71,7 +71,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import ClubSocialsLinks from '@/components/links/ClubSocialsLinks.vue';
+import ClubSocialsLinks from '@/components/ClubSocialsLinks.vue';
 import NewsletterSignup from '@/components/NewsletterSignup.vue';
 
 import { ClubSocials } from '@/data/types';
