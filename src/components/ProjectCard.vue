@@ -24,7 +24,7 @@
 import Vue from 'vue';
 import { createURLParams } from '@/lib/util';
 import goals from '@/lib/fathomGoals';
-import { Project } from '@/data/types';
+import { Project } from '@/configTypes';
 
 /**
  * ProjectCard is a small card used to render a Project. See [[Project]] for more details.

@@ -47,7 +47,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { ClubPosition } from '@/data/types';
+import { ClubPosition } from '@/configTypes';
 import goals from '@/lib/fathomGoals';
 import { updateClassesIfInView } from '@/lib/util';
 

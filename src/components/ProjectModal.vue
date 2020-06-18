@@ -147,7 +147,7 @@ import Vue from 'vue';
 import tippy from 'tippy.js';
 import goals from '@/lib/fathomGoals';
 import { createURLParams } from '@/lib/util';
-import { Project, MediaYouTube } from '@/data/types';
+import { Project, MediaYouTube } from '@/configTypes';
 
 // see https://github.com/ubclaunchpad/ubclaunchpad.com/issues/105
 import * as clipboard from 'clipboard-polyfill';

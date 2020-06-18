@@ -63,7 +63,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import goals from '@/lib/fathomGoals';
-import { ClubSocials } from '@/data/types';
+import { ClubSocials } from '@/configTypes';
 
 /**
  * ClubSocialsLinks renders a row of icons that link to our various social outlets online.

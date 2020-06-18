@@ -46,7 +46,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import ClubSocialsLinks from '@/components/ClubSocialsLinks.vue';
-import { ClubSocials } from '@/data/types';
+import { ClubSocials } from '@/configTypes';
 
 /**
  * Footer is the website footer.

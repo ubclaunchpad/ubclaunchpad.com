@@ -228,7 +228,7 @@ See [examples](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchp
 
 ### Configuration
 
-Site configuration is defined in [`src/config.ts`](./src/config.ts), with additional relevant types defined in [`src/data/types.ts`](./src/data/types.ts). Docstrings and types in these files are used to render the [UBC Launch Pad Site Configuration Guide](https://ubclaunchpad.com/config) as part of the post-build step to `npm run build` or by running:
+Site configuration is defined in [`src/config.ts`](./src/config.ts), with additional relevant types defined in [`src/configTypes.ts`](./src/configTypes.ts). Docstrings and types in these files are used to render the [UBC Launch Pad Site Configuration Guide](https://ubclaunchpad.com/config) as part of the post-build step to `npm run build` or by running:
 
 ```
 npm run docs

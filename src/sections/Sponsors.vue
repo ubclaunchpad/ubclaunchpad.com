@@ -50,7 +50,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { ClubSponsor } from '@/data/types';
+import { ClubSponsor } from '@/configTypes';
 import goals from '@/lib/fathomGoals';
 import { generateColumns, updateClassesIfInView } from '@/lib/util';
 

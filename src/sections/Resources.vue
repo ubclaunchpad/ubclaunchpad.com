@@ -74,7 +74,7 @@ import Vue from 'vue';
 import ClubSocialsLinks from '@/components/ClubSocialsLinks.vue';
 import NewsletterSignup from '@/components/NewsletterSignup.vue';
 
-import { ClubSocials } from '@/data/types';
+import { ClubSocials } from '@/configTypes';
 import goals from '@/lib/fathomGoals';
 import { updateClassesIfInView } from '@/lib/util';
 

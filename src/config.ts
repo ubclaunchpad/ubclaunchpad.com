@@ -9,7 +9,7 @@
  * @packageDocumentation
  */
 
-import { Project, ClubPosition, ClubSponsor, ClubSocials } from './data/types';
+import { Project, ClubPosition, ClubSponsor, ClubSocials } from './configTypes';
 
 /* eslint-disable max-len */
 

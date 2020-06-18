@@ -71,7 +71,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Project } from '@/data/types';
+import { Project } from '@/configTypes';
 import { generateColumns, updateClassesIfInView } from '@/lib/util';
 
 import projectModalController from '@/mixins/projectModalController';

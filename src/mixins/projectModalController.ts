@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Project } from '@/data/types';
+import { Project } from '@/configTypes';
 import { getURLParams } from '@/lib/util';
 
 interface ProjectModalState {
