@@ -1,7 +1,6 @@
 {
-  "name": "new",
+  "name": "@ubclaunchpad/dot-com",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "vue-ui": "vue ui",
     "serve": "vue-cli-service serve",
