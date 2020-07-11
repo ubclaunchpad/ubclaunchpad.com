@@ -28,7 +28,7 @@
         text="Subscribe"
         type="submit"
         class="subscribe-button"
-        :on-click="reportNewsletterSubscribe"
+        :on-click="reportSubscribe"
       />
     </form>
   </div>
