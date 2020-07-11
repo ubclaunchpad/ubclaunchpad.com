@@ -3,31 +3,27 @@
     <div class="has-text-centered">
       <h2>Sponsors</h2>
 
-      <div class="sponsors columns is-multiline is-centered">
-        <div
-          v-for="(col, i) in columns"
-          :key="'column-'+i"
-          class="column is-one-quarter-widescreen is-half-desktop"
+      <div class="sponsors margin-sides-auto">
+        <a
+          v-for="(s, i) in sponsors"
+          :key="'sponsor-'+i"
+          :href="s.website"
+          class="sponsor"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <a
-            v-for="(s, j) in col"
-            :key="'row-'+i+'-'+j"
-            :href="s.website"
-            class="sponsor"
-            target="_blank"
-            rel="noopener noreferrer"
+          <img
+            ref="sponsor-logo"
+            class="hidden margin-sides-auto margin-bottom-32"
+            :src="s.logo.url"
+            :alt="s.name"
+            :style="{
+              filter: s.logo.filter,
+              'max-width': sponsorWidth(s) + 'px',
+              'max-height': sponsorWidth(s) / 2.25 + 'px',
+            }"
           >
-            <img
-              ref="sponsor-logo"
-              class="sponsor-img hidden"
-              :src="s.logo.url"
-              :alt="s.name"
-              :style="{
-                filter: s.logo.filter,
-              }"
-            >
-          </a>
-        </div>
+        </a>
       </div>
 
       <p
@@ -52,7 +48,7 @@
 import Vue from 'vue';
 import { ClubSponsor } from '@/configTypes';
 import goals from '@/lib/fathomGoals';
-import { generateColumns, updateClassesIfInView } from '@/lib/util';
+import { updateClassesIfInView } from '@/lib/util';
 
 /**
  * Sponsors implements a section to feature Launch Pad's sponsors.
@@ -70,13 +66,6 @@ export default Vue.extend({
     sponsorshipPackage: {
       type: String,
       required: true,
-    },
-  },
-  computed: {
-    columns(): ClubSponsor[][] {
-      // too few sponsors looks awkward when spread out too much
-      const perColumn = (this.sponsors.length <= 4) ? 1 : 2;
-      return generateColumns<ClubSponsor>(this.sponsors, perColumn);
     },
   },
   created() {
@@ -98,6 +87,21 @@ export default Vue.extend({
     reportSponsorPackageClick() {
       this.$fathom.trackGoal(goals.SPONSORPACKAGE_CLICK);
     },
+    /**
+     * Generates appropriate width for sponsors
+     */
+    sponsorWidth(sponsor: ClubSponsor): number {
+      switch (sponsor.tier) {
+      case 'platinum':
+        return 300;
+      case 'gold':
+        return 260;
+      case 'silver':
+        return 220;
+      default:
+        return 180;
+      }
+    },
   },
 });
 </script>
@@ -110,12 +114,19 @@ h2 {
 .sponsors {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 75%;
+  @media (max-width: $touch) {
+    width: 100%;
+  }
 
   .sponsor {
-    img {
-      padding: 32px;
-      min-width: 320px;
-    }
+    line-height: 1.15;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 
