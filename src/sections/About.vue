@@ -38,11 +38,15 @@
             href="https://medium.com/ubc-launch-pad-software-engineering-blog/what-is-ubc-launch-pad-d3bbfe6322dc"
             target="_blank"
             rel="noopener noreferrer"
+            class="margin-bottom-16"
             @click="reportArticleClick"
           >
             <b>Read the Medium article ></b>
           </a>
           <br>
+          <a @click="goTo('sponsors')">
+            <b>See our sponsors ></b>
+          </a>
         </p>
       </div>
     </div>
@@ -52,7 +56,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import goals from '@/lib/fathomGoals';
-import { updateClassesIfInView } from '@/lib/util';
+import { updateClassesIfInView, goTo } from '@/lib/util';
 
 /**
  * About implements a section for introducing visitors to Launch Pad.
@@ -76,6 +80,7 @@ export default Vue.extend({
         removeClasses: 'hidden',
       });
     },
+    goTo(anchor: string) { goTo(document, anchor); },
   },
 });
 </script>
