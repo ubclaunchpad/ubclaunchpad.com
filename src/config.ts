@@ -400,14 +400,6 @@ export const sponsorshipConfig: {
       },
     },
     {
-      name: 'Cisco',
-      website: 'https://www.cisco.com/',
-      tier: 'gold',
-      logo: {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png',
-      },
-    },
-    {
       name: 'GitHub',
       website: 'https://github.com',
       logo: {
