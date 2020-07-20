@@ -159,6 +159,7 @@ export type ClubSocials = {
   github: string;
   email: string;
   linkedin: string;
+  youtube: string;
   /**
    * Buttondown is a newsletter provider - see https://buttondown.email
    */

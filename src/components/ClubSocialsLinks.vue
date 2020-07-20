@@ -56,6 +56,17 @@
           class="icon-medium hoverable"
         />
       </a>
+      <a
+        :href="links.youtube"
+        target="_blank"
+        rel="noopener noreferrer"
+        @click="reportClick('youtube')"
+      >
+        <unicon
+          name="youtube"
+          class="icon-medium hoverable"
+        />
+      </a>
     </p>
   </div>
 </template>

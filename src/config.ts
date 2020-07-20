@@ -354,6 +354,7 @@ export const clubConfig: {
     medium: 'https://medium.com/ubc-launch-pad-software-engineering-blog',
     github: 'https://github.com/ubclaunchpad',
     linkedin: 'https://www.linkedin.com/company/10054664',
+    youtube: 'https://www.youtube.com/channel/UCS0ghlwqTOc1RH_nYENNT5A',
     email: 'team@ubclaunchpad.com',
     buttondown: 'https://buttondown.email/ubclaunchpad',
   },

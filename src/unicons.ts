@@ -28,6 +28,7 @@ import {
   uniNotebooks, // notebooks
   uniMediumM, // medium-m
   uniShareAlt, // share-alt
+  uniYoutube, // youtube
 } from 'vue-unicons/src/icons';
 
 Unicon.add([
@@ -43,6 +44,7 @@ Unicon.add([
   uniNotebooks,
   uniMediumM,
   uniShareAlt,
+  uniYoutube,
 ]);
 
 export default Unicon;
