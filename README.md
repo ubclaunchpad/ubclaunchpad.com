@@ -39,7 +39,7 @@ The [Usage Guide](./USING.md) documents tips for using this website, such as how
 
 ## ⚙️ Configuring
 
-Want to make a change to the website? Most content can be updated using the website's configuration file - for example, the currently featured projects or recruitment status. Head on over to the [Site Configuration Guide](https://ubclaunchpad.com/config) for more details!
+Want to make a change to the website? Most content can be updated using the website's configuration file - for example, the currently featured projects. recruitment status, or redirects (short links). Head on over to the [Site Configuration Guide](https://ubclaunchpad.com/config) for more details!
 
 ## ⚒️ Contributing
 
