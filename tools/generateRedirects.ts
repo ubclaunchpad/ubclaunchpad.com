@@ -15,6 +15,7 @@ const redirects = [
   `/medium\t${clubConfig.socials.medium}`,
   `/linkedin\t${clubConfig.socials.linkedin}`,
   `/buttondown\t${clubConfig.socials.buttondown}`,
+  `/youtube\t${clubConfig.socials.youtube}`,
 
   // sponsorship package
   `/sponsorship\t${sponsorshipConfig.packageURL}`,
