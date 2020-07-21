@@ -461,4 +461,10 @@ export const redirectsConfig: Redirect[] = [
     path: '/newsletter',
     target: '/#resources',
   },
+  {
+    // redirect to latest campaign's Medium blog post - learn more about campaigns in our handbook:
+    // https://docs.ubclaunchpad.com/handbook/tools/social-media#social-media-campaigns
+    path: '/latest',
+    target: `${clubConfig.socials.medium}/state-of-launch-pad-2020-2da3f4cfbc36`,
+  },
 ];
