@@ -103,13 +103,9 @@ export type ClubPosition = {
    */
   name: string;
   /**
-   * Position description.
+   * Link to learn more and apply to this position.
    */
-  description: string;
-  /**
-   * Link to apply to this position.
-   */
-  applicationURL: string;
+  rolePageURL: string;
 }
 
 /**
