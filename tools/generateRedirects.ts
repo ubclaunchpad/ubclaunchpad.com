@@ -21,13 +21,6 @@ const redirects = [
   `/sponsorship\t${sponsorshipConfig.packageURL}`,
 ];
 
-// applications
-if (recruitmentConfig.applicationsOpen) {
-  recruitmentConfig.positions.forEach((p) => {
-    redirects.push(`/apply/${p.name.toLowerCase()}\t${p.applicationURL}`);
-  });
-}
-
 // custom redirects
 redirectsConfig.forEach((r) => {
   redirects.push(`${r.path}\t${r.target}`);
