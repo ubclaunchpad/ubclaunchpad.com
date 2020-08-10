@@ -36,7 +36,7 @@ export const recruitmentConfig: {
 
   /**
    * Define positions we are recruiting for. Each position will get a redirect generated under
-   * `https://ubclaunchpad.com/apply/$POSITION_NAME`
+   * `https://ubclaunchpad.com/join/$POSITION_NAME`
    *
    * Each element must satisfy [[`ClubPosition`]].
    */
