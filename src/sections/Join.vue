@@ -9,7 +9,7 @@
           <h3 ref="position-animated">
             <a
               class="position-link"
-              :href="p.applicationURL"
+              :href="p.rolePageURL"
               target="_blank"
               rel="noopener noreferrer"
               @click="onApplicationClick(p.name)"
@@ -36,8 +36,7 @@
             alt="feature image"
           >
           <p class="margin-top-24">
-            Are you a programmer, designer, or business student looking for an opportunity to work on
-            interesting projects with fun people? Apply today!
+            Are you a student looking for an opportunity to work on interesting projects with fun people? Apply today!
           </p>
         </div>
       </div>

@@ -24,7 +24,7 @@ const redirects = [
 // applications
 if (recruitmentConfig.applicationsOpen) {
   recruitmentConfig.positions.forEach((p) => {
-    redirects.push(`/apply/${p.name.toLowerCase()}\t${p.applicationURL}`);
+    redirects.push(`/join/${p.name.toLowerCase()}\t${p.rolePageURL}`);
   });
 }
 

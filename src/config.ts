@@ -32,44 +32,27 @@ export const recruitmentConfig: {
    * Toggle whether applications are open or not - this activates CTAs on the website for signup,
    * such as a 'Join Us' button and the 'Join Us' section.
    */
-  applicationsOpen: false,
+  applicationsOpen: true,
 
   /**
    * Define positions we are recruiting for. Each position will get a redirect generated under
-   * `https://ubclaunchpad.com/apply/$POSITION_NAME`
+   * `https://ubclaunchpad.com/join/$POSITION_NAME`
    *
    * Each element must satisfy [[`ClubPosition`]].
    */
   positions: [
     {
       name: 'Developer',
-      description:
-        `Join our development team to improve your skills and resume. You have the basics down, but want
-        to collaborate with a team to build awesome software and learn professional development practices.
-        Realize your ideas with a dedicated project team, and learn
-        from peers in a talented team of experienced designers and entrepreneurs. You're full
-        of ideas and you're ready to guide the development of a project from
-        conception to release.`,
-      applicationURL: 'TODO',
+      rolePageURL: 'https://docs.ubclaunchpad.com/handbook/recruitment/developer',
     },
     {
       name: 'Designer',
-      description:
-        `Realize your design ideas with a dedicated project team, and learn
-        from peers in a talented team of experienced designers. You're full
-        of ideas and you're ready to guide the development of a project from
-        conception to release.`,
-      applicationURL: 'TODO',
+      rolePageURL: 'https://docs.ubclaunchpad.com/handbook/recruitment/designer',
     },
-    {
-      name: 'Business Strategist',
-      description:
-        `Bring an entrepreneurial flair to a team of designers and developers to create awesome projects.
-        Develop industry relationships and insight while securing funding and sponsorships.
-        Work closely with partners to organize and market events that aim to benefit UBC's tech
-        community.`,
-      applicationURL: 'TODO',
-    },
+    // {
+    //   name: 'Strategy',
+    //   rolePageURL: 'TODO',
+    // },
   ],
 };
 
