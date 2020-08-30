@@ -23,7 +23,7 @@ If something you want to change that cannot be configured with `config.ts`, refe
 
 ### Configuring Recruitment Status
 
-One example of an easily configurable component of the website is recruitment and applications information. To open applications for a new season, simply update [`recruitmentConfig`](#recruitmentconfig) with the appropriate values, for example:
+One example of an easily configurable component of the website is recruitment and applications information. To open applications for a new season, simply update [`recruitmentConfig`](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:config.ts+recruitmentConfig&patternType=literal) with the appropriate values, for example:
 
 ```diff
 - season: 'Fall 2019'
@@ -35,7 +35,7 @@ One example of an easily configurable component of the website is recruitment an
 + applicationsOpen: true
 ```
 
-More details are available in the [`recruitmentConfig` documentation](#recruitmentconfig).
+More details are available in the [`recruitmentConfig` documentation](#recruitmentconfig). Make sure the relevant [`rolePageURL`](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/ubclaunchpad/ubclaunchpad%5C.com%24+file:config.ts+rolePageURL&patternType=literal) pages are up to date as well!
 
 ### Adding a Custom Redirect
 
