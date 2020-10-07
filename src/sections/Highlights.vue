@@ -55,7 +55,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 import { goTo } from '@/lib/util';
 
 interface Highlight {
@@ -88,7 +88,7 @@ UBC tech community and increase interest in software development.`,
 /**
  * Highlights implements a section to highlight some things about Launch Pad, such as what we do.
  */
-export default Vue.extend({
+export default defineComponent({
   name: 'Highlights',
   props: {},
   data: () => ({ highlights }),

@@ -11,21 +11,21 @@
     <div class="description">
       <h2>Past Projects</h2>
       <p>
-        Generations of students have created projects throughout the years as part of Launch Pad -
-        here are some of our favourites!
+        Generations of students have created projects throughout the years as
+        part of Launch Pad - here are some of our favourites!
       </p>
     </div>
 
     <div class="columns is-multiline is-centered projects">
       <div
         v-for="(col, i) in columns"
-        :key="'column-'+i"
+        :key="'column-' + i"
         class="column is-one-quarter-widescreen is-half-desktop project-column"
       >
         <div
           v-for="(r, j) in col"
-          ref="projects-project-card"
-          :key="'row-'+i+'-'+j"
+          ref="projectsProjectCard"
+          :key="'row-' + i + '-' + j"
           class="project-container hidden"
         >
           <ProjectCard
@@ -41,19 +41,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { Project } from '@/configTypes';
-import { generateColumns, updateClassesIfInView } from '@/lib/util';
+import { defineComponent, ref } from "vue";
+import { Project } from "@/configTypes";
+import { generateColumns, updateClassesIfInView, VueRef } from "@/lib/util";
 
-import projectModalController from '@/mixins/projectModalController';
-import ProjectCard from '@/components/ProjectCard.vue';
-import ProjectModal from '@/components/ProjectModal.vue';
+import projectModalController from "@/mixins/projectModalController";
+import ProjectCard from "@/components/ProjectCard.vue";
+import ProjectModal from "@/components/ProjectModal.vue";
 
 /**
  * Projects implements a section for highlighting past Launch Pad projects.
  */
-export default Vue.extend({
-  name: 'Projects',
+export default defineComponent({
+  name: "Projects",
   components: { ProjectCard, ProjectModal },
   mixins: [projectModalController],
   props: {
@@ -69,20 +69,23 @@ export default Vue.extend({
      */
     github: { type: String, required: true },
   },
-  data: () => ({ isActive: false, activeProjectName: '0' }),
+  data: () => ({ isActive: false, activeProjectName: "0" }),
   computed: {
     columns(): Project[][] {
       return generateColumns<Project>(this.projects, 2);
     },
   },
+  setup: () => ({
+    projectsProjectCard: ref<VueRef>(null),
+  }),
   created() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll() {
-      updateClassesIfInView(window, this.$refs['projects-project-card'], {
-        addClasses: 'animated fadeInUp slow',
-        removeClasses: 'hidden',
+      updateClassesIfInView(window, this.projectsProjectCard, {
+        addClasses: "animated fadeInUp slow",
+        removeClasses: "hidden",
       });
     },
   },

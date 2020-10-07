@@ -58,7 +58,7 @@ function updateClasses(el: Element, classNames: string, remove: boolean) {
   else el.classList.remove(...classes);
 }
 
-type VueRef = Vue | Element | Vue[] | Element[];
+export type VueRef = Vue | Element | Vue[] | Element[] | null;
 
 /**
  * Check if given element is within the window bounds (aka "in view") and updates classnames to it

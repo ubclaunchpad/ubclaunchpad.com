@@ -6,7 +6,7 @@
           v-for="(p, i) in positions"
           :key="p.name"
         >
-          <h3 ref="position-animated">
+          <h3 ref="positionAnimated">
             <a
               class="position-link"
               :href="p.rolePageURL"
@@ -19,7 +19,7 @@
           </h3>
           <hr
             v-if="i !== (positions.length-1)"
-            ref="position-animated"
+            ref="positionAnimated"
             class="position-divider"
           >
         </div>
@@ -45,16 +45,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent, ref, inject } from 'vue';
+
 import { ClubPosition } from '@/configTypes';
+import { updateClassesIfInView, VueRef } from '@/lib/util';
 import goals from '@/lib/fathomGoals';
-import { updateClassesIfInView } from '@/lib/util';
 
 /**
  * Join implements a section for encouraging users to apply to Launch Pad. It should only be
  * displayed if applications are open.
  */
-export default Vue.extend({
+export default defineComponent({
   name: 'Join',
   props: {
     positions: {
@@ -62,17 +63,22 @@ export default Vue.extend({
       required: true,
     },
   },
+  setup() {
+    return {
+      positionAnimated: ref<VueRef>(null),
+    }
+  },
   created() {
     window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {
-      updateClassesIfInView(window, this.$refs['position-animated'], {
+      updateClassesIfInView(window, this.positionAnimated, {
         addClasses: 'animated fadeInLeft',
       });
     },
     onApplicationClick() {
-      this.$fathom.trackGoal(goals.APPLICATION_CLICK);
+      this.$fathom?.trackGoal(goals.APPLICATION_CLICK);
     },
   },
 });

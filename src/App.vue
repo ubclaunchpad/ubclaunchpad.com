@@ -80,13 +80,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent, inject } from 'vue';
 
 // configuration for site properties - this should ONLY be imported here
 import { recruitmentConfig, clubConfig, sponsorshipConfig } from './config';
 
 // utility functions
 import { goTo } from '@/lib/util';
+import vueFathom from '@/mixins/vueFathom';
 
 // useful components
 import Nav from '@/components/Nav.vue';
@@ -102,11 +103,12 @@ import Projects from '@/sections/Projects.vue';
 import Resources from '@/sections/Resources.vue';
 import Join from '@/sections/Join.vue';
 import Sponsors from '@/sections/Sponsors.vue';
+import vueFathomInject from './mixins/vueFathomInject';
 
 /**
  * App is the primary entrypoint to the website.
  */
-export default Vue.extend({
+export default defineComponent({
   name: 'App',
   components: {
     Nav, Footer, Section,
@@ -120,13 +122,14 @@ export default Vue.extend({
     Join,
     Sponsors,
   },
+  mixins: [vueFathomInject],
   data: () => ({
     recruitment: recruitmentConfig,
     club: clubConfig,
     sponsorship: sponsorshipConfig,
   }),
   created() {
-    this.$fathom.trackPageview();
+    this.$fathom?.trackPageview();
   },
   methods: {
     goTo(anchor: string) { goTo(document, anchor); },

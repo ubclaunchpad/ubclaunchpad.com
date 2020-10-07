@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 import { Project } from '@/configTypes';
 import { getURLParams } from '@/lib/util';
 
@@ -18,7 +18,7 @@ interface ProjectModalState {
  * 
  * See Projects.vue, Teams.vue for examples.
  */
-export default Vue.extend({
+export default defineComponent({
   props: {
     /**
      * Projects available for modal

@@ -5,7 +5,7 @@
   >
     <div class="columns is-vcentered">
       <div
-        ref="about-col-left"
+        ref="aboutColLeft"
         class="hidden column"
       >
         <img
@@ -14,7 +14,7 @@
         >
       </div>
       <div
-        ref="about-col-right"
+        ref="aboutColRight"
         class="hidden column is-three-fifths pad-32"
       >
         <h2>Who we are</h2>
@@ -54,28 +54,35 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent, inject, ref } from 'vue';
 import goals from '@/lib/fathomGoals';
-import { updateClassesIfInView, goTo } from '@/lib/util';
+import { updateClassesIfInView, goTo, VueRef } from '@/lib/util';
+import vueFathom from '@/mixins/vueFathom';
 
 /**
  * About implements a section for introducing visitors to Launch Pad.
  */
-export default Vue.extend({
+export default defineComponent({
   name: 'About',
+  mixins: [vueFathom],
+  setup() {
+    const aboutColLeft = ref<VueRef>(null);
+    const aboutColRight = ref<VueRef>(null);
+    return { aboutColLeft, aboutColRight };
+  },
   created() {
     window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     reportArticleClick() {
-      this.$fathom.trackGoal(goals.ABOUTUSARTICLE_CLICK);
+      this.$fathom?.trackGoal(goals.ABOUTUSARTICLE_CLICK);
     },
     handleScroll() {
-      updateClassesIfInView(window, this.$refs['about-col-left'], {
+      updateClassesIfInView(window, this.aboutColLeft, {
         addClasses: 'animated fadeInLeft',
         removeClasses: 'hidden',
       });
-      updateClassesIfInView(window, this.$refs['about-col-right'], {
+      updateClassesIfInView(window, this.aboutColRight, {
         addClasses: 'animated fadeInLeft',
         removeClasses: 'hidden',
       });

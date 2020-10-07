@@ -4,14 +4,16 @@
       <div class="pad-32 column is-three-fifths-tablet">
         <div class="animated slideInDown">
           <!-- column-based layout with the "aside" description visible on desktop (hide-mobile, hide-tablet) -->
-          <div class="columns is-vcentered is-hidden-mobile is-hidden-tablet-only">
+          <div
+            class="columns is-vcentered is-hidden-mobile is-hidden-tablet-only"
+          >
             <div class="column is-narrow">
               <h1>UBC Launch Pad</h1>
             </div>
             <div class="column title-divider is-narrow" />
             <div class="column">
               <p class="main title-aside">
-                Software Engineering<br>Design Team
+                Software Engineering<br />Design Team
               </p>
             </div>
           </div>
@@ -30,24 +32,22 @@
           src="@/assets/landing.png"
           class="small-image is-hidden-tablet"
           alt="feature image"
-        >
+        />
 
         <div class="animated fadeIn">
           <p class="secondary">
-            A leading student-run software club based in the University of British Columbia devoted
-            to building applications in a collaborative and professional environment.
+            A leading student-run software club based in the University of
+            British Columbia devoted to building applications in a collaborative
+            and professional environment.
           </p>
-          <p
-            v-if="applicationsOpen"
-            class="secondary"
-          >
+          <p v-if="applicationsOpen" class="secondary">
             <i>{{ season }} applications are now open!</i>
           </p>
-          <p
-            v-else
-            class="secondary"
-          >
-            <i>We open applications every semester - subscribe to our newsletter for updates!</i>
+          <p v-else class="secondary">
+            <i
+              >We open applications every semester - subscribe to our newsletter
+              for updates!</i
+            >
           </p>
         </div>
 
@@ -64,10 +64,7 @@
             primary
             :on-click="() => goTo('resources')"
           />
-          <Button
-            text="our projects"
-            :on-click="() => goTo('teams')"
-          />
+          <Button text="our projects" :on-click="() => goTo('teams')" />
         </div>
       </div>
 
@@ -77,26 +74,29 @@
           src="@/assets/landing.png"
           class="is-hidden-mobile"
           alt="feature image"
-        >
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+
 import Button from '@/components/Button.vue';
-import goals from '@/lib/fathomGoals';
-import { goTo } from '@/lib/util';
+import goals from "@/lib/fathomGoals";
+import { goTo } from "@/lib/util";
+import vueFathomInject from "@/mixins/vueFathomInject";
 
 /**
  * Feature implements the landing section - the first thing visitors see.
  */
-export default Vue.extend({
-  name: 'Feature',
+export default defineComponent({
+  name: "Feature",
   components: {
     Button,
   },
+  mixins: [vueFathomInject],
   props: {
     applicationsOpen: Boolean,
     season: { type: String, required: true },
@@ -106,7 +106,7 @@ export default Vue.extend({
      * Called when one of the main buttons are clicked - these are "call-to-action" buttons.
      */
     goTo(anchor: string) {
-      this.$fathom.trackGoal(goals.CALLTOACTION_CLICK);
+      this.$fathom?.trackGoal(goals.CALLTOACTION_CLICK);
       goTo(document, anchor);
     },
   },
@@ -115,7 +115,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .feature {
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     margin-top: 80px;
   }
 

@@ -70,18 +70,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent, ref } from 'vue';
 import ClubSocialsLinks from '@/components/ClubSocialsLinks.vue';
 import NewsletterSignup from '@/components/NewsletterSignup.vue';
 
 import { ClubSocials } from '@/configTypes';
-import goals from '@/lib/fathomGoals';
 import { updateClassesIfInView } from '@/lib/util';
+import goals from '@/lib/fathomGoals';
 
 /**
  * About implements a section for introducing visitors to Launch Pad.
  */
-export default Vue.extend({
+export default defineComponent({
   name: 'Resources',
   components: { NewsletterSignup, ClubSocialsLinks },
   props: {
@@ -98,7 +98,7 @@ export default Vue.extend({
   },
   methods: {
     reportLearnClick() {
-      this.$fathom.trackGoal(goals.LEARN_CLICK);
+      this.$fathom?.trackGoal(goals.LEARN_CLICK);
     },
     handleScroll() {
       updateClassesIfInView(window, this.$refs['resources-col-left'], {
