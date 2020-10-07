@@ -17,6 +17,10 @@ const redirects = [
   `/buttondown\t${clubConfig.socials.buttondown}`,
   `/youtube\t${clubConfig.socials.youtube}`,
 
+  // google workplace (gsuite)
+  `/mail\thttps://mail.ubclaunchpad.com`,
+  `/calendar\thttp://calendar.ubclaunchpad.com`,
+
   // sponsorship package
   `/sponsorship\t${sponsorshipConfig.packageURL}`,
 ];
