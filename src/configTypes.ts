@@ -162,3 +162,16 @@ export type ClubSocials = {
   buttondown: string;
 }
 
+/**
+ * Defines a redirect - see [[`redirectsConfig`]].
+ */
+export type Redirect = {
+  /**
+   * Path to redirect, such as `/my/amazing-link`. This will translate to `ubclaunchpad.com/my/amazing-link`.
+   */
+  path: string;
+  /**
+   * URL or path to redirect to, such as `https://my-event-page.com`.
+   */
+  target: string;
+}

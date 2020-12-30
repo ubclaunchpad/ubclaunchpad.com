@@ -9,7 +9,7 @@
  * @packageDocumentation
  */
 
-import { Project, ClubPosition, ClubSponsor, ClubSocials } from './configTypes';
+import { Project, ClubPosition, ClubSponsor, ClubSocials, Redirect } from './configTypes';
 
 /* eslint-disable max-len */
 
@@ -407,20 +407,6 @@ export const sponsorshipConfig: {
     },
   ],
 };
-
-/**
- * Defines a redirect - see [[`redirectsConfig`]].
- */
-type Redirect = {
-  /**
-   * Path to redirect, such as `/my/amazing-link`. This will translate to `ubclaunchpad.com/my/amazing-link`.
-   */
-  path: string;
-  /**
-   * URL or path to redirect to, such as `https://my-event-page.com`.
-   */
-  target: string;
-}
 
 /**
  * Declare additional redirects to generate on each build. Make sure it does not conflict with any

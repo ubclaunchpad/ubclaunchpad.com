@@ -8,7 +8,7 @@
     "build": "vue-cli-service build",
     "postbuild": "npm run docs && npm run redirects",
     "lint": "vue-cli-service lint --max-warnings=0",
-    "docs": "typedoc --options typedoc.js src/config.ts",
+    "docs": "typedoc --options typedoc.js --listInvalidSymbolLinks",
     "redirects": "tsc ./tools/generateRedirects.ts --outDir bin && FILE='bin/src/config.js' ./tools/stripRequire.sh && node ./bin/tools/generateRedirects.js"
   },
   "dependencies": {
@@ -26,7 +26,7 @@
     "vue-unicons": "~2.1.0",
     "sass": "~1.26.5",
     "sass-loader": "~8.0.2",
-    "typescript": "~3.8.3",
+    "typescript": "~4.1.0",
     "vue-template-compiler": "~2.6.11"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "eslint": "~6.8.0",
     "eslint-plugin-vue": "~6.2.2",
     "serve": "~11.3.0",
-    "typedoc": "~0.17.6"
+    "typedoc": "~0.20.4"
   },
   "eslintConfig": {
     "root": true,
