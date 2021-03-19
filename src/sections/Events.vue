@@ -57,6 +57,7 @@ export default Vue.extend({
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  max-width: 850px;
 }
 
 .event {
