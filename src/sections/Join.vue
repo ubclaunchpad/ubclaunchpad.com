@@ -216,4 +216,9 @@ a {
   border: 2px solid #809CFF;
   color: #809CFF;
 }
+
+.mobile-illustration {
+  padding-left: 25%;
+  padding-right: 25%;
+}
 </style>
