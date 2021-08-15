@@ -5,7 +5,7 @@
         Join Us
       </h2>
       <p>
-        Apply by <b>September 12, 2021</b> to be a developer, designer or executive in Launch Pad!
+        Apply by <b>September 10, 2021</b> to be a developer, designer or executive in Launch Pad!
       </p>
     </div>
     <div class="columns reverse-on-tablet is-vcentered">
