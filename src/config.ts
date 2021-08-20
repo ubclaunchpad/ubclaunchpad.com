@@ -26,13 +26,13 @@ export const recruitmentConfig: {
   /**
    * Recruitment season name.
    */
-  season: 'Fall 2020',
+  season: 'Fall 2021',
 
   /**
    * Toggle whether applications are open or not - this activates CTAs on the website for signup,
    * such as a 'Join Us' button and the 'Join Us' section.
    */
-  applicationsOpen: false,
+  applicationsOpen: true,
 
   /**
    * Define positions we are recruiting for. Each position will get a redirect generated under
