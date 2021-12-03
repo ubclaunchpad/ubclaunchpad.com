@@ -357,7 +357,7 @@ export const sponsorshipConfig: {
    *
    * We will generate a redirect for this link under https://ubclaunchpad.com/sponsorship
    */
-  packageURL: 'https://drive.google.com/file/d/1qHG5GDN_2JZbJzOTBEQc8OULsx3VjXEz/view',
+  packageURL: 'https://drive.google.com/file/d/139k5jirMNCkOGth6MXH8JsDJcurhseV5/view',
 
   /**
    * Current sponsors.
