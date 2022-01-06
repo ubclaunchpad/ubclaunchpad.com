@@ -97,51 +97,6 @@
         >
       </div>
     </div>
-    <div class="columns reverse-on-tablet is-vcentered">
-      <div class="column has-text-centered is-one-fifth is-narrow is-hidden-mobile">
-        <img
-          src="@/assets/exec-role.png"
-          width="100%"
-          alt="feature image"
-        >
-      </div>
-      <div class="column is-four-fifths has-text-centered-mobile">
-        <h3>
-          Executive
-        </h3>
-        <p>
-          The executive team consists of our marketing, sponsorship, finance, and events
-          coordinators. As a member of this team, you will take on a leadership role and work
-          closely with our co-presidents, other executive team members, design, and technical
-          leads to ensure that our team runs smoothly and everyone has the best experience
-          possible.
-        </p>
-        <div class="animated fadeInLeft is-pulled-right">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScLAzYaacQGyInJfz3uFGub6U3Xj0EQVjnErSafnBjNKZSttw/viewform?usp=sf_link"
-            target="_blank"
-            class="primary-link"
-          >
-            apply now
-          </a>
-          <a
-            href="https://ubclaunchpad.notion.site/Executive-Role-Descriptions-dbb1ba4e72934129aa7b167f32901b19"
-            target="_blank"
-            class="secondary-link"
-          >
-            learn more
-          </a>
-        </div>
-      </div>
-      <div class="column has-text-centered is-one-fifth is-narrow is-hidden-tablet">
-        <img
-          src="@/assets/exec-role.png"
-          width="100%"
-          alt="feature image"
-          class="mobile-illustration"
-        >
-      </div>
-    </div>
   </div>
 </template>
 
