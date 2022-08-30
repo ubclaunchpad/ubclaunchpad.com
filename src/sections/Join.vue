@@ -5,7 +5,7 @@
         Join Us
       </h2>
       <p>
-        Apply by <b>January 16th, 2022</b> to be a developer or designer in Launch Pad!
+        Apply by <b>September 9th, 2022</b> to be a developer or designer in Launch Pad!
       </p>
     </div>
     <div class="columns reverse-on-tablet is-vcentered">
