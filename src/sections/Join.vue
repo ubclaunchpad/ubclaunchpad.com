@@ -29,7 +29,7 @@
         </p>
         <div class="animated fadeInLeft is-pulled-right">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScLAzYaacQGyInJfz3uFGub6U3Xj0EQVjnErSafnBjNKZSttw/viewform?usp=sf_link"
+            href="https://forms.gle/pcmQDP82YeSqQztp9"
             target="_blank"
             class="primary-link"
           >
@@ -66,7 +66,7 @@
         </p>
         <div class="animated fadeInRight">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScLAzYaacQGyInJfz3uFGub6U3Xj0EQVjnErSafnBjNKZSttw/viewform?usp=sf_link"
+            href="https://forms.gle/pcmQDP82YeSqQztp9"
             target="_blank"
             class="primary-link"
           >
