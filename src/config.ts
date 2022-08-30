@@ -26,7 +26,7 @@ export const recruitmentConfig: {
   /**
    * Recruitment season name.
    */
-  season: 'Winter 2022',
+  season: 'Fall 2022',
 
   /**
    * Toggle whether applications are open or not - this activates CTAs on the website for signup,
