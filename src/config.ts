@@ -49,10 +49,6 @@ export const recruitmentConfig: {
       name: 'Designer',
       rolePageURL: 'https://docs.ubclaunchpad.com/handbook/recruitment/designer',
     },
-    // {
-    //   name: 'Strategy',
-    //   rolePageURL: 'TODO',
-    // },
   ],
 };
 
