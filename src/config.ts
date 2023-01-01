@@ -26,7 +26,7 @@ export const recruitmentConfig: {
   /**
    * Recruitment season name.
    */
-  season: 'Fall 2022',
+  season: 'Winter 2023',
 
   /**
    * Toggle whether applications are open or not - this activates CTAs on the website for signup,
@@ -49,10 +49,6 @@ export const recruitmentConfig: {
       name: 'Designer',
       rolePageURL: 'https://docs.ubclaunchpad.com/handbook/recruitment/designer',
     },
-    // {
-    //   name: 'Strategy',
-    //   rolePageURL: 'TODO',
-    // },
   ],
 };
 
