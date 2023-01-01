@@ -447,3 +447,4 @@ export const redirectsConfig: Redirect[] = [
     target: `${clubConfig.socials.medium}/state-of-launch-pad-2020-2da3f4cfbc36`,
   },
 ];
+
