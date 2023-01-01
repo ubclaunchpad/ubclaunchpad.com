@@ -5,7 +5,7 @@
         Join Us
       </h2>
       <p>
-        Apply by <b>September 9th, 2022</b> to be a developer or designer in Launch Pad!
+        Apply by <b>January 8th, 2023</b> to be a developer or designer in Launch Pad!
       </p>
     </div>
     <div class="columns reverse-on-tablet is-vcentered">
@@ -29,7 +29,7 @@
         </p>
         <div class="animated fadeInLeft is-pulled-right">
           <a
-            href="https://forms.gle/pcmQDP82YeSqQztp9"
+            href="https://forms.gle/NWq7WihqJVx2aBL1A"
             target="_blank"
             class="primary-link"
           >
@@ -66,7 +66,7 @@
         </p>
         <div class="animated fadeInRight">
           <a
-            href="https://forms.gle/pcmQDP82YeSqQztp9"
+            href="https://forms.gle/NWq7WihqJVx2aBL1A"
             target="_blank"
             class="primary-link"
           >
